@@ -754,3 +754,33 @@ Chaque étape sera expliquée avec :
 - Objectif = apprendre ET livrer un produit de qualité
 
 **Let's build! 🏗️⚽**
+
+---
+
+## 📍 Checkpoint de progression
+
+### Dernière session : 21 avril 2026
+
+### ✅ Phase 0 : Setup Docker — TERMINÉE
+- docker-compose.yml (3 services : db, backend, frontend)
+- Dockerfile backend (Python 3.12-slim)
+- Dockerfile frontend (Node 20-alpine)
+- Projet Django initialisé (`jet`)
+- Projet Next.js 14 initialisé (TypeScript + Tailwind)
+- .env et .gitignore configurés
+
+### ✅ Phase 1 : Backend — EN COURS
+
+**Fait :**
+- settings.py configuré (PostgreSQL, CORS, DRF, variables d'env)
+- App Django `club` créée et enregistrée
+- Tous les modèles créés et migrés en base :
+  Article, Team, Player, TrainingSchedule, Match, TeamStats, Sponsor, SiteSettings
+- Django Admin configuré en français avec filtres et recherche
+- Superutilisateur `admin` créé
+
+**Prochaine étape : API REST**
+- Créer `serializers.py` ← ON S'EST ARRÊTÉ ICI
+- Créer `views.py`
+- Créer `urls.py`
+- Tester les endpoints avec le navigateur
