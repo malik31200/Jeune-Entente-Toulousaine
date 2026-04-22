@@ -1,4 +1,4 @@
-import { getArticles, getMatches,  getTeams, getSponsors } from '../lib/api'
+import { getArticles, getMatches, getTeams, getSponsors, getMediaUrl } from '../lib/api'
 import MatchCarousel from '../components/MatchCarousel'
 import Link from 'next/link'
 
@@ -50,7 +50,7 @@ export default async function Home() {
         className="relative flex items-end min-h-[70vh]"
         style={{
           backgroundColor: 'var(--color-primary)',
-          backgroundImage: heroArticle?.image ? `url(${heroArticle.image})` : undefined,
+          backgroundImage: heroArticle?.image ? `url(${getMediaUrl(heroArticle.image)})` : undefined,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -88,8 +88,9 @@ export default async function Home() {
             <Link key={article.slug} href={`/actualites/${article.slug}`} className="group">
               <div className="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow">
                 {article.image && (
-                  <img src={article.image} alt={article.title} className="w-full h-48 object-cover" />
+                  <img src={getMediaUrl(article.image)!} alt={article.title} className="w-full h-48 object-cover object-top" />
                 )}
+
                 <div className="p-4">
                   <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--color-accent)' }}>
                     {new Date(article.published_date).toLocaleDateString('fr-FR')}
@@ -122,14 +123,14 @@ export default async function Home() {
             <a key={sponsor.id} href={sponsor.website_url} target="_blank" rel="noopener noreferrer"
                className="opacity-60 hover:opacity-100 transition-opacity">
               {sponsor.logo
-                ? <img src={sponsor.logo} alt={sponsor.name} className="h-12 object-contain" />
+                ? <img src={getMediaUrl(sponsor.logo)!} alt={sponsor.name} className="h-12 object-contain" />
                 : <span className="font-bold text-lg" style={{ color: 'var(--color-text-light)' }}>{sponsor.name}</span>
               }
             </a>
           ) : (
             <div key={sponsor.id} className="opacity-60">
               {sponsor.logo
-                ? <img src={sponsor.logo} alt={sponsor.name} className="h-12 object-contain" />
+                ? <img src={getMediaUrl(sponsor.logo)!} alt={sponsor.name} className="h-12 object-contain" />
                 : <span className="font-bold text-lg" style={{ color: 'var(--color-text-light)' }}>{sponsor.name}</span>
               }
             </div>

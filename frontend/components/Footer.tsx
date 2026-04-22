@@ -88,6 +88,14 @@ export default async function Footer() {
               style={{ backgroundColor: 'var(--color-accent)', color: 'var(--color-primary)' }}>
               Nous contacter
             </Link>
+            {settings?.shop_url && (
+            <a href={settings.shop_url} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-3 text-sm font-semibold px-4 py-2 rounded border transition-colors"
+              style={{ borderColor: 'var(--color-accent)', color: 'var(--color-accent)' }}>
+              🛒 Boutique
+            </a>
+          )}
+
           </div>
         </div>
 

@@ -1,4 +1,4 @@
-import { getArticles } from '../../lib/api'
+import { getArticles, getMediaUrl } from '../../lib/api'
 import Link from 'next/link'
 
 export default async function ActualitesPage() {
@@ -20,7 +20,7 @@ export default async function ActualitesPage() {
           <Link key={article.slug} href={`/actualites/${article.slug}`} className="group">
             <div className="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow h-full flex flex-col">
               {article.image ? (
-                <img src={article.image} alt={article.title} className="w-full h-48 object-cover" />
+                <img src={getMediaUrl(article.image)!} alt={article.title} className="w-full h-48 object-cover object-top" />
               ) : (
                 <div className="w-full h-48 flex items-center justify-center" style={{ backgroundColor: 'var(--color-primary)' }}>
                   <span className="text-4xl">⚽</span>

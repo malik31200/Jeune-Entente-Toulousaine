@@ -44,3 +44,10 @@ export async function getTeamStats(teamId?: number) {
 export async function getSiteSettings() {
     return fetchAPI('/site-settings/')
 }
+
+export function getMediaUrl(url: string | null | undefined): string | null {
+  if (!url) return null
+  if (url.startsWith('http://backend:8000')) return url.replace('http://backend:8000', 'http://localhost:8000')
+  if (url.startsWith('/media/')) return `http://localhost:8000${url}`
+  return url
+}
