@@ -58,6 +58,11 @@ class SponsorViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = SponsorSerializer
 
 
+class SiteSettingsViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = SiteSettings.objects.all()
+    serializer_class = SiteSettingsSerializer
+
+
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def contact_view(request):

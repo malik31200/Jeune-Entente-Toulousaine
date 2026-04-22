@@ -1,18 +1,21 @@
-import { getArticles, getMatches,  getTeams } from '../lib/api'
+import { getArticles, getMatches,  getTeams, getSponsors } from '../lib/api'
 import MatchCarousel from '../components/MatchCarousel'
 import Link from 'next/link'
 
 export default async function Home() {
-    const [articlesData, matchesData, teamsData] = await Promise.all([
+    const [articlesData, matchesData, teamsData, sponsorsData] = await Promise.all([
       getArticles().catch(() => []),
       getMatches().catch(() => []),
       getTeams().catch(() => []),
+      getSponsors().catch(() => []),
     ])
 
     const articles = Array.isArray(articlesData) ? articlesData : (articlesData.results || [])
     const allMatches = Array.isArray(matchesData) ? matchesData : (matchesData.results || [])
     const teams = Array.isArray(teamsData) ? teamsData : (teamsData.results || [])
     const heroArticle = articles[0] || null
+    const sponsors = Array.isArray(sponsorsData) ? sponsorsData : (sponsorsData.results || [])
+
 
     const TEAM_ORDER = ['Seniors', 'Seniors 2', 'U19', 'U17', 'U16', 'U15', 'U14', 'Féminines', 'U18 Féminines', 'U15 Féminines', 'Futsal']
 
@@ -105,6 +108,38 @@ export default async function Home() {
           </div>
         )}
       </section>
+
+      {/* Sponsors */}
+{sponsors.length > 0 && (
+  <section className="py-12 border-t" style={{ borderColor: 'var(--color-border)' }}>
+    <div className="container">
+      <p className="text-center text-xs font-semibold uppercase tracking-widest mb-8" style={{ color: 'var(--color-text-light)' }}>
+        Nos partenaires
+      </p>
+      <div className="flex flex-wrap items-center justify-center gap-8">
+        {sponsors.map((sponsor: any) => (
+          sponsor.website_url ? (
+            <a key={sponsor.id} href={sponsor.website_url} target="_blank" rel="noopener noreferrer"
+               className="opacity-60 hover:opacity-100 transition-opacity">
+              {sponsor.logo
+                ? <img src={sponsor.logo} alt={sponsor.name} className="h-12 object-contain" />
+                : <span className="font-bold text-lg" style={{ color: 'var(--color-text-light)' }}>{sponsor.name}</span>
+              }
+            </a>
+          ) : (
+            <div key={sponsor.id} className="opacity-60">
+              {sponsor.logo
+                ? <img src={sponsor.logo} alt={sponsor.name} className="h-12 object-contain" />
+                : <span className="font-bold text-lg" style={{ color: 'var(--color-text-light)' }}>{sponsor.name}</span>
+              }
+            </div>
+          )
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
     </>
   )
 }

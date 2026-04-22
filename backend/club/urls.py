@@ -10,6 +10,7 @@ router.register(r'training-schedules', views.TrainingScheduleViewSet)
 router.register(r'matches', views.MatchViewSet)
 router.register(r'team-stats', views.TeamStatsViewSet)
 router.register(r'sponsors', views.SponsorViewSet)
+router.register(r'site-settings', views.SiteSettingsViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),

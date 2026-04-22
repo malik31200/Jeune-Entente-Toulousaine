@@ -40,3 +40,7 @@ export async function getTeamStats(teamId?: number) {
     if (teamId) url += `?team=${teamId}`
     return fetchAPI(url)
 }
+
+export async function getSiteSettings() {
+    return fetchAPI('/site-settings/')
+}
