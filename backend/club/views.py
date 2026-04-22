@@ -1,5 +1,6 @@
 from rest_framework import viewsets, status
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from django.core.mail import send_mail
 from django.conf import settings
@@ -58,25 +59,36 @@ class SponsorViewSet(viewsets.ReadOnlyModelViewSet):
 
 
 @api_view(['POST'])
+@permission_classes([AllowAny])
 def contact_view(request):
     name = request.data.get('name')
     email = request.data.get('email')
     message = request.data.get('message')
+    phone = request.data.get('phone', '')
+    subject = request.data.get('subject', '')
 
     if not all([name, email, message]):
         return Response({'error': 'Tous les champs sont requis.'},
                         status=status.HTTP_400_BAD_REQUEST)
-    
+
     try:
         settings_obj = SiteSettings.objects.first()
         recipient = settings_obj.contact_email if settings_obj else 'contact@jet.fr'
 
+        body = f'De : {name} <{email}>'
+        if phone:
+            body += f'\nTéléphone : {phone}'
+        if subject:
+            body += f'\nSujet : {subject}'
+        body += f'\n\n{message}'
+
         send_mail(
-            subject=f'[JET] Message de {name}',
-            message=f'De : {name} <{email}>\n\n{message}',
+            subject=f'[JET] {subject or "Message"} de {name}',
+            message=body,
             from_email=settings.EMAIL_HOST_USER or 'noreply@jet.fr',
             recipient_list=[recipient],
         )
         return Response({'success': 'Message envoyé avec succès.'})
     except Exception as e:
         return Response({'error': 'Erreur lors de l\'envoi.'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
