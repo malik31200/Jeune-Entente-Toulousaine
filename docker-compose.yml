@@ -21,6 +21,7 @@ services:
       - DATABASE_URL=postgresql://jet_user:jet_password@db:5432/jet_db
       - DEBUG=1
       - SECRET_KEY=dev-secret-key-change-in-production
+      - ALLOWED_HOSTS=localhost,127.0.0.1,backend
     depends_on:
       - db
 

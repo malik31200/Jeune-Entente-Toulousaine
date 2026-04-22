@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'GraffitiYouth';
+  src: url('/fonts/GraffitiYouth-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --color-primary: #111111;
   --color-primary-light: #1f1f1f;

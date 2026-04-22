@@ -36,11 +36,11 @@ export default async function Footer() {
           {/* Logo + description + réseaux */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm"
-                   style={{ backgroundColor: 'var(--color-accent)', color: 'var(--color-primary)' }}>
-                JET
+              <img src="/logo.png" alt="Logo JET" className="w-10 h-10 object-cover rounded-full" />
+              <div>
+                <p className="leading-none" style={{ color: 'var(--color-accent)', fontFamily: 'GraffitiYouth', fontSize: '1.5rem' }}>La JET</p>
+                <p className="text-gray-300 text-xs leading-none mt-0.5 tracking-widest uppercase">Jeune Entente Toulousaine</p>
               </div>
-              <span className="text-white font-bold">Jeune Entente Toulousaine</span>
             </div>
             <p className="text-gray-400 text-sm mb-4">
               Club de football toulousain fondé avec passion. Rejoignez l'aventure JET !

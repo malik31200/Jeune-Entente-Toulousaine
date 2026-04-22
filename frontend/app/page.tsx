@@ -1,6 +1,8 @@
 import { getArticles, getMatches, getTeams, getSponsors, getMediaUrl } from '../lib/api'
 import MatchCarousel from '../components/MatchCarousel'
 import Link from 'next/link'
+import FadeIn from '../components/FadeIn'
+
 
 export default async function Home() {
     const [articlesData, matchesData, teamsData, sponsorsData] = await Promise.all([
@@ -57,21 +59,23 @@ export default async function Home() {
       >
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, transparent 100%)' }} />
         <div className="container relative z-10 pb-12">
-          <p className="text-sm font-semibold uppercase tracking-widest mb-2" style={{ color: 'var(--color-accent)' }}>
-            Actualité
-          </p>
-          <h1 className="text-white text-4xl md:text-6xl font-black max-w-3xl leading-tight mb-4">
-            {heroArticle?.title || 'Bienvenue à la Jeune Entente Toulousaine'}
-          </h1>
-          {heroArticle && (
-            <Link
-              href={`/actualites/${heroArticle.slug}`}
-              className="inline-flex items-center gap-2 font-semibold px-6 py-3 rounded"
-              style={{ backgroundColor: 'var(--color-accent)', color: 'var(--color-primary)' }}
-            >
-              Lire l'article →
-            </Link>
-          )}
+          <FadeIn>
+            <p className="text-sm font-semibold uppercase tracking-widest mb-2" style={{ color: 'var(--color-accent)' }}>
+              Actualité
+            </p>
+            <h1 className="text-white text-4xl md:text-6xl font-black max-w-3xl leading-tight mb-4">
+              {heroArticle?.title || 'Bienvenue à la Jeune Entente Toulousaine'}
+            </h1>
+            {heroArticle && (
+              <Link
+                href={`/actualites/${heroArticle.slug}`}
+                className="inline-flex items-center gap-2 font-semibold px-6 py-3 rounded"
+                style={{ backgroundColor: 'var(--color-accent)', color: 'var(--color-primary)' }}
+              >
+                Lire l'article →
+              </Link>
+            )}
+          </FadeIn>
         </div>
       </section>
 
@@ -80,27 +84,30 @@ export default async function Home() {
 
       {/* Dernières actus */}
       <section className="container py-16">
-        <h2 className="text-2xl font-black uppercase mb-8" style={{ color: 'var(--color-primary)' }}>
-          Dernières actualités
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {articles.slice(0, 3).map((article: any) => (
-            <Link key={article.slug} href={`/actualites/${article.slug}`} className="group">
-              <div className="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow">
-                {article.image && (
-                  <img src={getMediaUrl(article.image)!} alt={article.title} className="w-full h-48 object-cover object-top" />
-                )}
-
-                <div className="p-4">
-                  <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--color-accent)' }}>
-                    {new Date(article.published_date).toLocaleDateString('fr-FR')}
-                  </p>
-                  <h3 className="font-bold text-lg group-hover:underline">{article.title}</h3>
+        <FadeIn delay={0.2}>
+          <h2 className="text-2xl font-black uppercase mb-8" style={{ color: 'var(--color-primary)' }}>
+            Dernières actualités
+          </h2>
+        </FadeIn>
+        <FadeIn delay={0.4}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {articles.slice(0, 3).map((article: any) => (
+              <Link key={article.slug} href={`/actualites/${article.slug}`} className="group">
+                <div className="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow">
+                  {article.image && (
+                    <img src={getMediaUrl(article.image)!} alt={article.title} className="w-full h-48 object-cover object-top" />
+                  )}
+                  <div className="p-4">
+                    <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--color-accent)' }}>
+                      {new Date(article.published_date).toLocaleDateString('fr-FR')}
+                    </p>
+                    <h3 className="font-bold text-lg group-hover:underline">{article.title}</h3>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
-        </div>
+              </Link>
+            ))}
+          </div>
+        </FadeIn>
         {articles.length > 3 && (
           <div className="text-center mt-8">
             <Link href="/actualites" className="font-semibold underline" style={{ color: 'var(--color-accent)' }}>

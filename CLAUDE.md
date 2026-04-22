@@ -796,8 +796,47 @@ Chaque étape sera expliquée avec :
 - Formulaire Contact : nom, email, téléphone (optionnel), sujet, message
 - Design : palette noir/orange JET, style TFC
 
-### 🔲 Phase 3 : Fonctionnalités V1 — À DÉMARRER
+### ✅ Phase 3 : Design & Polish — TERMINÉE (22 avril 2026)
 
-- Section Sponsors
-- Liens réseaux sociaux
+#### 🎨 Identité visuelle
+- **Logo réel** (`/public/logo.png`) intégré dans Header et Footer, rond (`rounded-full`)
+- **Police "Graffiti Youth"** : police custom street/graffiti pour "La JET"
+  - Fichier : `frontend/public/fonts/GraffitiYouth-Regular.otf`
+  - Déclarée via `@font-face` dans `globals.css`
+- **Police Bebas Neue** : supprimée au profit de Graffiti Youth
+- **Animation Header** (Framer Motion) : logo tourne + scale → "La JET" glisse → sous-titre fade in
+
+#### 🃏 Carrousel matchs — redesign complet
+- Flèches gauche/droite : **invisibles par défaut, apparaissent au survol** de la section (style PSG)
+- Cards : **hover = scale + remontée + bordure orange lumineuse**
+- **Bande couleur** en haut de chaque card : vert victoire / rouge défaite / jaune nul / orange à venir
+- **Badge résultat** : VICTOIRE / DÉFAITE / NUL coloré selon résultat JET
+- Animation de transition : cards glissent selon la direction (gauche/droite)
+- **Dots** de navigation en bas
+- Détection automatique si JET est domicile ou extérieur (`is_home`)
+
+#### 🏟️ Page Équipes
+- Cards avec **photo de l'équipe** si upload admin, sinon fallback ⚽
+- Zoom au hover sur la photo
+- Dégradé sombre pour lisibilité du nom
+
+#### 📊 Page Détail Équipe — onglets DATA & CLASSEMENT style TFC
+- **DATA** : fond noir, graphique barres animées (Framer Motion), grands chiffres buts marqués/encaissés, buts/match, V/N/D colorés, forme animée
+- **CLASSEMENT** : fond noir, en-tête compétition, tableau style TFC avec position en orange
+- **Calcul stats depuis les matchs** (`computeStatsFromMatches`) :
+  - Fallback si pas de `TeamStats` en base
+  - Filtre sur saison la plus récente uniquement
+  - Filtre sur la compétition principale (plus de matchs = championnat, exclut les coupes)
+  - Toujours calculé depuis les matchs (source de vérité), `TeamStats` DB utilisé uniquement pour le classement
+
+#### ✨ Animations globales (Framer Motion)
+- Composant `FadeIn` réutilisable : `frontend/components/FadeIn.tsx`
+- Page d'accueil : hero, titre "Dernières actualités", grille d'articles — tous animés en cascade
+
+### 🔲 Phase 4 : Déploiement — À FAIRE
+
 - Configuration SMTP email (production)
+- Variables d'environnement production
+- Backend : Railway / Render
+- Frontend : Vercel
+- Configuration domaine
