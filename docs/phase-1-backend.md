@@ -199,3 +199,152 @@ team = models.ForeignKey(Team, on_delete=models.CASCADE, related_name='matches')
 - `http://localhost:8000/admin` → interface admin ✅
 - `http://localhost:8000/api/` → liste des endpoints ✅
 - Tous les endpoints API fonctionnels ✅
+
+---
+
+## Étape 8 : Le scraping de l'API FFF
+
+### Pourquoi l'API FFF et pas du scraping HTML ?
+
+La FFF expose une API REST officielle (`api-dofa.fff.fr`) qui retourne du JSON propre. C'est bien plus fiable que de parser du HTML qui peut changer à tout moment.
+
+### Trouver l'identifiant du club
+
+Chaque club a un identifiant unique `cl_no` dans la base FFF. Pour JET :
+```
+cl_no = 11641
+```
+
+URL des matchs :
+```
+https://api-dofa.fff.fr/api/clubs/11641/matchs?sa_no=2025
+```
+(`sa_no` = numéro de saison, 2025 = saison 2025/2026)
+
+### Structure de l'API (Hydra/JSON-LD)
+
+L'API utilise le format **Hydra** (JSON-LD), reconnaissable à ses clés préfixées `hydra:` :
+
+```json
+{
+  "hydra:totalItems": 243,
+  "hydra:member": [ ...liste des matchs... ],
+  "hydra:view": {
+    "hydra:next": "/api/clubs/11641/matchs?sa_no=2025&page=2",
+    "hydra:last": "/api/clubs/11641/matchs?sa_no=2025&page=9"
+  }
+}
+```
+
+- `hydra:member` → les matchs de la page courante (30 par page)
+- `hydra:totalItems` → nombre total de matchs (243 pour JET)
+- `hydra:view.hydra:next` → URL de la page suivante (absent sur la dernière page)
+
+### Pagination
+
+L'API retourne **30 matchs par page**. JET a 243 matchs sur 9 pages. Notre scraper boucle tant qu'il y a une page suivante :
+
+```python
+while next_url:
+    response = requests.get(base_url + next_url)
+    data = response.json()
+    # traiter les matchs...
+    next_url = data.get('hydra:view', {}).get('hydra:next')
+```
+
+### Structure d'un match
+
+Chaque match contient :
+```json
+{
+  "ma_no": 53561981,
+  "competition": { "name": "U16 Régional 1 M", ... },
+  "home": {
+    "club": { "cl_no": 11641 },
+    "category_code": "U17",
+    "code": 21,
+    "short_name": "JEUNE ENTENTE TOULOU"
+  },
+  "away": { "club": { "cl_no": 21594 }, ... },
+  "date": "2025-09-13T00:00:00+00:00",
+  "time": "18H00",
+  "home_score": 1,
+  "away_score": 1
+}
+```
+
+### Piège : les category_code FFF
+
+Le FFF utilise des codes par **tranche d'âge**, pas par catégorie exacte :
+
+| Compétition réelle | category_code FFF | Explication |
+|---|---|---|
+| U17 Régional 1 | `U17` | ✅ correct |
+| **U16 Régional 1** | `U17` | ⚠️ U16 est dans la tranche U17 |
+| U15 Régional 1 | `U15` | ✅ correct |
+| **U14 Régional 1** | `U15` | ⚠️ U14 est dans la tranche U15 |
+| Seniors 1 | `SEM` + `code: 1` | ✅ correct |
+| **Seniors 2** | `SEM` + `code: 2` | ⚠️ même code, champ `code` différent |
+
+**Solution** : utiliser le nom de la compétition pour détecter U16/U14, et le champ `code` pour Seniors 2 :
+
+```python
+def get_or_create_team(self, category_code, competition_name, team_code):
+    comp = competition_name.upper()
+    if 'U16' in comp:
+        team_name = 'U16'
+    elif 'U14' in comp:
+        team_name = 'U14'
+    elif category_code == 'SEM' and team_code == 2:
+        team_name = 'Seniors 2'
+    else:
+        team_name = CATEGORY_TO_TEAM.get(category_code)
+```
+
+### Déterminer si JET joue à domicile
+
+```python
+is_home = home_club.get('cl_no') == FFF_CLUB_ID
+our_team_data = home if is_home else away
+```
+
+Si `cl_no` de l'équipe à domicile = 11641 → JET joue à domicile. Sinon → JET joue à l'extérieur.
+
+### Parser la date
+
+La date est au format ISO 8601 avec timezone (`T00:00:00+00:00`), et l'heure est dans un champ séparé (`"18H00"`). On les combine :
+
+```python
+def parse_date(self, date_str, time_str='00H00'):
+    dt = datetime.fromisoformat(date_str)   # "2025-09-13T00:00:00+00:00"
+    parts = time_str.replace('H', ':').split(':')  # "18H00" → [18, 0]
+    dt = dt.replace(hour=int(parts[0]), minute=int(parts[1]))
+    return dt
+```
+
+### update_or_create
+
+Au lieu d'insérer ou vérifier manuellement, Django a une méthode puissante :
+
+```python
+match, was_created = Match.objects.update_or_create(
+    home_team=home_name,   # clé unique : ces 3 champs
+    away_team=away_name,
+    date=match_date,
+    defaults={ ... }       # champs à mettre à jour si le match existe déjà
+)
+```
+
+Si le match n'existe pas → il est **créé**. S'il existe → il est **mis à jour**. Parfait pour un scraping récurrent.
+
+### Lancer le scraping
+
+```bash
+docker compose exec backend python manage.py scrape_fff
+```
+
+### Résultat
+
+- 243 matchs récupérés sur 9 pages
+- Toutes les équipes détectées : Seniors, Seniors 2, U19, U17, U16, U15, U14, Féminines, U15 Féminines, U18 Féminines, Futsal
+- Visible dans l'admin : `http://localhost:8000/admin/club/match/`
