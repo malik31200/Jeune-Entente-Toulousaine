@@ -759,7 +759,7 @@ Chaque étape sera expliquée avec :
 
 ## 📍 Checkpoint de progression
 
-### Dernière session : 21 avril 2026
+### Dernière session : 22 avril 2026
 
 ### ✅ Phase 0 : Setup Docker — TERMINÉE
 - docker-compose.yml (3 services : db, backend, frontend)
@@ -769,18 +769,27 @@ Chaque étape sera expliquée avec :
 - Projet Next.js 14 initialisé (TypeScript + Tailwind)
 - .env et .gitignore configurés
 
-### ✅ Phase 1 : Backend — EN COURS
+### ✅ Phase 1 : Backend — TERMINÉE
 
-**Fait :**
 - settings.py configuré (PostgreSQL, CORS, DRF, variables d'env)
 - App Django `club` créée et enregistrée
 - Tous les modèles créés et migrés en base :
   Article, Team, Player, TrainingSchedule, Match, TeamStats, Sponsor, SiteSettings
 - Django Admin configuré en français avec filtres et recherche
 - Superutilisateur `admin` créé
+- API REST complète (serializers, views, urls)
+- Scraping FFF : `backend/club/management/commands/scrape_fff.py`
+  - cl_no JET = 11641
+  - Pagination sur 9 pages (243 matchs)
+  - Toutes équipes : Seniors, Seniors 2, U19, U17, U16, U15, U14, Féminines, U15F, U18F, Futsal
+  - Détection U16/U14 via nom de compétition (FFF code U17/U15 pour ces tranches)
+  - Lancer : `docker compose exec backend python manage.py scrape_fff`
 
-**Prochaine étape : API REST**
-- Créer `serializers.py` ← ON S'EST ARRÊTÉ ICI
-- Créer `views.py`
-- Créer `urls.py`
-- Tester les endpoints avec le navigateur
+### 🔲 Phase 2 : Frontend Next.js — À DÉMARRER
+
+- Page d'accueil (hero + carrousel matchs + actus + sponsors)
+- Page Actualités (liste + détail)
+- Page Résultats (matchs filtrés par équipe)
+- Page Équipes (liste + détail avec onglets DATA/RÉSULTATS/CLASSEMENT)
+- Page Horaires d'entraînement
+- Formulaire Contact
