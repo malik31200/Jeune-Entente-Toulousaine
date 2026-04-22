@@ -785,11 +785,19 @@ Chaque étape sera expliquée avec :
   - Détection U16/U14 via nom de compétition (FFF code U17/U15 pour ces tranches)
   - Lancer : `docker compose exec backend python manage.py scrape_fff`
 
-### 🔲 Phase 2 : Frontend Next.js — À DÉMARRER
+### ✅ Phase 2 : Frontend Next.js — TERMINÉE
 
-- Page d'accueil (hero + carrousel matchs + actus + sponsors)
-- Page Actualités (liste + détail)
-- Page Résultats (matchs filtrés par équipe)
-- Page Équipes (liste + détail avec onglets DATA/RÉSULTATS/CLASSEMENT)
+- Page d'accueil : hero + carrousel matchs (dernier résultat + prochain match par équipe, filtre 60 jours)
+- Page Actualités : liste + détail article
+- Page Équipes : grille + détail avec 3 onglets (DATA / RÉSULTATS-CALENDRIER / CLASSEMENT)
+  - Sélecteur de saison (ordre footballistique Août→Juillet)
+  - Navigation par mois
 - Page Horaires d'entraînement
-- Formulaire Contact
+- Formulaire Contact : nom, email, téléphone (optionnel), sujet, message
+- Design : palette noir/orange JET, style TFC
+
+### 🔲 Phase 3 : Fonctionnalités V1 — À DÉMARRER
+
+- Section Sponsors
+- Liens réseaux sociaux
+- Configuration SMTP email (production)
