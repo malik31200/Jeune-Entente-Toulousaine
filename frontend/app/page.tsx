@@ -36,14 +36,6 @@ export default async function Home() {
       if (nextMatch) carouselMatches.push({ ...nextMatch, team_name: teamName })
     }
 
-    const nextMatchGlobal = [...allMatches]
-      .filter((m: any) => m.status === 'A_VENIR')
-      .sort((a: any, b: any) => new Date(a.date).getTime() - new Date(b.date).getTime())[0]
-
-    const nextMatchTeam = nextMatchGlobal
-      ? teams.find((t: any) => t.id === nextMatchGlobal.team)
-      : null
-
     return (
         <>
             {/* ─── Hero plein écran ─── */}
@@ -110,38 +102,6 @@ export default async function Home() {
                             )}
                         </FadeIn>
 
-                        {/* Widget prochain match */}
-                        {nextMatchGlobal && (
-                            <FadeIn delay={0.3}>
-                                <div
-                                    className="hidden md:block rounded-xl p-5 shrink-0"
-                                    style={{
-                                        backgroundColor: 'rgba(0,0,0,0.65)',
-                                        border: '1px solid rgba(249,115,22,0.35)',
-                                        backdropFilter: 'blur(10px)',
-                                        minWidth: '240px',
-                                    }}
-                                >
-                                    <p className="text-xs font-black uppercase tracking-widest mb-1" style={{ color: 'var(--color-accent)' }}>
-                                        Prochain match
-                                    </p>
-                                    {nextMatchTeam && (
-                                        <p className="text-gray-500 text-xs uppercase tracking-wider mb-3">{nextMatchTeam.name}</p>
-                                    )}
-                                    <p className="text-gray-300 text-xs mb-4 capitalize">
-                                        {new Date(nextMatchGlobal.date).toLocaleDateString('fr-FR', { weekday: 'long', day: '2-digit', month: 'long' })}
-                                        {' · '}
-                                        {new Date(nextMatchGlobal.date).toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' })}
-                                    </p>
-                                    <div className="flex items-center gap-2">
-                                        <span className="text-white font-bold text-sm text-right flex-1 truncate">{nextMatchGlobal.home_team}</span>
-                                        <span className="font-black px-2 py-1 rounded text-xs" style={{ backgroundColor: 'var(--color-accent)', color: 'var(--color-primary)' }}>VS</span>
-                                        <span className="text-white font-bold text-sm flex-1 truncate">{nextMatchGlobal.away_team}</span>
-                                    </div>
-                                    <p className="text-gray-600 text-xs mt-3 text-center truncate">{nextMatchGlobal.competition}</p>
-                                </div>
-                            </FadeIn>
-                        )}
                     </div>
                 </div>
             </section>
