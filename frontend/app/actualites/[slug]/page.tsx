@@ -12,7 +12,7 @@ export default async function ArticleDetailPage({ params }: { params: { slug: st
   }
 
   return (
-    <div className="container py-12 max-w-3xl">
+    <div className="container py-12 max-w-3xl" style={{ paddingBottom: '5rem' }}>
       <Link href="/actualites" className="text-sm font-semibold uppercase tracking-wider mb-6 inline-block" style={{ color: 'var(--color-accent)' }}>
         ← Toutes les actualités
       </Link>
@@ -39,11 +39,11 @@ export default async function ArticleDetailPage({ params }: { params: { slug: st
         </div>
       )}
 
-      <div className="prose prose-lg max-w-none" style={{ color: 'var(--color-text)' }}>
-        {article.content.split('\n').map((paragraph: string, i: number) =>
-          paragraph.trim() ? <p key={i} className="mb-4">{paragraph}</p> : null
-        )}
-      </div>
+      <div
+        className="leading-relaxed text-base"
+        style={{ color: 'var(--color-text)' }}
+        dangerouslySetInnerHTML={{ __html: article.content }}
+      />
     </div>
   )
 }

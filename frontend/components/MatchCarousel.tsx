@@ -107,7 +107,7 @@ function MatchCard({ match }: { match: Match }) {
       {/* Date + badge */}
       <div
         className="px-4 pb-4 pt-2 flex items-center justify-between gap-2 border-t"
-        style={{ borderColor: 'rgba(255,255,255,0.06)' }}
+        style={{ borderColor: 'rgba(235, 231, 231, 0.06)' }}
       >
         <span className="text-xs text-gray-500">{dateStr} · {timeStr}</span>
         <span

@@ -75,7 +75,7 @@ function computeStatsFromMatches(matches: any[]): any | null {
 function DataTab({ stats }: { stats: any }) {
   if (!stats) {
     return (
-      <div style={{ backgroundColor: 'var(--color-primary)', minHeight: '100vh' }}>
+      <div className="pb-20" style={{ backgroundColor: 'var(--color-primary)', minHeight: '60vh' }}>
         <div className="container py-12 text-gray-500">Aucune statistique disponible.</div>
       </div>
     )
@@ -91,8 +91,8 @@ function DataTab({ stats }: { stats: any }) {
   const diff = stats.goals_for - stats.goals_against
 
   return (
-    <div style={{ backgroundColor: 'var(--color-primary)', minHeight: '100vh' }}>
-      <div className="container py-12">
+    <div className="pb-20" style={{ backgroundColor: 'var(--color-primary)', minHeight: '60vh' }}>
+      <div className="container" style={{ paddingTop: '4rem', paddingBottom: '2.5rem' }}>
         <div className="max-w-md mx-auto">
 
           {/* Graphique en barres */}
@@ -164,7 +164,7 @@ function DataTab({ stats }: { stats: any }) {
           <div className="grid grid-cols-3 gap-3 mb-8">
             <motion.div
               className="rounded-xl p-5 text-center"
-              style={{ backgroundColor: 'rgba(34,197,94,0.12)', border: '1px solid rgba(34,197,94,0.2)' }}
+              style={{ backgroundColor: 'rgba(246, 249, 250, 0.94)', border: '1px solid rgba(34,197,94,0.2)' }}
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}
             >
               <p className="text-5xl font-black text-green-400">{stats.wins}</p>
@@ -229,92 +229,116 @@ function DataTab({ stats }: { stats: any }) {
 }
 
 /* ─── Onglet CLASSEMENT ─── */
-function ClassementTab({ stats, team }: { stats: any; team: any }) {
-  const imageUrl = getMediaUrl(team?.image)
+const JET_CL_NO = 11641
 
-  if (!stats) {
+function ClassementTab({ stats, team }: { stats: any; team: any }) {
+  const [ranking, setRanking] = useState<any[]>([])
+  const [rankLoading, setRankLoading] = useState(false)
+
+  useEffect(() => {
+    if (!team?.cp_no) return
+    setRankLoading(true)
+    const phase = team.phase_no ?? 1
+    const poule = team.poule_no ?? 1
+    fetch(`${API_URL}/classement/?cp_no=${team.cp_no}&phase=${phase}&poule=${poule}`)
+      .then(r => r.json())
+      .then(data => setRanking(Array.isArray(data) ? data : []))
+      .catch(() => setRanking([]))
+      .finally(() => setRankLoading(false))
+  }, [team?.cp_no, team?.phase_no, team?.poule_no])
+
+  if (!team?.cp_no && !stats) {
     return (
-      <div style={{ backgroundColor: 'var(--color-primary)', minHeight: '100vh' }}>
+      <div className="pb-20" style={{ backgroundColor: 'var(--color-primary)', minHeight: '60vh' }}>
         <div className="container py-12 text-gray-500">Pas de données de classement disponibles.</div>
       </div>
     )
   }
 
-  const diff = stats.goals_for - stats.goals_against
-
   return (
-    <div style={{ backgroundColor: 'var(--color-primary)', minHeight: '100vh' }}>
-      <div className="container py-10">
-        <div className="max-w-xl">
+    <div className="pb-20" style={{ backgroundColor: 'var(--color-primary)', minHeight: '60vh' }}>
+      <div className="container" style={{ paddingTop: '4rem', paddingBottom: '2.5rem' }}>
+        <div className="max-w-2xl">
 
           {/* En-tête compétition */}
-          <div className="rounded-xl p-4 flex items-center gap-4 mb-6"
-            style={{ backgroundColor: '#1a1a1a', border: '1px solid rgba(255,255,255,0.07)' }}>
-            <div className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0"
-              style={{ backgroundColor: 'rgba(249,115,22,0.15)', border: '1px solid rgba(249,115,22,0.25)' }}>
-              <span className="text-2xl">⚽</span>
-            </div>
-            <div>
-              <p className="text-gray-400 text-xs uppercase tracking-widest">Saison {stats.season}</p>
-              <p className="text-white font-black uppercase text-lg leading-tight">{stats.competition}</p>
-            </div>
-          </div>
-
-          {/* En-tête colonnes */}
-          <div className="flex items-center gap-2 px-4 pb-2 text-gray-600 text-xs font-bold uppercase tracking-wider">
-            <span className="w-8 text-center">Pos</span>
-            <span className="flex-1">Équipe</span>
-            <span className="w-10 text-center" style={{ color: 'var(--color-accent)' }}>Pts</span>
-            <span className="w-8 text-center">J</span>
-            <span className="w-8 text-center text-green-600">V</span>
-            <span className="w-8 text-center">N</span>
-            <span className="w-8 text-center text-red-600">D</span>
-            <span className="w-10 text-center">DB</span>
-          </div>
-
-          {/* Ligne de l'équipe */}
-          <motion.div
-            className="flex items-center gap-2 px-4 py-4 rounded-xl"
-            style={{
-              backgroundColor: 'rgba(249,115,22,0.1)',
-              border: '1px solid rgba(249,115,22,0.25)',
-            }}
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.4 }}
-          >
-            <span className="w-8 text-center font-black text-2xl" style={{ color: 'var(--color-accent)' }}>
-              {stats.ranking || '–'}
-            </span>
-
-            <div className="flex-1 flex items-center gap-2 min-w-0">
-              <div className="w-9 h-9 rounded-full overflow-hidden flex-shrink-0"
-                style={{ backgroundColor: 'rgba(249,115,22,0.2)', border: '2px solid rgba(249,115,22,0.4)' }}>
-                {imageUrl
-                  ? <img src={imageUrl} alt={team.name} className="w-full h-full object-cover" />
-                  : <div className="w-full h-full flex items-center justify-center text-xs font-black" style={{ color: 'var(--color-accent)' }}>JET</div>
-                }
+          {stats && (
+            <div className="bg-white rounded-xl p-4 flex items-center gap-4 mb-6 shadow">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                style={{ backgroundColor: 'rgba(249,115,22,0.1)', border: '1px solid rgba(249,115,22,0.2)' }}>
+                <span className="text-xl">⚽</span>
               </div>
-              <span className="text-white font-bold text-sm truncate">{team.name}</span>
+              <div>
+                <p className="text-gray-400 text-xs uppercase tracking-widest">Saison {stats.season}</p>
+                <p className="font-black uppercase text-base leading-tight" style={{ color: 'var(--color-primary)' }}>{stats.competition}</p>
+              </div>
             </div>
+          )}
 
-            <span className="w-10 text-center font-black text-2xl" style={{ color: 'var(--color-accent)' }}>
-              {stats.points}
-            </span>
+          {rankLoading && (
+            <p className="text-gray-500 text-sm py-4">Chargement du classement...</p>
+          )}
 
-            <span className="w-8 text-center text-gray-300 text-sm">{stats.matches_played}</span>
-            <span className="w-8 text-center text-green-400 font-semibold text-sm">{stats.wins}</span>
-            <span className="w-8 text-center text-gray-400 text-sm">{stats.draws}</span>
-            <span className="w-8 text-center text-red-400 font-semibold text-sm">{stats.losses}</span>
+          {!rankLoading && ranking.length > 0 && (
+            <>
+              {/* En-tête colonnes */}
+              <div className="flex items-center gap-1 px-3 pb-2 text-gray-400 text-xs font-bold uppercase tracking-wider">
+                <span className="w-8 text-center">#</span>
+                <span className="flex-1">Équipes</span>
+                <span className="w-10 text-center" style={{ color: 'var(--color-accent)' }}>Pts</span>
+                <span className="w-8 text-center">J</span>
+                <span className="w-8 text-center text-green-600">V</span>
+                <span className="w-8 text-center">N</span>
+                <span className="w-8 text-center text-red-500">D</span>
+                <span className="w-10 text-center">DB</span>
+              </div>
 
-            <span className={`w-10 text-center text-sm font-semibold ${diff > 0 ? 'text-green-400' : diff < 0 ? 'text-red-400' : 'text-gray-400'}`}>
-              {diff > 0 ? `+${diff}` : diff}
-            </span>
-          </motion.div>
+              <div className="flex flex-col gap-1.5">
+                {ranking.map((t: any, i: number) => {
+                  const isJet = t.cl_no === JET_CL_NO
+                  const diff = t.diff ?? (t.bp - t.bc)
+                  return (
+                    <motion.div
+                      key={t.cl_no}
+                      className="flex items-center gap-1 px-3 py-3 rounded-xl shadow-sm"
+                      style={{
+                        backgroundColor: isJet ? 'rgba(249,115,22,0.08)' : 'white',
+                        border: isJet ? '2px solid rgba(249,115,22,0.4)' : '1px solid #e5e7eb',
+                      }}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: i * 0.04 }}
+                    >
+                      <span className="w-8 text-center font-black text-base"
+                        style={{ color: isJet ? 'var(--color-accent)' : '#9ca3af' }}>
+                        {t.rank}
+                      </span>
+                      <span className="flex-1 text-sm font-bold truncate"
+                        style={{ color: isJet ? 'white' : 'var(--color-primary)' }}>
+                        {isJet ? team.name : t.name}
+                      </span>
+                      <span className="w-10 text-center font-black text-base"
+                        style={{ color: isJet ? 'var(--color-accent)' : 'var(--color-primary)' }}>
+                        {t.pts}
+                      </span>
+                      <span className="w-8 text-center text-gray-500 text-sm">{t.j}</span>
+                      <span className="w-8 text-center text-green-600 text-sm">{t.g}</span>
+                      <span className="w-8 text-center text-gray-500 text-sm">{t.n}</span>
+                      <span className="w-8 text-center text-red-500 text-sm">{t.p}</span>
+                      <span className={`w-10 text-center text-sm font-semibold ${diff > 0 ? 'text-green-600' : diff < 0 ? 'text-red-500' : 'text-gray-400'}`}>
+                        {diff > 0 ? `+${diff}` : diff}
+                      </span>
+                    </motion.div>
+                  )
+                })}
+              </div>
+            </>
+          )}
 
-          <p className="text-gray-700 text-xs text-center mt-6 uppercase tracking-widest">
-            Données issues du scraping FFF · classement partiel
-          </p>
+          {!rankLoading && ranking.length === 0 && !team?.cp_no && stats && (
+            <p className="text-gray-500 text-sm mt-4">
+              Configurez le cp_no dans l&apos;admin pour afficher le classement complet.
+            </p>
+          )}
         </div>
       </div>
     </div>
@@ -361,8 +385,10 @@ export default function TeamDetailPage() {
 
   const handleSeasonChange = (season: string) => {
     setSelectedSeason(season)
+    const comp = stats?.competition ?? null
+    const filtered = comp ? matches.filter((m: any) => m.competition === comp) : matches
     const months = Array.from(new Set<number>(
-      matches.filter((m: any) => getSeason(new Date(m.date)) === season)
+      filtered.filter((m: any) => getSeason(new Date(m.date)) === season)
         .map((m: any) => new Date(m.date).getMonth())
     )).sort((a, b) => SEASON_MONTH_ORDER.indexOf(a) - SEASON_MONTH_ORDER.indexOf(b))
     if (months.length > 0) setSelectedMonth(months[0])
@@ -371,7 +397,10 @@ export default function TeamDetailPage() {
   if (loading) return <div className="container py-12 text-gray-500">Chargement...</div>
   if (!team || team.detail === 'Not found.') return <div className="container py-12 text-gray-500">Équipe introuvable.</div>
 
-  const availableSeasons = [...new Set<string>(matches.map((m: any) => getSeason(new Date(m.date))))].sort()
+  const mainComp = stats?.competition ?? null
+  const mainCompMatches = mainComp ? matches.filter((m: any) => m.competition === mainComp) : matches
+
+  const availableSeasons = [...new Set<string>(mainCompMatches.map((m: any) => getSeason(new Date(m.date))))].sort()
   const TABS = [
     { key: 'data', label: 'DATA' },
     { key: 'resultats', label: 'RÉSULTATS/CALENDRIER' },
@@ -379,12 +408,12 @@ export default function TeamDetailPage() {
   ]
 
   const availableMonths = Array.from(new Set(
-    matches
+    mainCompMatches
       .filter((m: any) => !selectedSeason || getSeason(new Date(m.date)) === selectedSeason)
       .map((m: any) => new Date(m.date).getMonth())
   )).sort((a, b) => SEASON_MONTH_ORDER.indexOf(a) - SEASON_MONTH_ORDER.indexOf(b))
 
-  const matchesInMonth = matches
+  const matchesInMonth = mainCompMatches
     .filter((m: any) =>
       (!selectedSeason || getSeason(new Date(m.date)) === selectedSeason) &&
       new Date(m.date).getMonth() === selectedMonth
@@ -392,7 +421,7 @@ export default function TeamDetailPage() {
     .sort((a: any, b: any) => new Date(a.date).getTime() - new Date(b.date).getTime())
 
   return (
-    <div style={{ backgroundColor: 'var(--color-primary)' }}>
+    <div style={{ backgroundColor: 'var(--color-primary)', minHeight: '60vh' }}>
       {/* Header équipe */}
       <div className="py-12" style={{ backgroundColor: 'var(--color-primary)' }}>
         <div className="container">
@@ -431,73 +460,75 @@ export default function TeamDetailPage() {
       {activeTab === 'classement' && <ClassementTab stats={stats} team={team} />}
 
       {activeTab === 'resultats' && (
-        <div className="container py-8" style={{ minHeight: '100vh' }}>
-          {availableSeasons.length > 0 && (
-            <div className="flex gap-2 mb-4 flex-wrap">
-              {availableSeasons.map(season => (
-                <button key={season} onClick={() => handleSeasonChange(season)}
-                  className="px-4 py-2 rounded font-bold text-sm border-2 transition-colors"
+        <div className="pb-20" style={{ backgroundColor: 'var(--color-primary)', minHeight: '60vh' }}>
+          <div className="container" style={{ paddingTop: '4rem', paddingBottom: '2.5rem' }}>
+            {availableSeasons.length > 0 && (
+              <div className="flex gap-2 flex-wrap" style={{ marginBottom: '4rem' }}>
+                {availableSeasons.map(season => (
+                  <button key={season} onClick={() => handleSeasonChange(season)}
+                    className="px-4 py-2 rounded font-bold text-sm border-2 transition-colors"
+                    style={{
+                      borderColor: selectedSeason === season ? 'var(--color-accent)' : 'rgba(255,255,255,0.15)',
+                      color: selectedSeason === season ? 'var(--color-accent)' : '#9ca3af',
+                      backgroundColor: 'transparent',
+                    }}>
+                    {season}
+                  </button>
+                ))}
+              </div>
+            )}
+            <div className="flex gap-2 overflow-x-auto pb-2 mb-6">
+              {availableMonths.map((m: number) => (
+                <button key={m} onClick={() => setSelectedMonth(m)}
+                  className="flex-shrink-0 px-4 py-2 rounded font-semibold text-sm transition-colors"
                   style={{
-                    borderColor: selectedSeason === season ? 'var(--color-accent)' : 'var(--color-border)',
-                    color: selectedSeason === season ? 'var(--color-accent)' : 'var(--color-text-light)',
-                    backgroundColor: 'white',
+                    backgroundColor: selectedMonth === m ? 'var(--color-accent)' : 'rgba(255,255,255,0.07)',
+                    color: selectedMonth === m ? 'var(--color-primary)' : 'white',
                   }}>
-                  {season}
+                  {MONTH_NAMES[m]}
                 </button>
               ))}
             </div>
-          )}
-          <div className="flex gap-2 overflow-x-auto pb-2 mb-6">
-            {availableMonths.map((m: number) => (
-              <button key={m} onClick={() => setSelectedMonth(m)}
-                className="flex-shrink-0 px-4 py-2 rounded font-semibold text-sm transition-colors"
-                style={{
-                  backgroundColor: selectedMonth === m ? 'var(--color-accent)' : 'var(--color-primary)',
-                  color: selectedMonth === m ? 'var(--color-primary)' : 'white',
-                }}>
-                {MONTH_NAMES[m]}
-              </button>
-            ))}
-          </div>
 
-          {matchesInMonth.length === 0 ? (
-            <p className="text-gray-500">Aucun match ce mois-ci.</p>
-          ) : (
-            <div className="flex flex-col gap-3 max-w-2xl">
-              {matchesInMonth.map((match: any) => {
-                const isTermine = match.status === 'TERMINE'
-                const date = new Date(match.date)
-                const dateStr = date.toLocaleDateString('fr-FR', { weekday: 'short', day: '2-digit', month: 'short' })
-                const timeStr = date.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' })
-                return (
-                  <div key={match.id} className="bg-white rounded-lg shadow p-4">
-                    <div className="flex items-center justify-between mb-2">
-                      <p className="text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--color-accent)' }}>
-                        {match.competition}
-                      </p>
-                      <span className="text-xs font-bold px-2 py-0.5 rounded"
-                        style={{
-                          backgroundColor: isTermine ? '#374151' : 'var(--color-accent)',
-                          color: isTermine ? '#9ca3af' : 'var(--color-primary)',
-                        }}>
-                        {isTermine ? 'TERMINÉ' : 'À VENIR'}
-                      </span>
+            {matchesInMonth.length === 0 ? (
+              <p className="text-gray-500">Aucun match ce mois-ci.</p>
+            ) : (
+              <div className="flex flex-col gap-3 max-w-2xl">
+                {matchesInMonth.map((match: any) => {
+                  const isTermine = match.status === 'TERMINE'
+                  const date = new Date(match.date)
+                  const dateStr = date.toLocaleDateString('fr-FR', { weekday: 'short', day: '2-digit', month: 'short' })
+                  const timeStr = date.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' })
+                  return (
+                    <div key={match.id} className="bg-white rounded-xl p-4 shadow">
+                      <div className="flex items-center justify-between mb-2">
+                        <p className="text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--color-accent)' }}>
+                          {match.competition}
+                        </p>
+                        <span className="text-xs font-bold px-2 py-0.5 rounded"
+                          style={{
+                            backgroundColor: isTermine ? '#e5e7eb' : 'var(--color-accent)',
+                            color: isTermine ? '#6b7280' : 'var(--color-primary)',
+                          }}>
+                          {isTermine ? 'TERMINÉ' : 'À VENIR'}
+                        </span>
+                      </div>
+                      <p className="text-xs text-gray-400 mb-3 capitalize">{dateStr} · {timeStr}</p>
+                      <div className="flex items-center gap-3">
+                        <span className="font-bold flex-1 text-right text-sm" style={{ color: 'var(--color-primary)' }}>{match.home_team}</span>
+                        {isTermine ? (
+                          <span className="font-black text-xl w-20 text-center" style={{ color: 'var(--color-primary)' }}>{match.home_score} – {match.away_score}</span>
+                        ) : (
+                          <span className="text-gray-400 font-bold w-20 text-center">vs</span>
+                        )}
+                        <span className="font-bold flex-1 text-sm" style={{ color: 'var(--color-primary)' }}>{match.away_team}</span>
+                      </div>
                     </div>
-                    <p className="text-xs text-gray-400 mb-3 capitalize">{dateStr} · {timeStr}</p>
-                    <div className="flex items-center gap-3">
-                      <span className="font-bold flex-1 text-right text-sm">{match.home_team}</span>
-                      {isTermine ? (
-                        <span className="font-black text-xl w-20 text-center">{match.home_score} – {match.away_score}</span>
-                      ) : (
-                        <span className="text-gray-400 font-bold w-20 text-center">vs</span>
-                      )}
-                      <span className="font-bold flex-1 text-sm">{match.away_team}</span>
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
-          )}
+                  )
+                })}
+              </div>
+            )}
+          </div>
         </div>
       )}
     </div>

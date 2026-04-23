@@ -3,8 +3,12 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from django.core.mail import send_mail
+from django.core.cache import cache
 from django.conf import settings
 import requests as http_requests
+
+FFF_BASE = "https://api-dofa.fff.fr"
+CACHE_TIMEOUT = 15 * 60
 from .models import Article, Team, TrainingSchedule, Match, TeamStats, Sponsor, SiteSettings
 from .serializers import (ArticleSerializer, TeamSerializer, TrainingScheduleSerializer,
                           MatchSerializer, TeamStatsSerializer, SponsorSerializer,
@@ -87,6 +91,100 @@ def ranking_proxy(request, team_id):
         return Response(resp.json())
     except Exception as e:
         return Response({'error': f'Erreur lors de la récupération du classement : {str(e)}'}, status=status.HTTP_502_BAD_GATEWAY)
+
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def classement_view(request):
+    cp_no = request.query_params.get('cp_no')
+    phase = request.query_params.get('phase', '1')
+    poule = request.query_params.get('poule', '1')
+    if not cp_no:
+        return Response({'error': 'cp_no requis'}, status=400)
+    cache_key = f"classement_{cp_no}_{phase}_{poule}"
+    data = cache.get(cache_key)
+    if data is None:
+        try:
+            base_url = f"{FFF_BASE}/api/compets/{cp_no}/phases/{phase}/poules/{poule}/matchs"
+            headers = {'User-Agent': 'Mozilla/5.0'}
+            all_matchs = []
+
+            resp = http_requests.get(base_url, params={'page': 1}, headers=headers, timeout=15)
+            resp.raise_for_status()
+            body = resp.json()
+
+            if isinstance(body, list):
+                all_matchs = body
+            else:
+                all_matchs.extend(body.get('hydra:member', []))
+                view = body.get('hydra:view', {})
+                last_url = view.get('hydra:last', '')
+                import re
+                m = re.search(r'page=(\d+)', last_url)
+                last_page = int(m.group(1)) if m else 1
+                for page in range(2, last_page + 1):
+                    r = http_requests.get(base_url, params={'page': page}, headers=headers, timeout=15)
+                    r.raise_for_status()
+                    page_body = r.json()
+                    if isinstance(page_body, list):
+                        all_matchs.extend(page_body)
+                    else:
+                        all_matchs.extend(page_body.get('hydra:member', []))
+
+            data = _compute_classement(all_matchs)
+            cache.set(cache_key, data, CACHE_TIMEOUT)
+        except Exception as e:
+            return Response({'error': str(e)}, status=502)
+    return Response(data)
+
+
+def _compute_classement(matchs):
+    teams = {}
+    for m in matchs:
+        home = m.get('home', {})
+        away = m.get('away', {})
+        home_cl = home.get('club', {}).get('cl_no')
+        away_cl = away.get('club', {}).get('cl_no')
+        home_name = home.get('short_name', '')
+        away_name = away.get('short_name', '')
+
+        for cl, name in [(home_cl, home_name), (away_cl, away_name)]:
+            if cl and cl not in teams:
+                teams[cl] = {'cl_no': cl, 'name': name, 'pts': 0, 'j': 0,
+                             'g': 0, 'n': 0, 'p': 0, 'bp': 0, 'bc': 0}
+
+        home_score = m.get('home_score')
+        away_score = m.get('away_score')
+        if home_score is None or away_score is None:
+            continue
+
+        teams[home_cl]['j'] += 1
+        teams[away_cl]['j'] += 1
+        teams[home_cl]['bp'] += home_score
+        teams[home_cl]['bc'] += away_score
+        teams[away_cl]['bp'] += away_score
+        teams[away_cl]['bc'] += home_score
+
+        if home_score > away_score:
+            teams[home_cl]['g'] += 1
+            teams[home_cl]['pts'] += 3
+            teams[away_cl]['p'] += 1
+        elif home_score < away_score:
+            teams[away_cl]['g'] += 1
+            teams[away_cl]['pts'] += 3
+            teams[home_cl]['p'] += 1
+        else:
+            teams[home_cl]['n'] += 1
+            teams[away_cl]['n'] += 1
+            teams[home_cl]['pts'] += 1
+            teams[away_cl]['pts'] += 1
+
+    ranking = sorted(teams.values(),
+                     key=lambda t: (-t['pts'], -(t['bp'] - t['bc']), -t['bp']))
+    for i, t in enumerate(ranking, 1):
+        t['rank'] = i
+        t['diff'] = t['bp'] - t['bc']
+    return ranking
 
 
 @api_view(['POST'])

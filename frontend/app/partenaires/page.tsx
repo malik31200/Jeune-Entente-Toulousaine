@@ -5,7 +5,7 @@ export default async function PartenairesPage() {
   const sponsors = Array.isArray(data) ? data : (data.results || [])
 
   return (
-    <div className="container py-12">
+    <div className="container py-12" style={{ paddingBottom: '5rem' }}>
       <h1 className="text-3xl font-black uppercase mb-2" style={{ color: 'var(--color-primary)' }}>
         Nos Partenaires
       </h1>

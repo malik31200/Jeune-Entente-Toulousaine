@@ -26,12 +26,22 @@ export default async function Home() {
       const team = teams.find((t: any) => t.name === teamName)
       if (!team) continue
       const teamMatches = allMatches.filter((m: any) => m.team === team.id)
-      const lastResult = [...teamMatches]
-        .filter((m: any) => m.status === 'TERMINE' && m.home_score !== null && new Date(m.date) >= sixtyDaysAgo)
+
+      // Compétition principale = celle avec le plus de matchs terminés
+      const terminated = teamMatches.filter((m: any) => m.status === 'TERMINE' && m.home_score !== null)
+      const compCount: Record<string, number> = {}
+      for (const m of terminated) compCount[m.competition] = (compCount[m.competition] || 0) + 1
+      const mainComp = Object.keys(compCount).length > 0
+        ? Object.entries(compCount).sort(([, a], [, b]) => b - a)[0][0]
+        : null
+
+      const lastResult = terminated
+        .filter((m: any) => (!mainComp || m.competition === mainComp) && new Date(m.date) >= sixtyDaysAgo)
         .sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime())[0]
-      const nextMatch = [...teamMatches]
-        .filter((m: any) => m.status === 'A_VENIR')
+      const nextMatch = teamMatches
+        .filter((m: any) => m.status === 'A_VENIR' && (!mainComp || m.competition === mainComp))
         .sort((a: any, b: any) => new Date(a.date).getTime() - new Date(b.date).getTime())[0]
+
       if (lastResult) carouselMatches.push({ ...lastResult, team_name: teamName })
       if (nextMatch) carouselMatches.push({ ...nextMatch, team_name: teamName })
     }
@@ -110,7 +120,8 @@ export default async function Home() {
             <MatchCarousel matches={carouselMatches} />
 
             {/* ─── Dernières actus ─── */}
-            <section className="container py-16">
+            <section style={{ backgroundColor: 'var(--color-bg)' }}>
+            <div className="container py-16">
                 <FadeIn delay={0.2}>
                     <h2 className="text-2xl font-black uppercase mb-8" style={{ color: 'var(--color-primary)' }}>
                         Dernières actualités
@@ -142,13 +153,14 @@ export default async function Home() {
                         </Link>
                     </div>
                 )}
+            </div>
             </section>
 
             {/* ─── Sponsors ─── */}
             {sponsors.length > 0 && (
-                <section className="py-12 border-t" style={{ borderColor: 'var(--color-border)' }}>
+                <section className="py-12 border-t" style={{ borderColor: 'var(--color-border)', backgroundColor: 'var(--color-bg)' }}>
                     <div className="container">
-                        <p className="text-center text-xs font-semibold uppercase tracking-widest mb-8" style={{ color: 'var(--color-text-light)' }}>
+                        <p className="text-center text-xl font-bold uppercase tracking-widest mb-8" style={{ color: 'var(--color-text-light)' }}>
                             Nos partenaires
                         </p>
                         <div className="flex flex-wrap items-center justify-center gap-8">

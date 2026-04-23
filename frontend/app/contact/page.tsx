@@ -28,7 +28,7 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="container py-12 max-w-2xl">
+    <div className="container py-12 max-w-2xl" style={{ paddingBottom: '5rem' }}>
       <h1 className="text-3xl font-black uppercase mb-2" style={{ color: 'var(--color-primary)' }}>
         Nous contacter
       </h1>

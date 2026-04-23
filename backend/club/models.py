@@ -33,8 +33,11 @@ class Team(models.Model):
     description = models.TextField(blank=True)
     image = models.ImageField(upload_to='teams/', blank=True, null=True)
     order = models.IntegerField(default=0)
-    ranking_api_url = models.URLField(blank=True, null=True, verbose_name="URL API classement FFF",
-                                      help_text="Ex: https://api-dofa.fff.fr/api/compets/434770/phases/1/poules/2/classement_journees?page=1")
+    ranking_api_url = models.URLField(blank=True, null=True, verbose_name="URL API classement FFF")
+    cp_no = models.CharField(max_length=20, blank=True, null=True, verbose_name="FFF cp_no",
+                             help_text="Identifiant compétition (ex: 434763)")
+    phase_no = models.IntegerField(default=1, verbose_name="FFF phase")
+    poule_no = models.IntegerField(default=1, verbose_name="FFF poule")
 
     def __str__(self):
         return self.name

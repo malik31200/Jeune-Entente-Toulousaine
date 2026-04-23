@@ -14,7 +14,7 @@ export default async function ActualitesPage({
   const totalPages = Math.ceil(count / 9)
 
   return (
-    <div className="container py-12">
+    <div className="container py-12" style={{ paddingBottom: '5rem' }}>
       <h1 className="text-3xl font-black uppercase mb-8" style={{ color: 'var(--color-primary)' }}>
         Actualités
       </h1>
