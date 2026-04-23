@@ -6,6 +6,31 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api'
 
 const DAYS_ORDER = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche']
 
+// Retourne une clé de tri : [groupe, rang, féminine]
+// Seniors → [0], U-catégories par nombre décroissant → [1, 100-U], Féminines → [2], Futsal → [3]
+function teamSortKey(name: string): [number, number, number] {
+  const low = name.toLowerCase().trim()
+  if (low === 'seniors') return [0, 0, 0]
+  if (low.startsWith('seniors')) return [0, 1, 0]
+  const uMatch = name.match(/U(\d+)/i)
+  if (uMatch) {
+    const num = parseInt(uMatch[1])
+    const isFem = /fémin/i.test(name) ? 1 : 0
+    return [1, 100 - num, isFem]
+  }
+  if (/futsal/i.test(low)) return [3, 0, 0]
+  return [2, 0, 0]
+}
+
+function compareTeams(a: string, b: string): number {
+  const ka = teamSortKey(a)
+  const kb = teamSortKey(b)
+  for (let i = 0; i < 3; i++) {
+    if (ka[i] !== kb[i]) return ka[i] - kb[i]
+  }
+  return a.localeCompare(b)
+}
+
 export default function HorairesPage() {
   const [schedules, setSchedules] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
@@ -46,7 +71,7 @@ export default function HorairesPage() {
       )}
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {Object.entries(byTeam).map(([teamName, slots]) => (
+        {Object.entries(byTeam).sort(([a], [b]) => compareTeams(a, b)).map(([teamName, slots]) => (
           <div key={teamName} className="bg-white rounded-lg shadow overflow-hidden">
             <div className="px-4 py-3" style={{ backgroundColor: 'var(--color-primary)' }}>
               <h2 className="text-white font-black">{teamName}</h2>
