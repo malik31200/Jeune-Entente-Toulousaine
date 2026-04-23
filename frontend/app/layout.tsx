@@ -3,7 +3,6 @@ import { Bebas_Neue } from 'next/font/google'
 import './globals.css'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import BottomNav from '../components/BottomNav'
 import { getSiteSettings } from '../lib/api'
 
 const bebasNeue = Bebas_Neue({
@@ -28,11 +27,10 @@ export default async function RootLayout({
 
   return (
     <html lang="fr" className={bebasNeue.variable}>
-      <body className="flex flex-col min-h-screen pb-16">
+      <body className="flex flex-col min-h-screen">
         <Header shopUrl={shopUrl} />
         <main className="flex-1">{children}</main>
         <Footer />
-        <BottomNav />
       </body>
     </html>
   )
