@@ -20,15 +20,18 @@ class ArticleViewSet(viewsets.ReadOnlyModelViewSet):
 class TeamViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Team.objects.all()
     serializer_class = TeamSerializer
+    pagination_class = None
 
 
 class TrainingScheduleViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = TrainingSchedule.objects.filter(is_active=True)
     serializer_class = TrainingScheduleSerializer
+    pagination_class = None
 
 class MatchViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Match.objects.all()
     serializer_class = MatchSerializer
+    pagination_class = None
 
     def get_queryset(self):
         queryset = Match.objects.all()
@@ -39,28 +42,30 @@ class MatchViewSet(viewsets.ReadOnlyModelViewSet):
         if status:
             queryset = queryset.filter(status=status)
         return queryset
-    
+
 
 class TeamStatsViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = TeamStats.objects.all()
     serializer_class = TeamStatsSerializer
+    pagination_class = None
 
     def get_queryset(self):
         queryset = TeamStats.objects.all()
-        team_id = self.request.query_params.get('team')   
-
+        team_id = self.request.query_params.get('team')
         if team_id:
             queryset = queryset.filter(team_id=team_id)
         return queryset
-    
+
 
 class SponsorViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Sponsor.objects.filter(is_active=True)
     serializer_class = SponsorSerializer
+    pagination_class = None
 
 
 class SiteSettingsViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = SiteSettings.objects.all()
+    pagination_class = None
     serializer_class = SiteSettingsSerializer
 
 
