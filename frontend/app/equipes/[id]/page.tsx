@@ -392,7 +392,7 @@ export default function TeamDetailPage() {
     .sort((a: any, b: any) => new Date(a.date).getTime() - new Date(b.date).getTime())
 
   return (
-    <div>
+    <div style={{ backgroundColor: 'var(--color-primary)' }}>
       {/* Header équipe */}
       <div className="py-12" style={{ backgroundColor: 'var(--color-primary)' }}>
         <div className="container">
