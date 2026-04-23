@@ -3,7 +3,6 @@ import MatchCarousel from '../components/MatchCarousel'
 import Link from 'next/link'
 import FadeIn from '../components/FadeIn'
 
-
 export default async function Home() {
     const [articlesData, matchesData, teamsData, sponsorsData] = await Promise.all([
       getArticles().catch(() => []),
@@ -18,136 +17,203 @@ export default async function Home() {
     const heroArticle = articles[0] || null
     const sponsors = Array.isArray(sponsorsData) ? sponsorsData : (sponsorsData.results || [])
 
-
     const TEAM_ORDER = ['Seniors', 'Seniors 2', 'U19', 'U17', 'U16', 'U15', 'U14', 'Féminines', 'U18 Féminines', 'U15 Féminines', 'Futsal']
-
     const sixtyDaysAgo = new Date()
     sixtyDaysAgo.setDate(sixtyDaysAgo.getDate() - 60)
 
-    const matches: any[] = []
+    const carouselMatches: any[] = []
     for (const teamName of TEAM_ORDER) {
       const team = teams.find((t: any) => t.name === teamName)
       if (!team) continue
+      const teamMatches = allMatches.filter((m: any) => m.team === team.id)
+      const lastResult = [...teamMatches]
+        .filter((m: any) => m.status === 'TERMINE' && m.home_score !== null && new Date(m.date) >= sixtyDaysAgo)
+        .sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime())[0]
+      const nextMatch = [...teamMatches]
+        .filter((m: any) => m.status === 'A_VENIR')
+        .sort((a: any, b: any) => new Date(a.date).getTime() - new Date(b.date).getTime())[0]
+      if (lastResult) carouselMatches.push({ ...lastResult, team_name: teamName })
+      if (nextMatch) carouselMatches.push({ ...nextMatch, team_name: teamName })
+    }
 
-    const teamMatches = allMatches.filter((m: any) => m.team === team.id)
-
-    const lastResult = [...teamMatches]
-      .filter((m: any) => m.status === 'TERMINE' && m.home_score !== null && new Date(m.date) >= sixtyDaysAgo)
-      .sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime())[0]
-
-    const nextMatch = [...teamMatches]
+    const nextMatchGlobal = [...allMatches]
       .filter((m: any) => m.status === 'A_VENIR')
       .sort((a: any, b: any) => new Date(a.date).getTime() - new Date(b.date).getTime())[0]
 
-    if (lastResult) matches.push({ ...lastResult, team_name: teamName })
-    if (nextMatch) matches.push({ ...nextMatch, team_name: teamName })
-  }
+    const nextMatchTeam = nextMatchGlobal
+      ? teams.find((t: any) => t.id === nextMatchGlobal.team)
+      : null
 
+    return (
+        <>
+            {/* ─── Hero plein écran ─── */}
+            <section
+                className="relative flex flex-col justify-end"
+                style={{
+                    minHeight: 'calc(100vh - 64px)',
+                    backgroundColor: 'var(--color-primary)',
+                    backgroundImage: heroArticle?.image ? `url(${getMediaUrl(heroArticle.image)})` : undefined,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                }}
+            >
+                {/* Overlay */}
+                <div className="absolute inset-0" style={{
+                    background: 'linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.15) 100%)'
+                }} />
 
+                {/* Contenu bas */}
+                <div className="container relative z-10 pb-10">
+                    <div className="flex items-end justify-between gap-6">
 
-  return (
-    <>
-      {/* Hero */}
-      <section
-        className="relative flex items-end min-h-[70vh]"
-        style={{
-          backgroundColor: 'var(--color-primary)',
-          backgroundImage: heroArticle?.image ? `url(${getMediaUrl(heroArticle.image)})` : undefined,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, transparent 100%)' }} />
-        <div className="container relative z-10 pb-12">
-          <FadeIn>
-            <p className="text-sm font-semibold uppercase tracking-widest mb-2" style={{ color: 'var(--color-accent)' }}>
-              Actualité
-            </p>
-            <h1 className="text-white text-4xl md:text-6xl font-black max-w-3xl leading-tight mb-4">
-              {heroArticle?.title || 'Bienvenue à la Jeune Entente Toulousaine'}
-            </h1>
-            {heroArticle && (
-              <Link
-                href={`/actualites/${heroArticle.slug}`}
-                className="inline-flex items-center gap-2 font-semibold px-6 py-3 rounded"
-                style={{ backgroundColor: 'var(--color-accent)', color: 'var(--color-primary)' }}
-              >
-                Lire l'article →
-              </Link>
-            )}
-          </FadeIn>
-        </div>
-      </section>
+                        {/* Texte gauche */}
+                        <FadeIn>
+                            <p className="text-sm font-bold uppercase tracking-widest mb-1" style={{ color: 'var(--color-accent)' }}>
+                                Jeune Entente Toulousaine
+                            </p>
+                            <h1
+                                className="leading-none font-black uppercase"
+                                style={{
+                                    fontFamily: 'var(--font-bebas, Bebas Neue, sans-serif)',
+                                    fontSize: 'clamp(3.5rem, 9vw, 8rem)',
+                                    color: 'white',
+                                    letterSpacing: '0.02em',
+                                }}
+                            >
+                                BIENVENUE
+                            </h1>
+                            <h2
+                                className="leading-none font-black uppercase mb-6"
+                                style={{
+                                    fontFamily: 'var(--font-bebas, Bebas Neue, sans-serif)',
+                                    fontSize: 'clamp(3.5rem, 9vw, 8rem)',
+                                    color: 'var(--color-accent)',
+                                    letterSpacing: '0.02em',
+                                }}
+                            >
+                                À LA JET
+                            </h2>
 
-      {/* Carrousel matchs */}
-      <MatchCarousel matches={matches} />
+                            {heroArticle && (
+                                <p className="text-gray-300 text-base mb-5 max-w-lg leading-snug">
+                                    {heroArticle.title}
+                                </p>
+                            )}
+                            {heroArticle && (
+                                <Link
+                                    href={`/actualites/${heroArticle.slug}`}
+                                    className="inline-flex items-center gap-2 font-bold px-6 py-3 rounded transition-opacity hover:opacity-80"
+                                    style={{ backgroundColor: 'var(--color-accent)', color: 'var(--color-primary)' }}
+                                >
+                                    Lire l'article →
+                                </Link>
+                            )}
+                        </FadeIn>
 
-      {/* Dernières actus */}
-      <section className="container py-16">
-        <FadeIn delay={0.2}>
-          <h2 className="text-2xl font-black uppercase mb-8" style={{ color: 'var(--color-primary)' }}>
-            Dernières actualités
-          </h2>
-        </FadeIn>
-        <FadeIn delay={0.4}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {articles.slice(0, 3).map((article: any) => (
-              <Link key={article.slug} href={`/actualites/${article.slug}`} className="group">
-                <div className="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow">
-                  {article.image && (
-                    <img src={getMediaUrl(article.image)!} alt={article.title} className="w-full h-48 object-cover object-top" />
-                  )}
-                  <div className="p-4">
-                    <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--color-accent)' }}>
-                      {new Date(article.published_date).toLocaleDateString('fr-FR')}
-                    </p>
-                    <h3 className="font-bold text-lg group-hover:underline">{article.title}</h3>
-                  </div>
+                        {/* Widget prochain match */}
+                        {nextMatchGlobal && (
+                            <FadeIn delay={0.3}>
+                                <div
+                                    className="hidden md:block rounded-xl p-5 shrink-0"
+                                    style={{
+                                        backgroundColor: 'rgba(0,0,0,0.65)',
+                                        border: '1px solid rgba(249,115,22,0.35)',
+                                        backdropFilter: 'blur(10px)',
+                                        minWidth: '240px',
+                                    }}
+                                >
+                                    <p className="text-xs font-black uppercase tracking-widest mb-1" style={{ color: 'var(--color-accent)' }}>
+                                        Prochain match
+                                    </p>
+                                    {nextMatchTeam && (
+                                        <p className="text-gray-500 text-xs uppercase tracking-wider mb-3">{nextMatchTeam.name}</p>
+                                    )}
+                                    <p className="text-gray-300 text-xs mb-4 capitalize">
+                                        {new Date(nextMatchGlobal.date).toLocaleDateString('fr-FR', { weekday: 'long', day: '2-digit', month: 'long' })}
+                                        {' · '}
+                                        {new Date(nextMatchGlobal.date).toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' })}
+                                    </p>
+                                    <div className="flex items-center gap-2">
+                                        <span className="text-white font-bold text-sm text-right flex-1 truncate">{nextMatchGlobal.home_team}</span>
+                                        <span className="font-black px-2 py-1 rounded text-xs" style={{ backgroundColor: 'var(--color-accent)', color: 'var(--color-primary)' }}>VS</span>
+                                        <span className="text-white font-bold text-sm flex-1 truncate">{nextMatchGlobal.away_team}</span>
+                                    </div>
+                                    <p className="text-gray-600 text-xs mt-3 text-center truncate">{nextMatchGlobal.competition}</p>
+                                </div>
+                            </FadeIn>
+                        )}
+                    </div>
                 </div>
-              </Link>
-            ))}
-          </div>
-        </FadeIn>
-        {articles.length > 3 && (
-          <div className="text-center mt-8">
-            <Link href="/actualites" className="font-semibold underline" style={{ color: 'var(--color-accent)' }}>
-              Voir toutes les actualités →
-            </Link>
-          </div>
-        )}
-      </section>
+            </section>
 
-      {/* Sponsors */}
-{sponsors.length > 0 && (
-  <section className="py-12 border-t" style={{ borderColor: 'var(--color-border)' }}>
-    <div className="container">
-      <p className="text-center text-xs font-semibold uppercase tracking-widest mb-8" style={{ color: 'var(--color-text-light)' }}>
-        Nos partenaires
-      </p>
-      <div className="flex flex-wrap items-center justify-center gap-8">
-        {sponsors.map((sponsor: any) => (
-          sponsor.website_url ? (
-            <a key={sponsor.id} href={sponsor.website_url} target="_blank" rel="noopener noreferrer"
-               className="opacity-60 hover:opacity-100 transition-opacity">
-              {sponsor.logo
-                ? <img src={getMediaUrl(sponsor.logo)!} alt={sponsor.name} className="h-12 object-contain" />
-                : <span className="font-bold text-lg" style={{ color: 'var(--color-text-light)' }}>{sponsor.name}</span>
-              }
-            </a>
-          ) : (
-            <div key={sponsor.id} className="opacity-60">
-              {sponsor.logo
-                ? <img src={getMediaUrl(sponsor.logo)!} alt={sponsor.name} className="h-12 object-contain" />
-                : <span className="font-bold text-lg" style={{ color: 'var(--color-text-light)' }}>{sponsor.name}</span>
-              }
-            </div>
-          )
-        ))}
-      </div>
-    </div>
-  </section>
-)}
+            {/* ─── Carrousel matchs ─── */}
+            <MatchCarousel matches={carouselMatches} />
 
-    </>
-  )
+            {/* ─── Dernières actus ─── */}
+            <section className="container py-16">
+                <FadeIn delay={0.2}>
+                    <h2 className="text-2xl font-black uppercase mb-8" style={{ color: 'var(--color-primary)' }}>
+                        Dernières actualités
+                    </h2>
+                </FadeIn>
+                <FadeIn delay={0.4}>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        {articles.slice(0, 3).map((article: any) => (
+                            <Link key={article.slug} href={`/actualites/${article.slug}`} className="group">
+                                <div className="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow">
+                                    {article.image && (
+                                        <img src={getMediaUrl(article.image)!} alt={article.title} className="w-full h-48 object-cover object-top" />
+                                    )}
+                                    <div className="p-4">
+                                        <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--color-accent)' }}>
+                                            {new Date(article.published_date).toLocaleDateString('fr-FR')}
+                                        </p>
+                                        <h3 className="font-bold text-lg group-hover:underline">{article.title}</h3>
+                                    </div>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+                </FadeIn>
+                {articles.length > 3 && (
+                    <div className="text-center mt-8">
+                        <Link href="/actualites" className="font-semibold underline" style={{ color: 'var(--color-accent)' }}>
+                            Voir toutes les actualités →
+                        </Link>
+                    </div>
+                )}
+            </section>
+
+            {/* ─── Sponsors ─── */}
+            {sponsors.length > 0 && (
+                <section className="py-12 border-t" style={{ borderColor: 'var(--color-border)' }}>
+                    <div className="container">
+                        <p className="text-center text-xs font-semibold uppercase tracking-widest mb-8" style={{ color: 'var(--color-text-light)' }}>
+                            Nos partenaires
+                        </p>
+                        <div className="flex flex-wrap items-center justify-center gap-8">
+                            {sponsors.map((sponsor: any) => (
+                                sponsor.website_url ? (
+                                    <a key={sponsor.id} href={sponsor.website_url} target="_blank" rel="noopener noreferrer"
+                                        className="opacity-60 hover:opacity-100 transition-opacity">
+                                        {sponsor.logo
+                                            ? <img src={getMediaUrl(sponsor.logo)!} alt={sponsor.name} className="h-12 object-contain" />
+                                            : <span className="font-bold text-lg" style={{ color: 'var(--color-text-light)' }}>{sponsor.name}</span>
+                                        }
+                                    </a>
+                                ) : (
+                                    <div key={sponsor.id} className="opacity-60">
+                                        {sponsor.logo
+                                            ? <img src={getMediaUrl(sponsor.logo)!} alt={sponsor.name} className="h-12 object-contain" />
+                                            : <span className="font-bold text-lg" style={{ color: 'var(--color-text-light)' }}>{sponsor.name}</span>
+                                        }
+                                    </div>
+                                )
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            )}
+        </>
+    )
 }

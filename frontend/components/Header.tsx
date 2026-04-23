@@ -1,21 +1,9 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
 import { motion } from 'framer-motion'
 
-const navLinks = [
-    { href: '/', label: 'Accueil' },
-    { href: '/actualites', label: 'Actualités' },
-    { href: '/equipes', label: 'Équipes' },
-    { href: '/horaires', label: 'Entraînements' },
-    { href: '/partenaires', label: 'Nos partenaires' },
-    { href: '/contact', label: 'Contact' },
-]
-
 export default function Header({ shopUrl }: { shopUrl?: string | null }) {
-    const [menuOpen, setMenuOpen] = useState(false)
-
     return (
         <header style={{ backgroundColor: 'var(--color-primary)' }}>
             <div className="container">
@@ -52,66 +40,19 @@ export default function Header({ shopUrl }: { shopUrl?: string | null }) {
                         </div>
                     </Link>
 
-                    {/* Nav desktop */}
-                    <nav className="hidden md:flex items-center gap-6">
-                        {navLinks.map((link) => (
-                            <Link
-                                key={link.href}
-                                href={link.href}
-                                className="text-gray-300 hover:text-white text-sm font-medium transition-colors"
-                            >
-                                {link.label}
-                            </Link>
-                        ))}
-                        {shopUrl && (
-                            <a
-                                href={shopUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-gray-300 hover:text-white text-sm font-medium transition-colors"
-                            >
-                                Boutique
-                            </a>
-                        )}
-                    </nav>
-
-                    {/* Bouton menu mobile */}
-                    <button
-                        className="md:hidden text-white p-2"
-                        onClick={() => setMenuOpen(!menuOpen)}
-                        aria-label="Menu"
-                    >
-                        <div className="w-6 h-0.5 bg-white mb-1.5"></div>
-                        <div className="w-6 h-0.5 bg-white mb-1.5"></div>
-                        <div className="w-6 h-0.5 bg-white"></div>
-                    </button>
-                </div>
-
-            {/* Nav mobile */}
-            {menuOpen && (
-                <nav className="md:hidden pb-4 flex flex-col gap-3">
-                    {navLinks.map((link) => (
-                        <Link
-                            key={link.href}
-                            href={link.href}
-                            className="text-gray-300 hover:text-white text-sm font-medium"
-                            onClick={() => setMenuOpen(false)}
-                        >
-                            {link.label}
-                        </Link>
-                    ))}
+                    {/* Boutique */}
                     {shopUrl && (
                         <a
                             href={shopUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-gray-300 hover:text-white text-sm font-medium"
+                            className="text-sm font-bold px-4 py-2 rounded transition-opacity hover:opacity-80"
+                            style={{ backgroundColor: 'var(--color-accent)', color: 'var(--color-primary)' }}
                         >
                             Boutique
                         </a>
                     )}
-                </nav>
-            )}
+                </div>
             </div>
         </header>
     )
