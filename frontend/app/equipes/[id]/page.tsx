@@ -431,7 +431,7 @@ export default function TeamDetailPage() {
       {activeTab === 'classement' && <ClassementTab stats={stats} team={team} />}
 
       {activeTab === 'resultats' && (
-        <div className="container py-8">
+        <div className="container py-8" style={{ minHeight: '100vh' }}>
           {availableSeasons.length > 0 && (
             <div className="flex gap-2 mb-4 flex-wrap">
               {availableSeasons.map(season => (
