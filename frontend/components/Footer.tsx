@@ -29,7 +29,7 @@ export default async function Footer() {
   ]
 
   return (
-    <footer style={{ backgroundColor: 'var(--color-primary)' }} className="mt-16">
+    <footer style={{ backgroundColor: 'var(--color-primary)' }}>
       <div className="container py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
