@@ -58,9 +58,13 @@ export default function Header({ shopUrl }: { shopUrl?: string | null }) {
                             <Link
                                 key={link.href}
                                 href={link.href}
-                                className="text-gray-300 hover:text-white text-sm font-medium transition-colors"
+                                className="relative text-gray-300 hover:text-white text-sm font-medium transition-colors duration-200 group"
                             >
                                 {link.label}
+                                <span
+                                    className="absolute -bottom-1 left-0 h-0.5 w-0 group-hover:w-full transition-all duration-300"
+                                    style={{ backgroundColor: 'var(--color-accent)' }}
+                                />
                             </Link>
                         ))}
                         {shopUrl && (
