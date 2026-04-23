@@ -1,9 +1,17 @@
 import { getArticles, getMediaUrl } from '../../lib/api'
 import Link from 'next/link'
 
-export default async function ActualitesPage() {
-  const data = await getArticles().catch(() => [])
+export default async function ActualitesPage({
+  searchParams,
+}: {
+  searchParams: { page?: string }
+}) {
+  const page = Math.max(1, parseInt(searchParams.page || '1', 10))
+  const data = await getArticles(page).catch(() => ({ results: [], count: 0, next: null, previous: null }))
+
   const articles = Array.isArray(data) ? data : (data.results || [])
+  const count: number = data.count || 0
+  const totalPages = Math.ceil(count / 9)
 
   return (
     <div className="container py-12">
@@ -36,6 +44,51 @@ export default async function ActualitesPage() {
           </Link>
         ))}
       </div>
+
+      {/* Pagination */}
+      {totalPages > 1 && (
+        <div className="flex items-center justify-center gap-2 mt-12">
+          {page > 1 && (
+            <Link
+              href={`/actualites?page=${page - 1}`}
+              className="px-4 py-2 rounded font-bold text-sm transition-colors"
+              style={{ backgroundColor: 'var(--color-primary)', color: 'white' }}
+            >
+              ← Précédent
+            </Link>
+          )}
+
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map(p => (
+            <Link
+              key={p}
+              href={`/actualites?page=${p}`}
+              className="w-10 h-10 rounded flex items-center justify-center font-bold text-sm transition-colors"
+              style={p === page
+                ? { backgroundColor: 'var(--color-accent)', color: 'var(--color-primary)' }
+                : { backgroundColor: '#f3f4f6', color: '#374151' }
+              }
+            >
+              {p}
+            </Link>
+          ))}
+
+          {page < totalPages && (
+            <Link
+              href={`/actualites?page=${page + 1}`}
+              className="px-4 py-2 rounded font-bold text-sm transition-colors"
+              style={{ backgroundColor: 'var(--color-primary)', color: 'white' }}
+            >
+              Suivant →
+            </Link>
+          )}
+        </div>
+      )}
+
+      {count > 0 && (
+        <p className="text-center text-gray-400 text-sm mt-4">
+          {count} article{count > 1 ? 's' : ''} · page {page} sur {totalPages}
+        </p>
+      )}
     </div>
   )
 }

@@ -8,8 +8,8 @@ export async function fetchAPI(endpoint: string) {
         return res.json()
 }
 
-export async function getArticles() {
-    return fetchAPI('/articles/')
+export async function getArticles(page = 1) {
+    return fetchAPI(`/articles/?page=${page}`)
 }
 
 export async function getArticle(slug: string) {
@@ -43,10 +43,6 @@ export async function getTeamStats(teamId?: number) {
 
 export async function getSiteSettings() {
     return fetchAPI('/site-settings/')
-}
-
-export async function getRanking(teamId: number) {
-    return fetchAPI(`/teams/${teamId}/ranking/`)
 }
 
 export function getMediaUrl(url: string | null | undefined): string | null {
