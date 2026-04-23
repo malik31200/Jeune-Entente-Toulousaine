@@ -83,7 +83,9 @@ export default async function Footer() {
           {/* Contact */}
           <div>
             <h3 className="text-white font-semibold mb-4 uppercase text-sm tracking-wider">Contact</h3>
-            <p className="text-gray-400 text-sm mb-4">Toulouse, France</p>
+            <p className="text-gray-400 text-sm">Complexe sportif Borderouge</p>
+            <p className="text-gray-400 text-sm">3 Rue Hubert Monloup, 31200 Toulouse</p>
+            <p className="text-gray-400 text-sm mb-4">05 61 48 79 66</p>
             <div className="flex flex-col items-start gap-3">
               <Link href="/contact"
                 className="inline-block text-sm font-semibold px-4 py-2 rounded transition-colors"
