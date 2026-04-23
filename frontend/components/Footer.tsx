@@ -68,6 +68,7 @@ export default async function Footer() {
                 { href: '/actualites', label: 'Actualités' },
                 { href: '/equipes', label: 'Équipes' },
                 { href: '/horaires', label: 'Horaires' },
+                { href: '/partenaires', label: 'Nos partenaires' },
                 { href: '/contact', label: 'Contact' },
               ].map((link) => (
                 <li key={link.href}>

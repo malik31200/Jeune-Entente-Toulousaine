@@ -4,6 +4,7 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from django.core.mail import send_mail
 from django.conf import settings
+import requests as http_requests
 from .models import Article, Team, TrainingSchedule, Match, TeamStats, Sponsor, SiteSettings
 from .serializers import (ArticleSerializer, TeamSerializer, TrainingScheduleSerializer,
                           MatchSerializer, TeamStatsSerializer, SponsorSerializer,
@@ -61,6 +62,26 @@ class SponsorViewSet(viewsets.ReadOnlyModelViewSet):
 class SiteSettingsViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = SiteSettings.objects.all()
     serializer_class = SiteSettingsSerializer
+
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def ranking_proxy(request, team_id):
+    try:
+        team = Team.objects.get(pk=team_id)
+    except Team.DoesNotExist:
+        return Response({'error': 'Équipe introuvable.'}, status=status.HTTP_404_NOT_FOUND)
+
+    if not team.ranking_api_url:
+        return Response({'error': 'Pas d\'URL de classement configurée pour cette équipe.'}, status=status.HTTP_404_NOT_FOUND)
+
+    try:
+        headers = {'User-Agent': 'Mozilla/5.0', 'Accept': 'application/json'}
+        resp = http_requests.get(team.ranking_api_url, headers=headers, timeout=8)
+        resp.raise_for_status()
+        return Response(resp.json())
+    except Exception as e:
+        return Response({'error': f'Erreur lors de la récupération du classement : {str(e)}'}, status=status.HTTP_502_BAD_GATEWAY)
 
 
 @api_view(['POST'])

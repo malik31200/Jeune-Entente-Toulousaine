@@ -229,97 +229,128 @@ function DataTab({ stats }: { stats: any }) {
 }
 
 /* ─── Onglet CLASSEMENT ─── */
-function ClassementTab({ stats, team }: { stats: any; team: any }) {
-  const imageUrl = getMediaUrl(team?.image)
+const JET_CL_NO = 11641
 
-  if (!stats) {
-    return (
-      <div style={{ backgroundColor: 'var(--color-primary)', minHeight: '60vh' }}>
-        <div className="container py-12 text-gray-500">Pas de données de classement disponibles.</div>
-      </div>
-    )
-  }
+function ClassementTab({ stats, team, teamId }: { stats: any; team: any; teamId: string | string[] }) {
+  const [ranking, setRanking] = useState<any[]>([])
+  const [rankingError, setRankingError] = useState(false)
+  const [rankingLoading, setRankingLoading] = useState(true)
 
-  const diff = stats.goals_for - stats.goals_against
+  useEffect(() => {
+    fetch(`${API_URL}/teams/${teamId}/ranking/`)
+      .then(r => r.json())
+      .then(data => {
+        const members = data['hydra:member'] || []
+        setRanking(members)
+      })
+      .catch(() => setRankingError(true))
+      .finally(() => setRankingLoading(false))
+  }, [teamId])
+
+  const hasRankingUrl = !rankingError || ranking.length > 0
 
   return (
     <div style={{ backgroundColor: 'var(--color-primary)', minHeight: '70vh' }}>
       <div className="container py-10">
-        <div className="max-w-xl">
+        <div className="max-w-2xl">
 
           {/* En-tête compétition */}
-          <div className="rounded-xl p-4 flex items-center gap-4 mb-6"
-            style={{ backgroundColor: '#1a1a1a', border: '1px solid rgba(255,255,255,0.07)' }}>
-            <div className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0"
-              style={{ backgroundColor: 'rgba(249,115,22,0.15)', border: '1px solid rgba(249,115,22,0.25)' }}>
-              <span className="text-2xl">⚽</span>
-            </div>
-            <div>
-              <p className="text-gray-400 text-xs uppercase tracking-widest">Saison {stats.season}</p>
-              <p className="text-white font-black uppercase text-lg leading-tight">{stats.competition}</p>
-            </div>
-          </div>
-
-          {/* En-tête colonnes */}
-          <div className="flex items-center gap-2 px-4 pb-2 text-gray-600 text-xs font-bold uppercase tracking-wider">
-            <span className="w-8 text-center">Pos</span>
-            <span className="flex-1">Équipe</span>
-            <span className="w-10 text-center" style={{ color: 'var(--color-accent)' }}>Pts</span>
-            <span className="w-8 text-center">J</span>
-            <span className="w-8 text-center text-green-600">V</span>
-            <span className="w-8 text-center">N</span>
-            <span className="w-8 text-center text-red-600">D</span>
-            <span className="w-10 text-center">DB</span>
-          </div>
-
-          {/* Ligne de l'équipe */}
-          <motion.div
-            className="flex items-center gap-2 px-4 py-4 rounded-xl"
-            style={{
-              backgroundColor: 'rgba(249,115,22,0.1)',
-              border: '1px solid rgba(249,115,22,0.25)',
-            }}
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.4 }}
-          >
-            {/* Position */}
-            <span className="w-8 text-center font-black text-2xl" style={{ color: 'var(--color-accent)' }}>
-              {stats.ranking || '–'}
-            </span>
-
-            {/* Logo + nom */}
-            <div className="flex-1 flex items-center gap-2 min-w-0">
-              <div className="w-9 h-9 rounded-full overflow-hidden flex-shrink-0"
-                style={{ backgroundColor: 'rgba(249,115,22,0.2)', border: '2px solid rgba(249,115,22,0.4)' }}>
-                {imageUrl
-                  ? <img src={imageUrl} alt={team.name} className="w-full h-full object-cover" />
-                  : <div className="w-full h-full flex items-center justify-center text-xs font-black" style={{ color: 'var(--color-accent)' }}>JET</div>
-                }
+          {stats && (
+            <div className="rounded-xl p-4 flex items-center gap-4 mb-6"
+              style={{ backgroundColor: '#1a1a1a', border: '1px solid rgba(255,255,255,0.07)' }}>
+              <div className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0"
+                style={{ backgroundColor: 'rgba(249,115,22,0.15)', border: '1px solid rgba(249,115,22,0.25)' }}>
+                <span className="text-2xl">⚽</span>
               </div>
-              <span className="text-white font-bold text-sm truncate">{team.name}</span>
+              <div>
+                <p className="text-gray-400 text-xs uppercase tracking-widest">Saison {stats.season}</p>
+                <p className="text-white font-black uppercase text-lg leading-tight">{stats.competition}</p>
+              </div>
             </div>
+          )}
 
-            {/* Points */}
-            <span className="w-10 text-center font-black text-2xl" style={{ color: 'var(--color-accent)' }}>
-              {stats.points}
-            </span>
+          {rankingLoading && (
+            <p className="text-gray-500 text-sm">Chargement du classement...</p>
+          )}
 
-            {/* J / V / N / D */}
-            <span className="w-8 text-center text-gray-300 text-sm">{stats.matches_played}</span>
-            <span className="w-8 text-center text-green-400 font-semibold text-sm">{stats.wins}</span>
-            <span className="w-8 text-center text-gray-400 text-sm">{stats.draws}</span>
-            <span className="w-8 text-center text-red-400 font-semibold text-sm">{stats.losses}</span>
+          {!rankingLoading && rankingError && ranking.length === 0 && (
+            <p className="text-gray-500 text-sm">
+              Classement non disponible. Configurez l'URL API dans l'admin.
+            </p>
+          )}
 
-            {/* DB */}
-            <span className={`w-10 text-center text-sm font-semibold ${diff > 0 ? 'text-green-400' : diff < 0 ? 'text-red-400' : 'text-gray-400'}`}>
-              {diff > 0 ? `+${diff}` : diff}
-            </span>
-          </motion.div>
+          {!rankingLoading && ranking.length > 0 && (
+            <>
+              {/* En-tête colonnes */}
+              <div className="flex items-center gap-2 px-3 pb-2 text-gray-600 text-xs font-bold uppercase tracking-wider">
+                <span className="w-8 text-center">Pos</span>
+                <span className="flex-1">Équipe</span>
+                <span className="w-10 text-center" style={{ color: 'var(--color-accent)' }}>Pts</span>
+                <span className="w-8 text-center">J</span>
+                <span className="w-8 text-center text-green-600">V</span>
+                <span className="w-8 text-center">N</span>
+                <span className="w-8 text-center text-red-600">D</span>
+                <span className="w-10 text-center">DB</span>
+              </div>
 
-          <p className="text-gray-700 text-xs text-center mt-6 uppercase tracking-widest">
-            Données issues du scraping FFF · classement partiel
-          </p>
+              <div className="flex flex-col gap-1">
+                {ranking.map((row: any, i: number) => {
+                  const isJet = row.equipe?.club?.cl_no === JET_CL_NO
+                  const diff = row.goals_diff ?? (row.goals_for_count - row.goals_against_count)
+                  return (
+                    <motion.div
+                      key={i}
+                      className="flex items-center gap-2 px-3 py-3 rounded-lg"
+                      style={isJet ? {
+                        backgroundColor: 'rgba(249,115,22,0.12)',
+                        border: '1px solid rgba(249,115,22,0.35)',
+                      } : {
+                        backgroundColor: i % 2 === 0 ? 'rgba(255,255,255,0.03)' : 'transparent',
+                        border: '1px solid transparent',
+                      }}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3, delay: i * 0.03 }}
+                    >
+                      <span className={`w-8 text-center font-bold text-sm ${isJet ? '' : 'text-gray-500'}`}
+                        style={isJet ? { color: 'var(--color-accent)' } : {}}>
+                        {row.rank}
+                      </span>
+
+                      <div className="flex-1 flex items-center gap-2 min-w-0">
+                        {isJet && (
+                          <div className="w-7 h-7 rounded-full overflow-hidden flex-shrink-0"
+                            style={{ border: '1px solid rgba(249,115,22,0.5)' }}>
+                            <img src="/logo.png" alt="JET" className="w-full h-full object-cover" />
+                          </div>
+                        )}
+                        <span className={`text-sm truncate ${isJet ? 'font-black' : 'text-gray-300 font-medium'}`}
+                          style={isJet ? { color: 'var(--color-accent)' } : {}}>
+                          {row.equipe?.short_name || '–'}
+                        </span>
+                      </div>
+
+                      <span className={`w-10 text-center font-black text-base ${isJet ? '' : 'text-white'}`}
+                        style={isJet ? { color: 'var(--color-accent)' } : {}}>
+                        {row.point_count}
+                      </span>
+                      <span className="w-8 text-center text-gray-400 text-sm">{row.total_games_count}</span>
+                      <span className="w-8 text-center text-green-400 text-sm">{row.won_games_count}</span>
+                      <span className="w-8 text-center text-gray-400 text-sm">{row.draw_games_count}</span>
+                      <span className="w-8 text-center text-red-400 text-sm">{row.lost_games_count}</span>
+                      <span className={`w-10 text-center text-sm font-semibold ${diff > 0 ? 'text-green-400' : diff < 0 ? 'text-red-400' : 'text-gray-500'}`}>
+                        {diff > 0 ? `+${diff}` : diff}
+                      </span>
+                    </motion.div>
+                  )
+                })}
+              </div>
+
+              <p className="text-gray-700 text-xs text-center mt-6 uppercase tracking-widest">
+                Classement officiel FFF · mis à jour automatiquement
+              </p>
+            </>
+          )}
         </div>
       </div>
     </div>
@@ -433,7 +464,7 @@ export default function TeamDetailPage() {
       {/* Contenu */}
       {activeTab === 'data' && <DataTab stats={stats} />}
 
-      {activeTab === 'classement' && <ClassementTab stats={stats} team={team} />}
+      {activeTab === 'classement' && <ClassementTab stats={stats} team={team} teamId={params.id} />}
 
       {activeTab === 'resultats' && (
         <div className="container py-8">

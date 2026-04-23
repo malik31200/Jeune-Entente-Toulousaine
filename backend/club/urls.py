@@ -15,4 +15,5 @@ router.register(r'site-settings', views.SiteSettingsViewSet)
 urlpatterns = [
     path('', include(router.urls)),
     path('contact/', views.contact_view, name='contact'),
+    path('teams/<int:team_id>/ranking/', views.ranking_proxy, name='ranking_proxy'),
 ]

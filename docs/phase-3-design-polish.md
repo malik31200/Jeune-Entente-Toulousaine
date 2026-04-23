@@ -56,7 +56,7 @@ Un composant réutilisable qui encapsule cette animation. On lui passe un `delay
 ## 2. Identité visuelle — Logo & Police
 
 ### Logo réel
-On a remplacé le cercle orange ⚽ par le vrai logo du club (`logo.png`).
+On a remplacé le cercle orange  par le vrai logo du club (`logo.png`).
 
 **Important** : pour le rendre rond, on utilise `rounded-full` + `object-cover` sur la balise `<img>`. La propriété CSS `border-radius: 50%` coupe l'image en cercle.
 

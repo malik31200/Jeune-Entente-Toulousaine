@@ -11,9 +11,13 @@ class ArticleAdmin(admin.ModelAdmin):
 
 @admin.register(Team)
 class TeamAdmin(admin.ModelAdmin):
-    list_display = ['name', 'category', 'order']
+    list_display = ['name', 'category', 'order', 'ranking_api_url']
     list_filter = ['category']
     search_fields = ['name']
+    fieldsets = [
+        (None, {'fields': ['name', 'category', 'description', 'image', 'order']}),
+        ('Classement FFF (API)', {'fields': ['ranking_api_url'], 'classes': ['collapse']}),
+    ]
 
 
 @admin.register(Player)

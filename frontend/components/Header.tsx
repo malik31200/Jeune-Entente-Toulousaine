@@ -8,11 +8,12 @@ const navLinks = [
     { href: '/', label: 'Accueil' },
     { href: '/actualites', label: 'Actualités' },
     { href: '/equipes', label: 'Équipes' },
-    { href: '/horaires', label: 'Horaires' },
+    { href: '/horaires', label: 'Entraînements' },
+    { href: '/partenaires', label: 'Nos partenaires' },
     { href: '/contact', label: 'Contact' },
 ]
 
-export default function Header() {
+export default function Header({ shopUrl }: { shopUrl?: string | null }) {
     const [menuOpen, setMenuOpen] = useState(false)
 
     return (
@@ -62,6 +63,16 @@ export default function Header() {
                                 {link.label}
                             </Link>
                         ))}
+                        {shopUrl && (
+                            <a
+                                href={shopUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-gray-300 hover:text-white text-sm font-medium transition-colors"
+                            >
+                                Boutique
+                            </a>
+                        )}
                     </nav>
 
                     {/* Bouton menu mobile */}
@@ -89,6 +100,16 @@ export default function Header() {
                             {link.label}
                         </Link>
                     ))}
+                    {shopUrl && (
+                        <a
+                            href={shopUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-gray-300 hover:text-white text-sm font-medium"
+                        >
+                            Boutique
+                        </a>
+                    )}
                 </nav>
             )}
             </div>
