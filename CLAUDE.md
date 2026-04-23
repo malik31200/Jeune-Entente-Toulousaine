@@ -833,10 +833,53 @@ Chaque étape sera expliquée avec :
 - Composant `FadeIn` réutilisable : `frontend/components/FadeIn.tsx`
 - Page d'accueil : hero, titre "Dernières actualités", grille d'articles — tous animés en cascade
 
+### ✅ Phase 3.5 : Classement FFF réel + UX polish — TERMINÉE (23 avril 2026)
+
+#### 🏆 Classement FFF réel
+- **Endpoint backend** `/api/classement/?cp_no=&phase=&poule=` : pagination complète FFF (`hydra:last`)
+- **Calcul des standings** serveur (`_compute_classement`) depuis les matchs FFF (home_resu, home_score, away_score)
+- **Champs Team** : `cp_no`, `phase_no`, `poule_no` (migration 0003) — à renseigner dans l'admin
+- **Teams configurées** : Seniors (434764/1/2), Seniors 2 (434765/1/5), Futsal (434793/1/1), U17 (434769/1/2), U16 (434770/1/2), U15 (434772/1/2), U14 (434773/1/4)
+- Ligne JET surlignée en orange dans le tableau, nom en blanc pour lisibilité
+
+#### 🎨 Cards blanches sur fond noir
+- Carrousel homepage : cards blanches avec bande couleur résultat + texte sombre
+- Onglet RÉSULTATS/CALENDRIER : cards blanches (badge TERMINÉ gris clair, À VENIR orange)
+- Onglet DATA : cards V/N/D et Différence de buts en blanc avec ombres
+- Onglet CLASSEMENT : chaque ligne du tableau en blanc, ligne JET orange clair
+
+#### 🔍 Filtre compétition principale
+- **Carrousel** : par équipe, n'affiche que la compétition avec le plus de matchs terminés (évite le mélange U15 Régional 1 / U15 Départemental 2)
+- **Onglet RÉSULTATS/CALENDRIER** : idem, filtré sur `mainComp` = compétition principale
+- `handleSeasonChange` mise à jour pour respecter le filtre
+
+#### 🛠️ Corrections UX
+- Footer `mt-0` + `paddingBottom: '5rem'` (inline style) sur toutes les pages pour éviter la collision cards/footer
+- Contenu article rendu via `dangerouslySetInnerHTML` (plus de split `\n` qui cassait le HTML)
+- Espacement `paddingTop: '4rem'` uniforme entre barre d'onglets et contenu (DATA, RÉSULTATS, CLASSEMENT)
+- Saison 2025/2026 centrée visuellement entre onglets et boutons de mois (`marginBottom: '4rem'`)
+
+---
+
 ### 🔲 Phase 4 : Déploiement — À FAIRE
 
-- Configuration SMTP email (production)
-- Variables d'environnement production
-- Backend : Railway / Render
-- Frontend : Vercel
-- Configuration domaine
+#### 🚀 Priorité haute
+- [ ] **SMTP email production** : configurer variables `EMAIL_HOST`, `EMAIL_HOST_USER`, `EMAIL_HOST_PASSWORD` dans `.env` production (formulaire contact)
+- [ ] **Déploiement backend** : Railway ou Render (Django + PostgreSQL)
+- [ ] **Déploiement frontend** : Vercel (Next.js)
+- [ ] **Variables d'environnement production** : `NEXT_PUBLIC_API_URL`, `DATABASE_URL`, `SECRET_KEY`, `ALLOWED_HOSTS`, `CORS_ALLOWED_ORIGINS`
+- [ ] **Configuration domaine** : DNS + HTTPS
+
+#### 🔧 À faire avant déploiement
+- [ ] **Tester le formulaire contact** : vérifier que l'email part bien (SMTP à configurer)
+- [ ] **Renseigner cp_no dans l'admin** pour les équipes sans classement affiché
+- [ ] **Vérifier responsive mobile** : navbar hamburger, carrousel, onglets équipes
+- [ ] **SEO** : meta tags `<title>` et `<description>` par page (Next.js metadata API)
+- [ ] **Next Image** : remplacer les `<img>` par `<Image>` de Next.js pour l'optimisation
+- [ ] **Scheduler scraping** : configurer cron (celery-beat ou APScheduler) pour l'automatisation FFF
+
+#### 💡 Améliorations futures (optionnel)
+- [ ] Éditeur rich text dans l'admin Django (django-ckeditor ou Quill) pour formater les articles
+- [ ] Page mentions légales / politique de confidentialité
+- [ ] Galerie photos par équipe
+- [ ] Export Excel des licences joueurs
