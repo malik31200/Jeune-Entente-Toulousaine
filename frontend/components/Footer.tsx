@@ -29,7 +29,7 @@ export default async function Footer() {
   ]
 
   return (
-    <footer style={{ backgroundColor: 'var(--color-primary)' }}>
+    <footer style={{ backgroundColor: 'var(--color-primary)' }} className="mt-12">
       <div className="container py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
@@ -84,7 +84,7 @@ export default async function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-4 uppercase text-sm tracking-wider">Contact</h3>
             <p className="text-gray-400 text-sm mb-4">Toulouse, France</p>
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col items-start gap-3">
               <Link href="/contact"
                 className="inline-block text-sm font-semibold px-4 py-2 rounded transition-colors"
                 style={{ backgroundColor: 'var(--color-accent)', color: 'var(--color-primary)' }}>
