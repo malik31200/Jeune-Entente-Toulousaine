@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 
 const navLinks = [
     { href: '/', label: 'Accueil' },
+    { href: '/club', label: 'Club' },
     { href: '/actualites', label: 'Actualités' },
     { href: '/equipes', label: 'Équipes' },
     { href: '/horaires', label: 'Entraînements' },

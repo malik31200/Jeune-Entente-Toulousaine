@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Article, Team, Player, TrainingSchedule, Match, TeamStats, Sponsor, SiteSettings
+from .models import Article, Team, Player, TrainingSchedule, Match, TeamStats, Sponsor, SiteSettings, ClubPage
 
 
 @admin.register(Article)
@@ -56,3 +56,14 @@ class SponsorAdmin(admin.ModelAdmin):
 @admin.register(SiteSettings)
 class SiteSettingsAdmin(admin.ModelAdmin):
     list_display = ['contact_email', 'shop_url']
+
+
+@admin.register(ClubPage)
+class ClubPageAdmin(admin.ModelAdmin):
+    list_display = ['title', 'updated_at']
+
+    def has_add_permission(self, request):
+        return not ClubPage.objects.exists()
+
+    def has_delete_permission(self, request, obj=None):
+        return False

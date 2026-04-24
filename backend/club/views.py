@@ -9,10 +9,10 @@ import requests as http_requests
 
 FFF_BASE = "https://api-dofa.fff.fr"
 CACHE_TIMEOUT = 15 * 60
-from .models import Article, Team, TrainingSchedule, Match, TeamStats, Sponsor, SiteSettings
+from .models import Article, Team, TrainingSchedule, Match, TeamStats, Sponsor, SiteSettings, ClubPage
 from .serializers import (ArticleSerializer, TeamSerializer, TrainingScheduleSerializer,
                           MatchSerializer, TeamStatsSerializer, SponsorSerializer,
-                          SiteSettingsSerializer)
+                          SiteSettingsSerializer, ClubPageSerializer)
 
 
 class ArticleViewSet(viewsets.ReadOnlyModelViewSet):
@@ -71,6 +71,16 @@ class SiteSettingsViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = SiteSettings.objects.all()
     pagination_class = None
     serializer_class = SiteSettingsSerializer
+
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def club_page_view(request):
+    page = ClubPage.objects.first()
+    if not page:
+        return Response({'title': 'Notre Club', 'subtitle': '', 'content': '', 'image': None})
+    serializer = ClubPageSerializer(page, context={'request': request})
+    return Response(serializer.data)
 
 
 @api_view(['GET'])

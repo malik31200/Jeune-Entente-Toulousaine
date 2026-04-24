@@ -176,6 +176,21 @@ class Sponsor(models.Model):
         ordering = ['order']
 
 
+class ClubPage(models.Model):
+    title = models.CharField(max_length=200, default="Notre Club")
+    subtitle = models.CharField(max_length=300, blank=True)
+    content = models.TextField(blank=True)
+    image = models.ImageField(upload_to='club/', blank=True, null=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return "Page Club"
+
+    class Meta:
+        verbose_name = "Page Club"
+        verbose_name_plural = "Page Club"
+
+
 class SiteSettings(models.Model):
     shop_url = models.URLField(blank=True)
     facebook_url = models.URLField(blank=True)

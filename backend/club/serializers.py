@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Article, Team, TrainingSchedule, Match, TeamStats, Sponsor, SiteSettings
+from .models import Article, Team, TrainingSchedule, Match, TeamStats, Sponsor, SiteSettings, ClubPage
 
 
 class ArticleSerializer(serializers.ModelSerializer):
@@ -62,3 +62,9 @@ class SiteSettingsSerializer(serializers.ModelSerializer):
         model = SiteSettings
         fields = ['shop_url', 'facebook_url', 'instagram_url', 'twitter_url',
                     'youtube_url', 'contact_email']
+
+
+class ClubPageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ClubPage
+        fields = ['title', 'subtitle', 'content', 'image', 'updated_at']
