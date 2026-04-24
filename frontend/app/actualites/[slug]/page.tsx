@@ -25,7 +25,7 @@ export default async function ArticleDetailPage({ params }: { params: { slug: st
         {new Date(article.published_date).toLocaleDateString('fr-FR', { day: '2-digit', month: 'long', year: 'numeric' })}
       </p>
 
-      <h1 className="text-3xl md:text-4xl font-black mb-6" style={{ color: 'var(--color-primary)' }}>
+      <h1 className="font-black mb-6 text-right" style={{ color: 'var(--color-primary)', fontSize: 'clamp(2.5rem, 6vw, 4rem)' }}>
         {article.title}
       </h1>
 

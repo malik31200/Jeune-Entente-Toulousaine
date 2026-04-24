@@ -29,13 +29,13 @@ export default async function Footer() {
   ]
 
   return (
-    <footer style={{ backgroundColor: 'var(--color-primary)' }} className="mt-0">
+    <footer style={{ backgroundColor: 'var(--color-primary)' }} className="mt-16">
       <div className="container py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
           {/* Logo + description + réseaux */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center gap-3 mb-4 mt-4">
               <img src="/logo.png" alt="Logo JET" className="w-10 h-10 object-cover rounded-full" />
               <div>
                 <p className="leading-none" style={{ color: 'var(--color-accent)', fontFamily: 'GraffitiYouth', fontSize: '1.5rem' }}>La JET</p>
@@ -62,7 +62,7 @@ export default async function Footer() {
 
           {/* Navigation */}
           <div>
-            <h3 className="text-white font-semibold mb-4 uppercase text-sm tracking-wider">Navigation</h3>
+            <h3 className="text-white font-semibold mb-4 mt-4 uppercase text-sm tracking-wider">Navigation</h3>
             <ul className="space-y-2">
               {[
                 { href: '/actualites', label: 'Actualités' },
@@ -82,7 +82,7 @@ export default async function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-white font-semibold mb-4 uppercase text-sm tracking-wider">Contact</h3>
+            <h3 className="text-white font-semibold mb-4 mt-4 uppercase text-sm tracking-wider">Contact</h3>
             <p className="text-gray-400 text-sm">
               <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x12aea34fee9193e3:0x511aa5b8dee9bccf?sa=X&ved=1t:8290&ictx=111">Complexe sportif Borderouge <br />3 Rue Hubert Monloup, 31200 Toulouse</a></p>
             <p className="text-gray-400 text-sm mb-4">05 61 48 79 66</p>

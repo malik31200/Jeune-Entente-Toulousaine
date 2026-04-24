@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Article, Team, TrainingSchedule, Match, TeamStats, Sponsor, SiteSettings, ClubPage
+from .models import Article, Team, TrainingSchedule, Match, TeamStats, Sponsor, SiteSettings, ClubPage, GalleryPhoto, CategoryPage, TeamPresentation, Detection
 
 
 class ArticleSerializer(serializers.ModelSerializer):
@@ -19,7 +19,7 @@ class ArticleSerializer(serializers.ModelSerializer):
 class TeamSerializer(serializers.ModelSerializer):
     class Meta:
         model = Team
-        fields = ['id', 'name', 'category', 'description', 'image', 'order', 'cp_no', 'phase_no', 'poule_no']
+        fields = ['id', 'name', 'category', 'description', 'image', 'order', 'cp_no', 'phase_no', 'poule_no', 'coaches']
 
 
 class TrainingScheduleSerializer(serializers.ModelSerializer):
@@ -68,3 +68,34 @@ class ClubPageSerializer(serializers.ModelSerializer):
     class Meta:
         model = ClubPage
         fields = ['title', 'subtitle', 'content', 'image', 'updated_at']
+
+
+class GalleryPhotoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = GalleryPhoto
+        fields = ['id', 'title', 'image', 'order', 'created_at']
+
+
+class CategoryPageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CategoryPage
+        fields = ['slug', 'image', 'description', 'coaches', 'updated_at']
+
+
+class DetectionSerializer(serializers.ModelSerializer):
+    team_name = serializers.CharField(source='team.name', read_only=True)
+
+    class Meta:
+        model = Detection
+        fields = ['id', 'team', 'team_name', 'form_url', 'description', 'order']
+
+
+class TeamPresentationSerializer(serializers.ModelSerializer):
+    display_name = serializers.SerializerMethodField()
+
+    class Meta:
+        model = TeamPresentation
+        fields = ['id', 'category', 'display_name', 'image', 'coaches', 'order']
+
+    def get_display_name(self, obj):
+        return obj.team.name if obj.team else obj.name

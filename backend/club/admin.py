@@ -1,5 +1,7 @@
 from django.contrib import admin
-from .models import Article, Team, Player, TrainingSchedule, Match, TeamStats, Sponsor, SiteSettings, ClubPage
+from .models import Article, Team, Player, TrainingSchedule, Match, TeamStats, Sponsor, SiteSettings, ClubPage, GalleryPhoto, CategoryPage, TeamPresentation, Detection
+
+
 
 
 @admin.register(Article)
@@ -15,7 +17,7 @@ class TeamAdmin(admin.ModelAdmin):
     list_filter = ['category']
     search_fields = ['name']
     fieldsets = [
-        (None, {'fields': ['name', 'category', 'description', 'image', 'order']}),
+        (None, {'fields': ['name', 'category', 'description', 'image', 'order', 'coaches']}),
         ('Classement FFF (API)', {'fields': ['ranking_api_url'], 'classes': ['collapse']}),
     ]
 
@@ -67,3 +69,26 @@ class ClubPageAdmin(admin.ModelAdmin):
 
     def has_delete_permission(self, request, obj=None):
         return False
+
+
+
+@admin.register(Detection)
+class DetectionAdmin(admin.ModelAdmin):
+    list_display = ['team', 'is_active', 'order']
+    list_editable = ['is_active', 'order']
+    fields = ['team', 'form_url', 'description', 'is_active', 'order']
+
+
+@admin.register(TeamPresentation)
+class TeamPresentationAdmin(admin.ModelAdmin):
+    list_display = ['__str__', 'category', 'order']
+    list_filter = ['category']
+    list_editable = ['order']
+    fields = ['category', 'team', 'name', 'image', 'coaches', 'order']
+
+
+@admin.register(GalleryPhoto)
+class GalleryPhotoAdmin(admin.ModelAdmin):
+    list_display = ['__str__', 'order', 'created_at']
+    list_editable = ['order']
+    fields = ['image', 'order']

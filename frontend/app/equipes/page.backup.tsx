@@ -1,7 +1,7 @@
 import { getTeams, getMediaUrl } from '../../lib/api'
 import Link from 'next/link'
 
-const TEAM_ORDER = ['Seniors', 'Seniors 2', 'U19', 'U17', 'U16', 'U15', 'U14', 'Féminines', 'U18 Féminines', 'U15 Féminines']
+const TEAM_ORDER = ['Seniors', 'Seniors 2', 'U19', 'U17', 'U16', 'U15', 'U14', 'Féminines', 'U18 Féminines', 'U15 Féminines', 'Futsal']
 
 export default async function EquipesPage() {
   const data = await getTeams().catch(() => [])
@@ -14,7 +14,7 @@ export default async function EquipesPage() {
   return (
     <div className="container pt-12 pb-40">
       <h1 className="text-3xl font-black uppercase mb-8 mt-8" style={{ color: 'var(--color-primary)' }}>
-        Foot à 11
+        Nos Équipes
       </h1>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {teams.map((team: any) => {

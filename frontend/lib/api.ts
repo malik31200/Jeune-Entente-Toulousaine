@@ -49,6 +49,22 @@ export async function getClubPage() {
     return fetchAPI('/club-page/')
 }
 
+export async function getGallery() {
+    return fetchAPI('/gallery/')
+}
+
+export async function getCategoryPage(slug: string) {
+    return fetchAPI(`/category-page/${slug}/`)
+}
+
+export async function getTeamPresentations(category: string) {
+    return fetchAPI(`/team-presentations/?category=${category}`)
+}
+
+export async function getDetections() {
+    return fetchAPI('/detections/')
+}
+
 export function getMediaUrl(url: string | null | undefined): string | null {
   if (!url) return null
   if (url.startsWith('http://backend:8000')) return url.replace('http://backend:8000', 'http://localhost:8000')

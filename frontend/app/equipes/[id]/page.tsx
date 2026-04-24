@@ -22,7 +22,7 @@ function getSeason(date: Date): string {
   return m >= 7 ? `${y}/${y + 1}` : `${y - 1}/${y}`
 }
 
-type Tab = 'data' | 'resultats' | 'classement'
+type Tab = 'data' | 'resultats' | 'classement' | 'staff'
 
 function computeStatsFromMatches(matches: any[]): any | null {
   // Saison la plus récente uniquement
@@ -405,6 +405,7 @@ export default function TeamDetailPage() {
     { key: 'data', label: 'DATA' },
     { key: 'resultats', label: 'RÉSULTATS/CALENDRIER' },
     { key: 'classement', label: 'CLASSEMENT' },
+    { key: 'staff', label: 'STAFF' },
   ]
 
   const availableMonths = Array.from(new Set(
@@ -458,6 +459,29 @@ export default function TeamDetailPage() {
       {activeTab === 'data' && <DataTab stats={stats} />}
 
       {activeTab === 'classement' && <ClassementTab stats={stats} team={team} />}
+
+      {activeTab === 'staff' && (
+        <div className="pb-20" style={{ backgroundColor: 'var(--color-primary)', minHeight: '60vh' }}>
+          <div className="container max-w-xl" style={{ paddingTop: '4rem' }}>
+            {team.coaches ? (
+              <div className="flex flex-col gap-3">
+                {team.coaches.split('\n').filter(Boolean).map((coach: string, i: number) => (
+                  <div key={i} className="flex items-center gap-4 px-5 py-4 rounded-xl"
+                    style={{ backgroundColor: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center font-black text-sm flex-shrink-0"
+                      style={{ backgroundColor: 'var(--color-accent)', color: 'var(--color-primary)' }}>
+                      {coach.trim()[0]?.toUpperCase()}
+                    </div>
+                    <span className="text-white font-semibold">{coach.trim()}</span>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p className="text-gray-500 italic">Aucun staff renseigné pour cette équipe.</p>
+            )}
+          </div>
+        </div>
+      )}
 
       {activeTab === 'resultats' && (
         <div className="pb-20" style={{ backgroundColor: 'var(--color-primary)', minHeight: '60vh' }}>

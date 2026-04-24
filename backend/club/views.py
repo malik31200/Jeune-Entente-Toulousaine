@@ -9,10 +9,11 @@ import requests as http_requests
 
 FFF_BASE = "https://api-dofa.fff.fr"
 CACHE_TIMEOUT = 15 * 60
-from .models import Article, Team, TrainingSchedule, Match, TeamStats, Sponsor, SiteSettings, ClubPage
+from .models import Article, Team, TrainingSchedule, Match, TeamStats, Sponsor, SiteSettings, ClubPage, GalleryPhoto, CategoryPage, TeamPresentation, Detection
 from .serializers import (ArticleSerializer, TeamSerializer, TrainingScheduleSerializer,
                           MatchSerializer, TeamStatsSerializer, SponsorSerializer,
-                          SiteSettingsSerializer, ClubPageSerializer)
+                          SiteSettingsSerializer, ClubPageSerializer, GalleryPhotoSerializer,
+                          CategoryPageSerializer, TeamPresentationSerializer, DetectionSerializer)
 
 
 class ArticleViewSet(viewsets.ReadOnlyModelViewSet):
@@ -67,6 +68,30 @@ class SponsorViewSet(viewsets.ReadOnlyModelViewSet):
     pagination_class = None
 
 
+class DetectionViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Detection.objects.filter(is_active=True)
+    serializer_class = DetectionSerializer
+    pagination_class = None
+
+
+class TeamPresentationViewSet(viewsets.ReadOnlyModelViewSet):
+    serializer_class = TeamPresentationSerializer
+    pagination_class = None
+
+    def get_queryset(self):
+        queryset = TeamPresentation.objects.all()
+        category = self.request.query_params.get('category')
+        if category:
+            queryset = queryset.filter(category=category)
+        return queryset
+
+
+class GalleryPhotoViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = GalleryPhoto.objects.all()
+    serializer_class = GalleryPhotoSerializer
+    pagination_class = None
+
+
 class SiteSettingsViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = SiteSettings.objects.all()
     pagination_class = None
@@ -81,6 +106,17 @@ def club_page_view(request):
         return Response({'title': 'Notre Club', 'subtitle': '', 'content': '', 'image': None})
     serializer = ClubPageSerializer(page, context={'request': request})
     return Response(serializer.data)
+
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def category_page_view(request, slug):
+    try:
+        page = CategoryPage.objects.get(slug=slug)
+        serializer = CategoryPageSerializer(page, context={'request': request})
+        return Response(serializer.data)
+    except CategoryPage.DoesNotExist:
+        return Response({'slug': slug, 'image': None, 'description': '', 'coaches': ''})
 
 
 @api_view(['GET'])

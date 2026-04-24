@@ -861,6 +861,53 @@ Chaque étape sera expliquée avec :
 
 ---
 
+### ✅ Phase 3.6 : Nouvelles fonctionnalités — TERMINÉE (24 avril 2026)
+
+#### 📝 Éditeur rich text articles (django-ckeditor)
+- **Package** : `django-ckeditor==6.7.1` installé dans `requirements.txt`
+- **Modèles** : `Article.content` et `ClubPage.content` → `RichTextField()`
+- **Config** : `CKEDITOR_CONFIGS` dans `settings.py` (gras, italique, souligné, listes, liens)
+- Rendu HTML via `dangerouslySetInnerHTML` dans les pages Next.js
+
+#### 🖼️ Galerie photos
+- **Modèle** `GalleryPhoto` : image, ordre, date de création (migration 0005)
+- **Admin** : `GalleryPhotoAdmin` — champ ordre éditable en liste
+- **API** : endpoint `/api/gallery/` (ViewSet read-only)
+- **Page** `/galerie` : grille responsive avec lightbox (flèches prev/next + touche Escape)
+- Photos affichées en `object-contain` dans la lightbox pour respecter les proportions
+
+#### 🗂️ Navbar — Dropdown Équipes
+- Menu déroulant au survol sur "Équipes" : Foot à 11, Foot à 8, Foot à 5, Futsal
+- Desktop : délai 150ms à la fermeture pour éviter les fermetures accidentelles
+- Mobile : accordion click (chevron animé)
+
+#### 👥 Pages Foot à 8 / Foot à 5
+- **Modèle** `TeamPresentation` : category (foot-a-8/foot-a-5), ForeignKey Team optionnel, nom fallback, photo, coaches (un par ligne), ordre (migration 0007)
+- **Admin** : `TeamPresentationAdmin` — filtre par catégorie, ordre éditable
+- **API** : endpoint `/api/team-presentations/?category=foot-a-8`
+- **Pages** `/equipes/foot-a-8` et `/equipes/foot-a-5` : cards avec photo (object-contain) + staff
+- **Tri automatique** par numéro extrait du nom d'équipe (U10→10, ordre croissant)
+- **Page Futsal** : redirect automatique vers la page détail de l'équipe Futsal existante
+
+#### 👔 Onglet STAFF dans les pages équipe
+- Ajout de l'onglet STAFF dans `/equipes/[id]` (4ème onglet)
+- Champ `coaches` (TextField, un nom par ligne) ajouté au modèle `Team` (migration 0008)
+- Affichage : avatar orange par coach + nom
+
+#### 🎯 Page Détections
+- **Modèle** `Detection` : ForeignKey Team, lien Google Form, description, actif, ordre (migrations 0009 + 0010)
+- **Admin** : dropdown Teams existantes pour choisir la catégorie
+- **API** : endpoint `/api/detections/` (filtre is_active=True)
+- **Page** `/detections` : boutons catégorie triés (Seniors → U19 → U5) + iframe Google Form intégré
+- L'URL du form est automatiquement convertie avec `?embedded=true`
+
+#### 🎨 Corrections UX
+- Page Club : bannière moins haute, séparateur orange, marges article
+- Homepage hero : "BIENVENUE À LA JET" à gauche, titre article + bouton à droite
+- Titre article détail : plus grand, aligné à droite (`clamp(2.5rem, 6vw, 4rem)`)
+
+---
+
 ### 🔲 Phase 4 : Déploiement — À FAIRE
 
 #### 🚀 Priorité haute
@@ -879,7 +926,6 @@ Chaque étape sera expliquée avec :
 - [ ] **Scheduler scraping** : configurer cron (celery-beat ou APScheduler) pour l'automatisation FFF
 
 #### 💡 Améliorations futures (optionnel)
-- [ ] Éditeur rich text dans l'admin Django (django-ckeditor ou Quill) pour formater les articles
 - [ ] Page mentions légales / politique de confidentialité
-- [ ] Galerie photos par équipe
 - [ ] Export Excel des licences joueurs
+- [ ] Notifications push nouvelles actualités

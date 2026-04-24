@@ -1,12 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import slugify
+from ckeditor.fields import RichTextField
 
 
 class Article(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(unique=True, blank=True)
-    content = models.TextField()
+    content = RichTextField()
     image = models.ImageField(upload_to='articles/', blank=True, null=True)
     video_url = models.URLField(blank=True, null=True)
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
@@ -38,6 +39,8 @@ class Team(models.Model):
                              help_text="Identifiant compétition (ex: 434763)")
     phase_no = models.IntegerField(default=1, verbose_name="FFF phase")
     poule_no = models.IntegerField(default=1, verbose_name="FFF poule")
+    coaches = models.TextField(blank=True, verbose_name="Staff / Coachs",
+                               help_text="Un nom par ligne")
 
     def __str__(self):
         return self.name
@@ -179,7 +182,7 @@ class Sponsor(models.Model):
 class ClubPage(models.Model):
     title = models.CharField(max_length=200, default="Notre Club")
     subtitle = models.CharField(max_length=300, blank=True)
-    content = models.TextField(blank=True)
+    content = RichTextField(blank=True)
     image = models.ImageField(upload_to='club/', blank=True, null=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -189,6 +192,82 @@ class ClubPage(models.Model):
     class Meta:
         verbose_name = "Page Club"
         verbose_name_plural = "Page Club"
+
+
+class Detection(models.Model):
+    team = models.ForeignKey(Team, on_delete=models.CASCADE, verbose_name="Équipe",
+                             related_name='detections')
+    form_url = models.URLField(verbose_name="Lien Google Form")
+    description = models.TextField(blank=True, verbose_name="Description (optionnel)")
+    is_active = models.BooleanField(default=True, verbose_name="Actif")
+    order = models.IntegerField(default=0, verbose_name="Ordre")
+
+    def __str__(self):
+        return f"Détection {self.team.name}"
+
+    class Meta:
+        ordering = ['order']
+        verbose_name = "Détection"
+        verbose_name_plural = "Détections"
+
+
+class CategoryPage(models.Model):
+    SLUG_CHOICES = [
+        ('foot-a-8', 'Foot à 8'),
+        ('foot-a-5', 'Foot à 5'),
+    ]
+    slug = models.CharField(max_length=20, choices=SLUG_CHOICES, unique=True)
+    image = models.ImageField(upload_to='categories/', blank=True, null=True)
+    description = RichTextField(blank=True)
+    coaches = models.TextField(blank=True, help_text="Noms des coachs, un par ligne")
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return dict(self.SLUG_CHOICES).get(self.slug, self.slug)
+
+    class Meta:
+        verbose_name = "Page catégorie (Foot à 8 / Foot à 5)"
+        verbose_name_plural = "Pages catégories (Foot à 8 / Foot à 5)"
+
+
+class TeamPresentation(models.Model):
+    CATEGORY_CHOICES = [
+        ('foot-a-8', 'Foot à 8'),
+        ('foot-a-5', 'Foot à 5'),
+    ]
+    category = models.CharField(max_length=20, choices=CATEGORY_CHOICES, verbose_name="Catégorie")
+    team = models.ForeignKey(Team, on_delete=models.SET_NULL, null=True, blank=True,
+                             related_name='presentations', verbose_name="Équipe (optionnel)")
+    name = models.CharField(max_length=100, blank=True, verbose_name="Nom personnalisé",
+                            help_text="Si aucune équipe sélectionnée ci-dessus, entrez un nom ici")
+    image = models.ImageField(upload_to='team-presentations/', blank=True, null=True, verbose_name="Photo")
+    coaches = models.TextField(blank=True, verbose_name="Staff / Coachs",
+                               help_text="Un nom par ligne (ex: Jean Dupont)")
+    order = models.IntegerField(default=0, verbose_name="Ordre d'affichage")
+
+    def __str__(self):
+        n = self.team.name if self.team else self.name
+        return f"{n} ({self.get_category_display()})"
+
+    class Meta:
+        ordering = ['order']
+        verbose_name = "Présentation équipe"
+        verbose_name_plural = "Présentations équipes (Foot à 5 / Foot à 8)"
+
+
+class GalleryPhoto(models.Model):
+    title = models.CharField(max_length=200, blank=True)
+    image = models.ImageField(upload_to='gallery/')
+    order = models.IntegerField(default=0)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title or f"Photo {self.id}"
+
+    class Meta:
+        ordering = ['order', '-created_at']
+        verbose_name = "Photo"
+        verbose_name_plural = "Galerie photos"
 
 
 class SiteSettings(models.Model):

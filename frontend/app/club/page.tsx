@@ -21,13 +21,14 @@ export default async function ClubPage() {
       {/* Bannière */}
       <div
         className="relative flex items-end"
-        style={{ minHeight: '420px', backgroundColor: 'var(--color-primary)' }}
+        style={{ minHeight: '320px', backgroundColor: 'var(--color-primary)' }}
       >
         {imageUrl && (
           <img
             src={imageUrl}
             alt={page.title}
-            className="absolute inset-0 w-full h-full object-cover object-center"
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ objectPosition: 'center 30%' }}
           />
         )}
         {/* Overlay dégradé */}
@@ -42,7 +43,7 @@ export default async function ClubPage() {
             {page.title}
           </h1>
           {page.subtitle && (
-            <p className="text-gray-300 text-lg mt-4 max-w-xl leading-relaxed">{page.subtitle}</p>
+            <p className="text-gray-300 text-lg mt-4 mb-4 max-w-xl leading-relaxed">{page.subtitle}</p>
           )}
         </div>
       </div>
@@ -51,7 +52,7 @@ export default async function ClubPage() {
       <div className="h-1 w-full" style={{ backgroundColor: 'var(--color-accent)' }} />
 
       {/* Contenu */}
-      <div className="container py-14 max-w-3xl">
+      <div className="container max-w-3xl" style={{ paddingTop: '2rem', paddingBottom: '2rem' }}>
         {contentHtml ? (
           <div
             className="club-content"

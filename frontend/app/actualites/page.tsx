@@ -15,7 +15,7 @@ export default async function ActualitesPage({
 
   return (
     <div className="container py-12" style={{ paddingBottom: '5rem' }}>
-      <h1 className="text-3xl font-black uppercase mb-8" style={{ color: 'var(--color-primary)' }}>
+      <h1 className="text-3xl font-black uppercase mb-8 mt-8" style={{ color: 'var(--color-primary)' }}>
         Actualités
       </h1>
 

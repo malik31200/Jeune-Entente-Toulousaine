@@ -65,10 +65,10 @@ export default async function Home() {
                 }} />
 
                 {/* Contenu bas */}
-                <div className="container relative z-10 pb-10">
+                <div className="container relative z-10" style={{ paddingBottom: '5rem' }}>
                     <div className="flex items-end justify-between gap-6">
 
-                        {/* Texte gauche */}
+                        {/* Gauche : titre du club */}
                         <FadeIn>
                             <p className="text-sm font-bold uppercase tracking-widest mb-1" style={{ color: 'var(--color-accent)' }}>
                                 Jeune Entente Toulousaine
@@ -85,7 +85,7 @@ export default async function Home() {
                                 BIENVENUE
                             </h1>
                             <h2
-                                className="leading-none font-black uppercase mb-6"
+                                className="leading-none font-black uppercase"
                                 style={{
                                     fontFamily: 'var(--font-bebas, Bebas Neue, sans-serif)',
                                     fontSize: 'clamp(3.5rem, 9vw, 8rem)',
@@ -95,22 +95,25 @@ export default async function Home() {
                             >
                                 À LA JET
                             </h2>
-
-                            {heroArticle && (
-                                <p className="text-gray-300 text-base mb-5 max-w-lg leading-snug">
-                                    {heroArticle.title}
-                                </p>
-                            )}
-                            {heroArticle && (
-                                <Link
-                                    href={`/actualites/${heroArticle.slug}`}
-                                    className="inline-flex items-center gap-2 font-bold px-6 py-3 rounded transition-opacity hover:opacity-80"
-                                    style={{ backgroundColor: 'var(--color-accent)', color: 'var(--color-primary)' }}
-                                >
-                                    Lire l'article →
-                                </Link>
-                            )}
                         </FadeIn>
+
+                        {/* Droite : dernier article */}
+                        {heroArticle && (
+                            <FadeIn delay={0.2}>
+                                <div className="flex flex-col items-center max-w-sm mb-20">
+                                    <p className="text-white font-black uppercase mb-4 leading-tight text-center w-full" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.5rem)' }}>
+                                        {heroArticle.title}
+                                    </p>
+                                    <Link
+                                        href={`/actualites/${heroArticle.slug}`}
+                                        className="flex items-center justify-center gap-2 font-bold px-6 py-3 rounded transition-opacity hover:opacity-80 w-full"
+                                        style={{ backgroundColor: 'var(--color-accent)', color: 'var(--color-primary)' }}
+                                    >
+                                        Lire l'article →
+                                    </Link>
+                                </div>
+                            </FadeIn>
+                        )}
 
                     </div>
                 </div>
@@ -123,7 +126,7 @@ export default async function Home() {
             <section style={{ backgroundColor: 'var(--color-bg)' }}>
             <div className="container py-16">
                 <FadeIn delay={0.2}>
-                    <h2 className="text-2xl font-black uppercase mb-8" style={{ color: 'var(--color-primary)' }}>
+                    <h2 className="text-2xl font-black uppercase mb-8 mt-8" style={{ color: 'var(--color-primary)' }}>
                         Dernières actualités
                     </h2>
                 </FadeIn>
