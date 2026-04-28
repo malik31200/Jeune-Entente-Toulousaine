@@ -2,6 +2,12 @@
 
 import { useEffect, useState } from 'react'
 
+export const metadata = {
+  title: 'Entraînements — Jeune Entente Toulousaine',
+  description: 'Horaires et lieux d\'entraînement de toutes les équipes de la JET.',
+}
+
+
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api'
 
 const DAYS_ORDER = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche']

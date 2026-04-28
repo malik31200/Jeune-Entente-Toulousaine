@@ -2,6 +2,12 @@
 
 import { useEffect, useState, useCallback } from 'react'
 
+export const metadata = {
+  title: 'Galerie — Jeune Entente Toulousaine',
+  description: 'Photos et moments forts du club Jeune Entente Toulousaine.',
+}
+
+
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api'
 
 function getMediaUrl(url: string | null | undefined): string | null {

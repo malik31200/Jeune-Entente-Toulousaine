@@ -3,6 +3,12 @@
 import { useEffect, useState } from 'react'
 import { getDetections } from '@/lib/api'
 
+export const metadata = {
+  title: 'Détections — Jeune Entente Toulousaine',
+  description: 'Inscris-toi aux séances de détection de la Jeune Entente Toulousaine.',
+}
+
+
 type Detection = {
   id: number
   team: number

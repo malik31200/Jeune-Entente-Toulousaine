@@ -1,5 +1,11 @@
 import { getClubPage, getMediaUrl } from '../../lib/api'
 
+export const metadata = {
+  title: 'Le Club — Jeune Entente Toulousaine',
+  description: 'Découvrez l\'histoire et les valeurs de la Jeune Entente Toulousaine.',
+}
+
+
 export default async function ClubPage() {
   let page: any = { title: 'Notre Club', subtitle: '', content: '', image: null }
   try {

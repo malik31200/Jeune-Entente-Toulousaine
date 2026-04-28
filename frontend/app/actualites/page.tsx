@@ -1,6 +1,11 @@
 import { getArticles, getMediaUrl } from '../../lib/api'
 import Link from 'next/link'
 
+export const metadata = {
+  title: 'Actualités — La JET',
+  description: 'Retrouvez toutes les actualités du club de football Jeune Entente Toulousaine.',
+}
+
 export default async function ActualitesPage({
   searchParams,
 }: {

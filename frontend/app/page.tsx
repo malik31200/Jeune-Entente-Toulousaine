@@ -3,6 +3,11 @@ import MatchCarousel from '../components/MatchCarousel'
 import Link from 'next/link'
 import FadeIn from '../components/FadeIn'
 
+export const metada = {
+    title: 'Jeune Entente Toulousaine - Club de football à Toulouse',
+    description: 'La Jeune Entente Toulousaine est un club formateur dédié aux jeunes, alliant passion, compétition et esprit d\'équipe.'
+}
+
 export default async function Home() {
     const [articlesData, matchesData, teamsData, sponsorsData] = await Promise.all([
       getArticles().catch(() => []),

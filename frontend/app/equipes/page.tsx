@@ -1,6 +1,12 @@
 import { getTeams, getMediaUrl } from '../../lib/api'
 import Link from 'next/link'
 
+export const metadata = {
+  title: 'Nos Équipes — Jeune Entente Toulousaine',
+  description: 'Toutes les équipes de la JET : Foot à 11, Foot à 8, Foot à 5 et Futsal.',
+}
+
+
 const TEAM_ORDER = ['Seniors', 'Seniors 2', 'U19', 'U17', 'U16', 'U15', 'U14', 'Féminines', 'U18 Féminines', 'U15 Féminines']
 
 export default async function EquipesPage() {
