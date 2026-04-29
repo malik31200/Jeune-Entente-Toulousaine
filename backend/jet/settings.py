@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'ckeditor',
     'club',
+    'django_apscheduler',
 ]
 
 CKEDITOR_CONFIGS = {
