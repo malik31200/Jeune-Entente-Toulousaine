@@ -947,9 +947,9 @@ Chaque étape sera expliquée avec :
 - [ ] **Tester le formulaire contact** : vérifier que l'email part bien (SMTP à configurer)
 - [ ] **Renseigner cp_no dans l'admin** pour les équipes sans classement affiché
 - [ ] **Vérifier responsive mobile** : navbar hamburger, carrousel, onglets équipes
-- [ ] **SEO** : meta tags `<title>` et `<description>` par page (Next.js metadata API)
-- [ ] **Next Image** : remplacer les `<img>` par `<Image>` de Next.js pour l'optimisation
-- [ ] **Scheduler scraping** : configurer cron (celery-beat ou APScheduler) pour l'automatisation FFF
+- [x] **SEO** : meta tags `<title>` et `<description>` par page (Next.js metadata API)
+- [x] **Next Image** : remplacer les `<img>` par `<Image>` de Next.js pour l'optimisation
+- [x] **Scheduler scraping** : APScheduler — lun-ven 23h, sam-dim 6 créneaux
 
 #### 💡 Améliorations futures (optionnel)
 - [ ] Page mentions légales / politique de confidentialité
