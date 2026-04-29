@@ -908,7 +908,33 @@ Chaque étape sera expliquée avec :
 
 ---
 
-### 🔲 Phase 4 : Déploiement — À FAIRE
+### ✅ Phase 4.1 : SEO + Next Image + Scheduler — TERMINÉE (29 avril 2026)
+
+#### 🔍 SEO — Metadata sur toutes les pages
+- `export const metadata` sur chaque page Server Component
+- Pages `'use client'` → `layout.tsx` séparé (détections, contact, horaires, galerie)
+- Titles et descriptions cohérents sur toutes les pages
+
+#### 🖼️ Next Image — Migration complète
+- Tous les `<img>` remplacés par `<Image>` Next.js
+- `next.config.mjs` : remotePatterns pour `localhost:8000` et `backend:8000`
+- Pattern `fill` pour images dynamiques (API), `width/height` pour images statiques
+- `priority` sur le hero de la homepage
+
+#### 🐳 Fix Docker — getMediaUrl context-aware
+- `typeof window === 'undefined'` pour détecter serveur vs navigateur
+- Serveur → `http://backend:8000`, Navigateur → `http://localhost:8000`
+- `<Image>` proxie via `/_next/image` → navigateur ne touche jamais `backend:8000`
+
+#### ⏰ Scheduler APScheduler — Scraping FFF automatique
+- `django-apscheduler==0.6.2` installé
+- `backend/club/scheduler.py` : jobs CronTrigger (lun-ven 23h, sam-dim 6x)
+- `backend/club/apps.py` : `ready()` → `scheduler.start()`
+- Protection "chicken and egg" : vérifie l'existence des tables avant démarrage
+
+---
+
+### 🔲 Phase 4.2 : Déploiement — À FAIRE
 
 #### 🚀 Priorité haute
 - [ ] **SMTP email production** : configurer variables `EMAIL_HOST`, `EMAIL_HOST_USER`, `EMAIL_HOST_PASSWORD` dans `.env` production (formulaire contact)

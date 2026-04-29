@@ -43,4 +43,4 @@ def start():
         )
 
     scheduler.start()
-    print("✅ Scheduler FFF démarré.")  # ← print au lieu de logger.info
+    print("✅ Scheduler FFF démarré.")
