@@ -1,5 +1,5 @@
 import { getArticle, getMediaUrl } from '../../../lib/api'
-
+import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
@@ -18,14 +18,23 @@ export default async function ArticleDetailPage({ params }: { params: { slug: st
       </Link>
 
       {article.image && (
-        <img src={getMediaUrl(article.image)!} alt={article.title} className="w-full max-h-[600px] object-contain rounded-lg mb-8 bg-gray-100" />
+      <div className="relative w-full mb-8 bg-gray-100 rounded-lg overflow-hidden" style={{ maxHeight: '600px', minHeight: '300px' }}>
+        <Image
+          src={getMediaUrl(article.image)!}
+          alt={article.title}
+          fill
+          className="object-contain"
+          sizes="100vw"
+        />
+      </div>
+
       )}
 
       <p className="text-sm font-semibold uppercase tracking-wider mb-3" style={{ color: 'var(--color-accent)' }}>
         {new Date(article.published_date).toLocaleDateString('fr-FR', { day: '2-digit', month: 'long', year: 'numeric' })}
       </p>
 
-      <h1 className="font-black mb-6 text-right" style={{ color: 'var(--color-primary)', fontSize: 'clamp(2.5rem, 6vw, 4rem)' }}>
+      <h1 className="font-black mb-6 text-center" style={{ color: 'var(--color-primary)', fontSize: 'clamp(2.5rem, 6vw, 4rem)' }}>
         {article.title}
       </h1>
 

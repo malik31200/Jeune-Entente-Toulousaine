@@ -1,4 +1,5 @@
 import { getSponsors, getMediaUrl } from '../../lib/api'
+import Image from 'next/image'
 
 export const metadata = {
   title: 'Partenaires — Jeune Entente Toulousaine',
@@ -28,11 +29,16 @@ export default async function PartenairesPage() {
                 className="bg-white rounded-xl shadow hover:shadow-lg transition-shadow p-6 flex flex-col items-center gap-4 group cursor-pointer border border-transparent hover:border-orange-200"
               >
                 {logoUrl ? (
-                  <img
-                    src={logoUrl}
-                    alt={sponsor.name}
-                    className="h-20 object-contain group-hover:scale-105 transition-transform duration-300"
-                  />
+                  <div className="relative h-24 w-48">
+                    <Image
+                      src={logoUrl}
+                      alt={sponsor.name}
+                      fill
+                      className="object-contain"
+                      sizes="192px"
+                    />
+                  </div>
+
                 ) : (
                   <div
                     className="w-20 h-20 rounded-full flex items-center justify-center text-2xl font-black"

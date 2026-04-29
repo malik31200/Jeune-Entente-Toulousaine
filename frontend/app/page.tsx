@@ -2,6 +2,7 @@ import { getArticles, getMatches, getTeams, getSponsors, getMediaUrl } from '../
 import MatchCarousel from '../components/MatchCarousel'
 import Link from 'next/link'
 import FadeIn from '../components/FadeIn'
+import Image from 'next/image'
 
 export const metada = {
     title: 'Jeune Entente Toulousaine - Club de football à Toulouse',
@@ -59,11 +60,20 @@ export default async function Home() {
                 style={{
                     minHeight: 'calc(100vh - 64px)',
                     backgroundColor: 'var(--color-primary)',
-                    backgroundImage: heroArticle?.image ? `url(${getMediaUrl(heroArticle.image)})` : undefined,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
                 }}
             >
+                    {heroArticle?.image && (
+                        <Image
+                            src={getMediaUrl(heroArticle.image)!}
+                            alt={heroArticle.title}
+                            fill
+                            className="object-cover object-center"
+                            priority
+                            sizes="100vw"
+                        />
+                    )}
+
+
                 {/* Overlay */}
                 <div className="absolute inset-0" style={{
                     background: 'linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.15) 100%)'
@@ -141,7 +151,9 @@ export default async function Home() {
                             <Link key={article.slug} href={`/actualites/${article.slug}`} className="group">
                                 <div className="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow">
                                     {article.image && (
-                                        <img src={getMediaUrl(article.image)!} alt={article.title} className="w-full h-48 object-cover object-top" />
+                                        <div className="relative w-full h-48">
+                                            <Image src={getMediaUrl(article.image)!} alt={article.title} fill className="object-cover object-center" sizes="(max-width: 768px) 100vw, 33vw" />
+                                        </div>
                                     )}
                                     <div className="p-4">
                                         <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--color-accent)' }}>
@@ -177,14 +189,18 @@ export default async function Home() {
                                     <a key={sponsor.id} href={sponsor.website_url} target="_blank" rel="noopener noreferrer"
                                         className="opacity-60 hover:opacity-100 transition-opacity">
                                         {sponsor.logo
-                                            ? <img src={getMediaUrl(sponsor.logo)!} alt={sponsor.name} className="h-12 object-contain" />
+                                            ? <div className="relative h-12 w-32">
+                                                  <Image src={getMediaUrl(sponsor.logo)!} alt={sponsor.name} fill className="object-contain" sizes="128px" />
+                                                </div>
                                             : <span className="font-bold text-lg" style={{ color: 'var(--color-text-light)' }}>{sponsor.name}</span>
                                         }
                                     </a>
                                 ) : (
                                     <div key={sponsor.id} className="opacity-60">
                                         {sponsor.logo
-                                            ? <img src={getMediaUrl(sponsor.logo)!} alt={sponsor.name} className="h-12 object-contain" />
+                                            ? <div className="relative h-12 w-32">
+                                                <Image src={getMediaUrl(sponsor.logo)!} alt={sponsor.name} fill className="object-contain" sizes="128px" />
+                                            </div>
                                             : <span className="font-bold text-lg" style={{ color: 'var(--color-text-light)' }}>{sponsor.name}</span>
                                         }
                                     </div>

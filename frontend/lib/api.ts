@@ -67,7 +67,14 @@ export async function getDetections() {
 
 export function getMediaUrl(url: string | null | undefined): string | null {
   if (!url) return null
-  if (url.startsWith('http://backend:8000')) return url.replace('http://backend:8000', 'http://localhost:8000')
-  if (url.startsWith('/media/')) return `http://localhost:8000${url}`
+  const isServer = typeof window === 'undefined'
+  const serverBase = 'http://backend:8000'
+  const clientBase = 'http://localhost:8000'
+  const base = isServer ? serverBase : clientBase
+
+  if (url.startsWith('http://backend:8000')) return isServer ? url : url.replace(serverBase, clientBase)
+  if (url.startsWith('http://localhost:8000')) return isServer ? url.replace(clientBase, serverBase) : url
+  if (url.startsWith('/media/')) return `${base}${url}`
   return url
 }
+

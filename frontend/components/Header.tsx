@@ -3,6 +3,8 @@
 import Link from 'next/link'
 import { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
+
 
 const equipesDropdown = [
   { href: '/equipes', label: 'Foot à 11' },
@@ -43,14 +45,21 @@ export default function Header({ shopUrl }: { shopUrl?: string | null }) {
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
-            <motion.img
-              src="/logo.png"
-              alt="Logo JET"
-              className="w-10 h-10 object-cover rounded-full"
+            <motion.div
+              className="w-10 h-10 rounded-full overflow-hidden"
               initial={{ scale: 0, rotate: -180 }}
               animate={{ scale: 1, rotate: 0 }}
               transition={{ type: 'spring', stiffness: 260, damping: 20, delay: 0.1 }}
-            />
+            >
+              <Image
+                src="/logo.png"
+                alt="Logo JET"
+                width={40}
+                height={40}
+                className="object-cover rounded-full"
+              />
+            </motion.div>
+
             <div className="hidden sm:block">
               <motion.p
                 className="leading-none"

@@ -1,5 +1,7 @@
 import { getArticles, getMediaUrl } from '../../lib/api'
 import Link from 'next/link'
+import Image from 'next/image'
+
 
 export const metadata = {
   title: 'Actualités — La JET',
@@ -33,7 +35,16 @@ export default async function ActualitesPage({
           <Link key={article.slug} href={`/actualites/${article.slug}`} className="group">
             <div className="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow h-full flex flex-col">
               {article.image ? (
-                <img src={getMediaUrl(article.image)!} alt={article.title} className="w-full h-48 object-cover object-top" />
+                <div className="relative w-full h-48">
+                  <Image
+                    src={getMediaUrl(article.image)!}
+                    alt={article.title}
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
+
               ) : (
                 <div className="w-full h-48 flex items-center justify-center" style={{ backgroundColor: 'var(--color-primary)' }}>
                   <span className="text-4xl">⚽</span>

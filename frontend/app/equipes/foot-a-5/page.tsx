@@ -1,5 +1,6 @@
 import { getTeamPresentations, getMediaUrl } from '../../../lib/api'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default async function FootA5Page() {
   const data = await getTeamPresentations('foot-a-5').catch(() => [])
@@ -39,7 +40,16 @@ export default async function FootA5Page() {
                   {/* Photo */}
                   <div className="w-48 flex-shrink-0" style={{ minHeight: '180px' }}>
                     {imageUrl ? (
-                      <img src={imageUrl} alt={item.display_name} className="w-full h-full object-contain" />
+                      <div className="relative w-full h-full">
+                        <Image
+                          src={imageUrl}
+                          alt={item.display_name}
+                          fill
+                          className="object-contain"
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                        />
+                      </div>
+
                     ) : (
                       <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: '#f3f4f6' }}>
                         <span className="text-4xl">⚽</span>

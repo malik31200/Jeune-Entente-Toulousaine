@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { getSiteSettings } from '../lib/api'
+import Image from 'next/image'
 
 export default async function Footer() {
   const settingsData = await getSiteSettings().catch(() => null)
@@ -36,14 +37,14 @@ export default async function Footer() {
           {/* Logo + description + réseaux */}
           <div>
             <div className="flex items-center gap-3 mb-4 mt-4">
-              <img src="/logo.png" alt="Logo JET" className="w-10 h-10 object-cover rounded-full" />
+              <Image src="/logo.png" alt="Logo JET" width={40} height={40} className="object-cover rounded-full" />
               <div>
                 <p className="leading-none" style={{ color: 'var(--color-accent)', fontFamily: 'GraffitiYouth', fontSize: '1.5rem' }}>La JET</p>
                 <p className="text-gray-300 text-xs leading-none mt-0.5 tracking-widest uppercase">Jeune Entente Toulousaine</p>
               </div>
             </div>
             <p className="text-gray-400 text-sm mb-4">
-              Club de football toulousain fondé avec passion. Rejoignez l'aventure JET !
+              Club de football toulousain fondé avec passion.<br />Rejoignez l'aventure JET !
             </p>
             {settings && (
               <div className="flex gap-3">
