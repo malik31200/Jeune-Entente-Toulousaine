@@ -724,10 +724,19 @@ Créer un **site web moderne pour un club de football** qui combine :
 |**Domaine .fr**|DNS + HTTPS|~1€/mois|
 |**TOTAL**||**~5.60€/mois**|
 
-### Stratégie recommandée
-1. Montrer le site au président en **screen share** (localhost) avant tout déploiement
-2. Si validation → déployer sur **Fly.io + Vercel + Neon + Cloudinary** (~1€/mois)
-3. Si problèmes → passer sur **Railway** (~5.60€/mois, simple et fiable)
+### Décision finale : déploiement direct sur Fly.io + Vercel + Neon + Cloudinary
+
+**Ordre des étapes de déploiement :**
+1. [ ] **Cloudinary** — créer compte + intégrer `django-cloudinary-storage` dans le backend
+2. [ ] **Neon.tech** — créer BDD PostgreSQL cloud + migrer les données
+3. [ ] **Fly.io** — déployer le backend Django
+4. [ ] **Vercel** — déployer le frontend Next.js
+5. [ ] **Variables d'environnement production** — configurer sur Fly.io et Vercel
+6. [ ] **SMTP email** — configurer Gmail App Password pour le formulaire contact
+7. [ ] **cron-job.org** — keep-alive toutes les 14 min + backup scheduler
+8. [ ] **Domaine .fr** — acheter + configurer DNS + HTTPS
+9. [ ] **RGPD** — pages mentions légales + politique de confidentialité
+10. [ ] **Google Analytics 4** — suivi des visiteurs (avec bandeau cookie)
 
 ---
 
