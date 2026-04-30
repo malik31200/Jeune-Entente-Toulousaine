@@ -20,10 +20,10 @@ export default async function EquipesPage() {
 
   return (
     <div className="container pt-12 pb-40">
-      <h1 className="text-3xl font-black uppercase mb-8 mt-8" style={{ color: 'var(--color-primary)' }}>
+      <h1 className="text-4xl text-center font-black uppercase mb-8 mt-8" style={{ color: 'var(--color-primary)' }}>
         Foot à 11
       </h1>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
         {teams.map((team: any) => {
           const imageUrl = getMediaUrl(team.image)
           return (

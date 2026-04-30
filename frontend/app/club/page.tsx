@@ -27,7 +27,7 @@ export default async function ClubPage() {
       {/* Bannière */}
       <div
         className="relative flex items-end"
-        style={{ minHeight: '320px', backgroundColor: 'var(--color-primary)' }}
+        style={{ minHeight: '550px', backgroundColor: 'var(--color-primary)' }}
       >
         {imageUrl && (
           <Image

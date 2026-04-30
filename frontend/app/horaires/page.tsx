@@ -63,7 +63,7 @@ export default function HorairesPage() {
 
   return (
     <div className="container py-12" style={{ paddingBottom: '5rem' }}>
-      <h1 className="text-3xl font-black uppercase mb-8" style={{ color: 'var(--color-primary)' }}>
+      <h1 className="text-3xl text-center font-black uppercase mt-12 mb-12" style={{ color: 'var(--color-primary)' }}>
         Horaires d'entraînement
       </h1>
 

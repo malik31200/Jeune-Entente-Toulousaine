@@ -695,15 +695,39 @@ Créer un **site web moderne pour un club de football** qui combine :
 - **Temps estimé** : 20-25 jours (apprentissage inclus)
 - **Coût** : Votre temps 😊
 
-### Hébergement mensuel
+### Hébergement mensuel — Option retenue ✅
 
-|Service|Coût|
-|---|---|
-|Backend (Railway/Render)|5-10€|
-|Frontend (Vercel)|0€ (gratuit)|
-|Base de données (incluse)|0€|
-|Domaine (.fr)|~1€|
-|**TOTAL**|**6-12€/mois**|
+**Stack choisi : Fly.io (pas de sommeil) + Vercel + Neon + Cloudinary**
+
+|Service|Usage|Prix|
+|---|---|---|
+|**Vercel**|Frontend Next.js|0€|
+|**Fly.io** (free tier)|Backend Django — ne dort PAS|0€|
+|**Neon.tech** (free tier)|PostgreSQL|0€|
+|**Cloudinary** (free tier)|Stockage photos/médias (25GB)|0€|
+|**cron-job.org**|Keep-alive + scheduler backup|0€|
+|**Domaine .fr**|DNS + HTTPS|~1€/mois|
+|**TOTAL**||**~1€/mois**|
+
+**Pourquoi Fly.io plutôt que Render :**
+- Render free dort après 15min → mauvaise expérience utilisateur
+- Fly.io free tier ne dort pas → site toujours réactif
+- Cloudinary obligatoire car filesystem éphémère sur tous ces hébergeurs
+
+**Si ça ne suffit pas → Railway Hobby à ~5.60€/mois :**
+
+|Service|Usage|Prix|
+|---|---|---|
+|**Vercel**|Frontend Next.js|0€|
+|**Railway** (Hobby $5/mois)|Backend Django + PostgreSQL|~4.60€|
+|**Cloudinary**|Photos/médias|0€|
+|**Domaine .fr**|DNS + HTTPS|~1€/mois|
+|**TOTAL**||**~5.60€/mois**|
+
+### Stratégie recommandée
+1. Montrer le site au président en **screen share** (localhost) avant tout déploiement
+2. Si validation → déployer sur **Fly.io + Vercel + Neon + Cloudinary** (~1€/mois)
+3. Si problèmes → passer sur **Railway** (~5.60€/mois, simple et fiable)
 
 ---
 
