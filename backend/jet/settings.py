@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'ckeditor',
+    'cloudinary',
+    'cloudinary_storage',
     'club',
     'django_apscheduler',
 ]
@@ -92,16 +94,23 @@ WSGI_APPLICATION = 'jet.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('POSTGRES_DB', 'jet_db'),
-        'USER': os.environ.get('POSTGRES_USER', 'jet_user'),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'jet_password'),
-        'HOST': 'db',
-        'PORT': '5432',
+_DATABASE_URL = os.environ.get('DATABASE_URL')
+
+if _DATABASE_URL:
+    import dj_database_url
+    DATABASES = {'default': dj_database_url.parse(_DATABASE_URL)}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.environ.get('PGDATABASE') or os.environ.get('POSTGRES_DB', 'jet_db'),
+            'USER': os.environ.get('PGUSER') or os.environ.get('POSTGRES_USER', 'jet_user'),
+            'PASSWORD': os.environ.get('PGPASSWORD') or os.environ.get('POSTGRES_PASSWORD', 'jet_password'),
+            'HOST': os.environ.get('PGHOST') or os.environ.get('POSTGRES_HOST', 'db'),
+            'PORT': os.environ.get('PGPORT', '5432'),
+        }
     }
-}
+
 
 
 # Password validation
@@ -170,3 +179,19 @@ REST_FRAMEWORK = {
 # Email (console en dev, SMTP en production)
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST_USER = 'noreply@jet.fr'
+
+# Cloudinary
+import cloudinary
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
+}
+STORAGES = {
+    "default": {
+        "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+    },
+}
