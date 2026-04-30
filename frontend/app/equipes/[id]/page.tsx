@@ -202,7 +202,7 @@ function DataTab({ stats }: { stats: any }) {
             <div>
               <p className="text-gray-400 text-xs font-bold uppercase tracking-widest mb-3">Forme récente</p>
               <div className="flex gap-2">
-                {stats.form.split('').map((c: string, i: number) => (
+                {stats.form.split('').reverse().map((c: string, i: number) => (
                   <motion.div
                     key={i}
                     className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-black text-sm"

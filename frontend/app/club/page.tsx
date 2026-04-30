@@ -1,10 +1,10 @@
 import { getClubPage, getMediaUrl } from '../../lib/api'
+import Image from 'next/image'
 
 export const metadata = {
   title: 'Le Club — Jeune Entente Toulousaine',
   description: 'Découvrez l\'histoire et les valeurs de la Jeune Entente Toulousaine.',
 }
-
 
 export default async function ClubPage() {
   let page: any = { title: 'Notre Club', subtitle: '', content: '', image: null }
@@ -30,10 +30,11 @@ export default async function ClubPage() {
         style={{ minHeight: '320px', backgroundColor: 'var(--color-primary)' }}
       >
         {imageUrl && (
-          <img
+          <Image
             src={imageUrl}
             alt={page.title}
-            className="absolute inset-0 w-full h-full object-cover"
+            fill
+            className="object-cover"
             style={{ objectPosition: 'center 30%' }}
           />
         )}

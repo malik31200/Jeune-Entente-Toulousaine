@@ -40,8 +40,8 @@ export default function Header({ shopUrl }: { shopUrl?: string | null }) {
 
   return (
     <header style={{ backgroundColor: 'var(--color-primary)' }}>
-      <div className="container">
-        <div className="flex items-center justify-between h-16">
+      <div className="px-20 md:px-20">
+        <div className="flex items-center justify-between h-24">
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
@@ -82,7 +82,7 @@ export default function Header({ shopUrl }: { shopUrl?: string | null }) {
           </Link>
 
           {/* Nav desktop */}
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-14">
             {navLinks.slice(0, 3).map((link) => (
               <Link
                 key={link.href}

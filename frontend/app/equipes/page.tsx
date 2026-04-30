@@ -1,5 +1,6 @@
 import { getTeams, getMediaUrl } from '../../lib/api'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata = {
   title: 'Nos Équipes — Jeune Entente Toulousaine',
@@ -35,10 +36,12 @@ export default async function EquipesPage() {
                 <div className="relative h-40 overflow-hidden">
                   {imageUrl ? (
                     <>
-                      <img
+                      <Image
                         src={imageUrl}
                         alt={team.name}
-                        className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                        fill
+                        className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                        sizes="(max-width: 768px) 50vw, 25vw"
                       />
                       <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 60%)' }} />
                     </>

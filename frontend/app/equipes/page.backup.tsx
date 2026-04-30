@@ -1,5 +1,6 @@
 import { getTeams, getMediaUrl } from '../../lib/api'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const TEAM_ORDER = ['Seniors', 'Seniors 2', 'U19', 'U17', 'U16', 'U15', 'U14', 'Féminines', 'U18 Féminines', 'U15 Féminines', 'Futsal']
 
@@ -16,7 +17,7 @@ export default async function EquipesPage() {
       <h1 className="text-3xl font-black uppercase mb-8 mt-8" style={{ color: 'var(--color-primary)' }}>
         Nos Équipes
       </h1>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-16">
         {teams.map((team: any) => {
           const imageUrl = getMediaUrl(team.image)
           return (
@@ -29,10 +30,12 @@ export default async function EquipesPage() {
                 <div className="relative h-40 overflow-hidden">
                   {imageUrl ? (
                     <>
-                      <img
+                      <Image
                         src={imageUrl}
                         alt={team.name}
-                        className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                        fill
+                        className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                        sizes="(max-width: 768px) 50vw, 25vw"
                       />
                       <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 60%)' }} />
                     </>

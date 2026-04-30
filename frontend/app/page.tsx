@@ -167,7 +167,7 @@ export default async function Home() {
                     </div>
                 </FadeIn>
                 {articles.length > 3 && (
-                    <div className="text-center mt-8">
+                    <div className="text-center mt-8 mb-8">
                         <Link href="/actualites" className="font-semibold underline" style={{ color: 'var(--color-accent)' }}>
                             Voir toutes les actualités →
                         </Link>
