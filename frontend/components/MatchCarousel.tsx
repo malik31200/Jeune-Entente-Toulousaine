@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 interface Match {
@@ -159,7 +159,19 @@ export default function MatchCarousel({ matches }: { matches: Match[] }) {
   const [startIndex, setStartIndex] = useState(0)
   const [direction, setDirection] = useState(1)
   const [hovered, setHovered] = useState(false)
-  const visible = 4
+  const [visible, setVisible] = useState(4)
+  const touchStartX = useRef<number | null>(null)
+
+  useEffect(() => {
+    const update = () => {
+      if (window.innerWidth < 640) setVisible(1)
+      else if (window.innerWidth < 1024) setVisible(2)
+      else setVisible(4)
+    }
+    update()
+    window.addEventListener('resize', update)
+    return () => window.removeEventListener('resize', update)
+  }, [])
 
   if (!matches.length) return null
 
@@ -184,6 +196,14 @@ export default function MatchCarousel({ matches }: { matches: Match[] }) {
       style={{ backgroundColor: 'var(--color-primary)' }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      onTouchStart={(e) => { touchStartX.current = e.touches[0].clientX }}
+      onTouchEnd={(e) => {
+        if (touchStartX.current === null) return
+        const diff = touchStartX.current - e.changedTouches[0].clientX
+        if (diff > 50) next()
+        else if (diff < -50) prev()
+        touchStartX.current = null
+      }}
     >
       <ArrowButton onClick={prev} disabled={!canPrev} direction="left" visible={hovered} />
       <ArrowButton onClick={next} disabled={!canNext} direction="right" visible={hovered} />

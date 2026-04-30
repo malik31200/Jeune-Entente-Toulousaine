@@ -82,7 +82,7 @@ export default function Header({ shopUrl }: { shopUrl?: string | null }) {
           </Link>
 
           {/* Nav desktop */}
-          <nav className="hidden md:flex items-center gap-14">
+          <nav className="hidden lg:flex items-center gap-14">
             {navLinks.slice(0, 3).map((link) => (
               <Link
                 key={link.href}
@@ -165,7 +165,7 @@ export default function Header({ shopUrl }: { shopUrl?: string | null }) {
 
           {/* Hamburger mobile */}
           <button
-            className="md:hidden text-white p-2"
+            className="lg:hidden text-white p-2"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Menu"
           >
@@ -177,7 +177,7 @@ export default function Header({ shopUrl }: { shopUrl?: string | null }) {
 
         {/* Nav mobile */}
         {menuOpen && (
-          <nav className="md:hidden pb-4 flex flex-col gap-3">
+          <nav className="lg:hidden pb-4 flex flex-col gap-3">
             {navLinks.slice(0, 3).map((link) => (
               <Link
                 key={link.href}

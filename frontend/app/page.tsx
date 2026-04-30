@@ -81,7 +81,7 @@ export default async function Home() {
 
                 {/* Contenu bas */}
                 <div className="container relative z-10" style={{ paddingBottom: '5rem' }}>
-                    <div className="flex items-end justify-between gap-6">
+                    <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between md:gap-6">
 
                         {/* Gauche : titre du club */}
                         <FadeIn>
@@ -115,7 +115,7 @@ export default async function Home() {
                         {/* Droite : dernier article */}
                         {heroArticle && (
                             <FadeIn delay={0.2}>
-                                <div className="flex flex-col items-center max-w-sm mb-20">
+                                <div className="flex flex-col items-center max-w-sm md:mb-20">
                                     <p className="text-white font-black uppercase mb-4 leading-tight text-center w-full" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.5rem)' }}>
                                         {heroArticle.title}
                                     </p>
