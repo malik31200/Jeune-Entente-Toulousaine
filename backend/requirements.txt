@@ -8,3 +8,8 @@ beautifulsoup4==4.12.3
 python-dotenv==1.0.1
 django-ckeditor==6.7.1
 django-apscheduler==0.6.2
+cloudinary==1.41.0
+django-cloudinary-storage==0.3.0
+dj-database-url==2.1.0
+gunicorn==21.2.0
+
