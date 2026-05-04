@@ -49,7 +49,7 @@ export default async function ArticleDetailPage({ params }: { params: { slug: st
       )}
 
       <div
-        className="leading-relaxed text-base"
+        className="article-content text-base"
         style={{ color: 'var(--color-text)' }}
         dangerouslySetInnerHTML={{ __html: article.content }}
       />
