@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState, useCallback } from 'react'
+import { useEffect, useState, useCallback, useRef } from 'react'
 
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api'
@@ -40,6 +40,8 @@ export default function GaleriePage() {
     window.addEventListener('keydown', handler)
     return () => window.removeEventListener('keydown', handler)
   }, [selectedIndex, prev, next])
+
+  const touchStartX = useRef<number | null>(null)
 
   const selectedUrl = selectedIndex !== null ? getMediaUrl(photos[selectedIndex]?.image) : null
 
@@ -81,8 +83,16 @@ export default function GaleriePage() {
       {selectedIndex !== null && selectedUrl && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center"
-          style={{ backgroundColor: 'rgba(0,0,0,0.94)' }}
+          style={{ backgroundColor: 'rgba(0,0,0,0.94)', touchAction: 'pan-y' }}
           onClick={close}
+          onTouchStart={e => { touchStartX.current = e.touches[0].clientX }}
+          onTouchEnd={e => {
+            if (touchStartX.current === null) return
+            const diff = touchStartX.current - e.changedTouches[0].clientX
+            if (diff > 50) { e.stopPropagation(); next() }
+            else if (diff < -50) { e.stopPropagation(); prev() }
+            touchStartX.current = null
+          }}
         >
           {/* Fermer */}
           <button
