@@ -67,7 +67,7 @@ export default async function Home() {
                             src={getMediaUrl(heroArticle.image)!}
                             alt={heroArticle.title}
                             fill
-                            className="object-cover object-center"
+                            className="object-cover object-top"
                             priority
                             sizes="100vw"
                         />
