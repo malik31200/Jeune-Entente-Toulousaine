@@ -221,7 +221,7 @@ export default function Header({ shopUrl }: { shopUrl?: string | null }) {
             </div>
 
             {/* Liens */}
-            <div className="flex-1 overflow-y-auto py-4 px-5 flex flex-col gap-1">
+            <div className="flex-1 py-4 px-5 flex flex-col gap-1" style={{ overflowY: 'auto', overflowX: 'hidden' }}>
               {navLinks.slice(0, 3).map((link) => (
                 <Link
                   key={link.href}

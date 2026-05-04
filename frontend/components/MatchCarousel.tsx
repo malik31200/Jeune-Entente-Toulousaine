@@ -193,7 +193,7 @@ export default function MatchCarousel({ matches }: { matches: Match[] }) {
   return (
     <section
       className="relative py-8"
-      style={{ backgroundColor: 'var(--color-primary)' }}
+      style={{ backgroundColor: 'var(--color-primary)', touchAction: 'pan-y' }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onTouchStart={(e) => { touchStartX.current = e.touches[0].clientX }}
