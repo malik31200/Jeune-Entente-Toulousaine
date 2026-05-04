@@ -20,7 +20,7 @@ class TeamAdmin(admin.ModelAdmin):
     search_fields = ['name']
     fieldsets = [
         (None, {'fields': ['name', 'category', 'description', 'image', 'order', 'coaches']}),
-        ('Classement FFF (API)', {'fields': ['ranking_api_url'], 'classes': ['collapse']}),
+        ('Classement FFF (API)', {'fields': ['cp_no', 'phase_no', 'poule_no', 'ranking_api_url'], 'classes': ['collapse']}),
     ]
 
 
