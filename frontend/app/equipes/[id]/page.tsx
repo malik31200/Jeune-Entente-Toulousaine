@@ -296,15 +296,15 @@ function ClassementTab({ stats, team }: { stats: any; team: any }) {
           {!rankLoading && ranking.length > 0 && (
             <>
               {/* En-tête colonnes */}
-              <div className="flex items-center gap-1 px-3 pb-2 text-gray-400 text-xs font-bold uppercase tracking-wider">
-                <span className="w-8 text-center">#</span>
+              <div className="flex items-center gap-0.5 px-3 pb-2 text-gray-400 text-xs font-bold uppercase tracking-wider">
+                <span className="w-6 text-center">#</span>
                 <span className="flex-1">Équipes</span>
-                <span className="w-10 text-center" style={{ color: 'var(--color-accent)' }}>Pts</span>
-                <span className="w-8 text-center">J</span>
-                <span className="w-8 text-center text-green-600">V</span>
-                <span className="w-8 text-center">N</span>
-                <span className="w-8 text-center text-red-500">D</span>
-                <span className="w-10 text-center">DB</span>
+                <span className="w-8 text-center" style={{ color: 'var(--color-accent)' }}>Pts</span>
+                <span className="w-6 text-center">J</span>
+                <span className="w-6 text-center text-green-600">V</span>
+                <span className="hidden sm:inline-block w-6 text-center">N</span>
+                <span className="w-6 text-center text-red-500">D</span>
+                <span className="w-8 text-center">DB</span>
               </div>
 
               <div className="flex flex-col gap-1.5">
@@ -314,7 +314,7 @@ function ClassementTab({ stats, team }: { stats: any; team: any }) {
                   return (
                     <motion.div
                       key={t.cl_no}
-                      className="flex items-center gap-1 px-3 py-3 rounded-xl shadow-sm"
+                      className="flex items-center gap-0.5 px-3 py-3 rounded-xl shadow-sm"
                       style={{
                         backgroundColor: isJet ? 'rgba(249,115,22,0.08)' : 'white',
                         border: isJet ? '2px solid rgba(249,115,22,0.4)' : '1px solid #e5e7eb',
@@ -323,23 +323,23 @@ function ClassementTab({ stats, team }: { stats: any; team: any }) {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: i * 0.04 }}
                     >
-                      <span className="w-8 text-center font-black text-base"
+                      <span className="w-6 text-center font-black text-sm"
                         style={{ color: isJet ? 'var(--color-accent)' : '#9ca3af' }}>
                         {t.rank}
                       </span>
-                      <span className="flex-1 text-sm font-bold truncate"
+                      <span className="flex-1 text-sm font-bold min-w-0 truncate"
                         style={{ color: isJet ? 'white' : 'var(--color-primary)' }}>
                         {isJet ? team.name : t.name}
                       </span>
-                      <span className="w-10 text-center font-black text-base"
+                      <span className="w-8 text-center font-black text-sm"
                         style={{ color: isJet ? 'var(--color-accent)' : 'var(--color-primary)' }}>
                         {t.pts}
                       </span>
-                      <span className="w-8 text-center text-gray-500 text-sm">{t.j}</span>
-                      <span className="w-8 text-center text-green-600 text-sm">{t.g}</span>
-                      <span className="w-8 text-center text-gray-500 text-sm">{t.n}</span>
-                      <span className="w-8 text-center text-red-500 text-sm">{t.p}</span>
-                      <span className={`w-10 text-center text-sm font-semibold ${diff > 0 ? 'text-green-600' : diff < 0 ? 'text-red-500' : 'text-gray-400'}`}>
+                      <span className="w-6 text-center text-gray-500 text-xs">{t.j}</span>
+                      <span className="w-6 text-center text-green-600 text-xs">{t.g}</span>
+                      <span className="hidden sm:inline-block w-6 text-center text-gray-500 text-xs">{t.n}</span>
+                      <span className="w-6 text-center text-red-500 text-xs">{t.p}</span>
+                      <span className={`w-8 text-center text-xs font-semibold ${diff > 0 ? 'text-green-600' : diff < 0 ? 'text-red-500' : 'text-gray-400'}`}>
                         {diff > 0 ? `+${diff}` : diff}
                       </span>
                     </motion.div>

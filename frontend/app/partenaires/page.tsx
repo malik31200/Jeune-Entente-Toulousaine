@@ -16,7 +16,8 @@ export default async function PartenairesPage() {
       <h1 className="text-3xl font-black uppercase mb-2 mt-10" style={{ color: 'var(--color-primary)' }}>
         Nos Partenaires
       </h1>
-      <p className="text-gray-500 mb-10 mt-8">Merci à tous nos partenaires pour leur soutien au club.</p>
+      <div className="h-1 w-16 mb-8" style={{ backgroundColor: 'var(--color-accent)' }} />
+      <p className="text-gray-500 mb-10">Merci à tous nos partenaires pour leur soutien au club.</p>
 
       {sponsors.length === 0 ? (
         <p className="text-gray-400">Aucun partenaire à afficher pour le moment.</p>

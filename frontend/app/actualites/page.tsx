@@ -22,9 +22,10 @@ export default async function ActualitesPage({
 
   return (
     <div className="container py-12" style={{ paddingBottom: '8rem' }}>
-      <h1 className="text-3xl font-black uppercase mb-16 mt-8" style={{ color: 'var(--color-primary)' }}>
+      <h1 className="text-3xl font-black uppercase mb-2 mt-8" style={{ color: 'var(--color-primary)' }}>
         Actualités
       </h1>
+      <div className="h-1 w-16 mb-10" style={{ backgroundColor: 'var(--color-accent)' }} />
 
       {articles.length === 0 && (
         <p className="text-gray-500">Aucune actualité pour le moment.</p>

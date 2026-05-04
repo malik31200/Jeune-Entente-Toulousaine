@@ -63,9 +63,10 @@ export default function HorairesPage() {
 
   return (
     <div className="container py-12" style={{ paddingBottom: '5rem' }}>
-      <h1 className="text-3xl text-center font-black uppercase mt-12 mb-12" style={{ color: 'var(--color-primary)' }}>
+      <h1 className="text-3xl text-center font-black uppercase mt-12 mb-2" style={{ color: 'var(--color-primary)' }}>
         Horaires d'entraînement
       </h1>
+      <div className="h-1 w-16 mb-12 mx-auto" style={{ backgroundColor: 'var(--color-accent)' }} />
 
       {Object.keys(byTeam).length === 0 && (
         <p className="text-gray-500">Aucun horaire disponible pour le moment.</p>

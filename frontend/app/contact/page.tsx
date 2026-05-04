@@ -30,9 +30,10 @@ export default function ContactPage() {
 
   return (
     <div className="container py-12 max-w-2xl" style={{ paddingBottom: '5rem' }}>
-      <h1 className="text-3xl font-black uppercase mb-10 mt-10" style={{ color: 'var(--color-primary)' }}>
+      <h1 className="text-3xl font-black uppercase mb-2 mt-10" style={{ color: 'var(--color-primary)' }}>
         Nous contacter
       </h1>
+      <div className="h-1 w-16 mb-8" style={{ backgroundColor: 'var(--color-accent)' }} />
       <p className="text-gray-500 mb-10">
         Une question, une inscription ? Envoyez-nous un message et nous vous répondrons rapidement.
       </p>
