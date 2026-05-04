@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 
@@ -42,6 +42,16 @@ export default function Header({ shopUrl }: { shopUrl?: string | null }) {
     setMenuOpen(false)
     setMobileEquipesOpen(false)
   }
+
+  // Bloquer le scroll de la page quand la sidebar est ouverte
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => { document.body.style.overflow = '' }
+  }, [menuOpen])
 
   return (
     <>
