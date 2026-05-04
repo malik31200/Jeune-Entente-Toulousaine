@@ -263,13 +263,14 @@ export default function Header({ shopUrl }: { shopUrl?: string | null }) {
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.2 }}
-                    className="overflow-hidden pl-3 flex flex-col gap-1"
+                    className="overflow-hidden grid grid-cols-2 gap-2 pb-2"
                   >
                     {equipesDropdown.map((link) => (
                       <Link
                         key={link.href}
                         href={link.href}
-                        className="text-gray-400 hover:text-white text-sm py-2.5 border-b border-white/5"
+                        className="text-gray-300 hover:text-white text-sm py-2 px-3 rounded text-center"
+                        style={{ backgroundColor: 'rgba(255,255,255,0.07)' }}
                         onClick={closeMenu}
                       >
                         {link.label}
