@@ -200,8 +200,8 @@ export default function Header({ shopUrl }: { shopUrl?: string | null }) {
       <AnimatePresence>
         {menuOpen && (
           <motion.nav
-            className="fixed top-0 left-0 h-full z-50 flex flex-col"
-            style={{ width: '75vw', maxWidth: '320px', backgroundColor: 'var(--color-primary)' }}
+            className="fixed top-0 left-0 z-50 flex flex-col"
+            style={{ width: '75vw', maxWidth: '320px', height: '100dvh', backgroundColor: 'var(--color-primary)' }}
             initial={{ x: '-100%' }}
             animate={{ x: 0 }}
             exit={{ x: '-100%' }}
@@ -221,7 +221,7 @@ export default function Header({ shopUrl }: { shopUrl?: string | null }) {
             </div>
 
             {/* Liens */}
-            <div className="flex-1 py-4 px-5 flex flex-col gap-1" style={{ overflowY: 'auto', overflowX: 'hidden' }}>
+            <div className="flex-1 py-4 px-5 flex flex-col gap-1" style={{ overflowY: 'auto', overflowX: 'hidden', WebkitOverflowScrolling: 'touch' }}>
               {navLinks.slice(0, 3).map((link) => (
                 <Link
                   key={link.href}
