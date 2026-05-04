@@ -1,4 +1,6 @@
 from django.contrib import admin
+from django.core.management import call_command
+from django.contrib import messages
 from .models import Article, Team, Player, TrainingSchedule, Match, TeamStats, Sponsor, SiteSettings, ClubPage, GalleryPhoto, CategoryPage, TeamPresentation, Detection
 
 
@@ -35,11 +37,20 @@ class TrainingScheduleAdmin(admin.ModelAdmin):
     list_filter = ['team', 'day_of_week', 'is_active']
 
 
+def scraper_fff_action(modeladmin, request, queryset):
+    try:
+        call_command('scrape_fff')
+        messages.success(request, 'Scraping FFF terminé avec succès !')
+    except Exception as e:
+        messages.error(request, f'Erreur scraping : {e}')
+scraper_fff_action.short_description = '🔄 Lancer le scraping FFF maintenant'
+
 @admin.register(Match)
 class MatchAdmin(admin.ModelAdmin):
     list_display = ['home_team', 'away_team', 'date', 'team', 'status', 'home_score', 'away_score']
     list_filter = ['team', 'status']
     search_fields = ['home_team', 'away_team', 'competition']
+    actions = [scraper_fff_action]
 
 
 @admin.register(TeamStats)
