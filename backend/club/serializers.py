@@ -19,7 +19,7 @@ class ArticleSerializer(serializers.ModelSerializer):
 class TeamSerializer(serializers.ModelSerializer):
     class Meta:
         model = Team
-        fields = ['id', 'name', 'category', 'description', 'image', 'order', 'cp_no', 'phase_no', 'poule_no', 'coaches']
+        fields = ['id', 'name', 'category', 'description', 'image', 'order', 'cp_no', 'phase_no', 'poule_no', 'phase_no_2', 'poule_no_2', 'coaches']
 
 
 class TrainingScheduleSerializer(serializers.ModelSerializer):

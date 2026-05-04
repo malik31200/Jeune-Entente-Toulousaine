@@ -39,6 +39,9 @@ class Team(models.Model):
                              help_text="Identifiant compétition (ex: 434763)")
     phase_no = models.IntegerField(default=1, verbose_name="FFF phase")
     poule_no = models.IntegerField(default=1, verbose_name="FFF poule")
+    phase_no_2 = models.IntegerField(null=True, blank=True, verbose_name="FFF phase 2 (optionnel)",
+                                     help_text="Si l'équipe a une phase 2 (ex: playoffs)")
+    poule_no_2 = models.IntegerField(null=True, blank=True, verbose_name="FFF poule phase 2")
     coaches = models.TextField(blank=True, verbose_name="Staff / Coachs",
                                help_text="Un nom par ligne")
 

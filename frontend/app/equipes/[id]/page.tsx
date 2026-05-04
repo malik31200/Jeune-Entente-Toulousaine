@@ -9,12 +9,6 @@ const SEASON_MONTH_ORDER = [7, 8, 9, 10, 11, 0, 1, 2, 3, 4, 5, 6]
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api'
 const MONTH_NAMES = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre']
 
-function getMediaUrl(url: string | null | undefined): string | null {
-  if (!url) return null
-  if (url.startsWith('http://backend:8000')) return url.replace('http://backend:8000', 'http://localhost:8000')
-  if (url.startsWith('/media/')) return `http://localhost:8000${url}`
-  return url
-}
 
 function getSeason(date: Date): string {
   const y = date.getFullYear()
@@ -234,18 +228,20 @@ const JET_CL_NO = 11641
 function ClassementTab({ stats, team }: { stats: any; team: any }) {
   const [ranking, setRanking] = useState<any[]>([])
   const [rankLoading, setRankLoading] = useState(false)
+  const hasPhase2 = !!(team?.phase_no_2)
+  const [selectedPhase, setSelectedPhase] = useState<1 | 2>(1)
 
   useEffect(() => {
     if (!team?.cp_no) return
     setRankLoading(true)
-    const phase = team.phase_no ?? 1
-    const poule = team.poule_no ?? 1
+    const phase = selectedPhase === 2 ? (team.phase_no_2 ?? 2) : (team.phase_no ?? 1)
+    const poule = selectedPhase === 2 ? (team.poule_no_2 ?? 1) : (team.poule_no ?? 1)
     fetch(`${API_URL}/classement/?cp_no=${team.cp_no}&phase=${phase}&poule=${poule}`)
       .then(r => r.json())
       .then(data => setRanking(Array.isArray(data) ? data : []))
       .catch(() => setRanking([]))
       .finally(() => setRankLoading(false))
-  }, [team?.cp_no, team?.phase_no, team?.poule_no])
+  }, [team?.cp_no, team?.phase_no, team?.poule_no, team?.phase_no_2, team?.poule_no_2, selectedPhase])
 
   if (!team?.cp_no && !stats) {
     return (
@@ -259,6 +255,25 @@ function ClassementTab({ stats, team }: { stats: any; team: any }) {
     <div className="pb-20" style={{ backgroundColor: 'var(--color-primary)', minHeight: '60vh' }}>
       <div className="container" style={{ paddingTop: '4rem', paddingBottom: '2.5rem' }}>
         <div className="max-w-2xl">
+
+          {/* Sélecteur Phase 1 / Phase 2 */}
+          {hasPhase2 && (
+            <div className="flex gap-2 mb-6">
+              {([1, 2] as const).map(p => (
+                <button
+                  key={p}
+                  onClick={() => setSelectedPhase(p)}
+                  className="px-4 py-2 rounded-lg text-sm font-bold transition-all"
+                  style={{
+                    backgroundColor: selectedPhase === p ? 'var(--color-accent)' : 'rgba(255,255,255,0.08)',
+                    color: selectedPhase === p ? 'var(--color-primary)' : '#9ca3af',
+                  }}
+                >
+                  Phase {p}
+                </button>
+              ))}
+            </div>
+          )}
 
           {/* En-tête compétition */}
           {stats && (
