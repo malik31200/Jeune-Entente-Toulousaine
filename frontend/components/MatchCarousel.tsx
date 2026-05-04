@@ -215,7 +215,7 @@ export default function MatchCarousel({ matches }: { matches: Match[] }) {
         </h2>
 
         <div
-          className="grid gap-4"
+          className="grid gap-4 overflow-hidden"
           style={{ gridTemplateColumns: `repeat(${Math.min(visible, matches.length)}, 1fr)` }}
         >
           <AnimatePresence mode="popLayout" initial={false}>
