@@ -192,7 +192,7 @@ export default function MatchCarousel({ matches }: { matches: Match[] }) {
 
   return (
     <section
-      className="relative py-8"
+      className="relative py-8 overflow-hidden"
       style={{ backgroundColor: 'var(--color-primary)', touchAction: 'pan-y' }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -215,7 +215,7 @@ export default function MatchCarousel({ matches }: { matches: Match[] }) {
         </h2>
 
         <div
-          className="grid gap-4 overflow-hidden"
+          className="grid gap-4"
           style={{ gridTemplateColumns: `repeat(${Math.min(visible, matches.length)}, 1fr)` }}
         >
           <AnimatePresence mode="popLayout" initial={false}>
