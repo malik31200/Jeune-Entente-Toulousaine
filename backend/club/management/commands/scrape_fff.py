@@ -80,9 +80,12 @@ class Command(BaseCommand):
         category_code = our_team_data.get('category_code', '')
         team_code = our_team_data.get('code', 1)
         competition_name = competition.get('name', '') if competition else ''
+        phase = data.get('phase', {})
+        poule = data.get('poule', {})
         team = self.get_or_create_team(category_code, competition_name, team_code)
         if not team:
             return None
+        self.update_team_classement(team, competition, phase, poule)
         
         date_str = data.get('date')
         time_str = data.get('time', '00H00')
@@ -134,6 +137,14 @@ class Command(BaseCommand):
             defaults={'category': category_code, 'order': 0}
         )
         return team
+
+    def update_team_classement(self, team, competition, phase, poule):
+        cp_no = str(competition.get('cp_no', '')) if competition else ''
+        phase_no = phase.get('number', 1) if phase else 1
+        poule_no = poule.get('stage_number', 1) if poule else 1
+        if cp_no and team.cp_no != cp_no:
+            Team.objects.filter(pk=team.pk).update(cp_no=cp_no, phase_no=phase_no, poule_no=poule_no)
+            team.cp_no = cp_no
     
     def parse_date(self, date_str, time_str='00H00'):
         if not date_str:
