@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 python manage.py migrate --noinput
+python manage.py collectstatic --noinput
 
 echo "DEBUG: DJANGO_SUPERUSER_USERNAME='$DJANGO_SUPERUSER_USERNAME'"
 echo "DEBUG: PASSWORD_LEN=${#DJANGO_SUPERUSER_PASSWORD}"
