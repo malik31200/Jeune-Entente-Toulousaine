@@ -120,6 +120,7 @@ class Match(models.Model):
         ('EN_COURS', 'En cours'),
     ]
 
+    ma_no = models.BigIntegerField(null=True, blank=True, unique=True, verbose_name="ID FFF match")
     date = models.DateTimeField()
     home_team = models.CharField(max_length=200)
     away_team = models.CharField(max_length=200)

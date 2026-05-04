@@ -98,19 +98,20 @@ class Command(BaseCommand):
 
         match_status = self.determine_status(match_date, home_score, away_score)
 
+        ma_no = data.get('ma_no')
         match, was_created = Match.objects.update_or_create(
-            home_team=home_name,
-            away_team=away_name,
-            date=match_date,
+            ma_no=ma_no,
             defaults={
                 'team': team,
+                'home_team': home_name,
+                'away_team': away_name,
+                'date': match_date,
                 'home_score': home_score,
                 'away_score': away_score,
                 'competition': competition_name,
                 'location': location,
                 'is_home': is_home,
                 'status': match_status,
-                'scraped_at': timezone.now(),
             }
         )
 
