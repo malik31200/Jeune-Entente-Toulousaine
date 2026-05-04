@@ -5,6 +5,8 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { getSiteSettings } from '../lib/api'
 
+export const dynamic = 'force-dynamic'
+
 const bebasNeue = Bebas_Neue({
   weight: '400',
   subsets: ['latin'],
