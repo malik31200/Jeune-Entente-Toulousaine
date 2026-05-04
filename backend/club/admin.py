@@ -45,12 +45,18 @@ def scraper_fff_action(modeladmin, request, queryset):
         messages.error(request, f'Erreur scraping : {e}')
 scraper_fff_action.short_description = '🔄 Lancer le scraping FFF maintenant'
 
+def supprimer_doublons_action(modeladmin, request, queryset):
+    from club.models import Match
+    deleted, _ = Match.objects.filter(ma_no__isnull=True).delete()
+    messages.success(request, f'{deleted} anciens matchs sans ID FFF supprimés.')
+supprimer_doublons_action.short_description = '🗑️ Supprimer les anciens matchs en double (sans ID FFF)'
+
 @admin.register(Match)
 class MatchAdmin(admin.ModelAdmin):
     list_display = ['home_team', 'away_team', 'date', 'team', 'status', 'home_score', 'away_score']
     list_filter = ['team', 'status']
     search_fields = ['home_team', 'away_team', 'competition']
-    actions = [scraper_fff_action]
+    actions = [scraper_fff_action, supprimer_doublons_action]
 
 
 @admin.register(TeamStats)
