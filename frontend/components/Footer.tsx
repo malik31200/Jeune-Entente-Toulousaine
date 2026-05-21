@@ -85,7 +85,15 @@ export default async function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-4 mt-4 uppercase text-sm tracking-wider">Contact</h3>
             <p className="text-gray-400 text-sm">
-              <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x12aea34fee9193e3:0x511aa5b8dee9bccf?sa=X&ved=1t:8290&ictx=111">Complexe sportif Borderouge <br />3 Rue Hubert Monloup, 31200 Toulouse</a></p>
+              <a
+                href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x12aea34fee9193e3:0x511aa5b8dee9bccf?sa=X&ved=1t:8290&ictx=111"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors underline underline-offset-2"
+                style={{ color: 'var(--color-accent)' }}
+              >
+                📍 Complexe sportif Borderouge<br />3 Rue Hubert Monloup, 31200 Toulouse
+              </a></p>
             <p className="text-gray-400 text-sm mb-4">05 61 48 79 66</p>
             <div className="flex flex-col items-start gap-3">
               <Link href="/contact"
