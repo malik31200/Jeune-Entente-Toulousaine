@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { getMediaUrl } from '../lib/api'
 
 interface Article {
   slug: string
@@ -13,10 +14,9 @@ interface Article {
 
 interface Props {
   articles: Article[]
-  getMediaUrl: (url: string) => string | null
 }
 
-export default function NewsCards({ articles, getMediaUrl }: Props) {
+export default function NewsCards({ articles }: Props) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       {articles.slice(0, 3).map((article, i) => (

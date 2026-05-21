@@ -152,7 +152,7 @@ export default async function Home() {
                         Dernières actualités
                     </h2>
                 </FadeIn>
-                <NewsCards articles={articles} getMediaUrl={getMediaUrl} />
+                <NewsCards articles={articles} />
                 {articles.length > 3 && (
                     <div className="text-center mt-8 mb-8">
                         <Link href="/actualites" className="font-semibold underline" style={{ color: 'var(--color-accent)' }}>
