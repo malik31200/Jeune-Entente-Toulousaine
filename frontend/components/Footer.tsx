@@ -31,52 +31,82 @@ export default async function Footer() {
 
   return (
     <footer style={{ backgroundColor: 'var(--color-primary)' }} className="mt-16">
-      <div className="container py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-          {/* Logo + description + réseaux */}
-          <div>
-            <div className="flex items-center gap-3 mb-4 mt-4">
-              <Image src="/logo.png" alt="Logo JET" width={40} height={40} className="object-cover rounded-full" />
-              <div>
-                <p className="leading-none" style={{ color: 'var(--color-accent)', fontFamily: 'GraffitiYouth', fontSize: '1.5rem' }}>La JET</p>
-                <p className="text-gray-300 text-xs leading-none mt-0.5 tracking-widest uppercase">Jeune Entente Toulousaine</p>
-              </div>
+      {/* ── Bandeau supérieur ── */}
+      <div className="border-b border-gray-800">
+        <div className="container py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+
+          {/* Logo */}
+          <div className="flex items-center gap-3">
+            <Image src="/logo.png" alt="Logo JET" width={48} height={48} className="object-cover rounded-full" />
+            <div>
+              <p className="leading-none" style={{ color: 'var(--color-accent)', fontFamily: 'GraffitiYouth', fontSize: '1.5rem' }}>La JET</p>
+              <p className="text-gray-400 text-xs leading-none mt-0.5 tracking-widest uppercase">Jeune Entente Toulousaine</p>
             </div>
-            <p className="text-gray-400 text-sm mb-4">
-              Club de football toulousain fondé avec passion.<br />Rejoignez l'aventure JET !
-            </p>
-            {settings && (
-              <div className="flex gap-3">
-                {socials.map(({ key, label, icon }) =>
-                  settings[key] ? (
-                    <a key={key} href={settings[key]} target="_blank" rel="noopener noreferrer"
-                       aria-label={label}
-                       className="text-gray-400 hover:text-white transition-colors">
-                      {icon}
-                    </a>
-                  ) : null
-                )}
-              </div>
-            )}
           </div>
 
-          {/* Navigation */}
-          <div className="flex flex-col items-center">
-            <h3 className="text-white font-semibold mb-4 mt-4 uppercase text-sm tracking-wider">Navigation</h3>
-            <ul className="grid grid-cols-2 gap-x-8 gap-y-2">
+          {/* Slogan */}
+          <p className="text-sm italic font-medium hidden md:block" style={{ color: 'var(--color-accent)' }}>
+            Club de football toulousain fondé avec passion.<br />
+            Rejoignez l&apos;aventure JET !
+          </p>
+
+          {/* Réseaux sociaux */}
+          {settings && (
+            <div className="flex gap-3">
+              {socials.map(({ key, label, icon }) =>
+                settings[key] ? (
+                  <a key={key} href={settings[key]} target="_blank" rel="noopener noreferrer"
+                     aria-label={label}
+                     className="text-gray-400 hover:text-white transition-colors">
+                    {icon}
+                  </a>
+                ) : null
+              )}
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* ── Colonnes principales ── */}
+      <div className="container py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+          {/* NAVIGATION */}
+          <div>
+            <h3 className="font-bold mb-5 uppercase text-xs tracking-widest" style={{ color: 'var(--color-accent)' }}>
+              Navigation
+            </h3>
+            <ul className="space-y-2.5">
               {[
                 { href: '/', label: 'Accueil' },
-                { href: '/club', label: 'Le Club' },
                 { href: '/actualites', label: 'Actualités' },
-                { href: '/horaires', label: 'Entraînements' },
                 { href: '/equipes', label: 'Équipes — Foot à 11' },
-                { href: '/detections', label: 'Détections' },
                 { href: '/equipes/foot-a-8', label: 'Équipes — Foot à 8' },
-                { href: '/galerie', label: 'Galerie' },
                 { href: '/equipes/foot-a-5', label: 'Équipes — Foot à 5' },
-                { href: '/partenaires', label: 'Partenaires' },
                 { href: '/equipes/futsal', label: 'Équipes — Futsal' },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-gray-400 hover:text-white text-sm transition-colors">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* LE CLUB */}
+          <div>
+            <h3 className="font-bold mb-5 uppercase text-xs tracking-widest" style={{ color: 'var(--color-accent)' }}>
+              Le Club
+            </h3>
+            <ul className="space-y-2.5">
+              {[
+                { href: '/club', label: 'Notre Club' },
+                { href: '/horaires', label: 'Entraînements' },
+                { href: '/detections', label: 'Détections' },
+                { href: '/galerie', label: 'Galerie' },
+                { href: '/partenaires', label: 'Partenaires' },
                 { href: '/contact', label: 'Contact' },
               ].map((link) => (
                 <li key={link.href}>
@@ -88,53 +118,65 @@ export default async function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* CONTACT */}
           <div>
-            <h3 className="text-white font-semibold mb-4 mt-4 uppercase text-sm tracking-wider">Contact</h3>
-            <p className="text-gray-400 text-sm">
+            <h3 className="font-bold mb-5 uppercase text-xs tracking-widest" style={{ color: 'var(--color-accent)' }}>
+              Contact
+            </h3>
+
+            <div className="space-y-3 mb-6">
               <a
                 href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x12aea34fee9193e3:0x511aa5b8dee9bccf?sa=X&ved=1t:8290&ictx=111"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-white transition-colors"
+                className="flex gap-2 hover:text-white transition-colors text-sm"
                 style={{ color: 'var(--color-accent)' }}
               >
-                <span className="inline-flex gap-2">
-                  <span>📍</span>
-                  <span className="underline underline-offset-2">Complexe sportif Borderouge<br />3 Rue Hubert Monloup, 31200 Toulouse</span>
+                <span className="mt-0.5">📍</span>
+                <span className="underline underline-offset-2 text-gray-400 hover:text-white transition-colors">
+                  Complexe sportif Borderouge<br />
+                  3 Rue Hubert Monloup<br />
+                  31200 Toulouse
                 </span>
-              </a></p>
-            <p className="text-sm mt-3 mb-4">
+              </a>
+
               <a
                 href="tel:+33561487966"
-                className="hover:text-white transition-colors"
+                className="flex gap-2 items-center text-sm hover:text-white transition-colors"
                 style={{ color: 'var(--color-accent)' }}
               >
-                📞 <span className="underline underline-offset-2">05 61 48 79 66</span>
+                <span>📞</span>
+                <span className="underline underline-offset-2 text-gray-400 hover:text-white transition-colors">
+                  05 61 48 79 66
+                </span>
               </a>
-            </p>
+            </div>
+
             <div className="flex flex-col items-start gap-3">
               <Link href="/contact"
-                className="inline-block text-sm font-semibold px-4 py-2 rounded transition-colors"
+                className="inline-block text-sm font-bold px-5 py-2.5 rounded transition-opacity hover:opacity-90"
                 style={{ backgroundColor: 'var(--color-accent)', color: 'var(--color-primary)' }}>
                 Nous contacter
               </Link>
               {settings?.shop_url && (
                 <a href={settings.shop_url} target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-2 rounded border transition-colors"
+                  className="inline-flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded border transition-colors hover:bg-white/5"
                   style={{ borderColor: 'var(--color-accent)', color: 'var(--color-accent)' }}>
                   🛒 Boutique
                 </a>
               )}
             </div>
-
           </div>
         </div>
+      </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-6 text-center text-gray-500 text-sm">
+      {/* ── Copyright ── */}
+      <div className="border-t border-gray-800">
+        <div className="container py-5 text-center text-gray-500 text-xs">
           © {new Date().getFullYear()} Jeune Entente Toulousaine. Tous droits réservés.
         </div>
       </div>
+
     </footer>
   )
 }
