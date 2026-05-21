@@ -29,6 +29,7 @@ export default function Header({ shopUrl }: { shopUrl?: string | null }) {
   const [equipesOpen, setEquipesOpen] = useState(false)
   const [mobileEquipesOpen, setMobileEquipesOpen] = useState(false)
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const swipeStartX = useRef<number | null>(null)
 
   const openDropdown = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current)
@@ -51,6 +52,25 @@ export default function Header({ shopUrl }: { shopUrl?: string | null }) {
       document.body.style.overflow = ''
     }
     return () => { document.body.style.overflow = '' }
+  }, [menuOpen])
+
+  // Swipe depuis le bord gauche pour ouvrir la sidebar
+  useEffect(() => {
+    const onStart = (e: TouchEvent) => {
+      if (menuOpen) return
+      if (e.touches[0].clientX < 30) swipeStartX.current = e.touches[0].clientX
+    }
+    const onEnd = (e: TouchEvent) => {
+      if (menuOpen || swipeStartX.current === null) return
+      if (e.changedTouches[0].clientX - swipeStartX.current > 60) setMenuOpen(true)
+      swipeStartX.current = null
+    }
+    document.addEventListener('touchstart', onStart)
+    document.addEventListener('touchend', onEnd)
+    return () => {
+      document.removeEventListener('touchstart', onStart)
+      document.removeEventListener('touchend', onEnd)
+    }
   }, [menuOpen])
 
   return (
@@ -216,6 +236,12 @@ export default function Header({ shopUrl }: { shopUrl?: string | null }) {
             animate={{ x: 0 }}
             exit={{ x: '-100%' }}
             transition={{ type: 'tween', duration: 0.3, ease: 'easeInOut' }}
+            onTouchStart={e => { swipeStartX.current = e.touches[0].clientX }}
+            onTouchEnd={e => {
+              if (swipeStartX.current === null) return
+              if (swipeStartX.current - e.changedTouches[0].clientX > 60) closeMenu()
+              swipeStartX.current = null
+            }}
           >
             {/* En-tête sidebar */}
             <div className="flex items-center justify-between px-5 py-5 border-b border-white/10">
