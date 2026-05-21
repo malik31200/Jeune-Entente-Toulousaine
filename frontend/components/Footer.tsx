@@ -67,16 +67,16 @@ export default async function Footer() {
             <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
               {[
                 { href: '/', label: 'Accueil' },
-                { href: '/actualites', label: 'Actualités' },
                 { href: '/club', label: 'Le Club' },
-                { href: '/equipes', label: 'Équipes — Foot à 11' },
-                { href: '/equipes/foot-a-8', label: 'Équipes — Foot à 8' },
-                { href: '/equipes/foot-a-5', label: 'Équipes — Foot à 5' },
-                { href: '/equipes/futsal', label: 'Équipes — Futsal' },
+                { href: '/actualites', label: 'Actualités' },
                 { href: '/horaires', label: 'Entraînements' },
+                { href: '/equipes', label: 'Équipes — Foot à 11' },
                 { href: '/detections', label: 'Détections' },
+                { href: '/equipes/foot-a-8', label: 'Équipes — Foot à 8' },
                 { href: '/galerie', label: 'Galerie' },
+                { href: '/equipes/foot-a-5', label: 'Équipes — Foot à 5' },
                 { href: '/partenaires', label: 'Partenaires' },
+                { href: '/equipes/futsal', label: 'Équipes — Futsal' },
                 { href: '/contact', label: 'Contact' },
               ].map((link) => (
                 <li key={link.href}>
