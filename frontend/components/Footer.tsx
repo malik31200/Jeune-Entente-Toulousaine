@@ -94,7 +94,15 @@ export default async function Footer() {
               >
                 📍 Complexe sportif Borderouge<br />3 Rue Hubert Monloup, 31200 Toulouse
               </a></p>
-            <p className="text-gray-400 text-sm mb-4">05 61 48 79 66</p>
+            <p className="text-sm mb-4">
+              <a
+                href="tel:+33561487966"
+                className="hover:text-white transition-colors underline underline-offset-2"
+                style={{ color: 'var(--color-accent)' }}
+              >
+                📞 05 61 48 79 66
+              </a>
+            </p>
             <div className="flex flex-col items-start gap-3">
               <Link href="/contact"
                 className="inline-block text-sm font-semibold px-4 py-2 rounded transition-colors"
