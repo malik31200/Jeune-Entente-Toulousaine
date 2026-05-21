@@ -49,7 +49,7 @@ function MatchCard({ match }: { match: Match }) {
 
   return (
     <motion.div
-      className="rounded-xl overflow-hidden w-full"
+      className="rounded-xl overflow-hidden w-full h-full flex flex-col"
       style={{
         backgroundColor: '#1a1a1a',
         border: '1px solid rgba(255,255,255,0.07)',
@@ -62,26 +62,28 @@ function MatchCard({ match }: { match: Match }) {
       transition={{ duration: 0.2, ease: 'easeOut' }}
     >
       {/* Bande couleur résultat */}
-      <div className="h-1 w-full" style={{ backgroundColor: stripColor }} />
+      <div className="h-1 w-full flex-shrink-0" style={{ backgroundColor: stripColor }} />
 
-      {/* Compétition + catégorie */}
-      <div className="px-4 pt-3 pb-2">
+      {/* Compétition + catégorie — hauteur fixe */}
+      <div className="px-4 pt-3 pb-2 flex-shrink-0" style={{ minHeight: '60px' }}>
         <p className="text-xs font-bold uppercase tracking-wider truncate" style={{ color: 'var(--color-accent)' }}>
           {match.competition}
         </p>
-        {match.team_name && (
-          <span
-            className="inline-block text-xs font-semibold mt-1.5 px-2 py-0.5 rounded-full"
-            style={{ backgroundColor: 'rgba(249,115,22,0.12)', color: 'rgba(249,115,22,0.85)' }}
-          >
-            {match.team_name}
-          </span>
-        )}
+        <div className="h-6 mt-1.5 flex items-center">
+          {match.team_name && (
+            <span
+              className="inline-block text-xs font-semibold px-2 py-0.5 rounded-full"
+              style={{ backgroundColor: 'rgba(249,115,22,0.12)', color: 'rgba(249,115,22,0.85)' }}
+            >
+              {match.team_name}
+            </span>
+          )}
+        </div>
       </div>
 
-      {/* Équipes + score */}
-      <div className="px-4 py-2">
-        <div className="flex items-center gap-1">
+      {/* Équipes + score — grandit pour remplir */}
+      <div className="px-4 py-2 flex-1 flex items-center">
+        <div className="flex items-center gap-1 w-full">
           <div className="flex-1 text-right min-w-0">
             <p className={`font-black text-sm leading-tight truncate ${jetIsHome ? 'text-white' : 'text-gray-500'}`}>
               {match.home_team}
@@ -106,7 +108,7 @@ function MatchCard({ match }: { match: Match }) {
 
       {/* Date + badge */}
       <div
-        className="px-4 pb-4 pt-2 flex items-center justify-between gap-2 border-t"
+        className="px-4 pb-4 pt-2 flex-shrink-0 flex items-center justify-between gap-2 border-t"
         style={{ borderColor: 'rgba(235, 231, 231, 0.06)' }}
       >
         <span className="text-xs text-gray-500">{dateStr} · {timeStr}</span>
@@ -226,6 +228,7 @@ export default function MatchCarousel({ matches }: { matches: Match[] }) {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: direction > 0 ? -50 : 50 }}
                 transition={{ duration: 0.25, ease: 'easeOut' }}
+                className="h-full"
               >
                 <MatchCard match={match} />
               </motion.div>
