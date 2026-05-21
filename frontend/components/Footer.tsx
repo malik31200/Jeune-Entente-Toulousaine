@@ -8,84 +8,90 @@ export default async function Footer() {
 
   const socials = [
     { key: 'facebook_url', label: 'Facebook', icon: (
-      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
         <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
       </svg>
     )},
     { key: 'instagram_url', label: 'Instagram', icon: (
-      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
         <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
       </svg>
     )},
     { key: 'twitter_url', label: 'X / Twitter', icon: (
-      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
       </svg>
     )},
     { key: 'youtube_url', label: 'YouTube', icon: (
-      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
         <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
       </svg>
     )},
   ]
 
+  const navLinks = [
+    { href: '/', label: 'Accueil' },
+    { href: '/actualites', label: 'Actualités' },
+    { href: '/equipes', label: 'Foot à 11' },
+    { href: '/equipes/foot-a-8', label: 'Foot à 8' },
+    { href: '/equipes/foot-a-5', label: 'Foot à 5' },
+    { href: '/equipes/futsal', label: 'Futsal' },
+  ]
+
+  const clubLinks = [
+    { href: '/club', label: 'Notre Club' },
+    { href: '/horaires', label: 'Entraînements' },
+    { href: '/detections', label: 'Détections' },
+    { href: '/galerie', label: 'Galerie' },
+    { href: '/partenaires', label: 'Partenaires' },
+    { href: '/contact', label: 'Contact' },
+  ]
+
   return (
-    <footer style={{ backgroundColor: 'var(--color-primary)' }} className="mt-16">
+    <footer style={{ backgroundColor: '#0a0a0a' }} className="mt-16">
 
-      {/* ── Bandeau supérieur ── */}
-      <div className="border-b border-gray-800">
-        <div className="container py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      {/* ── Ligne orange décorative ── */}
+      <div className="h-0.5 w-full" style={{ backgroundColor: 'var(--color-accent)' }} />
 
-          {/* Logo */}
-          <div className="flex items-center gap-3">
-            <Image src="/logo.png" alt="Logo JET" width={48} height={48} className="object-cover rounded-full" />
-            <div>
-              <p className="leading-none" style={{ color: 'var(--color-accent)', fontFamily: 'GraffitiYouth', fontSize: '1.5rem' }}>La JET</p>
-              <p className="text-gray-400 text-xs leading-none mt-0.5 tracking-widest uppercase">Jeune Entente Toulousaine</p>
+      <div className="container py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+          {/* Colonne 1 — Logo + slogan + socials */}
+          <div className="md:col-span-1">
+            <div className="flex items-center gap-2.5 mb-4">
+              <Image src="/logo.png" alt="Logo JET" width={44} height={44} className="object-cover rounded-full" />
+              <div>
+                <p className="leading-none" style={{ color: 'var(--color-accent)', fontFamily: 'GraffitiYouth', fontSize: '1.4rem' }}>La JET</p>
+                <p className="text-gray-500 text-xs leading-none mt-0.5 tracking-widest uppercase">Toulouse</p>
+              </div>
             </div>
+            <p className="text-gray-500 text-xs leading-relaxed mb-5">
+              Club de football toulousain.<br />
+              <span style={{ color: 'var(--color-accent)' }}>Rejoignez l&apos;aventure JET !</span>
+            </p>
+            {settings && (
+              <div className="flex gap-2.5">
+                {socials.map(({ key, label, icon }) =>
+                  settings[key] ? (
+                    <a key={key} href={settings[key]} target="_blank" rel="noopener noreferrer"
+                       aria-label={label}
+                       className="w-8 h-8 rounded flex items-center justify-center text-gray-500 hover:text-white transition-colors"
+                       style={{ backgroundColor: 'rgba(255,255,255,0.05)' }}>
+                      {icon}
+                    </a>
+                  ) : null
+                )}
+              </div>
+            )}
           </div>
 
-          {/* Slogan */}
-          <p className="text-sm italic font-medium hidden md:block" style={{ color: 'var(--color-accent)' }}>
-            Club de football toulousain fondé avec passion.<br />
-            Rejoignez l&apos;aventure JET !
-          </p>
-
-          {/* Réseaux sociaux */}
-          {settings && (
-            <div className="flex gap-3">
-              {socials.map(({ key, label, icon }) =>
-                settings[key] ? (
-                  <a key={key} href={settings[key]} target="_blank" rel="noopener noreferrer"
-                     aria-label={label}
-                     className="text-gray-400 hover:text-white transition-colors">
-                    {icon}
-                  </a>
-                ) : null
-              )}
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* ── Colonnes principales ── */}
-      <div className="container py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-
-          {/* NAVIGATION */}
+          {/* Colonne 2 — Navigation */}
           <div>
-            <h3 className="font-bold mb-5 uppercase text-xs tracking-widest" style={{ color: 'var(--color-accent)' }}>
+            <h3 className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: 'var(--color-accent)' }}>
               Navigation
             </h3>
-            <ul className="space-y-2.5">
-              {[
-                { href: '/', label: 'Accueil' },
-                { href: '/actualites', label: 'Actualités' },
-                { href: '/equipes', label: 'Équipes — Foot à 11' },
-                { href: '/equipes/foot-a-8', label: 'Équipes — Foot à 8' },
-                { href: '/equipes/foot-a-5', label: 'Équipes — Foot à 5' },
-                { href: '/equipes/futsal', label: 'Équipes — Futsal' },
-              ].map((link) => (
+            <ul className="space-y-2">
+              {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-gray-400 hover:text-white text-sm transition-colors">
                     {link.label}
@@ -95,20 +101,13 @@ export default async function Footer() {
             </ul>
           </div>
 
-          {/* LE CLUB */}
+          {/* Colonne 3 — Le Club */}
           <div>
-            <h3 className="font-bold mb-5 uppercase text-xs tracking-widest" style={{ color: 'var(--color-accent)' }}>
+            <h3 className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: 'var(--color-accent)' }}>
               Le Club
             </h3>
-            <ul className="space-y-2.5">
-              {[
-                { href: '/club', label: 'Notre Club' },
-                { href: '/horaires', label: 'Entraînements' },
-                { href: '/detections', label: 'Détections' },
-                { href: '/galerie', label: 'Galerie' },
-                { href: '/partenaires', label: 'Partenaires' },
-                { href: '/contact', label: 'Contact' },
-              ].map((link) => (
+            <ul className="space-y-2">
+              {clubLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-gray-400 hover:text-white text-sm transition-colors">
                     {link.label}
@@ -118,62 +117,52 @@ export default async function Footer() {
             </ul>
           </div>
 
-          {/* CONTACT */}
+          {/* Colonne 4 — Contact */}
           <div>
-            <h3 className="font-bold mb-5 uppercase text-xs tracking-widest" style={{ color: 'var(--color-accent)' }}>
+            <h3 className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: 'var(--color-accent)' }}>
               Contact
             </h3>
-
-            <div className="space-y-3 mb-6">
+            <div className="space-y-3 mb-5">
               <a
                 href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x12aea34fee9193e3:0x511aa5b8dee9bccf?sa=X&ved=1t:8290&ictx=111"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex gap-2 hover:text-white transition-colors text-sm"
-                style={{ color: 'var(--color-accent)' }}
+                target="_blank" rel="noopener noreferrer"
+                className="flex gap-2 group"
               >
-                <span className="mt-0.5">📍</span>
-                <span className="underline underline-offset-2 text-gray-400 hover:text-white transition-colors">
+                <span className="text-sm mt-0.5" style={{ color: 'var(--color-accent)' }}>📍</span>
+                <span className="text-gray-400 group-hover:text-white text-sm transition-colors leading-relaxed">
                   Complexe sportif Borderouge<br />
                   3 Rue Hubert Monloup<br />
                   31200 Toulouse
                 </span>
               </a>
-
-              <a
-                href="tel:+33561487966"
-                className="flex gap-2 items-center text-sm hover:text-white transition-colors"
-                style={{ color: 'var(--color-accent)' }}
-              >
-                <span>📞</span>
-                <span className="underline underline-offset-2 text-gray-400 hover:text-white transition-colors">
-                  05 61 48 79 66
-                </span>
+              <a href="tel:+33561487966" className="flex gap-2 items-center group">
+                <span className="text-sm" style={{ color: 'var(--color-accent)' }}>📞</span>
+                <span className="text-gray-400 group-hover:text-white text-sm transition-colors">05 61 48 79 66</span>
               </a>
             </div>
-
-            <div className="flex flex-col items-start gap-3">
+            <div className="flex flex-col gap-2">
               <Link href="/contact"
-                className="inline-block text-sm font-bold px-5 py-2.5 rounded transition-opacity hover:opacity-90"
-                style={{ backgroundColor: 'var(--color-accent)', color: 'var(--color-primary)' }}>
+                className="text-center text-sm font-bold px-4 py-2 rounded transition-opacity hover:opacity-90"
+                style={{ backgroundColor: 'var(--color-accent)', color: '#000' }}>
                 Nous contacter
               </Link>
               {settings?.shop_url && (
                 <a href={settings.shop_url} target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded border transition-colors hover:bg-white/5"
-                  style={{ borderColor: 'var(--color-accent)', color: 'var(--color-accent)' }}>
+                  className="text-center text-sm font-bold px-4 py-2 rounded border transition-colors hover:bg-white/5"
+                  style={{ borderColor: 'rgba(249,115,22,0.4)', color: 'var(--color-accent)' }}>
                   🛒 Boutique
                 </a>
               )}
             </div>
           </div>
+
         </div>
       </div>
 
       {/* ── Copyright ── */}
-      <div className="border-t border-gray-800">
-        <div className="container py-5 text-center text-gray-500 text-xs">
-          © {new Date().getFullYear()} Jeune Entente Toulousaine. Tous droits réservés.
+      <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+        <div className="container py-4 text-center text-gray-600 text-xs">
+          © {new Date().getFullYear()} Jeune Entente Toulousaine — Tous droits réservés
         </div>
       </div>
 
