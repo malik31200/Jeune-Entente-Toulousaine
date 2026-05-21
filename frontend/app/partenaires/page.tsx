@@ -22,15 +22,13 @@ export default async function PartenairesPage() {
       {sponsors.length === 0 ? (
         <p className="text-gray-400">Aucun partenaire à afficher pour le moment.</p>
       ) : (
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-start" style={{ alignItems: 'stretch' }}>
           {sponsors.map((sponsor: any) => {
             const logoUrl = getMediaUrl(sponsor.logo)
             const card = (
-              <div
-                className="bg-white rounded-xl shadow hover:shadow-lg transition-shadow p-6 flex flex-col items-center gap-4 group cursor-pointer border border-transparent hover:border-orange-200"
-              >
+              <div className="bg-white rounded-xl shadow hover:shadow-lg transition-shadow p-6 flex flex-col items-center gap-4 group cursor-pointer border border-transparent hover:border-orange-200 h-full">
                 {logoUrl ? (
-                  <div className="relative h-20 w-full">
+                  <div className="relative h-20 w-full flex-shrink-0">
                     <Image
                       src={logoUrl}
                       alt={sponsor.name}
@@ -39,10 +37,9 @@ export default async function PartenairesPage() {
                       sizes="(max-width: 768px) 40vw, 200px"
                     />
                   </div>
-
                 ) : (
                   <div
-                    className="w-20 h-20 rounded-full flex items-center justify-center text-2xl font-black"
+                    className="w-20 h-20 rounded-full flex items-center justify-center text-2xl font-black flex-shrink-0"
                     style={{ backgroundColor: 'var(--color-accent)', color: 'var(--color-primary)' }}
                   >
                     {sponsor.name.charAt(0)}
@@ -52,12 +49,12 @@ export default async function PartenairesPage() {
                   {sponsor.name}
                 </p>
                 {sponsor.description && (
-                  <p className="text-xs text-center text-gray-500 leading-relaxed -mt-2">
+                  <p className="text-xs text-center text-gray-500 leading-relaxed -mt-2 flex-grow">
                     {sponsor.description}
                   </p>
                 )}
                 {sponsor.website_url && (
-                  <span className="text-xs font-semibold" style={{ color: 'var(--color-accent)' }}>
+                  <span className="text-sm font-bold mt-auto" style={{ color: 'var(--color-accent)' }}>
                     Visiter le site →
                   </span>
                 )}
@@ -70,11 +67,12 @@ export default async function PartenairesPage() {
                 href={sponsor.website_url}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="flex flex-col"
               >
                 {card}
               </a>
             ) : (
-              <div key={sponsor.id}>{card}</div>
+              <div key={sponsor.id} className="flex flex-col">{card}</div>
             )
           })}
         </div>
