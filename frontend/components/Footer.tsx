@@ -53,7 +53,7 @@ export default async function Footer() {
       {/* ── Ligne orange décorative ── */}
       <div className="h-0.5 w-full" style={{ backgroundColor: 'var(--color-accent)' }} />
 
-      <div className="container" style={{ paddingTop: '5rem', paddingBottom: '3rem' }}>
+      <div className="container" style={{ paddingTop: '2rem', paddingBottom: '3rem' }}>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 gap-y-10">
 
           {/* Colonne 1 — Logo + slogan + socials */}
