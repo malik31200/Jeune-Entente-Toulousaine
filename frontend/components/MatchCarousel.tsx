@@ -139,7 +139,7 @@ function ArrowButton({
     <button
       onClick={onClick}
       disabled={disabled}
-      className="absolute top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-200"
+      className="hidden sm:flex absolute top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full items-center justify-center transition-all duration-200"
       style={{
         [isLeft ? 'left' : 'right']: '1rem',
         opacity: visible && !disabled ? 1 : 0,
