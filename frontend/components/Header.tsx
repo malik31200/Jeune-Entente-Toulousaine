@@ -62,7 +62,7 @@ export default function Header({ shopUrl }: { shopUrl?: string | null }) {
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3">
               <motion.div
-                className="w-10 h-10 rounded-full overflow-hidden"
+                className="w-14 h-14 rounded-full overflow-hidden"
                 initial={{ scale: 0, rotate: -180 }}
                 animate={{ scale: 1, rotate: 0 }}
                 transition={{ type: 'spring', stiffness: 260, damping: 20, delay: 0.1 }}
@@ -70,8 +70,8 @@ export default function Header({ shopUrl }: { shopUrl?: string | null }) {
                 <Image
                   src="/logo.png"
                   alt="Logo JET"
-                  width={40}
-                  height={40}
+                  width={56}
+                  height={56}
                   className="object-cover rounded-full"
                 />
               </motion.div>
@@ -220,7 +220,7 @@ export default function Header({ shopUrl }: { shopUrl?: string | null }) {
             {/* En-tête sidebar */}
             <div className="flex items-center justify-between px-5 py-5 border-b border-white/10">
               <Link href="/" onClick={closeMenu} className="flex items-center gap-2">
-                <Image src="/logo.png" alt="Logo JET" width={36} height={36} className="rounded-full object-cover" />
+                <Image src="/logo.png" alt="Logo JET" width={48} height={48} className="rounded-full object-cover" />
                 <span style={{ color: 'var(--color-accent)', fontFamily: 'GraffitiYouth', fontSize: '1.3rem' }}>La JET</span>
               </Link>
               <button onClick={closeMenu} className="text-white p-1" aria-label="Fermer">
