@@ -111,7 +111,7 @@ function MatchCard({ match }: { match: Match }) {
         className="px-4 pb-4 pt-2 flex-shrink-0 flex items-center justify-between gap-2 border-t"
         style={{ borderColor: 'rgba(235, 231, 231, 0.06)' }}
       >
-        <span className="text-xs text-gray-500">{dateStr} · {timeStr}</span>
+        <span className="text-xs text-gray-500 truncate min-w-0">{dateStr} · {timeStr}</span>
         <span
           className="text-xs font-bold px-2.5 py-0.5 rounded-full whitespace-nowrap"
           style={{ backgroundColor: badgeBg, color: badgeColor }}
@@ -217,7 +217,7 @@ export default function MatchCarousel({ matches }: { matches: Match[] }) {
         </h2>
 
         <div
-          className="grid gap-4"
+          className="grid gap-4 overflow-hidden"
           style={{ gridTemplateColumns: `repeat(${Math.min(visible, matches.length)}, 1fr)` }}
         >
           <AnimatePresence mode="popLayout" initial={false}>
@@ -228,7 +228,7 @@ export default function MatchCarousel({ matches }: { matches: Match[] }) {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: direction > 0 ? -50 : 50 }}
                 transition={{ duration: 0.25, ease: 'easeOut' }}
-                className="h-full"
+                className="h-full min-w-0"
               >
                 <MatchCard match={match} />
               </motion.div>
