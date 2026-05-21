@@ -53,11 +53,11 @@ export default async function Footer() {
       {/* ── Ligne orange décorative ── */}
       <div className="h-0.5 w-full" style={{ backgroundColor: 'var(--color-accent)' }} />
 
-      <div className="container py-12 pt-16">
+      <div className="container py-12 pt-20">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 gap-y-10">
 
           {/* Colonne 1 — Logo + slogan + socials */}
-          <div className="md:col-span-1">
+          <div className="md:col-span-1 flex flex-col items-center md:items-start text-center md:text-left">
             <div className="flex items-center gap-2.5 mb-4">
               <Image src="/logo.png" alt="Logo JET" width={44} height={44} className="object-cover rounded-full" />
               <div>
@@ -119,7 +119,7 @@ export default async function Footer() {
           </div>
 
           {/* Colonne 4 — Contact */}
-          <div>
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <h3 className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: 'var(--color-accent)' }}>
               Contact
             </h3>
@@ -141,7 +141,7 @@ export default async function Footer() {
                 <span className="text-gray-400 group-hover:text-white text-sm transition-colors">05 61 48 79 66</span>
               </a>
             </div>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 w-full">
               <Link href="/contact"
                 className="text-center text-sm font-bold px-4 py-2 rounded transition-opacity hover:opacity-90"
                 style={{ backgroundColor: 'var(--color-accent)', color: '#000' }}>
