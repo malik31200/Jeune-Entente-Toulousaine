@@ -92,7 +92,6 @@ export default async function ClubPage() {
         }
         .club-content strong {
           font-weight: 700;
-          color: var(--color-primary);
         }
         .club-content a {
           color: var(--color-accent);
@@ -104,6 +103,25 @@ export default async function ClubPage() {
         }
         .club-content li {
           margin-bottom: 0.5rem;
+        }
+        .club-content img {
+          display: inline-block;
+          max-width: 100%;
+          height: auto;
+          margin: 0.5rem 0;
+        }
+        .club-content figure {
+          margin: 1.5rem 0;
+          text-align: center;
+        }
+        .club-content figure img {
+          display: block;
+          margin: 0 auto;
+        }
+        .club-content figure figcaption {
+          font-size: 0.875rem;
+          color: var(--color-text-light);
+          margin-top: 0.5rem;
         }
       `}</style>
     </div>
