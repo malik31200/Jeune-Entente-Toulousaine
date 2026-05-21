@@ -92,9 +92,12 @@ export default async function Footer() {
                 className="hover:text-white transition-colors"
                 style={{ color: 'var(--color-accent)' }}
               >
-                📍 <span className="underline underline-offset-2">Complexe sportif Borderouge<br />3 Rue Hubert Monloup, 31200 Toulouse</span>
+                <span className="inline-flex gap-2">
+                  <span>📍</span>
+                  <span className="underline underline-offset-2">Complexe sportif Borderouge<br />3 Rue Hubert Monloup, 31200 Toulouse</span>
+                </span>
               </a></p>
-            <p className="text-sm mb-4">
+            <p className="text-sm mt-3 mb-4">
               <a
                 href="tel:+33561487966"
                 className="hover:text-white transition-colors"
