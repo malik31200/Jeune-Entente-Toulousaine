@@ -89,18 +89,18 @@ export default async function Footer() {
                 href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x12aea34fee9193e3:0x511aa5b8dee9bccf?sa=X&ved=1t:8290&ictx=111"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-white transition-colors underline underline-offset-2"
+                className="hover:text-white transition-colors"
                 style={{ color: 'var(--color-accent)' }}
               >
-                📍 Complexe sportif Borderouge<br />3 Rue Hubert Monloup, 31200 Toulouse
+                📍 <span className="underline underline-offset-2">Complexe sportif Borderouge<br />3 Rue Hubert Monloup, 31200 Toulouse</span>
               </a></p>
             <p className="text-sm mb-4">
               <a
                 href="tel:+33561487966"
-                className="hover:text-white transition-colors underline underline-offset-2"
+                className="hover:text-white transition-colors"
                 style={{ color: 'var(--color-accent)' }}
               >
-                📞 05 61 48 79 66
+                📞 <span className="underline underline-offset-2">05 61 48 79 66</span>
               </a>
             </p>
             <div className="flex flex-col items-start gap-3">
