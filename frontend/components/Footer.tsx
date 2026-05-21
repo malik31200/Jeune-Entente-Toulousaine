@@ -53,8 +53,8 @@ export default async function Footer() {
       {/* ── Ligne orange décorative ── */}
       <div className="h-0.5 w-full" style={{ backgroundColor: 'var(--color-accent)' }} />
 
-      <div className="container py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="container py-12 pt-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 gap-y-10">
 
           {/* Colonne 1 — Logo + slogan + socials */}
           <div className="md:col-span-1">
@@ -85,36 +85,37 @@ export default async function Footer() {
             )}
           </div>
 
-          {/* Colonne 2 — Navigation */}
-          <div>
-            <h3 className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: 'var(--color-accent)' }}>
-              Navigation
-            </h3>
-            <ul className="space-y-2">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-gray-400 hover:text-white text-sm transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Colonnes 2 & 3 — Navigation + Le Club (côte à côte sur mobile) */}
+          <div className="col-span-1 md:col-span-2 grid grid-cols-2 gap-8">
+            <div>
+              <h3 className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: 'var(--color-accent)' }}>
+                Navigation
+              </h3>
+              <ul className="space-y-2">
+                {navLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="text-gray-400 hover:text-white text-sm transition-colors">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Colonne 3 — Le Club */}
-          <div>
-            <h3 className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: 'var(--color-accent)' }}>
-              Le Club
-            </h3>
-            <ul className="space-y-2">
-              {clubLinks.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-gray-400 hover:text-white text-sm transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <div>
+              <h3 className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: 'var(--color-accent)' }}>
+                Le Club
+              </h3>
+              <ul className="space-y-2">
+                {clubLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="text-gray-400 hover:text-white text-sm transition-colors">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* Colonne 4 — Contact */}
