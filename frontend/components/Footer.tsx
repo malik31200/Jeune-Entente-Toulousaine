@@ -66,10 +66,17 @@ export default async function Footer() {
             <h3 className="text-white font-semibold mb-4 mt-4 uppercase text-sm tracking-wider">Navigation</h3>
             <ul className="space-y-2">
               {[
+                { href: '/', label: 'Accueil' },
                 { href: '/actualites', label: 'Actualités' },
-                { href: '/equipes', label: 'Équipes' },
-                { href: '/horaires', label: 'Horaires' },
-                { href: '/partenaires', label: 'Nos partenaires' },
+                { href: '/club', label: 'Le Club' },
+                { href: '/equipes', label: 'Équipes — Foot à 11' },
+                { href: '/equipes/foot-a-8', label: 'Équipes — Foot à 8' },
+                { href: '/equipes/foot-a-5', label: 'Équipes — Foot à 5' },
+                { href: '/equipes/futsal', label: 'Équipes — Futsal' },
+                { href: '/horaires', label: 'Entraînements' },
+                { href: '/detections', label: 'Détections' },
+                { href: '/galerie', label: 'Galerie' },
+                { href: '/partenaires', label: 'Partenaires' },
                 { href: '/contact', label: 'Contact' },
               ].map((link) => (
                 <li key={link.href}>
