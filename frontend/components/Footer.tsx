@@ -62,9 +62,9 @@ export default async function Footer() {
           </div>
 
           {/* Navigation */}
-          <div>
+          <div className="flex flex-col items-center">
             <h3 className="text-white font-semibold mb-4 mt-4 uppercase text-sm tracking-wider">Navigation</h3>
-            <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
+            <ul className="grid grid-cols-2 gap-x-8 gap-y-2">
               {[
                 { href: '/', label: 'Accueil' },
                 { href: '/club', label: 'Le Club' },
