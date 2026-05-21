@@ -64,7 +64,7 @@ CKEDITOR_CONFIGS = {
         ],
         'height': 500,
         'width': '100%',
-        'extraPlugins': 'colorbutton,font,templates',
+        'extraPlugins': 'colorbutton,font',
         'templates': 'jet',
         'templates_files': ['/static/club/ckeditor_jet_templates.js'],
         'templates_replaceContent': False,
