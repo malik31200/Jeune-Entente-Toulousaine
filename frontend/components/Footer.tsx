@@ -64,7 +64,7 @@ export default async function Footer() {
           {/* Navigation */}
           <div>
             <h3 className="text-white font-semibold mb-4 mt-4 uppercase text-sm tracking-wider">Navigation</h3>
-            <ul className="space-y-2">
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
               {[
                 { href: '/', label: 'Accueil' },
                 { href: '/actualites', label: 'Actualités' },
