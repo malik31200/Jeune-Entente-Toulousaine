@@ -3,6 +3,7 @@ import MatchCarousel from '../components/MatchCarousel'
 import Link from 'next/link'
 import FadeIn from '../components/FadeIn'
 import Image from 'next/image'
+import NewsCards from '../components/NewsCards'
 
 export const metadata = {
   title: 'Jeune Entente Toulousaine — Club de football à Toulouse',
@@ -151,27 +152,7 @@ export default async function Home() {
                         Dernières actualités
                     </h2>
                 </FadeIn>
-                <FadeIn delay={0.4}>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        {articles.slice(0, 3).map((article: any) => (
-                            <Link key={article.slug} href={`/actualites/${article.slug}`} className="group">
-                                <div className="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow">
-                                    {article.image && (
-                                        <div className="relative w-full h-48">
-                                            <Image src={getMediaUrl(article.image)!} alt={article.title} fill className="object-cover object-center" sizes="(max-width: 768px) 100vw, 33vw" />
-                                        </div>
-                                    )}
-                                    <div className="p-4">
-                                        <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--color-accent)' }}>
-                                            {new Date(article.published_date).toLocaleDateString('fr-FR')}
-                                        </p>
-                                        <h3 className="font-bold text-lg group-hover:underline">{article.title}</h3>
-                                    </div>
-                                </div>
-                            </Link>
-                        ))}
-                    </div>
-                </FadeIn>
+                <NewsCards articles={articles} getMediaUrl={getMediaUrl} />
                 {articles.length > 3 && (
                     <div className="text-center mt-8 mb-8">
                         <Link href="/actualites" className="font-semibold underline" style={{ color: 'var(--color-accent)' }}>
