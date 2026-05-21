@@ -482,14 +482,18 @@ export default function TeamDetailPage() {
             {team.coaches ? (
               <div className="flex flex-col gap-3">
                 {team.coaches.split('\n').filter(Boolean).map((coach: string, i: number) => (
-                  <div key={i} className="flex items-center gap-4 px-5 py-4 rounded-xl"
-                    style={{ backgroundColor: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                  <motion.div key={i} className="flex items-center gap-4 px-5 py-4 rounded-xl"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: i * 0.1, ease: 'easeOut' }}
+                    whileHover={{ x: 6, transition: { duration: 0.2 } }}
+                    style={{ backgroundColor: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)', cursor: 'default' }}>
                     <div className="w-10 h-10 rounded-full flex items-center justify-center font-black text-sm flex-shrink-0"
                       style={{ backgroundColor: 'var(--color-accent)', color: 'var(--color-primary)' }}>
                       {coach.trim()[0]?.toUpperCase()}
                     </div>
                     <span className="text-white font-semibold">{coach.trim()}</span>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             ) : (

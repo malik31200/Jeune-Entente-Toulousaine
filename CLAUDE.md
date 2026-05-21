@@ -641,10 +641,10 @@ Créer un **site web moderne pour un club de football** qui combine :
 
 ### RGPD & Légal
 
-✅ Mentions légales  
-✅ Politique de confidentialité  
-✅ Consentement cookies (si analytics)  
-✅ Gestion données contact (conservation limitée)
+❌ Mentions légales — **À FAIRE**
+❌ Politique de confidentialité — **À FAIRE**
+❌ Consentement cookies (si analytics) — **À FAIRE**
+✅ Gestion données contact (formulaire → email direct, pas de stockage BDD)
 
 ### Scraping FFF - Stratégie intelligente
 
@@ -724,19 +724,25 @@ Créer un **site web moderne pour un club de football** qui combine :
 |**Domaine .fr**|DNS + HTTPS|~1€/mois|
 |**TOTAL**||**~5.60€/mois**|
 
-### Décision finale : déploiement direct sur Fly.io + Vercel + Neon + Cloudinary
+### Décision finale : Railway + Vercel + Cloudinary (~5.60€/mois)
+
+| Service | Usage | Prix |
+|---------|-------|------|
+| **Vercel** | Frontend Next.js | 0€ |
+| **Railway** (Hobby $5/mois) | Backend Django + PostgreSQL | ~4.60€ |
+| **Cloudinary** | Photos/médias | 0€ ✅ fait |
+| **Domaine .fr** | DNS + HTTPS | ~1€/mois |
+| **TOTAL** | | **~5.60€/mois** |
 
 **Ordre des étapes de déploiement :**
-1. [ ] **Cloudinary** — créer compte + intégrer `django-cloudinary-storage` dans le backend
-2. [ ] **Neon.tech** — créer BDD PostgreSQL cloud + migrer les données
-3. [ ] **Fly.io** — déployer le backend Django
-4. [ ] **Vercel** — déployer le frontend Next.js
-5. [ ] **Variables d'environnement production** — configurer sur Fly.io et Vercel
-6. [ ] **SMTP email** — configurer Gmail App Password pour le formulaire contact
-7. [ ] **cron-job.org** — keep-alive toutes les 14 min + backup scheduler
-8. [ ] **Domaine .fr** — acheter + configurer DNS + HTTPS
-9. [ ] **RGPD** — pages mentions légales + politique de confidentialité
-10. [ ] **Google Analytics 4** — suivi des visiteurs (avec bandeau cookie)
+1. [x] **Cloudinary** — intégré et fonctionnel
+2. [ ] **Railway** — déployer backend Django + PostgreSQL
+3. [ ] **Vercel** — déployer frontend Next.js
+4. [ ] **Variables d'environnement production** — configurer sur Railway et Vercel
+5. [ ] **SMTP email** — configurer quand le club aura une adresse mail
+6. [ ] **Domaine .fr** — acheter + configurer DNS + HTTPS
+7. [ ] **RGPD** — pages mentions légales + politique de confidentialité
+8. [ ] **Google Analytics 4** — suivi des visiteurs
 
 ---
 
@@ -967,24 +973,73 @@ Chaque étape sera expliquée avec :
 
 ---
 
-### 🔲 Phase 4.2 : Déploiement — À FAIRE
+### ✅ Phase 5 : Animations & UI Polish — TERMINÉE (21 mai 2026)
+
+#### 🎨 Améliorations UI
+- **Footer** : refonte complète (4 colonnes, fond `#0a0a0a`, ligne orange, icônes réseaux carrés arrondis, adresse cliquable)
+- **Header mobile** : "La JET" (GraffitiYouth) + "Jeune Entente Toulousaine" désormais visibles sur mobile
+- **Sponsors** : champ `description` ajouté au modèle + migration `0014_sponsor_description`
+- **Page Partenaires** : cards hauteur égale (`h-full`/`flex-grow`/`mt-auto`), "Visiter le site →" plus grand, 1 card par ligne sur mobile
+
+#### ✨ Composants Framer Motion créés
+| Composant | Usage |
+|-----------|-------|
+| `NewsCards.tsx` | Cards actualités homepage — scroll + hover |
+| `ArticleGrid.tsx` | Grille `/actualites` — scroll + hover |
+| `ArticleDetail.tsx` | Détail article — image scale-in, date/titre en cascade |
+| `AnimatedContent.tsx` | **Partagé** — IntersectionObserver par élément HTML |
+| `ClubBannerText.tsx` | Bannière page Club — badge/titre/sous-titre en cascade |
+| `ClubContent.tsx` | Contenu page Club — utilise `AnimatedContent` |
+| `HomepageSponsors.tsx` | Section sponsors homepage — titre + logos staggered |
+| `SponsorCards.tsx` | Page Partenaires — whileInView + whileHover |
+| `TeamGrid.tsx` | Grille équipes Foot à 11 & Futsal — scroll + hover |
+| `TeamPresentationList.tsx` | Cards Foot à 8 & Foot à 5 — scroll + hover |
+
+#### 🏃 Pages animées
+- **Homepage** : carrousel fade-in + titre slide. Cards actus : stagger fade-up. Sponsors : logos scale-in staggered
+- **Actualités** : chaque card fade-up au scroll, image zoom + overlay orange au hover
+- **Détail article** : image scale-in, date slide gauche, titre fade-up, contenu par paragraphe (IntersectionObserver)
+- **Club** : bannière cascade (badge→titre→sous-titre), contenu par paragraphe
+- **Équipes Foot à 11 / Futsal** : stagger fade-up, card se soulève + image zoom + nom orange au hover
+- **Équipes Foot à 8 / à 5** : cards horizontales fade-up staggered, soulèvement + zoom
+- **Équipe détail** : résultats cards fade-up au scroll, classement soulèvement hover, staff slide-in gauche staggeré
+- **Entraînements** : cards fade-up staggered + soulèvement hover
+- **Détections** : boutons catégorie stagger, AnimatePresence au changement de formulaire
+- **Galerie** : photos scale-in staggered (lots de 8), zoom hover
+- **Partenaires** : cards fade-up staggered, soulèvement + ombre + nom orange hover
+
+#### 🔑 Pattern `AnimatedContent`
+- Résout "seul le premier bloc s'anime" : `querySelectorAll` sur tous les éléments après rendu → `IntersectionObserver` individuel sur chaque `p/h2/ul/blockquote/img`
+- Utilisé dans articles et page Club
+
+#### ⚠️ Règle critique Next.js
+- Ne pas passer `getMediaUrl` comme prop d'un Server Component → importer directement dans le Client Component
+
+---
+
+### 🔲 Phase 6 : Déploiement — À FAIRE
 
 #### 🚀 Priorité haute
-- [ ] **SMTP email production** : configurer variables `EMAIL_HOST`, `EMAIL_HOST_USER`, `EMAIL_HOST_PASSWORD` dans `.env` production (formulaire contact)
-- [ ] **Déploiement backend** : Railway ou Render (Django + PostgreSQL)
+- [ ] **SMTP email production** : configurer variables `EMAIL_HOST`, `EMAIL_HOST_USER`, `EMAIL_HOST_PASSWORD` quand le club aura une adresse mail
+- [ ] **Déploiement backend** : Railway (Django + PostgreSQL)
 - [ ] **Déploiement frontend** : Vercel (Next.js)
 - [ ] **Variables d'environnement production** : `NEXT_PUBLIC_API_URL`, `DATABASE_URL`, `SECRET_KEY`, `ALLOWED_HOSTS`, `CORS_ALLOWED_ORIGINS`
-- [ ] **Configuration domaine** : DNS + HTTPS
+- [ ] **Configuration domaine** : acheter domaine .fr + DNS + HTTPS
 
-#### 🔧 À faire avant déploiement
-- [ ] **Tester le formulaire contact** : vérifier que l'email part bien (SMTP à configurer)
-- [ ] **Renseigner cp_no dans l'admin** pour les équipes sans classement affiché
+#### 🔧 À faire avant mise en ligne
+- [ ] **Tester formulaire contact** en production (SMTP)
+- [ ] **Renseigner cp_no dans l'admin** pour équipes sans classement
 - [ ] **Vérifier responsive mobile** : navbar hamburger, carrousel, onglets équipes
-- [x] **SEO** : meta tags `<title>` et `<description>` par page (Next.js metadata API)
-- [x] **Next Image** : remplacer les `<img>` par `<Image>` de Next.js pour l'optimisation
-- [x] **Scheduler scraping** : APScheduler — lun-ven 23h, sam-dim 6 créneaux
+- [x] **SEO** : meta tags sur toutes les pages
+- [x] **Next Image** : migration complète
+- [x] **Scheduler scraping** : APScheduler configuré
+
+#### ❌ RGPD — À faire
+- [ ] **Page mentions légales** : éditeur, hébergeur, contact
+- [ ] **Page politique de confidentialité** : données collectées, durée conservation, droits utilisateurs
+- [ ] **Bannière cookies** (si Google Analytics activé)
 
 #### 💡 Améliorations futures (optionnel)
-- [ ] Page mentions légales / politique de confidentialité
+- [ ] Google Analytics 4
 - [ ] Export Excel des licences joueurs
 - [ ] Notifications push nouvelles actualités
