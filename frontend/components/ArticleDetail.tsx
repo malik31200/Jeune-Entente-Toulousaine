@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { getMediaUrl } from '../lib/api'
+import AnimatedContent from './AnimatedContent'
 
 interface Article {
   title: string
@@ -71,14 +72,7 @@ export default function ArticleDetail({ article }: { article: Article }) {
         </motion.div>
       )}
 
-      <motion.div
-        className="article-content text-base"
-        style={{ color: 'var(--color-text)' }}
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.4, ease: 'easeOut' }}
-        dangerouslySetInnerHTML={{ __html: article.content }}
-      />
+      <AnimatedContent html={article.content} className="article-content text-base" />
     </>
   )
 }
