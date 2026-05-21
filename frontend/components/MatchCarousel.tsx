@@ -193,9 +193,13 @@ export default function MatchCarousel({ matches }: { matches: Match[] }) {
   }
 
   return (
-    <section
+    <motion.section
       className="relative py-8 overflow-hidden"
       style={{ backgroundColor: 'var(--color-primary)', touchAction: 'pan-y' }}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onTouchStart={(e) => { touchStartX.current = e.touches[0].clientX }}
@@ -211,10 +215,16 @@ export default function MatchCarousel({ matches }: { matches: Match[] }) {
       <ArrowButton onClick={next} disabled={!canNext} direction="right" visible={hovered} />
 
       <div className="container">
-        <h2 className="text-white font-black uppercase text-sm tracking-widest mb-5 flex items-center gap-3">
+        <motion.h2
+          className="text-white font-black uppercase text-sm tracking-widest mb-5 flex items-center gap-3"
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0.15, ease: 'easeOut' }}
+        >
           <span className="inline-block w-4 h-0.5" style={{ backgroundColor: 'var(--color-accent)' }} />
           Résultats &amp; Calendrier
-        </h2>
+        </motion.h2>
 
         <div
           className="grid gap-4 overflow-hidden"
@@ -255,6 +265,6 @@ export default function MatchCarousel({ matches }: { matches: Match[] }) {
           </div>
         )}
       </div>
-    </section>
+    </motion.section>
   )
 }
