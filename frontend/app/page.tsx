@@ -4,6 +4,7 @@ import Link from 'next/link'
 import FadeIn from '../components/FadeIn'
 import Image from 'next/image'
 import NewsCards from '../components/NewsCards'
+import HomepageSponsors from '../components/HomepageSponsors'
 
 export const metadata = {
   title: 'Jeune Entente Toulousaine — Club de football à Toulouse',
@@ -164,39 +165,7 @@ export default async function Home() {
             </section>
 
             {/* ─── Sponsors ─── */}
-            {sponsors.length > 0 && (
-                <section className="py-12 border-t" style={{ borderColor: 'var(--color-border)', backgroundColor: 'var(--color-bg)' }}>
-                    <div className="container">
-                        <p className="text-center text-xl font-bold uppercase tracking-widest mb-8" style={{ color: 'var(--color-text-light)' }}>
-                            Nos partenaires
-                        </p>
-                        <div className="flex flex-wrap items-center justify-center gap-8">
-                            {sponsors.map((sponsor: any) => (
-                                sponsor.website_url ? (
-                                    <a key={sponsor.id} href={sponsor.website_url} target="_blank" rel="noopener noreferrer"
-                                        className="opacity-60 hover:opacity-100 transition-opacity">
-                                        {sponsor.logo
-                                            ? <div className="relative h-12 w-32">
-                                                  <Image src={getMediaUrl(sponsor.logo)!} alt={sponsor.name} fill className="object-contain" sizes="128px" />
-                                                </div>
-                                            : <span className="font-bold text-lg" style={{ color: 'var(--color-text-light)' }}>{sponsor.name}</span>
-                                        }
-                                    </a>
-                                ) : (
-                                    <div key={sponsor.id} className="opacity-60">
-                                        {sponsor.logo
-                                            ? <div className="relative h-12 w-32">
-                                                <Image src={getMediaUrl(sponsor.logo)!} alt={sponsor.name} fill className="object-contain" sizes="128px" />
-                                            </div>
-                                            : <span className="font-bold text-lg" style={{ color: 'var(--color-text-light)' }}>{sponsor.name}</span>
-                                        }
-                                    </div>
-                                )
-                            ))}
-                        </div>
-                    </div>
-                </section>
-            )}
+            <HomepageSponsors sponsors={sponsors} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
