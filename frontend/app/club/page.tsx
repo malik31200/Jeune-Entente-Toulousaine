@@ -1,5 +1,7 @@
 import { getClubPage, getMediaUrl } from '../../lib/api'
 import Image from 'next/image'
+import ClubBannerText from '../../components/ClubBannerText'
+import ClubContent from '../../components/ClubContent'
 
 export const metadata = {
   title: 'Le Club — Jeune Entente Toulousaine',
@@ -42,17 +44,7 @@ export default async function ClubPage() {
         <div className="absolute inset-0" style={{
           background: 'linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.25) 100%)'
         }} />
-        <div className="container relative z-10 py-14">
-          <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: 'var(--color-accent)' }}>
-            Jeune Entente Toulousaine
-          </p>
-          <h1 className="text-white font-black uppercase leading-none mb-10" style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)' }}>
-            {page.title}
-          </h1>
-          {page.subtitle && (
-            <p className="text-gray-300 text-lg mt-4 mb-4 max-w-xl leading-relaxed">{page.subtitle}</p>
-          )}
-        </div>
+        <ClubBannerText title={page.title} subtitle={page.subtitle} />
       </div>
 
       {/* Séparateur orange */}
@@ -61,10 +53,7 @@ export default async function ClubPage() {
       {/* Contenu */}
       <div className="container max-w-3xl" style={{ paddingTop: '2rem', paddingBottom: '2rem' }}>
         {contentHtml ? (
-          <div
-            className="club-content"
-            dangerouslySetInnerHTML={{ __html: contentHtml }}
-          />
+          <ClubContent html={contentHtml} />
         ) : (
           <p className="text-gray-400 italic">
             Le contenu de cette page n&apos;a pas encore été renseigné. Connectez-vous à l&apos;administration pour ajouter l&apos;histoire du club.
