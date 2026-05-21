@@ -22,7 +22,7 @@ export default async function PartenairesPage() {
       {sponsors.length === 0 ? (
         <p className="text-gray-400">Aucun partenaire à afficher pour le moment.</p>
       ) : (
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-start" style={{ alignItems: 'stretch' }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" style={{ alignItems: 'stretch' }}>
           {sponsors.map((sponsor: any) => {
             const logoUrl = getMediaUrl(sponsor.logo)
             const card = (
