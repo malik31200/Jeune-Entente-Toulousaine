@@ -96,7 +96,7 @@ export default function Header({ shopUrl }: { shopUrl?: string | null }) {
                 />
               </motion.div>
 
-              <div className="hidden sm:block">
+              <div>
                 <motion.p
                   className="leading-none"
                   style={{ color: 'var(--color-accent)', fontFamily: 'GraffitiYouth', fontSize: '1.5rem' }}
@@ -107,7 +107,8 @@ export default function Header({ shopUrl }: { shopUrl?: string | null }) {
                   La JET
                 </motion.p>
                 <motion.p
-                  className="text-gray-300 text-xs leading-none mt-0.5 tracking-widest uppercase"
+                  className="text-gray-300 leading-none mt-0.5 tracking-widest uppercase"
+                  style={{ fontSize: '0.55rem' }}
                   initial={{ opacity: 0, x: -8 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.4, delay: 0.55 }}
