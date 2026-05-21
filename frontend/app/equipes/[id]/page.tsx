@@ -314,7 +314,7 @@ function ClassementTab({ stats, team }: { stats: any; team: any }) {
                   return (
                     <motion.div
                       key={t.cl_no}
-                      className="flex items-center gap-0.5 px-3 py-3 rounded-xl shadow-sm"
+                      className="flex items-center gap-0.5 px-3 py-3 rounded-xl shadow-sm cursor-default"
                       style={{
                         backgroundColor: isJet ? 'rgba(249,115,22,0.08)' : 'white',
                         border: isJet ? '2px solid rgba(249,115,22,0.4)' : '1px solid #e5e7eb',
@@ -322,6 +322,7 @@ function ClassementTab({ stats, team }: { stats: any; team: any }) {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: i * 0.04 }}
+                      whileHover={{ y: -3, boxShadow: '0 6px 20px rgba(0,0,0,0.1)', transition: { duration: 0.18 } }}
                     >
                       <span className="w-6 text-center font-black text-sm"
                         style={{ color: isJet ? 'var(--color-accent)' : '#9ca3af' }}>
@@ -533,13 +534,21 @@ export default function TeamDetailPage() {
               <p className="text-gray-500">Aucun match ce mois-ci.</p>
             ) : (
               <div className="flex flex-col gap-3 max-w-2xl">
-                {matchesInMonth.map((match: any) => {
+                {matchesInMonth.map((match: any, idx: number) => {
                   const isTermine = match.status === 'TERMINE'
                   const date = new Date(match.date)
                   const dateStr = date.toLocaleDateString('fr-FR', { weekday: 'short', day: '2-digit', month: 'short' })
                   const timeStr = date.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' })
                   return (
-                    <div key={match.id} className="bg-white rounded-xl p-4 shadow">
+                    <motion.div
+                      key={match.id}
+                      className="bg-white rounded-xl p-4 shadow"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.2 }}
+                      transition={{ duration: 0.4, delay: idx * 0.07, ease: 'easeOut' }}
+                      whileHover={{ y: -3, boxShadow: '0 8px 24px rgba(0,0,0,0.1)', transition: { duration: 0.18 } }}
+                    >
                       <div className="flex items-center justify-between mb-2">
                         <p className="text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--color-accent)' }}>
                           {match.competition}
@@ -562,7 +571,7 @@ export default function TeamDetailPage() {
                         )}
                         <span className="font-bold flex-1 text-sm" style={{ color: 'var(--color-primary)' }}>{match.away_team}</span>
                       </div>
-                    </div>
+                    </motion.div>
                   )
                 })}
               </div>
