@@ -30,13 +30,13 @@ export default async function PartenairesPage() {
                 className="bg-white rounded-xl shadow hover:shadow-lg transition-shadow p-6 flex flex-col items-center gap-4 group cursor-pointer border border-transparent hover:border-orange-200"
               >
                 {logoUrl ? (
-                  <div className="relative h-24 w-48">
+                  <div className="relative h-20 w-full">
                     <Image
                       src={logoUrl}
                       alt={sponsor.name}
                       fill
                       className="object-contain"
-                      sizes="192px"
+                      sizes="(max-width: 768px) 40vw, 200px"
                     />
                   </div>
 
