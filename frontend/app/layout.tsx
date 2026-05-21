@@ -13,9 +13,28 @@ const bebasNeue = Bebas_Neue({
   variable: '--font-bebas',
 })
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://jet-toulouse.fr'
+
 export const metadata: Metadata = {
-  title: 'Jeune Entente Toulousaine',
-  description: 'Site officiel du club de football Jeune Entente Toulousaine',
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: 'Jeune Entente Toulousaine — Club de football à Toulouse',
+    template: '%s | JET Toulouse',
+  },
+  description: 'Site officiel de la Jeune Entente Toulousaine, club de football à Toulouse. Résultats, actualités, équipes et horaires d\'entraînement.',
+  openGraph: {
+    siteName: 'Jeune Entente Toulousaine',
+    locale: 'fr_FR',
+    type: 'website',
+    images: [{ url: '/logo.png', width: 500, height: 500, alt: 'Logo Jeune Entente Toulousaine' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default async function RootLayout({

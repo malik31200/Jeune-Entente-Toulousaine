@@ -4,9 +4,15 @@ import Link from 'next/link'
 import FadeIn from '../components/FadeIn'
 import Image from 'next/image'
 
-export const metada = {
-    title: 'Jeune Entente Toulousaine - Club de football à Toulouse',
-    description: 'La Jeune Entente Toulousaine est un club formateur dédié aux jeunes, alliant passion, compétition et esprit d\'équipe.'
+export const metadata = {
+  title: 'Jeune Entente Toulousaine — Club de football à Toulouse',
+  description: 'La Jeune Entente Toulousaine est un club formateur dédié aux jeunes, alliant passion, compétition et esprit d\'équipe à Toulouse.',
+  openGraph: {
+    title: 'Jeune Entente Toulousaine — Club de football à Toulouse',
+    description: 'Club formateur toulousain : résultats, actualités, équipes Foot à 11, 8, 5 et Futsal.',
+    url: '/',
+    type: 'website' as const,
+  },
 }
 
 export default async function Home() {
@@ -210,6 +216,26 @@ export default async function Home() {
                     </div>
                 </section>
             )}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'SportsOrganization',
+              name: 'Jeune Entente Toulousaine',
+              alternateName: 'JET',
+              url: process.env.NEXT_PUBLIC_SITE_URL || 'https://jet-toulouse.fr',
+              logo: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://jet-toulouse.fr'}/logo.png`,
+              sport: 'Football',
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: 'Toulouse',
+                addressRegion: 'Occitanie',
+                addressCountry: 'FR',
+              },
+            }),
+          }}
+        />
         </>
     )
 }

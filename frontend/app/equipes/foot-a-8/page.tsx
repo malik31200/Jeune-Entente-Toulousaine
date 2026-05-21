@@ -2,6 +2,11 @@ import { getTeamPresentations, getMediaUrl } from '../../../lib/api'
 import Link from 'next/link'
 import Image from 'next/image'
 
+export const metadata = {
+  title: 'Foot à 8',
+  description: 'Les équipes Foot à 8 de la Jeune Entente Toulousaine : U8, U9, U10, U11. Résultats et présentation.',
+}
+
 export default async function FootA8Page() {
   const data = await getTeamPresentations('foot-a-8').catch(() => [])
   const raw = Array.isArray(data) ? data : (data.results || [])

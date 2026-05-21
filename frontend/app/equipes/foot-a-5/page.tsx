@@ -2,6 +2,11 @@ import { getTeamPresentations, getMediaUrl } from '../../../lib/api'
 import Link from 'next/link'
 import Image from 'next/image'
 
+export const metadata = {
+  title: 'Foot à 5',
+  description: 'Les équipes Foot à 5 de la Jeune Entente Toulousaine : U6, U7. Résultats et présentation.',
+}
+
 export default async function FootA5Page() {
   const data = await getTeamPresentations('foot-a-5').catch(() => [])
   const raw = Array.isArray(data) ? data : (data.results || [])
