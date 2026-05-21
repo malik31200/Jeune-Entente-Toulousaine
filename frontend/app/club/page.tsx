@@ -97,7 +97,13 @@ export default async function ClubPage() {
           color: var(--color-accent);
           text-decoration: underline;
         }
-        .club-content ul, .club-content ol {
+        .club-content ul {
+          list-style: disc;
+          padding-left: 1.5rem;
+          margin-bottom: 1.5rem;
+        }
+        .club-content ol {
+          list-style: decimal;
           padding-left: 1.5rem;
           margin-bottom: 1.5rem;
         }
