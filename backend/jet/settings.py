@@ -51,6 +51,7 @@ CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'Custom',
         'toolbar_Custom': [
+            ['Templates'],
             ['Bold', 'Italic', 'Underline', 'Strike'],
             ['TextColor', 'BGColor'],
             ['FontSize'],
@@ -63,7 +64,10 @@ CKEDITOR_CONFIGS = {
         ],
         'height': 500,
         'width': '100%',
-        'extraPlugins': 'colorbutton,font',
+        'extraPlugins': 'colorbutton,font,templates',
+        'templates': 'jet',
+        'templates_files': ['/static/club/ckeditor_jet_templates.js'],
+        'templates_replaceContent': False,
         'allowedContent': True,
         'colorButton_colors': 'F97316,000000,FFFFFF,1f2937,6b7280,22c55e,ef4444,eab308,3b82f6',
         'fontSize_sizes': '10/10px;12/12px;14/14px;16/16px;18/18px;20/20px;24/24px;28/28px;32/32px;36/36px',
