@@ -1,6 +1,5 @@
-import { getTeams, getMediaUrl } from '../../lib/api'
-import Link from 'next/link'
-import Image from 'next/image'
+import { getTeams } from '../../lib/api'
+import TeamGrid from '../../components/TeamGrid'
 
 export const metadata = {
   title: 'Nos Équipes — Jeune Entente Toulousaine',
@@ -23,48 +22,7 @@ export default async function EquipesPage() {
       <h1 className="text-4xl text-center font-black uppercase mb-8 mt-8" style={{ color: 'var(--color-primary)' }}>
         Foot à 11
       </h1>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
-        {teams.map((team: any) => {
-          const imageUrl = getMediaUrl(team.image)
-          return (
-            <Link key={team.id} href={`/equipes/${team.id}`}>
-              <div
-                className="rounded-lg overflow-hidden cursor-pointer group hover:shadow-lg transition-shadow"
-                style={{ backgroundColor: 'var(--color-primary)' }}
-              >
-                {/* Zone image */}
-                <div className="relative h-40 overflow-hidden">
-                  {imageUrl ? (
-                    <>
-                      <Image
-                        src={imageUrl}
-                        alt={team.name}
-                        fill
-                        className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
-                        sizes="(max-width: 768px) 50vw, 25vw"
-                      />
-                      <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 60%)' }} />
-                    </>
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: 'var(--color-primary-light)' }}>
-                      <div className="w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: 'var(--color-accent)' }}>
-                        <span className="text-2xl">⚽</span>
-                      </div>
-                    </div>
-                  )}
-                </div>
-
-                {/* Nom de l'équipe */}
-                <div className="px-4 py-3">
-                  <h2 className="text-white font-bold text-base group-hover:text-orange-400 transition-colors">
-                    {team.name}
-                  </h2>
-                </div>
-              </div>
-            </Link>
-          )
-        })}
-      </div>
+      <TeamGrid teams={teams} />
     </div>
   )
 }

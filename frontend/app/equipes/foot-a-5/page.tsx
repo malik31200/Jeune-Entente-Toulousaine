@@ -1,6 +1,6 @@
-import { getTeamPresentations, getMediaUrl } from '../../../lib/api'
+import { getTeamPresentations } from '../../../lib/api'
 import Link from 'next/link'
-import Image from 'next/image'
+import TeamPresentationList from '../../../components/TeamPresentationList'
 
 export const metadata = {
   title: 'Foot à 5',
@@ -32,64 +32,8 @@ export default async function FootA5Page() {
       </div>
       <div className="h-1 w-full" style={{ backgroundColor: 'var(--color-accent)' }} />
 
-      <div className="container py-12 mt-3 mb-3">
-        {teams.length === 0 ? (
-          <p className="text-gray-400 italic">Aucune équipe pour le moment.</p>
-        ) : (
-          <div className="flex flex-col gap-6 mt-6 mb-6">
-            {teams.map((item: any) => {
-              const imageUrl = getMediaUrl(item.image)
-              const coaches = item.coaches ? item.coaches.split('\n').filter(Boolean) : []
-              return (
-                <div key={item.id} className="rounded-xl overflow-hidden shadow flex" style={{ backgroundColor: 'white', border: '1px solid #e5e7eb', minHeight: '180px' }}>
-                  {/* Photo */}
-                  <div className="w-48 flex-shrink-0" style={{ minHeight: '180px' }}>
-                    {imageUrl ? (
-                      <div className="relative w-full h-full">
-                        <Image
-                          src={imageUrl}
-                          alt={item.display_name}
-                          fill
-                          className="object-contain"
-                          sizes="(max-width: 768px) 100vw, 33vw"
-                        />
-                      </div>
-
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: '#f3f4f6' }}>
-                        <span className="text-4xl">⚽</span>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Contenu */}
-                  <div className="flex-1 p-6">
-                    <h2 className="font-black uppercase text-xl mb-4" style={{ color: 'var(--color-primary)' }}>
-                      {item.display_name}
-                    </h2>
-                    {coaches.length > 0 && (
-                      <>
-                        <p className="font-bold uppercase text-xs tracking-widest mb-3" style={{ color: 'var(--color-accent)' }}>
-                          Staff
-                        </p>
-                        <div className="flex flex-col gap-2">
-                          {coaches.map((coach: string, i: number) => (
-                            <div key={i} className="flex items-center gap-2">
-                              <div className="w-7 h-7 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0" style={{ backgroundColor: 'var(--color-primary)' }}>
-                                {coach.trim()[0]?.toUpperCase()}
-                              </div>
-                              <span className="text-sm font-medium" style={{ color: 'var(--color-text)' }}>{coach.trim()}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </>
-                    )}
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        )}
+      <div className="container py-12">
+        <TeamPresentationList teams={teams} />
       </div>
     </div>
   )
