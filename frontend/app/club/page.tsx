@@ -42,7 +42,7 @@ export default async function ClubPage() {
         <div className="absolute inset-0" style={{
           background: 'linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.25) 100%)'
         }} />
-        <div className="container relative z-10 py-14">
+        <div className="container relative z-10 pt-14 pb-20">
           <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: 'var(--color-accent)' }}>
             Jeune Entente Toulousaine
           </p>
