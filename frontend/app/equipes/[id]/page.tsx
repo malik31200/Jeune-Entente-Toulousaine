@@ -302,7 +302,7 @@ function ClassementTab({ stats, team }: { stats: any; team: any }) {
                 <span className="w-8 text-center" style={{ color: 'var(--color-accent)' }}>Pts</span>
                 <span className="w-6 text-center">J</span>
                 <span className="w-6 text-center text-green-600">V</span>
-                <span className="hidden sm:inline-block w-6 text-center">N</span>
+                <span className="w-6 text-center">N</span>
                 <span className="w-6 text-center text-red-500">D</span>
                 <span className="w-8 text-center">DB</span>
               </div>
@@ -329,7 +329,7 @@ function ClassementTab({ stats, team }: { stats: any; team: any }) {
                       </span>
                       <span className="flex-1 text-sm font-bold min-w-0 truncate"
                         style={{ color: isJet ? 'white' : 'var(--color-primary)' }}>
-                        {isJet ? team.name : t.name}
+                        {t.name}
                       </span>
                       <span className="w-8 text-center font-black text-sm"
                         style={{ color: isJet ? 'var(--color-accent)' : 'var(--color-primary)' }}>
@@ -337,7 +337,7 @@ function ClassementTab({ stats, team }: { stats: any; team: any }) {
                       </span>
                       <span className="w-6 text-center text-gray-500 text-xs">{t.j}</span>
                       <span className="w-6 text-center text-green-600 text-xs">{t.g}</span>
-                      <span className="hidden sm:inline-block w-6 text-center text-gray-500 text-xs">{t.n}</span>
+                      <span className="w-6 text-center text-gray-500 text-xs">{t.n}</span>
                       <span className="w-6 text-center text-red-500 text-xs">{t.p}</span>
                       <span className={`w-8 text-center text-xs font-semibold ${diff > 0 ? 'text-green-600' : diff < 0 ? 'text-red-500' : 'text-gray-400'}`}>
                         {diff > 0 ? `+${diff}` : diff}
