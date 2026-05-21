@@ -54,7 +54,7 @@ class TeamStatsSerializer(serializers.ModelSerializer):
 class SponsorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Sponsor
-        fields = ['id', 'name', 'logo', 'website_url', 'order']
+        fields = ['id', 'name', 'logo', 'website_url', 'description', 'order']
 
 
 class SiteSettingsSerializer(serializers.ModelSerializer):

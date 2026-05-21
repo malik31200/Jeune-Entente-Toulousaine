@@ -51,6 +51,11 @@ export default async function PartenairesPage() {
                 <p className="font-bold text-center text-sm" style={{ color: 'var(--color-primary)' }}>
                   {sponsor.name}
                 </p>
+                {sponsor.description && (
+                  <p className="text-xs text-center text-gray-500 leading-relaxed -mt-2">
+                    {sponsor.description}
+                  </p>
+                )}
                 {sponsor.website_url && (
                   <span className="text-xs font-semibold" style={{ color: 'var(--color-accent)' }}>
                     Visiter le site →

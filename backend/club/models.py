@@ -173,6 +173,8 @@ class Sponsor(models.Model):
     name = models.CharField(max_length=200)
     logo = models.ImageField(upload_to='sponsors/')
     website_url = models.URLField(blank=True, null=True)
+    description = models.TextField(blank=True, verbose_name="Description (optionnel)",
+                                   help_text="Texte affiché sous le nom du sponsor")
     order = models.IntegerField(default=0)
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
