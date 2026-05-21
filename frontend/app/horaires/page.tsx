@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
 
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api'
@@ -73,8 +74,17 @@ export default function HorairesPage() {
       )}
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {Object.entries(byTeam).sort(([a], [b]) => compareTeams(a, b)).map(([teamName, slots]) => (
-          <div key={teamName} className="bg-white rounded-lg shadow overflow-hidden">
+        {Object.entries(byTeam).sort(([a], [b]) => compareTeams(a, b)).map(([teamName, slots], index) => (
+          <motion.div
+            key={teamName}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.45, delay: (index % 3) * 0.1, ease: 'easeOut' }}
+            whileHover={{ y: -5, transition: { duration: 0.2, ease: 'easeOut' } }}
+            className="bg-white rounded-lg shadow overflow-hidden"
+            style={{ cursor: 'default' }}
+          >
             <div className="px-4 py-3" style={{ backgroundColor: 'var(--color-primary)' }}>
               <h2 className="text-white font-black">{teamName}</h2>
             </div>
@@ -95,7 +105,7 @@ export default function HorairesPage() {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

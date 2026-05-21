@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState, useCallback, useRef } from 'react'
+import { motion } from 'framer-motion'
 
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api'
@@ -60,8 +61,13 @@ export default function GaleriePage() {
             const url = getMediaUrl(photo.image)
             if (!url) return null
             return (
-              <button
+              <motion.button
                 key={photo.id}
+                initial={{ opacity: 0, scale: 0.88 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.4, delay: (index % 8) * 0.05, ease: 'easeOut' }}
+                whileHover={{ scale: 1.04, transition: { duration: 0.2 } }}
                 onClick={() => setSelectedIndex(index)}
                 className="group relative overflow-hidden rounded-lg focus:outline-none"
                 style={{ aspectRatio: '1 / 1' }}
@@ -69,11 +75,11 @@ export default function GaleriePage() {
                 <img
                   src={url}
                   alt=""
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
                   style={{ background: 'rgba(249,115,22,0.15)' }} />
-              </button>
+              </motion.button>
             )
           })}
         </div>

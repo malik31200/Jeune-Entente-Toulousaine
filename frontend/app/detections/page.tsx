@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { getDetections } from '@/lib/api'
 
 
@@ -82,64 +83,65 @@ export default function DetectionsPage() {
           <>
             {/* Category selector */}
             <div className="flex flex-wrap gap-3 justify-center mb-10">
-              {detections.map((d) => (
-                <button
+              {detections.map((d, i) => (
+                <motion.button
                   key={d.id}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.35, delay: i * 0.07, ease: 'easeOut' }}
+                  whileHover={{ scale: 1.06, transition: { duration: 0.15 } }}
                   onClick={() => setSelected(d)}
-                  className="px-5 py-2.5 rounded-full font-semibold text-sm transition-all duration-200"
+                  className="px-5 py-2.5 rounded-full font-semibold text-sm transition-colors duration-200"
                   style={
                     selected?.id === d.id
-                      ? {
-                          backgroundColor: 'var(--color-accent)',
-                          color: 'var(--color-primary)',
-                          transform: 'scale(1.05)',
-                        }
-                      : {
-                          backgroundColor: '#1a1a1a',
-                          color: '#ccc',
-                          border: '1px solid rgba(255,255,255,0.1)',
-                        }
+                      ? { backgroundColor: 'var(--color-accent)', color: 'var(--color-primary)' }
+                      : { backgroundColor: '#1a1a1a', color: '#ccc', border: '1px solid rgba(255,255,255,0.1)' }
                   }
                 >
                   {d.team_name}
-                </button>
+                </motion.button>
               ))}
             </div>
 
             {/* Selected detection content */}
-            {selected && (
-              <div className="max-w-4xl mx-auto">
-                {selected.description && (
-                  <div
-                    className="rounded-xl p-6 mb-8 text-center"
-                    style={{ backgroundColor: '#111', border: '1px solid rgba(255,255,255,0.06)' }}
-                  >
-                    <p className="text-gray-300 leading-relaxed">{selected.description}</p>
-                  </div>
-                )}
-
-                <div
-                  className="rounded-2xl overflow-hidden"
-                  style={{
-                    border: '1px solid rgba(255,255,255,0.08)',
-                    boxShadow: '0 8px 40px rgba(0,0,0,0.4)',
-                  }}
+            <AnimatePresence mode="wait">
+              {selected && (
+                <motion.div
+                  key={selected.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.35, ease: 'easeOut' }}
+                  className="max-w-4xl mx-auto"
                 >
-                  <iframe
-                    src={embedUrl(selected.form_url)}
-                    width="100%"
-                    height="900"
-                    frameBorder="0"
-                    marginHeight={0}
-                    marginWidth={0}
-                    style={{ display: 'block' }}
-                    title={`Formulaire de détection — ${selected.team_name}`}
+                  {selected.description && (
+                    <div
+                      className="rounded-xl p-6 mb-8 text-center"
+                      style={{ backgroundColor: '#111', border: '1px solid rgba(255,255,255,0.06)' }}
+                    >
+                      <p className="text-gray-300 leading-relaxed">{selected.description}</p>
+                    </div>
+                  )}
+                  <div
+                    className="rounded-2xl overflow-hidden"
+                    style={{ border: '1px solid rgba(255,255,255,0.08)', boxShadow: '0 8px 40px rgba(0,0,0,0.4)' }}
                   >
-                    Chargement…
-                  </iframe>
-                </div>
-              </div>
-            )}
+                    <iframe
+                      src={embedUrl(selected.form_url)}
+                      width="100%"
+                      height="900"
+                      frameBorder="0"
+                      marginHeight={0}
+                      marginWidth={0}
+                      style={{ display: 'block' }}
+                      title={`Formulaire de détection — ${selected.team_name}`}
+                    >
+                      Chargement…
+                    </iframe>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </>
         )}
       </div>
