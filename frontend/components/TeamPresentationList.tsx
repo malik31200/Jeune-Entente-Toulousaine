@@ -27,18 +27,19 @@ export default function TeamPresentationList({ teams }: { teams: TeamItem[] }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.45, delay: i * 0.08, ease: 'easeOut' }}
-            className="rounded-xl overflow-hidden shadow flex"
+            whileHover={{ y: -6, transition: { duration: 0.2, ease: 'easeOut' } }}
+            className="rounded-xl overflow-hidden shadow flex group cursor-pointer"
             style={{ backgroundColor: 'white', border: '1px solid #e5e7eb', minHeight: '180px' }}
           >
             {/* Photo */}
-            <div className="w-48 flex-shrink-0" style={{ minHeight: '180px' }}>
+            <div className="w-48 flex-shrink-0 overflow-hidden" style={{ minHeight: '180px' }}>
               {imageUrl ? (
                 <div className="relative w-full h-full">
                   <Image
                     src={imageUrl}
                     alt={item.display_name}
                     fill
-                    className="object-contain"
+                    className="object-contain transition-transform duration-500 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 </div>
@@ -51,7 +52,7 @@ export default function TeamPresentationList({ teams }: { teams: TeamItem[] }) {
 
             {/* Contenu */}
             <div className="flex-1 p-6">
-              <h2 className="font-black uppercase text-xl mb-4" style={{ color: 'var(--color-primary)' }}>
+              <h2 className="font-black uppercase text-xl mb-4 transition-colors group-hover:text-orange-400" style={{ color: 'var(--color-primary)' }}>
                 {item.display_name}
               </h2>
               {coaches.length > 0 && (
