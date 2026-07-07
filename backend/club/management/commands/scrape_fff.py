@@ -1,3 +1,4 @@
+import time
 import requests
 from datetime import datetime
 from django.core.management.base import BaseCommand
@@ -7,6 +8,12 @@ from club.models import Team, Match
 
 FFF_CLUB_ID = 11641
 FFF_SEASON = 2025
+MAX_RETRIES = 3
+HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+                  '(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+    'Accept': 'application/json',
+}
 
 CATEGORY_TO_TEAM = {
     'SEM': 'Seniors',
@@ -38,14 +45,22 @@ class Command(BaseCommand):
         while next_url:
             self.stdout.write(f'Page {page}...')
 
-            try:
-                response = requests.get(base_url + next_url, timeout=10)
-                response.raise_for_status()
-                data = response.json()
-            except requests.RequestException as e:
-                self.stderr.write(f'Erreur API FFF : {e}')
-                return
-        
+            data = None
+            for attempt in range(1, MAX_RETRIES + 1):
+                try:
+                    response = requests.get(base_url + next_url, headers=HEADERS, timeout=10)
+                    response.raise_for_status()
+                    data = response.json()
+                    break
+                except (requests.RequestException, ValueError) as e:
+                    self.stderr.write(f'Erreur API FFF (page {page}, tentative {attempt}/{MAX_RETRIES}) : {e}')
+                    if attempt < MAX_RETRIES:
+                        time.sleep(2 * attempt)
+
+            if data is None:
+                self.stderr.write(f'Abandon du scraping à la page {page} après {MAX_RETRIES} tentatives.')
+                break
+
             matchs = data.get('hydra:member', [])
             
             for match_data in matchs:
