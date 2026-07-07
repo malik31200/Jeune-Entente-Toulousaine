@@ -28,12 +28,12 @@ export default function HomepageSponsors({ sponsors }: { sponsors: Sponsor[] }) 
           Nos partenaires
         </motion.p>
 
-        <div className="flex flex-wrap items-center justify-center gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-10 place-items-center">
           {sponsors.map((sponsor, i) => {
             const logoUrl = sponsor.logo ? getMediaUrl(sponsor.logo) : null
             const inner = logoUrl ? (
-              <div className="relative h-12 w-32">
-                <Image src={logoUrl} alt={sponsor.name} fill className="object-contain" sizes="128px" />
+              <div className="relative h-20 w-36 sm:h-24 sm:w-44">
+                <Image src={logoUrl} alt={sponsor.name} fill className="object-contain" sizes="176px" />
               </div>
             ) : (
               <span className="font-bold text-lg" style={{ color: 'var(--color-text-light)' }}>{sponsor.name}</span>
