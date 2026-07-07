@@ -9,11 +9,6 @@ from club.models import Team, Match
 FFF_CLUB_ID = 11641
 FFF_SEASON = 2025
 MAX_RETRIES = 3
-HEADERS = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
-                  '(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
-    'Accept': 'application/json',
-}
 
 CATEGORY_TO_TEAM = {
     'SEM': 'Seniors',
@@ -48,7 +43,7 @@ class Command(BaseCommand):
             data = None
             for attempt in range(1, MAX_RETRIES + 1):
                 try:
-                    response = requests.get(base_url + next_url, headers=HEADERS, timeout=10)
+                    response = requests.get(base_url + next_url, timeout=10)
                     response.raise_for_status()
                     data = response.json()
                     break
