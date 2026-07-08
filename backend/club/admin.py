@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.core.management import call_command
 from django.contrib import messages
-from .models import Article, Team, Player, TrainingSchedule, Match, TeamStats, Sponsor, SiteSettings, ClubPage, GalleryPhoto, CategoryPage, TeamPresentation, Detection
+from .models import Article, Team, Player, TrainingSchedule, Match, TeamStats, ClassementEntry, Sponsor, SiteSettings, ClubPage, GalleryPhoto, CategoryPage, TeamPresentation, Detection
 
 
 
@@ -64,6 +64,17 @@ class TeamStatsAdmin(admin.ModelAdmin):
     list_display = ['team', 'season', 'matches_played', 'wins', 'draws', 'losses', 'points', 'ranking']
     list_filter = ['team', 'season']
     readonly_fields = ['updated_at']
+
+
+@admin.register(ClassementEntry)
+class ClassementEntryAdmin(admin.ModelAdmin):
+    list_display = ['name', 'cp_no', 'phase_no', 'poule_no', 'rank', 'pts', 'j', 'updated_at']
+    list_filter = ['cp_no']
+    search_fields = ['name', 'cp_no']
+    ordering = ['cp_no', 'phase_no', 'poule_no', 'rank']
+
+    def has_add_permission(self, request):
+        return False
 
 
 @admin.register(Sponsor)

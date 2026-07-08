@@ -167,7 +167,33 @@ class TeamStats(models.Model):
         verbose_name_plural = "Statistiques équipes"
 
 
-    
+class ClassementEntry(models.Model):
+    """Dernière ligne de classement connue pour un club, dans une poule FFF donnée.
+    Sert de secours quand l'API FFF est indisponible (ex: pendant l'intersaison)."""
+    cp_no = models.CharField(max_length=20)
+    phase_no = models.IntegerField()
+    poule_no = models.IntegerField()
+    cl_no = models.BigIntegerField()
+    name = models.CharField(max_length=200)
+    rank = models.IntegerField()
+    pts = models.IntegerField(default=0)
+    j = models.IntegerField(default=0)
+    g = models.IntegerField(default=0)
+    n = models.IntegerField(default=0)
+    p = models.IntegerField(default=0)
+    bp = models.IntegerField(default=0)
+    bc = models.IntegerField(default=0)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        unique_together = ('cp_no', 'phase_no', 'poule_no', 'cl_no')
+        ordering = ['rank']
+        verbose_name = "Classement (secours)"
+        verbose_name_plural = "Classements (secours)"
+
+    def __str__(self):
+        return f"{self.name} - {self.cp_no}/{self.phase_no}/{self.poule_no} (#{self.rank})"
+
 
 class Sponsor(models.Model):
     name = models.CharField(max_length=200)

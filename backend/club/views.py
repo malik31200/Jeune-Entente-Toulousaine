@@ -9,7 +9,7 @@ import requests as http_requests
 
 FFF_BASE = "https://api-dofa.fff.fr"
 CACHE_TIMEOUT = 15 * 60
-from .models import Article, Team, TrainingSchedule, Match, TeamStats, Sponsor, SiteSettings, ClubPage, GalleryPhoto, CategoryPage, TeamPresentation, Detection
+from .models import Article, Team, TrainingSchedule, Match, TeamStats, ClassementEntry, Sponsor, SiteSettings, ClubPage, GalleryPhoto, CategoryPage, TeamPresentation, Detection
 from .serializers import (ArticleSerializer, TeamSerializer, TrainingScheduleSerializer,
                           MatchSerializer, TeamStatsSerializer, SponsorSerializer,
                           SiteSettingsSerializer, ClubPageSerializer, GalleryPhotoSerializer,
@@ -143,45 +143,78 @@ def ranking_proxy(request, team_id):
 @permission_classes([AllowAny])
 def classement_view(request):
     cp_no = request.query_params.get('cp_no')
-    phase = request.query_params.get('phase', '1')
-    poule = request.query_params.get('poule', '1')
+    phase = int(request.query_params.get('phase', 1))
+    poule = int(request.query_params.get('poule', 1))
     if not cp_no:
         return Response({'error': 'cp_no requis'}, status=400)
     cache_key = f"classement_{cp_no}_{phase}_{poule}"
     data = cache.get(cache_key)
     if data is None:
         try:
-            base_url = f"{FFF_BASE}/api/compets/{cp_no}/phases/{phase}/poules/{poule}/matchs"
-            headers = {'User-Agent': 'Mozilla/5.0'}
-            all_matchs = []
-
-            resp = http_requests.get(base_url, params={'page': 1}, headers=headers, timeout=15)
-            resp.raise_for_status()
-            body = resp.json()
-
-            if isinstance(body, list):
-                all_matchs = body
-            else:
-                all_matchs.extend(body.get('hydra:member', []))
-                view = body.get('hydra:view', {})
-                last_url = view.get('hydra:last', '')
-                import re
-                m = re.search(r'page=(\d+)', last_url)
-                last_page = int(m.group(1)) if m else 1
-                for page in range(2, last_page + 1):
-                    r = http_requests.get(base_url, params={'page': page}, headers=headers, timeout=15)
-                    r.raise_for_status()
-                    page_body = r.json()
-                    if isinstance(page_body, list):
-                        all_matchs.extend(page_body)
-                    else:
-                        all_matchs.extend(page_body.get('hydra:member', []))
-
-            data = _compute_classement(all_matchs)
+            data = fetch_and_store_classement(cp_no, phase, poule)
             cache.set(cache_key, data, CACHE_TIMEOUT)
         except Exception as e:
+            fallback = _load_classement_fallback(cp_no, phase, poule)
+            if fallback:
+                return Response(fallback)
             return Response({'error': str(e)}, status=502)
     return Response(data)
+
+
+def fetch_and_store_classement(cp_no, phase, poule):
+    """Récupère le classement en direct depuis la FFF et sauvegarde un instantané en base.
+    Lève une exception si l'appel FFF échoue (laisse l'appelant décider du fallback)."""
+    base_url = f"{FFF_BASE}/api/compets/{cp_no}/phases/{phase}/poules/{poule}/matchs"
+    headers = {'User-Agent': 'Mozilla/5.0'}
+    all_matchs = []
+
+    resp = http_requests.get(base_url, params={'page': 1}, headers=headers, timeout=15)
+    resp.raise_for_status()
+    body = resp.json()
+
+    if isinstance(body, list):
+        all_matchs = body
+    else:
+        all_matchs.extend(body.get('hydra:member', []))
+        view = body.get('hydra:view', {})
+        last_url = view.get('hydra:last', '')
+        import re
+        m = re.search(r'page=(\d+)', last_url)
+        last_page = int(m.group(1)) if m else 1
+        for page in range(2, last_page + 1):
+            r = http_requests.get(base_url, params={'page': page}, headers=headers, timeout=15)
+            r.raise_for_status()
+            page_body = r.json()
+            if isinstance(page_body, list):
+                all_matchs.extend(page_body)
+            else:
+                all_matchs.extend(page_body.get('hydra:member', []))
+
+    data = _compute_classement(all_matchs)
+    _save_classement_snapshot(cp_no, phase, poule, data)
+    return data
+
+
+def _save_classement_snapshot(cp_no, phase, poule, ranking):
+    for t in ranking:
+        ClassementEntry.objects.update_or_create(
+            cp_no=cp_no, phase_no=phase, poule_no=poule, cl_no=t['cl_no'],
+            defaults={
+                'name': t['name'], 'rank': t['rank'], 'pts': t['pts'], 'j': t['j'],
+                'g': t['g'], 'n': t['n'], 'p': t['p'], 'bp': t['bp'], 'bc': t['bc'],
+            }
+        )
+
+
+def _load_classement_fallback(cp_no, phase, poule):
+    entries = ClassementEntry.objects.filter(cp_no=cp_no, phase_no=phase, poule_no=poule)
+    return [
+        {
+            'cl_no': e.cl_no, 'name': e.name, 'rank': e.rank, 'pts': e.pts, 'j': e.j,
+            'g': e.g, 'n': e.n, 'p': e.p, 'bp': e.bp, 'bc': e.bc, 'diff': e.bp - e.bc,
+        }
+        for e in entries
+    ]
 
 
 def _compute_classement(matchs):

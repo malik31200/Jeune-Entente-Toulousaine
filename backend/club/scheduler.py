@@ -15,6 +15,15 @@ def scrape_fff_job():
         logger.error(f"Erreur scraping FFF : {e}")
 
 
+def refresh_classements_job():
+    logger.info("Rafraîchissement des classements...")
+    try:
+        call_command('refresh_classements')
+        logger.info("Classements rafraîchis.")
+    except Exception as e:
+        logger.error(f"Erreur rafraîchissement classements : {e}")
+
+
 def start():
     from django.db import connection
     tables = connection.introspection.table_names()
@@ -41,6 +50,14 @@ def start():
             id=f"scrape_fff_weekend_{hour}h{minute:02d}",
             replace_existing=True,
         )
+
+    # Rafraîchissement quotidien des classements (secours en base)
+    scheduler.add_job(
+        refresh_classements_job,
+        trigger=CronTrigger(hour=5, minute=30),
+        id="refresh_classements",
+        replace_existing=True,
+    )
 
     scheduler.start()
     print("✅ Scheduler FFF démarré.")
