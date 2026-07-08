@@ -195,6 +195,18 @@ class ClassementEntry(models.Model):
         return f"{self.name} - {self.cp_no}/{self.phase_no}/{self.poule_no} (#{self.rank})"
 
 
+class ClassementFetchLock(models.Model):
+    """Verrou en base pour éviter que plusieurs workers/visiteurs déclenchent
+    en même temps un appel live à la FFF pour le même classement."""
+    cp_no = models.CharField(max_length=20)
+    phase_no = models.IntegerField()
+    poule_no = models.IntegerField()
+    started_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('cp_no', 'phase_no', 'poule_no')
+
+
 class Sponsor(models.Model):
     name = models.CharField(max_length=200)
     logo = models.ImageField(upload_to='sponsors/')

@@ -9,7 +9,7 @@ import requests as http_requests
 
 FFF_BASE = "https://api-dofa.fff.fr"
 CACHE_TIMEOUT = 15 * 60
-from .models import Article, Team, TrainingSchedule, Match, TeamStats, ClassementEntry, Sponsor, SiteSettings, ClubPage, GalleryPhoto, CategoryPage, TeamPresentation, Detection
+from .models import Article, Team, TrainingSchedule, Match, TeamStats, ClassementEntry, ClassementFetchLock, Sponsor, SiteSettings, ClubPage, GalleryPhoto, CategoryPage, TeamPresentation, Detection
 from .serializers import (ArticleSerializer, TeamSerializer, TrainingScheduleSerializer,
                           MatchSerializer, TeamStatsSerializer, SponsorSerializer,
                           SiteSettingsSerializer, ClubPageSerializer, GalleryPhotoSerializer,
@@ -150,6 +150,16 @@ def classement_view(request):
     cache_key = f"classement_{cp_no}_{phase}_{poule}"
     data = cache.get(cache_key)
     if data is None:
+        if not _acquire_classement_lock(cp_no, phase, poule):
+            # Un autre worker est déjà en train de rafraîchir ce classement : on sert
+            # la dernière version connue au lieu de dupliquer l'appel à la FFF.
+            fallback = _load_classement_fallback(cp_no, phase, poule)
+            if fallback:
+                return Response(fallback)
+            return Response(
+                {'error': 'Classement en cours de rafraîchissement, réessayez dans quelques secondes.'},
+                status=503,
+            )
         try:
             data = fetch_and_store_classement(cp_no, phase, poule)
             cache.set(cache_key, data, CACHE_TIMEOUT)
@@ -158,7 +168,40 @@ def classement_view(request):
             if fallback:
                 return Response(fallback)
             return Response({'error': str(e)}, status=502)
+        finally:
+            _release_classement_lock(cp_no, phase, poule)
     return Response(data)
+
+
+LOCK_STALE_SECONDS = 20
+
+
+def _acquire_classement_lock(cp_no, phase, poule):
+    """Verrou basé sur une contrainte unique en base : fonctionne entre workers/process,
+    contrairement au cache mémoire qui est local à chaque worker."""
+    from django.db import IntegrityError
+    from django.utils import timezone
+    from datetime import timedelta
+
+    try:
+        ClassementFetchLock.objects.create(cp_no=cp_no, phase_no=phase, poule_no=poule)
+        return True
+    except IntegrityError:
+        stale_before = timezone.now() - timedelta(seconds=LOCK_STALE_SECONDS)
+        deleted, _ = ClassementFetchLock.objects.filter(
+            cp_no=cp_no, phase_no=phase, poule_no=poule, started_at__lt=stale_before
+        ).delete()
+        if not deleted:
+            return False
+        try:
+            ClassementFetchLock.objects.create(cp_no=cp_no, phase_no=phase, poule_no=poule)
+            return True
+        except IntegrityError:
+            return False
+
+
+def _release_classement_lock(cp_no, phase, poule):
+    ClassementFetchLock.objects.filter(cp_no=cp_no, phase_no=phase, poule_no=poule).delete()
 
 
 def fetch_and_store_classement(cp_no, phase, poule):
