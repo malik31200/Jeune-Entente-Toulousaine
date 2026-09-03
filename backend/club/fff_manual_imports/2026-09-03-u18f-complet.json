@@ -1,0 +1,2842 @@
+[
+  {
+    "ma_no": 79065035,
+    "competition": {
+      "cp_no": 455737,
+      "season": 2026,
+      "type": "CH",
+      "name": "U18 Territoire F",
+      "level": "L",
+      "cdg": {
+        "cg_no": 77,
+        "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+        "external_updated_at": "2026-09-01T15:11:32+00:00"
+      },
+      "external_updated_at": "2026-08-26T14:22:36+00:00"
+    },
+    "phase": {
+      "number": 1,
+      "type": "CH",
+      "name": "Phase 1",
+      "external_updated_at": "2026-08-26T14:32:32+00:00"
+    },
+    "poule": {
+      "stage_number": 2,
+      "name": "POULE N1 B",
+      "external_updated_at": "2026-09-02T12:46:05+00:00",
+      "poule_unique": false,
+      "at_least_one_match_resultat": false
+    },
+    "poule_journee": {
+      "number": 1,
+      "external_updated_at": "2026-08-27T13:20:29+00:00",
+      "name": "1"
+    },
+    "home": {
+      "club": {
+        "cl_no": 11641,
+        "external_updated_at": "2026-09-01T16:25:03+00:00",
+        "logo": "https://cdn-transverse.azureedge.net/phlogos/BC527639.jpg"
+      },
+      "category_code": "U18F",
+      "number": 5,
+      "code": 1,
+      "short_name": "J.E.T.",
+      "short_name_ligue": "JEUNE ENTENTE TOULOU",
+      "short_name_federation": "JEUNE ENTENTE TOULOU",
+      "type": "C",
+      "engagements": [
+        {
+          "competition": {
+            "cp_no": 449675,
+            "season": 2026,
+            "type": "CP",
+            "name": "COUPE NIKE FÉMININE U18",
+            "level": "F",
+            "cdg": {
+              "cg_no": 0,
+              "name": "FEDERATION FRANCAISE DE FOOTBALL",
+              "external_updated_at": "2026-08-31T22:09:54+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:21:34+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455745,
+            "season": 2026,
+            "type": "CP",
+            "name": "Coupe Occitanie U18 FEM Amos",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455737,
+            "season": 2026,
+            "type": "CH",
+            "name": "U18 Territoire F",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        }
+      ],
+      "external_updated_at": "2026-08-27T14:41:39+00:00",
+      "category_label": "U18 F - U17 F - U16 F Libre",
+      "category_gender": "F"
+    },
+    "away": {
+      "club": {
+        "cl_no": 179924,
+        "external_updated_at": "2026-08-31T09:33:33+00:00",
+        "logo": "https://cdn-transverse.azureedge.net/phlogos/BC590251.jpg"
+      },
+      "category_code": "U18F",
+      "number": 3,
+      "code": 1,
+      "short_name": "ENT. LES ISARDES",
+      "short_name_ligue": "ENT. LES ISARDES",
+      "short_name_federation": "ENT. LES ISARDES",
+      "type": "E",
+      "engagements": [
+        {
+          "competition": {
+            "cp_no": 449675,
+            "season": 2026,
+            "type": "CP",
+            "name": "COUPE NIKE FÉMININE U18",
+            "level": "F",
+            "cdg": {
+              "cg_no": 0,
+              "name": "FEDERATION FRANCAISE DE FOOTBALL",
+              "external_updated_at": "2026-08-31T22:09:54+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:21:34+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455745,
+            "season": 2026,
+            "type": "CP",
+            "name": "Coupe Occitanie U18 FEM Amos",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455737,
+            "season": 2026,
+            "type": "CH",
+            "name": "U18 Territoire F",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        }
+      ],
+      "external_updated_at": "2026-08-31T09:33:17+00:00",
+      "category_label": "U18 F - U17 F - U16 F Libre",
+      "category_gender": "F"
+    },
+    "terrain": {
+      "te_no": 315552101,
+      "name": "STADE RIGAL",
+      "zip_code": "31300",
+      "city": "TOULOUSE",
+      "libelle_surface": "Synthétique",
+      "external_updated_at": "2026-07-28T18:31:31+00:00",
+      "address": "4 RUE RAPHAEL"
+    },
+    "season": 2026,
+    "status": "A",
+    "ma_ar": "A",
+    "ma_inver": "N",
+    "ma_arret": "N",
+    "is_overtime": "N",
+    "date": "2026-09-19T00:00:00+00:00",
+    "time": "16H00",
+    "initial_date": null,
+    "cr_eq_naff": null,
+    "home_resu": "",
+    "cr_nb_but": null,
+    "home_score": null,
+    "home_but_contre": null,
+    "home_nb_point": null,
+    "home_nb_tir_but": null,
+    "home_nb_point_pena": null,
+    "home_is_forfeit": "N",
+    "cv_eq_naff": null,
+    "away_resu": "",
+    "away_nb_but": null,
+    "away_score": null,
+    "away_but_contre": null,
+    "away_nb_point": null,
+    "away_nb_tir_but": null,
+    "away_nb_point_pena": null,
+    "away_is_forfeit": "N",
+    "seems_postponed": "",
+    "match_membres": [],
+    "match_feuille": null,
+    "external_updated_at": "2026-08-27T13:20:29+00:00",
+    "status_label": "/"
+  },
+  {
+    "ma_no": 79065036,
+    "competition": {
+      "cp_no": 455737,
+      "season": 2026,
+      "type": "CH",
+      "name": "U18 Territoire F",
+      "level": "L",
+      "cdg": {
+        "cg_no": 77,
+        "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+        "external_updated_at": "2026-09-01T15:11:32+00:00"
+      },
+      "external_updated_at": "2026-08-26T14:22:36+00:00"
+    },
+    "phase": {
+      "number": 1,
+      "type": "CH",
+      "name": "Phase 1",
+      "external_updated_at": "2026-08-26T14:32:32+00:00"
+    },
+    "poule": {
+      "stage_number": 2,
+      "name": "POULE N1 B",
+      "external_updated_at": "2026-09-02T12:46:05+00:00",
+      "poule_unique": false,
+      "at_least_one_match_resultat": false
+    },
+    "poule_journee": {
+      "number": 1,
+      "external_updated_at": "2026-08-27T13:20:29+00:00",
+      "name": "1"
+    },
+    "home": {
+      "club": {
+        "cl_no": 200902,
+        "external_updated_at": "2026-08-24T13:03:09+00:00",
+        "logo": "https://cdn-transverse.azureedge.net/phlogos/BC561233.jpg"
+      },
+      "category_code": "U18F",
+      "number": 1,
+      "code": 1,
+      "short_name": "SFBA",
+      "short_name_ligue": "SF BASSE ARIEGE",
+      "short_name_federation": "SFBA",
+      "type": "C",
+      "engagements": [
+        {
+          "competition": {
+            "cp_no": 455737,
+            "season": 2026,
+            "type": "CH",
+            "name": "U18 Territoire F",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        }
+      ],
+      "external_updated_at": "2026-09-02T14:11:40+00:00",
+      "category_label": "U18 F - U17 F - U16 F Libre",
+      "category_gender": "F"
+    },
+    "away": {
+      "club": {
+        "cl_no": 192196,
+        "external_updated_at": "2026-08-31T09:42:20+00:00",
+        "logo": "https://cdn-transverse.azureedge.net/phlogos/BC547304.jpg"
+      },
+      "category_code": "U18F",
+      "number": 4,
+      "code": 1,
+      "short_name": "EAUNES LABARTHE FC",
+      "short_name_ligue": "F.C. EAUNES LABARTHE",
+      "short_name_federation": "F.C. EAUNES LABARTHE",
+      "type": "C",
+      "engagements": [
+        {
+          "competition": {
+            "cp_no": 449675,
+            "season": 2026,
+            "type": "CP",
+            "name": "COUPE NIKE FÉMININE U18",
+            "level": "F",
+            "cdg": {
+              "cg_no": 0,
+              "name": "FEDERATION FRANCAISE DE FOOTBALL",
+              "external_updated_at": "2026-08-31T22:09:54+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:21:34+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455745,
+            "season": 2026,
+            "type": "CP",
+            "name": "Coupe Occitanie U18 FEM Amos",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455737,
+            "season": 2026,
+            "type": "CH",
+            "name": "U18 Territoire F",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        }
+      ],
+      "external_updated_at": "2026-08-27T14:41:48+00:00",
+      "category_label": "U18 F - U17 F - U16 F Libre",
+      "category_gender": "F"
+    },
+    "terrain": {
+      "te_no": 93120201,
+      "name": "Complexe Sportif Tour D'ariège N°1",
+      "zip_code": "09100",
+      "city": "LA TOUR DU CRIEU",
+      "libelle_surface": "Pelouse Naturelle",
+      "external_updated_at": "2026-06-07T13:31:19+00:00",
+      "address": "CHEMIN DE LASSERRE"
+    },
+    "season": 2026,
+    "status": "A",
+    "ma_ar": "A",
+    "ma_inver": "N",
+    "ma_arret": "N",
+    "is_overtime": "N",
+    "date": "2026-09-19T00:00:00+00:00",
+    "time": "15H00",
+    "initial_date": null,
+    "cr_eq_naff": null,
+    "home_resu": "",
+    "cr_nb_but": null,
+    "home_score": null,
+    "home_but_contre": null,
+    "home_nb_point": null,
+    "home_nb_tir_but": null,
+    "home_nb_point_pena": null,
+    "home_is_forfeit": "N",
+    "cv_eq_naff": null,
+    "away_resu": "",
+    "away_nb_but": null,
+    "away_score": null,
+    "away_but_contre": null,
+    "away_nb_point": null,
+    "away_nb_tir_but": null,
+    "away_nb_point_pena": null,
+    "away_is_forfeit": "N",
+    "seems_postponed": "",
+    "match_membres": [
+      {
+        "mm_no": 162185921,
+        "po_cod": "AC",
+        "prenom": "Anonyme",
+        "nom": "",
+        "label_position": "Arbitre centre",
+        "position_ordre": 1,
+        "external_updated_at": "2026-09-03T12:54:38+00:00"
+      }
+    ],
+    "match_feuille": null,
+    "external_updated_at": "2026-08-27T13:20:42+00:00",
+    "status_label": "/"
+  },
+  {
+    "ma_no": 79065037,
+    "competition": {
+      "cp_no": 455737,
+      "season": 2026,
+      "type": "CH",
+      "name": "U18 Territoire F",
+      "level": "L",
+      "cdg": {
+        "cg_no": 77,
+        "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+        "external_updated_at": "2026-09-01T15:11:32+00:00"
+      },
+      "external_updated_at": "2026-08-26T14:22:36+00:00"
+    },
+    "phase": {
+      "number": 1,
+      "type": "CH",
+      "name": "Phase 1",
+      "external_updated_at": "2026-08-26T14:32:32+00:00"
+    },
+    "poule": {
+      "stage_number": 2,
+      "name": "POULE N1 B",
+      "external_updated_at": "2026-09-02T12:46:05+00:00",
+      "poule_unique": false,
+      "at_least_one_match_resultat": false
+    },
+    "poule_journee": {
+      "number": 1,
+      "external_updated_at": "2026-08-27T13:20:29+00:00",
+      "name": "1"
+    },
+    "home": {
+      "club": {
+        "cl_no": 6315,
+        "external_updated_at": "2026-08-24T12:32:25+00:00",
+        "logo": "https://cdn-transverse.azureedge.net/phlogos/BC519333.jpg"
+      },
+      "category_code": "U18F",
+      "number": 3,
+      "code": 1,
+      "short_name": "ENT.TARBES JUILLAN 1",
+      "short_name_ligue": "ENT.TARBES JUILLAN 1",
+      "short_name_federation": "ENT.TARBES JUILLAN 1",
+      "type": "E",
+      "engagements": [
+        {
+          "competition": {
+            "cp_no": 449675,
+            "season": 2026,
+            "type": "CP",
+            "name": "COUPE NIKE FÉMININE U18",
+            "level": "F",
+            "cdg": {
+              "cg_no": 0,
+              "name": "FEDERATION FRANCAISE DE FOOTBALL",
+              "external_updated_at": "2026-08-31T22:09:54+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:21:34+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455737,
+            "season": 2026,
+            "type": "CH",
+            "name": "U18 Territoire F",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        }
+      ],
+      "external_updated_at": "2026-08-27T14:41:37+00:00",
+      "category_label": "U18 F - U17 F - U16 F Libre",
+      "category_gender": "F"
+    },
+    "away": {
+      "club": {
+        "cl_no": 4646,
+        "external_updated_at": "2026-08-31T07:37:33+00:00",
+        "logo": "https://cdn-transverse.azureedge.net/phlogos/BC514895.jpg"
+      },
+      "category_code": "U18F",
+      "number": 3,
+      "code": 1,
+      "short_name": "RAMONVILLE COTEAUX",
+      "short_name_ligue": "RAMONVILLE COTEAUX",
+      "short_name_federation": "RAMONVILLE COTEAUX",
+      "type": "C",
+      "engagements": [
+        {
+          "competition": {
+            "cp_no": 449675,
+            "season": 2026,
+            "type": "CP",
+            "name": "COUPE NIKE FÉMININE U18",
+            "level": "F",
+            "cdg": {
+              "cg_no": 0,
+              "name": "FEDERATION FRANCAISE DE FOOTBALL",
+              "external_updated_at": "2026-08-31T22:09:54+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:21:34+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455745,
+            "season": 2026,
+            "type": "CP",
+            "name": "Coupe Occitanie U18 FEM Amos",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455737,
+            "season": 2026,
+            "type": "CH",
+            "name": "U18 Territoire F",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        }
+      ],
+      "external_updated_at": "2026-08-27T14:41:36+00:00",
+      "category_label": "U18 F - U17 F - U16 F Libre",
+      "category_gender": "F"
+    },
+    "terrain": {
+      "te_no": 652350101,
+      "name": "STADE FRANCK SARRABAYROUSE",
+      "zip_code": "65290",
+      "city": "JUILLAN",
+      "libelle_surface": "Synthétique",
+      "external_updated_at": "2026-06-07T07:51:28+00:00",
+      "address": "RUE DES PYRENEES"
+    },
+    "season": 2026,
+    "status": "A",
+    "ma_ar": "A",
+    "ma_inver": "N",
+    "ma_arret": "N",
+    "is_overtime": "N",
+    "date": "2026-09-20T00:00:00+00:00",
+    "time": "15H00",
+    "initial_date": null,
+    "cr_eq_naff": null,
+    "home_resu": "",
+    "cr_nb_but": null,
+    "home_score": null,
+    "home_but_contre": null,
+    "home_nb_point": null,
+    "home_nb_tir_but": null,
+    "home_nb_point_pena": null,
+    "home_is_forfeit": "N",
+    "cv_eq_naff": null,
+    "away_resu": "",
+    "away_nb_but": null,
+    "away_score": null,
+    "away_but_contre": null,
+    "away_nb_point": null,
+    "away_nb_tir_but": null,
+    "away_nb_point_pena": null,
+    "away_is_forfeit": "N",
+    "seems_postponed": "",
+    "match_membres": [
+      {
+        "mm_no": 161751827,
+        "po_cod": "AC",
+        "prenom": "MOHAMED",
+        "nom": "MOUTII",
+        "label_position": "Arbitre centre",
+        "position_ordre": 1,
+        "external_updated_at": "2026-09-01T23:38:43+00:00"
+      }
+    ],
+    "match_feuille": null,
+    "external_updated_at": "2026-08-27T13:20:42+00:00",
+    "status_label": "/"
+  },
+  {
+    "ma_no": 79065038,
+    "competition": {
+      "cp_no": 455737,
+      "season": 2026,
+      "type": "CH",
+      "name": "U18 Territoire F",
+      "level": "L",
+      "cdg": {
+        "cg_no": 77,
+        "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+        "external_updated_at": "2026-09-01T15:11:32+00:00"
+      },
+      "external_updated_at": "2026-08-26T14:22:36+00:00"
+    },
+    "phase": {
+      "number": 1,
+      "type": "CH",
+      "name": "Phase 1",
+      "external_updated_at": "2026-08-26T14:32:32+00:00"
+    },
+    "poule": {
+      "stage_number": 2,
+      "name": "POULE N1 B",
+      "external_updated_at": "2026-09-02T12:46:05+00:00",
+      "poule_unique": false,
+      "at_least_one_match_resultat": false
+    },
+    "poule_journee": {
+      "number": 2,
+      "external_updated_at": "2026-08-27T13:20:29+00:00",
+      "name": "2"
+    },
+    "home": {
+      "club": {
+        "cl_no": 192196,
+        "external_updated_at": "2026-08-31T09:42:20+00:00",
+        "logo": "https://cdn-transverse.azureedge.net/phlogos/BC547304.jpg"
+      },
+      "category_code": "U18F",
+      "number": 4,
+      "code": 1,
+      "short_name": "EAUNES LABARTHE FC",
+      "short_name_ligue": "F.C. EAUNES LABARTHE",
+      "short_name_federation": "F.C. EAUNES LABARTHE",
+      "type": "C",
+      "engagements": [
+        {
+          "competition": {
+            "cp_no": 449675,
+            "season": 2026,
+            "type": "CP",
+            "name": "COUPE NIKE FÉMININE U18",
+            "level": "F",
+            "cdg": {
+              "cg_no": 0,
+              "name": "FEDERATION FRANCAISE DE FOOTBALL",
+              "external_updated_at": "2026-08-31T22:09:54+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:21:34+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455745,
+            "season": 2026,
+            "type": "CP",
+            "name": "Coupe Occitanie U18 FEM Amos",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455737,
+            "season": 2026,
+            "type": "CH",
+            "name": "U18 Territoire F",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        }
+      ],
+      "external_updated_at": "2026-08-27T14:41:48+00:00",
+      "category_label": "U18 F - U17 F - U16 F Libre",
+      "category_gender": "F"
+    },
+    "away": {
+      "club": {
+        "cl_no": 4646,
+        "external_updated_at": "2026-08-31T07:37:33+00:00",
+        "logo": "https://cdn-transverse.azureedge.net/phlogos/BC514895.jpg"
+      },
+      "category_code": "U18F",
+      "number": 3,
+      "code": 1,
+      "short_name": "RAMONVILLE COTEAUX",
+      "short_name_ligue": "RAMONVILLE COTEAUX",
+      "short_name_federation": "RAMONVILLE COTEAUX",
+      "type": "C",
+      "engagements": [
+        {
+          "competition": {
+            "cp_no": 449675,
+            "season": 2026,
+            "type": "CP",
+            "name": "COUPE NIKE FÉMININE U18",
+            "level": "F",
+            "cdg": {
+              "cg_no": 0,
+              "name": "FEDERATION FRANCAISE DE FOOTBALL",
+              "external_updated_at": "2026-08-31T22:09:54+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:21:34+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455745,
+            "season": 2026,
+            "type": "CP",
+            "name": "Coupe Occitanie U18 FEM Amos",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455737,
+            "season": 2026,
+            "type": "CH",
+            "name": "U18 Territoire F",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        }
+      ],
+      "external_updated_at": "2026-08-27T14:41:36+00:00",
+      "category_label": "U18 F - U17 F - U16 F Libre",
+      "category_gender": "F"
+    },
+    "terrain": {
+      "te_no": 312480201,
+      "name": "COMPLEXE SPORTIF BERNARD BERAIL",
+      "zip_code": "31860",
+      "city": "LABARTHE SUR LEZE",
+      "libelle_surface": "Synthétique",
+      "external_updated_at": "2026-06-05T17:19:49+00:00",
+      "address": "1047 ROUTE DU PLANTAUREL"
+    },
+    "season": 2026,
+    "status": "A",
+    "ma_ar": "A",
+    "ma_inver": "N",
+    "ma_arret": "N",
+    "is_overtime": "N",
+    "date": "2026-09-26T00:00:00+00:00",
+    "time": "16H00",
+    "initial_date": null,
+    "cr_eq_naff": null,
+    "home_resu": "",
+    "cr_nb_but": null,
+    "home_score": null,
+    "home_but_contre": null,
+    "home_nb_point": null,
+    "home_nb_tir_but": null,
+    "home_nb_point_pena": null,
+    "home_is_forfeit": "N",
+    "cv_eq_naff": null,
+    "away_resu": "",
+    "away_nb_but": null,
+    "away_score": null,
+    "away_but_contre": null,
+    "away_nb_point": null,
+    "away_nb_tir_but": null,
+    "away_nb_point_pena": null,
+    "away_is_forfeit": "N",
+    "seems_postponed": "",
+    "match_membres": [],
+    "match_feuille": null,
+    "external_updated_at": "2026-08-27T13:20:42+00:00",
+    "status_label": "/"
+  },
+  {
+    "ma_no": 79065039,
+    "competition": {
+      "cp_no": 455737,
+      "season": 2026,
+      "type": "CH",
+      "name": "U18 Territoire F",
+      "level": "L",
+      "cdg": {
+        "cg_no": 77,
+        "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+        "external_updated_at": "2026-09-01T15:11:32+00:00"
+      },
+      "external_updated_at": "2026-08-26T14:22:36+00:00"
+    },
+    "phase": {
+      "number": 1,
+      "type": "CH",
+      "name": "Phase 1",
+      "external_updated_at": "2026-08-26T14:32:32+00:00"
+    },
+    "poule": {
+      "stage_number": 2,
+      "name": "POULE N1 B",
+      "external_updated_at": "2026-09-02T12:46:05+00:00",
+      "poule_unique": false,
+      "at_least_one_match_resultat": false
+    },
+    "poule_journee": {
+      "number": 2,
+      "external_updated_at": "2026-08-27T13:20:29+00:00",
+      "name": "2"
+    },
+    "home": {
+      "club": {
+        "cl_no": 179924,
+        "external_updated_at": "2026-08-31T09:33:33+00:00",
+        "logo": "https://cdn-transverse.azureedge.net/phlogos/BC590251.jpg"
+      },
+      "category_code": "U18F",
+      "number": 3,
+      "code": 1,
+      "short_name": "ENT. LES ISARDES",
+      "short_name_ligue": "ENT. LES ISARDES",
+      "short_name_federation": "ENT. LES ISARDES",
+      "type": "E",
+      "engagements": [
+        {
+          "competition": {
+            "cp_no": 449675,
+            "season": 2026,
+            "type": "CP",
+            "name": "COUPE NIKE FÉMININE U18",
+            "level": "F",
+            "cdg": {
+              "cg_no": 0,
+              "name": "FEDERATION FRANCAISE DE FOOTBALL",
+              "external_updated_at": "2026-08-31T22:09:54+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:21:34+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455745,
+            "season": 2026,
+            "type": "CP",
+            "name": "Coupe Occitanie U18 FEM Amos",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455737,
+            "season": 2026,
+            "type": "CH",
+            "name": "U18 Territoire F",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        }
+      ],
+      "external_updated_at": "2026-08-31T09:33:17+00:00",
+      "category_label": "U18 F - U17 F - U16 F Libre",
+      "category_gender": "F"
+    },
+    "away": {
+      "club": {
+        "cl_no": 200902,
+        "external_updated_at": "2026-08-24T13:03:09+00:00",
+        "logo": "https://cdn-transverse.azureedge.net/phlogos/BC561233.jpg"
+      },
+      "category_code": "U18F",
+      "number": 1,
+      "code": 1,
+      "short_name": "SFBA",
+      "short_name_ligue": "SF BASSE ARIEGE",
+      "short_name_federation": "SFBA",
+      "type": "C",
+      "engagements": [
+        {
+          "competition": {
+            "cp_no": 455737,
+            "season": 2026,
+            "type": "CH",
+            "name": "U18 Territoire F",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        }
+      ],
+      "external_updated_at": "2026-09-02T14:11:40+00:00",
+      "category_label": "U18 F - U17 F - U16 F Libre",
+      "category_gender": "F"
+    },
+    "terrain": {
+      "te_no": 314830102,
+      "name": "STADE DE SÈDE N°2",
+      "zip_code": "31800",
+      "city": "ST GAUDENS",
+      "libelle_surface": "Pelouse Naturelle",
+      "external_updated_at": "2026-06-05T17:26:06+00:00",
+      "address": "RUE PHILIPPE ETANCELLIN"
+    },
+    "season": 2026,
+    "status": "A",
+    "ma_ar": "A",
+    "ma_inver": "N",
+    "ma_arret": "N",
+    "is_overtime": "N",
+    "date": "2026-09-26T00:00:00+00:00",
+    "time": "15H30",
+    "initial_date": null,
+    "cr_eq_naff": null,
+    "home_resu": "",
+    "cr_nb_but": null,
+    "home_score": null,
+    "home_but_contre": null,
+    "home_nb_point": null,
+    "home_nb_tir_but": null,
+    "home_nb_point_pena": null,
+    "home_is_forfeit": "N",
+    "cv_eq_naff": null,
+    "away_resu": "",
+    "away_nb_but": null,
+    "away_score": null,
+    "away_but_contre": null,
+    "away_nb_point": null,
+    "away_nb_tir_but": null,
+    "away_nb_point_pena": null,
+    "away_is_forfeit": "N",
+    "seems_postponed": "",
+    "match_membres": [],
+    "match_feuille": null,
+    "external_updated_at": "2026-09-01T16:16:55+00:00",
+    "status_label": "/"
+  },
+  {
+    "ma_no": 79065040,
+    "competition": {
+      "cp_no": 455737,
+      "season": 2026,
+      "type": "CH",
+      "name": "U18 Territoire F",
+      "level": "L",
+      "cdg": {
+        "cg_no": 77,
+        "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+        "external_updated_at": "2026-09-01T15:11:32+00:00"
+      },
+      "external_updated_at": "2026-08-26T14:22:36+00:00"
+    },
+    "phase": {
+      "number": 1,
+      "type": "CH",
+      "name": "Phase 1",
+      "external_updated_at": "2026-08-26T14:32:32+00:00"
+    },
+    "poule": {
+      "stage_number": 2,
+      "name": "POULE N1 B",
+      "external_updated_at": "2026-09-02T12:46:05+00:00",
+      "poule_unique": false,
+      "at_least_one_match_resultat": false
+    },
+    "poule_journee": {
+      "number": 2,
+      "external_updated_at": "2026-08-27T13:20:29+00:00",
+      "name": "2"
+    },
+    "home": {
+      "club": {
+        "cl_no": 11641,
+        "external_updated_at": "2026-09-01T16:25:03+00:00",
+        "logo": "https://cdn-transverse.azureedge.net/phlogos/BC527639.jpg"
+      },
+      "category_code": "U18F",
+      "number": 5,
+      "code": 1,
+      "short_name": "J.E.T.",
+      "short_name_ligue": "JEUNE ENTENTE TOULOU",
+      "short_name_federation": "JEUNE ENTENTE TOULOU",
+      "type": "C",
+      "engagements": [
+        {
+          "competition": {
+            "cp_no": 449675,
+            "season": 2026,
+            "type": "CP",
+            "name": "COUPE NIKE FÉMININE U18",
+            "level": "F",
+            "cdg": {
+              "cg_no": 0,
+              "name": "FEDERATION FRANCAISE DE FOOTBALL",
+              "external_updated_at": "2026-08-31T22:09:54+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:21:34+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455745,
+            "season": 2026,
+            "type": "CP",
+            "name": "Coupe Occitanie U18 FEM Amos",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455737,
+            "season": 2026,
+            "type": "CH",
+            "name": "U18 Territoire F",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        }
+      ],
+      "external_updated_at": "2026-08-27T14:41:39+00:00",
+      "category_label": "U18 F - U17 F - U16 F Libre",
+      "category_gender": "F"
+    },
+    "away": {
+      "club": {
+        "cl_no": 6315,
+        "external_updated_at": "2026-08-24T12:32:25+00:00",
+        "logo": "https://cdn-transverse.azureedge.net/phlogos/BC519333.jpg"
+      },
+      "category_code": "U18F",
+      "number": 3,
+      "code": 1,
+      "short_name": "ENT.TARBES JUILLAN 1",
+      "short_name_ligue": "ENT.TARBES JUILLAN 1",
+      "short_name_federation": "ENT.TARBES JUILLAN 1",
+      "type": "E",
+      "engagements": [
+        {
+          "competition": {
+            "cp_no": 449675,
+            "season": 2026,
+            "type": "CP",
+            "name": "COUPE NIKE FÉMININE U18",
+            "level": "F",
+            "cdg": {
+              "cg_no": 0,
+              "name": "FEDERATION FRANCAISE DE FOOTBALL",
+              "external_updated_at": "2026-08-31T22:09:54+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:21:34+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455737,
+            "season": 2026,
+            "type": "CH",
+            "name": "U18 Territoire F",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        }
+      ],
+      "external_updated_at": "2026-08-27T14:41:37+00:00",
+      "category_label": "U18 F - U17 F - U16 F Libre",
+      "category_gender": "F"
+    },
+    "terrain": {
+      "te_no": 315552101,
+      "name": "STADE RIGAL",
+      "zip_code": "31300",
+      "city": "TOULOUSE",
+      "libelle_surface": "Synthétique",
+      "external_updated_at": "2026-07-28T18:31:31+00:00",
+      "address": "4 RUE RAPHAEL"
+    },
+    "season": 2026,
+    "status": "A",
+    "ma_ar": "A",
+    "ma_inver": "N",
+    "ma_arret": "N",
+    "is_overtime": "N",
+    "date": "2026-09-26T00:00:00+00:00",
+    "time": "16H00",
+    "initial_date": null,
+    "cr_eq_naff": null,
+    "home_resu": "",
+    "cr_nb_but": null,
+    "home_score": null,
+    "home_but_contre": null,
+    "home_nb_point": null,
+    "home_nb_tir_but": null,
+    "home_nb_point_pena": null,
+    "home_is_forfeit": "N",
+    "cv_eq_naff": null,
+    "away_resu": "",
+    "away_nb_but": null,
+    "away_score": null,
+    "away_but_contre": null,
+    "away_nb_point": null,
+    "away_nb_tir_but": null,
+    "away_nb_point_pena": null,
+    "away_is_forfeit": "N",
+    "seems_postponed": "",
+    "match_membres": [],
+    "match_feuille": null,
+    "external_updated_at": "2026-08-27T13:20:43+00:00",
+    "status_label": "/"
+  },
+  {
+    "ma_no": 79065042,
+    "competition": {
+      "cp_no": 455737,
+      "season": 2026,
+      "type": "CH",
+      "name": "U18 Territoire F",
+      "level": "L",
+      "cdg": {
+        "cg_no": 77,
+        "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+        "external_updated_at": "2026-09-01T15:11:32+00:00"
+      },
+      "external_updated_at": "2026-08-26T14:22:36+00:00"
+    },
+    "phase": {
+      "number": 1,
+      "type": "CH",
+      "name": "Phase 1",
+      "external_updated_at": "2026-08-26T14:32:32+00:00"
+    },
+    "poule": {
+      "stage_number": 2,
+      "name": "POULE N1 B",
+      "external_updated_at": "2026-09-02T12:46:05+00:00",
+      "poule_unique": false,
+      "at_least_one_match_resultat": false
+    },
+    "poule_journee": {
+      "number": 3,
+      "external_updated_at": "2026-08-27T13:20:29+00:00",
+      "name": "3"
+    },
+    "home": {
+      "club": {
+        "cl_no": 4646,
+        "external_updated_at": "2026-08-31T07:37:33+00:00",
+        "logo": "https://cdn-transverse.azureedge.net/phlogos/BC514895.jpg"
+      },
+      "category_code": "U18F",
+      "number": 3,
+      "code": 1,
+      "short_name": "RAMONVILLE COTEAUX",
+      "short_name_ligue": "RAMONVILLE COTEAUX",
+      "short_name_federation": "RAMONVILLE COTEAUX",
+      "type": "C",
+      "engagements": [
+        {
+          "competition": {
+            "cp_no": 449675,
+            "season": 2026,
+            "type": "CP",
+            "name": "COUPE NIKE FÉMININE U18",
+            "level": "F",
+            "cdg": {
+              "cg_no": 0,
+              "name": "FEDERATION FRANCAISE DE FOOTBALL",
+              "external_updated_at": "2026-08-31T22:09:54+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:21:34+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455745,
+            "season": 2026,
+            "type": "CP",
+            "name": "Coupe Occitanie U18 FEM Amos",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455737,
+            "season": 2026,
+            "type": "CH",
+            "name": "U18 Territoire F",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        }
+      ],
+      "external_updated_at": "2026-08-27T14:41:36+00:00",
+      "category_label": "U18 F - U17 F - U16 F Libre",
+      "category_gender": "F"
+    },
+    "away": {
+      "club": {
+        "cl_no": 179924,
+        "external_updated_at": "2026-08-31T09:33:33+00:00",
+        "logo": "https://cdn-transverse.azureedge.net/phlogos/BC590251.jpg"
+      },
+      "category_code": "U18F",
+      "number": 3,
+      "code": 1,
+      "short_name": "ENT. LES ISARDES",
+      "short_name_ligue": "ENT. LES ISARDES",
+      "short_name_federation": "ENT. LES ISARDES",
+      "type": "E",
+      "engagements": [
+        {
+          "competition": {
+            "cp_no": 449675,
+            "season": 2026,
+            "type": "CP",
+            "name": "COUPE NIKE FÉMININE U18",
+            "level": "F",
+            "cdg": {
+              "cg_no": 0,
+              "name": "FEDERATION FRANCAISE DE FOOTBALL",
+              "external_updated_at": "2026-08-31T22:09:54+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:21:34+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455745,
+            "season": 2026,
+            "type": "CP",
+            "name": "Coupe Occitanie U18 FEM Amos",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455737,
+            "season": 2026,
+            "type": "CH",
+            "name": "U18 Territoire F",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        }
+      ],
+      "external_updated_at": "2026-08-31T09:33:17+00:00",
+      "category_label": "U18 F - U17 F - U16 F Libre",
+      "category_gender": "F"
+    },
+    "terrain": {
+      "te_no": 314460101,
+      "name": "STADE MUNICIPAL N°1",
+      "zip_code": "31520",
+      "city": "RAMONVILLE ST AGNE",
+      "libelle_surface": "Pelouse Naturelle",
+      "external_updated_at": "2026-06-05T17:24:45+00:00",
+      "address": "TERRAIN HONNEUR ALLEES DES SPORTS"
+    },
+    "season": 2026,
+    "status": "A",
+    "ma_ar": "A",
+    "ma_inver": "N",
+    "ma_arret": "N",
+    "is_overtime": "N",
+    "date": "2026-10-10T00:00:00+00:00",
+    "time": "16H30",
+    "initial_date": null,
+    "cr_eq_naff": null,
+    "home_resu": "",
+    "cr_nb_but": null,
+    "home_score": null,
+    "home_but_contre": null,
+    "home_nb_point": null,
+    "home_nb_tir_but": null,
+    "home_nb_point_pena": null,
+    "home_is_forfeit": "N",
+    "cv_eq_naff": null,
+    "away_resu": "",
+    "away_nb_but": null,
+    "away_score": null,
+    "away_but_contre": null,
+    "away_nb_point": null,
+    "away_nb_tir_but": null,
+    "away_nb_point_pena": null,
+    "away_is_forfeit": "N",
+    "seems_postponed": "",
+    "match_membres": [],
+    "match_feuille": null,
+    "external_updated_at": "2026-08-27T13:20:40+00:00",
+    "status_label": "/"
+  },
+  {
+    "ma_no": 79065041,
+    "competition": {
+      "cp_no": 455737,
+      "season": 2026,
+      "type": "CH",
+      "name": "U18 Territoire F",
+      "level": "L",
+      "cdg": {
+        "cg_no": 77,
+        "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+        "external_updated_at": "2026-09-01T15:11:32+00:00"
+      },
+      "external_updated_at": "2026-08-26T14:22:36+00:00"
+    },
+    "phase": {
+      "number": 1,
+      "type": "CH",
+      "name": "Phase 1",
+      "external_updated_at": "2026-08-26T14:32:32+00:00"
+    },
+    "poule": {
+      "stage_number": 2,
+      "name": "POULE N1 B",
+      "external_updated_at": "2026-09-02T12:46:05+00:00",
+      "poule_unique": false,
+      "at_least_one_match_resultat": false
+    },
+    "poule_journee": {
+      "number": 3,
+      "external_updated_at": "2026-08-27T13:20:29+00:00",
+      "name": "3"
+    },
+    "home": {
+      "club": {
+        "cl_no": 200902,
+        "external_updated_at": "2026-08-24T13:03:09+00:00",
+        "logo": "https://cdn-transverse.azureedge.net/phlogos/BC561233.jpg"
+      },
+      "category_code": "U18F",
+      "number": 1,
+      "code": 1,
+      "short_name": "SFBA",
+      "short_name_ligue": "SF BASSE ARIEGE",
+      "short_name_federation": "SFBA",
+      "type": "C",
+      "engagements": [
+        {
+          "competition": {
+            "cp_no": 455737,
+            "season": 2026,
+            "type": "CH",
+            "name": "U18 Territoire F",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        }
+      ],
+      "external_updated_at": "2026-09-02T14:11:40+00:00",
+      "category_label": "U18 F - U17 F - U16 F Libre",
+      "category_gender": "F"
+    },
+    "away": {
+      "club": {
+        "cl_no": 11641,
+        "external_updated_at": "2026-09-01T16:25:03+00:00",
+        "logo": "https://cdn-transverse.azureedge.net/phlogos/BC527639.jpg"
+      },
+      "category_code": "U18F",
+      "number": 5,
+      "code": 1,
+      "short_name": "J.E.T.",
+      "short_name_ligue": "JEUNE ENTENTE TOULOU",
+      "short_name_federation": "JEUNE ENTENTE TOULOU",
+      "type": "C",
+      "engagements": [
+        {
+          "competition": {
+            "cp_no": 449675,
+            "season": 2026,
+            "type": "CP",
+            "name": "COUPE NIKE FÉMININE U18",
+            "level": "F",
+            "cdg": {
+              "cg_no": 0,
+              "name": "FEDERATION FRANCAISE DE FOOTBALL",
+              "external_updated_at": "2026-08-31T22:09:54+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:21:34+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455745,
+            "season": 2026,
+            "type": "CP",
+            "name": "Coupe Occitanie U18 FEM Amos",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455737,
+            "season": 2026,
+            "type": "CH",
+            "name": "U18 Territoire F",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        }
+      ],
+      "external_updated_at": "2026-08-27T14:41:39+00:00",
+      "category_label": "U18 F - U17 F - U16 F Libre",
+      "category_gender": "F"
+    },
+    "terrain": {
+      "te_no": 93120201,
+      "name": "Complexe Sportif Tour D'ariège N°1",
+      "zip_code": "09100",
+      "city": "LA TOUR DU CRIEU",
+      "libelle_surface": "Pelouse Naturelle",
+      "external_updated_at": "2026-06-07T13:31:19+00:00",
+      "address": "CHEMIN DE LASSERRE"
+    },
+    "season": 2026,
+    "status": "A",
+    "ma_ar": "A",
+    "ma_inver": "N",
+    "ma_arret": "N",
+    "is_overtime": "N",
+    "date": "2026-10-10T00:00:00+00:00",
+    "time": "15H00",
+    "initial_date": null,
+    "cr_eq_naff": null,
+    "home_resu": "",
+    "cr_nb_but": null,
+    "home_score": null,
+    "home_but_contre": null,
+    "home_nb_point": null,
+    "home_nb_tir_but": null,
+    "home_nb_point_pena": null,
+    "home_is_forfeit": "N",
+    "cv_eq_naff": null,
+    "away_resu": "",
+    "away_nb_but": null,
+    "away_score": null,
+    "away_but_contre": null,
+    "away_nb_point": null,
+    "away_nb_tir_but": null,
+    "away_nb_point_pena": null,
+    "away_is_forfeit": "N",
+    "seems_postponed": "",
+    "match_membres": [],
+    "match_feuille": null,
+    "external_updated_at": "2026-08-27T13:20:43+00:00",
+    "status_label": "/"
+  },
+  {
+    "ma_no": 79065043,
+    "competition": {
+      "cp_no": 455737,
+      "season": 2026,
+      "type": "CH",
+      "name": "U18 Territoire F",
+      "level": "L",
+      "cdg": {
+        "cg_no": 77,
+        "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+        "external_updated_at": "2026-09-01T15:11:32+00:00"
+      },
+      "external_updated_at": "2026-08-26T14:22:36+00:00"
+    },
+    "phase": {
+      "number": 1,
+      "type": "CH",
+      "name": "Phase 1",
+      "external_updated_at": "2026-08-26T14:32:32+00:00"
+    },
+    "poule": {
+      "stage_number": 2,
+      "name": "POULE N1 B",
+      "external_updated_at": "2026-09-02T12:46:05+00:00",
+      "poule_unique": false,
+      "at_least_one_match_resultat": false
+    },
+    "poule_journee": {
+      "number": 3,
+      "external_updated_at": "2026-08-27T13:20:29+00:00",
+      "name": "3"
+    },
+    "home": {
+      "club": {
+        "cl_no": 6315,
+        "external_updated_at": "2026-08-24T12:32:25+00:00",
+        "logo": "https://cdn-transverse.azureedge.net/phlogos/BC519333.jpg"
+      },
+      "category_code": "U18F",
+      "number": 3,
+      "code": 1,
+      "short_name": "ENT.TARBES JUILLAN 1",
+      "short_name_ligue": "ENT.TARBES JUILLAN 1",
+      "short_name_federation": "ENT.TARBES JUILLAN 1",
+      "type": "E",
+      "engagements": [
+        {
+          "competition": {
+            "cp_no": 449675,
+            "season": 2026,
+            "type": "CP",
+            "name": "COUPE NIKE FÉMININE U18",
+            "level": "F",
+            "cdg": {
+              "cg_no": 0,
+              "name": "FEDERATION FRANCAISE DE FOOTBALL",
+              "external_updated_at": "2026-08-31T22:09:54+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:21:34+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455737,
+            "season": 2026,
+            "type": "CH",
+            "name": "U18 Territoire F",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        }
+      ],
+      "external_updated_at": "2026-08-27T14:41:37+00:00",
+      "category_label": "U18 F - U17 F - U16 F Libre",
+      "category_gender": "F"
+    },
+    "away": {
+      "club": {
+        "cl_no": 192196,
+        "external_updated_at": "2026-08-31T09:42:20+00:00",
+        "logo": "https://cdn-transverse.azureedge.net/phlogos/BC547304.jpg"
+      },
+      "category_code": "U18F",
+      "number": 4,
+      "code": 1,
+      "short_name": "EAUNES LABARTHE FC",
+      "short_name_ligue": "F.C. EAUNES LABARTHE",
+      "short_name_federation": "F.C. EAUNES LABARTHE",
+      "type": "C",
+      "engagements": [
+        {
+          "competition": {
+            "cp_no": 449675,
+            "season": 2026,
+            "type": "CP",
+            "name": "COUPE NIKE FÉMININE U18",
+            "level": "F",
+            "cdg": {
+              "cg_no": 0,
+              "name": "FEDERATION FRANCAISE DE FOOTBALL",
+              "external_updated_at": "2026-08-31T22:09:54+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:21:34+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455745,
+            "season": 2026,
+            "type": "CP",
+            "name": "Coupe Occitanie U18 FEM Amos",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455737,
+            "season": 2026,
+            "type": "CH",
+            "name": "U18 Territoire F",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        }
+      ],
+      "external_updated_at": "2026-08-27T14:41:48+00:00",
+      "category_label": "U18 F - U17 F - U16 F Libre",
+      "category_gender": "F"
+    },
+    "terrain": {
+      "te_no": 652350101,
+      "name": "STADE FRANCK SARRABAYROUSE",
+      "zip_code": "65290",
+      "city": "JUILLAN",
+      "libelle_surface": "Synthétique",
+      "external_updated_at": "2026-06-07T07:51:28+00:00",
+      "address": "RUE DES PYRENEES"
+    },
+    "season": 2026,
+    "status": "A",
+    "ma_ar": "A",
+    "ma_inver": "N",
+    "ma_arret": "N",
+    "is_overtime": "N",
+    "date": "2026-10-11T00:00:00+00:00",
+    "time": "15H00",
+    "initial_date": null,
+    "cr_eq_naff": null,
+    "home_resu": "",
+    "cr_nb_but": null,
+    "home_score": null,
+    "home_but_contre": null,
+    "home_nb_point": null,
+    "home_nb_tir_but": null,
+    "home_nb_point_pena": null,
+    "home_is_forfeit": "N",
+    "cv_eq_naff": null,
+    "away_resu": "",
+    "away_nb_but": null,
+    "away_score": null,
+    "away_but_contre": null,
+    "away_nb_point": null,
+    "away_nb_tir_but": null,
+    "away_nb_point_pena": null,
+    "away_is_forfeit": "N",
+    "seems_postponed": "",
+    "match_membres": [],
+    "match_feuille": null,
+    "external_updated_at": "2026-08-27T13:20:40+00:00",
+    "status_label": "/"
+  },
+  {
+    "ma_no": 79065044,
+    "competition": {
+      "cp_no": 455737,
+      "season": 2026,
+      "type": "CH",
+      "name": "U18 Territoire F",
+      "level": "L",
+      "cdg": {
+        "cg_no": 77,
+        "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+        "external_updated_at": "2026-09-01T15:11:32+00:00"
+      },
+      "external_updated_at": "2026-08-26T14:22:36+00:00"
+    },
+    "phase": {
+      "number": 1,
+      "type": "CH",
+      "name": "Phase 1",
+      "external_updated_at": "2026-08-26T14:32:32+00:00"
+    },
+    "poule": {
+      "stage_number": 2,
+      "name": "POULE N1 B",
+      "external_updated_at": "2026-09-02T12:46:05+00:00",
+      "poule_unique": false,
+      "at_least_one_match_resultat": false
+    },
+    "poule_journee": {
+      "number": 4,
+      "external_updated_at": "2026-08-27T13:20:29+00:00",
+      "name": "4"
+    },
+    "home": {
+      "club": {
+        "cl_no": 179924,
+        "external_updated_at": "2026-08-31T09:33:33+00:00",
+        "logo": "https://cdn-transverse.azureedge.net/phlogos/BC590251.jpg"
+      },
+      "category_code": "U18F",
+      "number": 3,
+      "code": 1,
+      "short_name": "ENT. LES ISARDES",
+      "short_name_ligue": "ENT. LES ISARDES",
+      "short_name_federation": "ENT. LES ISARDES",
+      "type": "E",
+      "engagements": [
+        {
+          "competition": {
+            "cp_no": 449675,
+            "season": 2026,
+            "type": "CP",
+            "name": "COUPE NIKE FÉMININE U18",
+            "level": "F",
+            "cdg": {
+              "cg_no": 0,
+              "name": "FEDERATION FRANCAISE DE FOOTBALL",
+              "external_updated_at": "2026-08-31T22:09:54+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:21:34+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455745,
+            "season": 2026,
+            "type": "CP",
+            "name": "Coupe Occitanie U18 FEM Amos",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455737,
+            "season": 2026,
+            "type": "CH",
+            "name": "U18 Territoire F",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        }
+      ],
+      "external_updated_at": "2026-08-31T09:33:17+00:00",
+      "category_label": "U18 F - U17 F - U16 F Libre",
+      "category_gender": "F"
+    },
+    "away": {
+      "club": {
+        "cl_no": 192196,
+        "external_updated_at": "2026-08-31T09:42:20+00:00",
+        "logo": "https://cdn-transverse.azureedge.net/phlogos/BC547304.jpg"
+      },
+      "category_code": "U18F",
+      "number": 4,
+      "code": 1,
+      "short_name": "EAUNES LABARTHE FC",
+      "short_name_ligue": "F.C. EAUNES LABARTHE",
+      "short_name_federation": "F.C. EAUNES LABARTHE",
+      "type": "C",
+      "engagements": [
+        {
+          "competition": {
+            "cp_no": 449675,
+            "season": 2026,
+            "type": "CP",
+            "name": "COUPE NIKE FÉMININE U18",
+            "level": "F",
+            "cdg": {
+              "cg_no": 0,
+              "name": "FEDERATION FRANCAISE DE FOOTBALL",
+              "external_updated_at": "2026-08-31T22:09:54+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:21:34+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455745,
+            "season": 2026,
+            "type": "CP",
+            "name": "Coupe Occitanie U18 FEM Amos",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455737,
+            "season": 2026,
+            "type": "CH",
+            "name": "U18 Territoire F",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        }
+      ],
+      "external_updated_at": "2026-08-27T14:41:48+00:00",
+      "category_label": "U18 F - U17 F - U16 F Libre",
+      "category_gender": "F"
+    },
+    "terrain": {
+      "te_no": 314830102,
+      "name": "STADE DE SÈDE N°2",
+      "zip_code": "31800",
+      "city": "ST GAUDENS",
+      "libelle_surface": "Pelouse Naturelle",
+      "external_updated_at": "2026-06-05T17:26:06+00:00",
+      "address": "RUE PHILIPPE ETANCELLIN"
+    },
+    "season": 2026,
+    "status": "A",
+    "ma_ar": "A",
+    "ma_inver": "N",
+    "ma_arret": "N",
+    "is_overtime": "N",
+    "date": "2026-11-07T00:00:00+00:00",
+    "time": "14H00",
+    "initial_date": null,
+    "cr_eq_naff": null,
+    "home_resu": "",
+    "cr_nb_but": null,
+    "home_score": null,
+    "home_but_contre": null,
+    "home_nb_point": null,
+    "home_nb_tir_but": null,
+    "home_nb_point_pena": null,
+    "home_is_forfeit": "N",
+    "cv_eq_naff": null,
+    "away_resu": "",
+    "away_nb_but": null,
+    "away_score": null,
+    "away_but_contre": null,
+    "away_nb_point": null,
+    "away_nb_tir_but": null,
+    "away_nb_point_pena": null,
+    "away_is_forfeit": "N",
+    "seems_postponed": "",
+    "match_membres": [],
+    "match_feuille": null,
+    "external_updated_at": "2026-08-27T13:20:40+00:00",
+    "status_label": "/"
+  },
+  {
+    "ma_no": 79065045,
+    "competition": {
+      "cp_no": 455737,
+      "season": 2026,
+      "type": "CH",
+      "name": "U18 Territoire F",
+      "level": "L",
+      "cdg": {
+        "cg_no": 77,
+        "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+        "external_updated_at": "2026-09-01T15:11:32+00:00"
+      },
+      "external_updated_at": "2026-08-26T14:22:36+00:00"
+    },
+    "phase": {
+      "number": 1,
+      "type": "CH",
+      "name": "Phase 1",
+      "external_updated_at": "2026-08-26T14:32:32+00:00"
+    },
+    "poule": {
+      "stage_number": 2,
+      "name": "POULE N1 B",
+      "external_updated_at": "2026-09-02T12:46:05+00:00",
+      "poule_unique": false,
+      "at_least_one_match_resultat": false
+    },
+    "poule_journee": {
+      "number": 4,
+      "external_updated_at": "2026-08-27T13:20:29+00:00",
+      "name": "4"
+    },
+    "home": {
+      "club": {
+        "cl_no": 11641,
+        "external_updated_at": "2026-09-01T16:25:03+00:00",
+        "logo": "https://cdn-transverse.azureedge.net/phlogos/BC527639.jpg"
+      },
+      "category_code": "U18F",
+      "number": 5,
+      "code": 1,
+      "short_name": "J.E.T.",
+      "short_name_ligue": "JEUNE ENTENTE TOULOU",
+      "short_name_federation": "JEUNE ENTENTE TOULOU",
+      "type": "C",
+      "engagements": [
+        {
+          "competition": {
+            "cp_no": 449675,
+            "season": 2026,
+            "type": "CP",
+            "name": "COUPE NIKE FÉMININE U18",
+            "level": "F",
+            "cdg": {
+              "cg_no": 0,
+              "name": "FEDERATION FRANCAISE DE FOOTBALL",
+              "external_updated_at": "2026-08-31T22:09:54+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:21:34+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455745,
+            "season": 2026,
+            "type": "CP",
+            "name": "Coupe Occitanie U18 FEM Amos",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455737,
+            "season": 2026,
+            "type": "CH",
+            "name": "U18 Territoire F",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        }
+      ],
+      "external_updated_at": "2026-08-27T14:41:39+00:00",
+      "category_label": "U18 F - U17 F - U16 F Libre",
+      "category_gender": "F"
+    },
+    "away": {
+      "club": {
+        "cl_no": 4646,
+        "external_updated_at": "2026-08-31T07:37:33+00:00",
+        "logo": "https://cdn-transverse.azureedge.net/phlogos/BC514895.jpg"
+      },
+      "category_code": "U18F",
+      "number": 3,
+      "code": 1,
+      "short_name": "RAMONVILLE COTEAUX",
+      "short_name_ligue": "RAMONVILLE COTEAUX",
+      "short_name_federation": "RAMONVILLE COTEAUX",
+      "type": "C",
+      "engagements": [
+        {
+          "competition": {
+            "cp_no": 449675,
+            "season": 2026,
+            "type": "CP",
+            "name": "COUPE NIKE FÉMININE U18",
+            "level": "F",
+            "cdg": {
+              "cg_no": 0,
+              "name": "FEDERATION FRANCAISE DE FOOTBALL",
+              "external_updated_at": "2026-08-31T22:09:54+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:21:34+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455745,
+            "season": 2026,
+            "type": "CP",
+            "name": "Coupe Occitanie U18 FEM Amos",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455737,
+            "season": 2026,
+            "type": "CH",
+            "name": "U18 Territoire F",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        }
+      ],
+      "external_updated_at": "2026-08-27T14:41:36+00:00",
+      "category_label": "U18 F - U17 F - U16 F Libre",
+      "category_gender": "F"
+    },
+    "terrain": {
+      "te_no": 315552101,
+      "name": "STADE RIGAL",
+      "zip_code": "31300",
+      "city": "TOULOUSE",
+      "libelle_surface": "Synthétique",
+      "external_updated_at": "2026-07-28T18:31:31+00:00",
+      "address": "4 RUE RAPHAEL"
+    },
+    "season": 2026,
+    "status": "A",
+    "ma_ar": "A",
+    "ma_inver": "N",
+    "ma_arret": "N",
+    "is_overtime": "N",
+    "date": "2026-11-07T00:00:00+00:00",
+    "time": "16H00",
+    "initial_date": null,
+    "cr_eq_naff": null,
+    "home_resu": "",
+    "cr_nb_but": null,
+    "home_score": null,
+    "home_but_contre": null,
+    "home_nb_point": null,
+    "home_nb_tir_but": null,
+    "home_nb_point_pena": null,
+    "home_is_forfeit": "N",
+    "cv_eq_naff": null,
+    "away_resu": "",
+    "away_nb_but": null,
+    "away_score": null,
+    "away_but_contre": null,
+    "away_nb_point": null,
+    "away_nb_tir_but": null,
+    "away_nb_point_pena": null,
+    "away_is_forfeit": "N",
+    "seems_postponed": "",
+    "match_membres": [],
+    "match_feuille": null,
+    "external_updated_at": "2026-08-27T13:20:41+00:00",
+    "status_label": "/"
+  },
+  {
+    "ma_no": 79065046,
+    "competition": {
+      "cp_no": 455737,
+      "season": 2026,
+      "type": "CH",
+      "name": "U18 Territoire F",
+      "level": "L",
+      "cdg": {
+        "cg_no": 77,
+        "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+        "external_updated_at": "2026-09-01T15:11:32+00:00"
+      },
+      "external_updated_at": "2026-08-26T14:22:36+00:00"
+    },
+    "phase": {
+      "number": 1,
+      "type": "CH",
+      "name": "Phase 1",
+      "external_updated_at": "2026-08-26T14:32:32+00:00"
+    },
+    "poule": {
+      "stage_number": 2,
+      "name": "POULE N1 B",
+      "external_updated_at": "2026-09-02T12:46:05+00:00",
+      "poule_unique": false,
+      "at_least_one_match_resultat": false
+    },
+    "poule_journee": {
+      "number": 4,
+      "external_updated_at": "2026-08-27T13:20:29+00:00",
+      "name": "4"
+    },
+    "home": {
+      "club": {
+        "cl_no": 200902,
+        "external_updated_at": "2026-08-24T13:03:09+00:00",
+        "logo": "https://cdn-transverse.azureedge.net/phlogos/BC561233.jpg"
+      },
+      "category_code": "U18F",
+      "number": 1,
+      "code": 1,
+      "short_name": "SFBA",
+      "short_name_ligue": "SF BASSE ARIEGE",
+      "short_name_federation": "SFBA",
+      "type": "C",
+      "engagements": [
+        {
+          "competition": {
+            "cp_no": 455737,
+            "season": 2026,
+            "type": "CH",
+            "name": "U18 Territoire F",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        }
+      ],
+      "external_updated_at": "2026-09-02T14:11:40+00:00",
+      "category_label": "U18 F - U17 F - U16 F Libre",
+      "category_gender": "F"
+    },
+    "away": {
+      "club": {
+        "cl_no": 6315,
+        "external_updated_at": "2026-08-24T12:32:25+00:00",
+        "logo": "https://cdn-transverse.azureedge.net/phlogos/BC519333.jpg"
+      },
+      "category_code": "U18F",
+      "number": 3,
+      "code": 1,
+      "short_name": "ENT.TARBES JUILLAN 1",
+      "short_name_ligue": "ENT.TARBES JUILLAN 1",
+      "short_name_federation": "ENT.TARBES JUILLAN 1",
+      "type": "E",
+      "engagements": [
+        {
+          "competition": {
+            "cp_no": 449675,
+            "season": 2026,
+            "type": "CP",
+            "name": "COUPE NIKE FÉMININE U18",
+            "level": "F",
+            "cdg": {
+              "cg_no": 0,
+              "name": "FEDERATION FRANCAISE DE FOOTBALL",
+              "external_updated_at": "2026-08-31T22:09:54+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:21:34+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455737,
+            "season": 2026,
+            "type": "CH",
+            "name": "U18 Territoire F",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        }
+      ],
+      "external_updated_at": "2026-08-27T14:41:37+00:00",
+      "category_label": "U18 F - U17 F - U16 F Libre",
+      "category_gender": "F"
+    },
+    "terrain": {
+      "te_no": 93120201,
+      "name": "Complexe Sportif Tour D'ariège N°1",
+      "zip_code": "09100",
+      "city": "LA TOUR DU CRIEU",
+      "libelle_surface": "Pelouse Naturelle",
+      "external_updated_at": "2026-06-07T13:31:19+00:00",
+      "address": "CHEMIN DE LASSERRE"
+    },
+    "season": 2026,
+    "status": "A",
+    "ma_ar": "A",
+    "ma_inver": "N",
+    "ma_arret": "N",
+    "is_overtime": "N",
+    "date": "2026-11-07T00:00:00+00:00",
+    "time": "15H30",
+    "initial_date": null,
+    "cr_eq_naff": null,
+    "home_resu": "",
+    "cr_nb_but": null,
+    "home_score": null,
+    "home_but_contre": null,
+    "home_nb_point": null,
+    "home_nb_tir_but": null,
+    "home_nb_point_pena": null,
+    "home_is_forfeit": "N",
+    "cv_eq_naff": null,
+    "away_resu": "",
+    "away_nb_but": null,
+    "away_score": null,
+    "away_but_contre": null,
+    "away_nb_point": null,
+    "away_nb_tir_but": null,
+    "away_nb_point_pena": null,
+    "away_is_forfeit": "N",
+    "seems_postponed": "",
+    "match_membres": [],
+    "match_feuille": null,
+    "external_updated_at": "2026-09-01T16:17:15+00:00",
+    "status_label": "/"
+  },
+  {
+    "ma_no": 79065047,
+    "competition": {
+      "cp_no": 455737,
+      "season": 2026,
+      "type": "CH",
+      "name": "U18 Territoire F",
+      "level": "L",
+      "cdg": {
+        "cg_no": 77,
+        "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+        "external_updated_at": "2026-09-01T15:11:32+00:00"
+      },
+      "external_updated_at": "2026-08-26T14:22:36+00:00"
+    },
+    "phase": {
+      "number": 1,
+      "type": "CH",
+      "name": "Phase 1",
+      "external_updated_at": "2026-08-26T14:32:32+00:00"
+    },
+    "poule": {
+      "stage_number": 2,
+      "name": "POULE N1 B",
+      "external_updated_at": "2026-09-02T12:46:05+00:00",
+      "poule_unique": false,
+      "at_least_one_match_resultat": false
+    },
+    "poule_journee": {
+      "number": 5,
+      "external_updated_at": "2026-08-27T13:20:29+00:00",
+      "name": "5"
+    },
+    "home": {
+      "club": {
+        "cl_no": 4646,
+        "external_updated_at": "2026-08-31T07:37:33+00:00",
+        "logo": "https://cdn-transverse.azureedge.net/phlogos/BC514895.jpg"
+      },
+      "category_code": "U18F",
+      "number": 3,
+      "code": 1,
+      "short_name": "RAMONVILLE COTEAUX",
+      "short_name_ligue": "RAMONVILLE COTEAUX",
+      "short_name_federation": "RAMONVILLE COTEAUX",
+      "type": "C",
+      "engagements": [
+        {
+          "competition": {
+            "cp_no": 449675,
+            "season": 2026,
+            "type": "CP",
+            "name": "COUPE NIKE FÉMININE U18",
+            "level": "F",
+            "cdg": {
+              "cg_no": 0,
+              "name": "FEDERATION FRANCAISE DE FOOTBALL",
+              "external_updated_at": "2026-08-31T22:09:54+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:21:34+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455745,
+            "season": 2026,
+            "type": "CP",
+            "name": "Coupe Occitanie U18 FEM Amos",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455737,
+            "season": 2026,
+            "type": "CH",
+            "name": "U18 Territoire F",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        }
+      ],
+      "external_updated_at": "2026-08-27T14:41:36+00:00",
+      "category_label": "U18 F - U17 F - U16 F Libre",
+      "category_gender": "F"
+    },
+    "away": {
+      "club": {
+        "cl_no": 200902,
+        "external_updated_at": "2026-08-24T13:03:09+00:00",
+        "logo": "https://cdn-transverse.azureedge.net/phlogos/BC561233.jpg"
+      },
+      "category_code": "U18F",
+      "number": 1,
+      "code": 1,
+      "short_name": "SFBA",
+      "short_name_ligue": "SF BASSE ARIEGE",
+      "short_name_federation": "SFBA",
+      "type": "C",
+      "engagements": [
+        {
+          "competition": {
+            "cp_no": 455737,
+            "season": 2026,
+            "type": "CH",
+            "name": "U18 Territoire F",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        }
+      ],
+      "external_updated_at": "2026-09-02T14:11:40+00:00",
+      "category_label": "U18 F - U17 F - U16 F Libre",
+      "category_gender": "F"
+    },
+    "terrain": {
+      "te_no": 314460101,
+      "name": "STADE MUNICIPAL N°1",
+      "zip_code": "31520",
+      "city": "RAMONVILLE ST AGNE",
+      "libelle_surface": "Pelouse Naturelle",
+      "external_updated_at": "2026-06-05T17:24:45+00:00",
+      "address": "TERRAIN HONNEUR ALLEES DES SPORTS"
+    },
+    "season": 2026,
+    "status": "A",
+    "ma_ar": "A",
+    "ma_inver": "N",
+    "ma_arret": "N",
+    "is_overtime": "N",
+    "date": "2026-11-14T00:00:00+00:00",
+    "time": "15H00",
+    "initial_date": null,
+    "cr_eq_naff": null,
+    "home_resu": "",
+    "cr_nb_but": null,
+    "home_score": null,
+    "home_but_contre": null,
+    "home_nb_point": null,
+    "home_nb_tir_but": null,
+    "home_nb_point_pena": null,
+    "home_is_forfeit": "N",
+    "cv_eq_naff": null,
+    "away_resu": "",
+    "away_nb_but": null,
+    "away_score": null,
+    "away_but_contre": null,
+    "away_nb_point": null,
+    "away_nb_tir_but": null,
+    "away_nb_point_pena": null,
+    "away_is_forfeit": "N",
+    "seems_postponed": "",
+    "match_membres": [],
+    "match_feuille": null,
+    "external_updated_at": "2026-08-28T16:07:07+00:00",
+    "status_label": "/"
+  },
+  {
+    "ma_no": 79065048,
+    "competition": {
+      "cp_no": 455737,
+      "season": 2026,
+      "type": "CH",
+      "name": "U18 Territoire F",
+      "level": "L",
+      "cdg": {
+        "cg_no": 77,
+        "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+        "external_updated_at": "2026-09-01T15:11:32+00:00"
+      },
+      "external_updated_at": "2026-08-26T14:22:36+00:00"
+    },
+    "phase": {
+      "number": 1,
+      "type": "CH",
+      "name": "Phase 1",
+      "external_updated_at": "2026-08-26T14:32:32+00:00"
+    },
+    "poule": {
+      "stage_number": 2,
+      "name": "POULE N1 B",
+      "external_updated_at": "2026-09-02T12:46:05+00:00",
+      "poule_unique": false,
+      "at_least_one_match_resultat": false
+    },
+    "poule_journee": {
+      "number": 5,
+      "external_updated_at": "2026-08-27T13:20:29+00:00",
+      "name": "5"
+    },
+    "home": {
+      "club": {
+        "cl_no": 192196,
+        "external_updated_at": "2026-08-31T09:42:20+00:00",
+        "logo": "https://cdn-transverse.azureedge.net/phlogos/BC547304.jpg"
+      },
+      "category_code": "U18F",
+      "number": 4,
+      "code": 1,
+      "short_name": "EAUNES LABARTHE FC",
+      "short_name_ligue": "F.C. EAUNES LABARTHE",
+      "short_name_federation": "F.C. EAUNES LABARTHE",
+      "type": "C",
+      "engagements": [
+        {
+          "competition": {
+            "cp_no": 449675,
+            "season": 2026,
+            "type": "CP",
+            "name": "COUPE NIKE FÉMININE U18",
+            "level": "F",
+            "cdg": {
+              "cg_no": 0,
+              "name": "FEDERATION FRANCAISE DE FOOTBALL",
+              "external_updated_at": "2026-08-31T22:09:54+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:21:34+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455745,
+            "season": 2026,
+            "type": "CP",
+            "name": "Coupe Occitanie U18 FEM Amos",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455737,
+            "season": 2026,
+            "type": "CH",
+            "name": "U18 Territoire F",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        }
+      ],
+      "external_updated_at": "2026-08-27T14:41:48+00:00",
+      "category_label": "U18 F - U17 F - U16 F Libre",
+      "category_gender": "F"
+    },
+    "away": {
+      "club": {
+        "cl_no": 11641,
+        "external_updated_at": "2026-09-01T16:25:03+00:00",
+        "logo": "https://cdn-transverse.azureedge.net/phlogos/BC527639.jpg"
+      },
+      "category_code": "U18F",
+      "number": 5,
+      "code": 1,
+      "short_name": "J.E.T.",
+      "short_name_ligue": "JEUNE ENTENTE TOULOU",
+      "short_name_federation": "JEUNE ENTENTE TOULOU",
+      "type": "C",
+      "engagements": [
+        {
+          "competition": {
+            "cp_no": 449675,
+            "season": 2026,
+            "type": "CP",
+            "name": "COUPE NIKE FÉMININE U18",
+            "level": "F",
+            "cdg": {
+              "cg_no": 0,
+              "name": "FEDERATION FRANCAISE DE FOOTBALL",
+              "external_updated_at": "2026-08-31T22:09:54+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:21:34+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455745,
+            "season": 2026,
+            "type": "CP",
+            "name": "Coupe Occitanie U18 FEM Amos",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455737,
+            "season": 2026,
+            "type": "CH",
+            "name": "U18 Territoire F",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        }
+      ],
+      "external_updated_at": "2026-08-27T14:41:39+00:00",
+      "category_label": "U18 F - U17 F - U16 F Libre",
+      "category_gender": "F"
+    },
+    "terrain": {
+      "te_no": 312480201,
+      "name": "COMPLEXE SPORTIF BERNARD BERAIL",
+      "zip_code": "31860",
+      "city": "LABARTHE SUR LEZE",
+      "libelle_surface": "Synthétique",
+      "external_updated_at": "2026-06-05T17:19:49+00:00",
+      "address": "1047 ROUTE DU PLANTAUREL"
+    },
+    "season": 2026,
+    "status": "A",
+    "ma_ar": "A",
+    "ma_inver": "N",
+    "ma_arret": "N",
+    "is_overtime": "N",
+    "date": "2026-11-14T00:00:00+00:00",
+    "time": "15H00",
+    "initial_date": null,
+    "cr_eq_naff": null,
+    "home_resu": "",
+    "cr_nb_but": null,
+    "home_score": null,
+    "home_but_contre": null,
+    "home_nb_point": null,
+    "home_nb_tir_but": null,
+    "home_nb_point_pena": null,
+    "home_is_forfeit": "N",
+    "cv_eq_naff": null,
+    "away_resu": "",
+    "away_nb_but": null,
+    "away_score": null,
+    "away_but_contre": null,
+    "away_nb_point": null,
+    "away_nb_tir_but": null,
+    "away_nb_point_pena": null,
+    "away_is_forfeit": "N",
+    "seems_postponed": "",
+    "match_membres": [],
+    "match_feuille": null,
+    "external_updated_at": "2026-08-28T16:06:54+00:00",
+    "status_label": "/"
+  },
+  {
+    "ma_no": 79065049,
+    "competition": {
+      "cp_no": 455737,
+      "season": 2026,
+      "type": "CH",
+      "name": "U18 Territoire F",
+      "level": "L",
+      "cdg": {
+        "cg_no": 77,
+        "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+        "external_updated_at": "2026-09-01T15:11:32+00:00"
+      },
+      "external_updated_at": "2026-08-26T14:22:36+00:00"
+    },
+    "phase": {
+      "number": 1,
+      "type": "CH",
+      "name": "Phase 1",
+      "external_updated_at": "2026-08-26T14:32:32+00:00"
+    },
+    "poule": {
+      "stage_number": 2,
+      "name": "POULE N1 B",
+      "external_updated_at": "2026-09-02T12:46:05+00:00",
+      "poule_unique": false,
+      "at_least_one_match_resultat": false
+    },
+    "poule_journee": {
+      "number": 5,
+      "external_updated_at": "2026-08-27T13:20:29+00:00",
+      "name": "5"
+    },
+    "home": {
+      "club": {
+        "cl_no": 179924,
+        "external_updated_at": "2026-08-31T09:33:33+00:00",
+        "logo": "https://cdn-transverse.azureedge.net/phlogos/BC590251.jpg"
+      },
+      "category_code": "U18F",
+      "number": 3,
+      "code": 1,
+      "short_name": "ENT. LES ISARDES",
+      "short_name_ligue": "ENT. LES ISARDES",
+      "short_name_federation": "ENT. LES ISARDES",
+      "type": "E",
+      "engagements": [
+        {
+          "competition": {
+            "cp_no": 449675,
+            "season": 2026,
+            "type": "CP",
+            "name": "COUPE NIKE FÉMININE U18",
+            "level": "F",
+            "cdg": {
+              "cg_no": 0,
+              "name": "FEDERATION FRANCAISE DE FOOTBALL",
+              "external_updated_at": "2026-08-31T22:09:54+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:21:34+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455745,
+            "season": 2026,
+            "type": "CP",
+            "name": "Coupe Occitanie U18 FEM Amos",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455737,
+            "season": 2026,
+            "type": "CH",
+            "name": "U18 Territoire F",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        }
+      ],
+      "external_updated_at": "2026-08-31T09:33:17+00:00",
+      "category_label": "U18 F - U17 F - U16 F Libre",
+      "category_gender": "F"
+    },
+    "away": {
+      "club": {
+        "cl_no": 6315,
+        "external_updated_at": "2026-08-24T12:32:25+00:00",
+        "logo": "https://cdn-transverse.azureedge.net/phlogos/BC519333.jpg"
+      },
+      "category_code": "U18F",
+      "number": 3,
+      "code": 1,
+      "short_name": "ENT.TARBES JUILLAN 1",
+      "short_name_ligue": "ENT.TARBES JUILLAN 1",
+      "short_name_federation": "ENT.TARBES JUILLAN 1",
+      "type": "E",
+      "engagements": [
+        {
+          "competition": {
+            "cp_no": 449675,
+            "season": 2026,
+            "type": "CP",
+            "name": "COUPE NIKE FÉMININE U18",
+            "level": "F",
+            "cdg": {
+              "cg_no": 0,
+              "name": "FEDERATION FRANCAISE DE FOOTBALL",
+              "external_updated_at": "2026-08-31T22:09:54+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:21:34+00:00"
+          }
+        },
+        {
+          "competition": {
+            "cp_no": 455737,
+            "season": 2026,
+            "type": "CH",
+            "name": "U18 Territoire F",
+            "level": "L",
+            "cdg": {
+              "cg_no": 77,
+              "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+              "external_updated_at": "2026-09-01T15:11:32+00:00"
+            },
+            "external_updated_at": "2026-08-26T14:22:36+00:00"
+          }
+        }
+      ],
+      "external_updated_at": "2026-08-27T14:41:37+00:00",
+      "category_label": "U18 F - U17 F - U16 F Libre",
+      "category_gender": "F"
+    },
+    "terrain": {
+      "te_no": 314830102,
+      "name": "STADE DE SÈDE N°2",
+      "zip_code": "31800",
+      "city": "ST GAUDENS",
+      "libelle_surface": "Pelouse Naturelle",
+      "external_updated_at": "2026-06-05T17:26:06+00:00",
+      "address": "RUE PHILIPPE ETANCELLIN"
+    },
+    "season": 2026,
+    "status": "A",
+    "ma_ar": "A",
+    "ma_inver": "N",
+    "ma_arret": "N",
+    "is_overtime": "N",
+    "date": "2026-11-14T00:00:00+00:00",
+    "time": "15H00",
+    "initial_date": null,
+    "cr_eq_naff": null,
+    "home_resu": "",
+    "cr_nb_but": null,
+    "home_score": null,
+    "home_but_contre": null,
+    "home_nb_point": null,
+    "home_nb_tir_but": null,
+    "home_nb_point_pena": null,
+    "home_is_forfeit": "N",
+    "cv_eq_naff": null,
+    "away_resu": "",
+    "away_nb_but": null,
+    "away_score": null,
+    "away_but_contre": null,
+    "away_nb_point": null,
+    "away_nb_tir_but": null,
+    "away_nb_point_pena": null,
+    "away_is_forfeit": "N",
+    "seems_postponed": "",
+    "match_membres": [],
+    "match_feuille": null,
+    "external_updated_at": "2026-08-28T16:06:56+00:00",
+    "status_label": "/"
+  }
+]
