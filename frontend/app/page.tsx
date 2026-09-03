@@ -31,7 +31,7 @@ export default async function Home() {
     const heroArticle = articles[0] || null
     const sponsors = Array.isArray(sponsorsData) ? sponsorsData : (sponsorsData.results || [])
 
-    const TEAM_ORDER = ['Seniors', 'Seniors 2', 'U19', 'U18', 'U17', 'U16', 'U15', 'U14', 'Féminines', 'U18 Féminines', 'U15 Féminines', 'Futsal']
+    const TEAM_ORDER = ['Seniors', 'Seniors 2', 'U19', 'U18', 'U17', 'U16', 'U15', 'U14', 'Féminines', 'U18 Féminines', 'U15 Elite Féminines', 'U15 Territoire Féminines', 'Futsal']
     const sixtyDaysAgo = new Date()
     sixtyDaysAgo.setDate(sixtyDaysAgo.getDate() - 60)
     // Marge de tolérance : un match peut rester en statut A_VENIR quelques

@@ -19,7 +19,7 @@ CATEGORY_TO_TEAM = {
     'U17': 'U17',
     'U16': 'U16',
     'U15': 'U15',
-    'U15F': 'U15 Féminines',
+    'U15F': 'U15 Elite Féminines',
     'U14': 'U14',
     'SEF': 'Féminines',
     'SESM': 'Futsal',
@@ -100,6 +100,10 @@ class FFFMatchImporter:
             # La compétition s'appelle "U18" mais la FFF renvoie encore le
             # category_code historique "U19" pour cette tranche d'âge.
             team_name = 'U18'
+        elif category_code == 'U15F' and 'TERRITOIRE' in comp:
+            # "U15 Elite F" et "U15 Territoire F" partagent le même
+            # category_code (U15F) mais ce sont deux équipes distinctes.
+            team_name = 'U15 Territoire Féminines'
         elif 'U16' in comp:
             team_name = 'U16'
         elif 'U14' in comp:
