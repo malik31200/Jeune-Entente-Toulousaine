@@ -29,6 +29,9 @@ ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost').split(',')
 # Application definition
 
 INSTALLED_APPS = [
+    'unfold',  # doit être déclaré avant django.contrib.admin
+    'unfold.contrib.filters',
+    'unfold.contrib.forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -195,6 +198,29 @@ REST_FRAMEWORK = {
 # Email (console en dev, SMTP en production)
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST_USER = 'noreply@jet.fr'
+
+# Unfold (thème admin) — couleurs alignées sur l'identité JET (orange/noir)
+UNFOLD = {
+    "SITE_TITLE": "JET Admin",
+    "SITE_HEADER": "Jeune Entente Toulousaine",
+    "SITE_SYMBOL": "sports_soccer",
+    "SHOW_HISTORY": True,
+    "COLORS": {
+        "primary": {
+            "50": "255 247 237",
+            "100": "255 237 213",
+            "200": "254 215 170",
+            "300": "253 186 116",
+            "400": "251 146 60",
+            "500": "249 115 22",
+            "600": "234 88 12",
+            "700": "194 65 12",
+            "800": "154 52 18",
+            "900": "124 45 18",
+            "950": "67 20 7",
+        },
+    },
+}
 
 # Cloudinary
 import cloudinary
