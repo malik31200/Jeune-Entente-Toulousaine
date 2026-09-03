@@ -86,7 +86,7 @@ function MatchCard({ match }: { match: Match }) {
           (line-clamp) au lieu d'être coupés, pour rester lisibles en entier. */}
       <div className="px-4 py-2 flex-1 flex items-center">
         <div className="flex items-center gap-1 w-full">
-          <div className="flex-1 text-right min-w-0">
+          <div className="flex-1 text-center min-w-0">
             <p className={`font-black text-sm leading-tight line-clamp-2 ${jetIsHome ? 'text-white' : 'text-gray-500'}`}>
               {match.home_team}
             </p>
@@ -100,7 +100,7 @@ function MatchCard({ match }: { match: Match }) {
               <p className="text-sm font-bold text-gray-500">VS</p>
             )}
           </div>
-          <div className="flex-1 text-left min-w-0">
+          <div className="flex-1 text-center min-w-0">
             <p className={`font-black text-sm leading-tight line-clamp-2 ${!jetIsHome ? 'text-white' : 'text-gray-500'}`}>
               {match.away_team}
             </p>
