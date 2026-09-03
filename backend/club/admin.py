@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.core.management import call_command
 from django.contrib import messages
+from django.shortcuts import redirect
+from django.urls import reverse
 from .models import Article, Team, Player, TrainingSchedule, Match, TeamStats, ClassementEntry, Sponsor, SiteSettings, ClubPage, GalleryPhoto, CategoryPage, TeamPresentation, Detection
 
 
@@ -86,6 +88,17 @@ class SponsorAdmin(admin.ModelAdmin):
 @admin.register(SiteSettings)
 class SiteSettingsAdmin(admin.ModelAdmin):
     list_display = ['contact_email', 'shop_url']
+
+    def has_add_permission(self, request):
+        # Un seul objet de configuration doit exister.
+        return not SiteSettings.objects.exists()
+
+    def changelist_view(self, request, extra_context=None):
+        # Un seul objet : on saute la liste et on ouvre directement le formulaire.
+        obj = SiteSettings.objects.first()
+        if obj:
+            return redirect(reverse('admin:club_sitesettings_change', args=[obj.pk]))
+        return super().changelist_view(request, extra_context)
 
 
 @admin.register(ClubPage)
