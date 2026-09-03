@@ -34,6 +34,12 @@ export default async function Home() {
     const TEAM_ORDER = ['Seniors', 'Seniors 2', 'U19', 'U17', 'U16', 'U15', 'U14', 'Féminines', 'U18 Féminines', 'U15 Féminines', 'Futsal']
     const sixtyDaysAgo = new Date()
     sixtyDaysAgo.setDate(sixtyDaysAgo.getDate() - 60)
+    // Marge de tolérance : un match peut rester en statut A_VENIR quelques
+    // jours après le coup d'envoi si la FFF n'a pas encore publié le score
+    // (délai normal) — on ne l'exclut du "prochain match" que passé ce délai,
+    // pour ne pas cacher un résultat simplement pas encore rentré.
+    const staleAVenirCutoff = new Date()
+    staleAVenirCutoff.setDate(staleAVenirCutoff.getDate() - 4)
 
     const carouselMatches: any[] = []
     for (const teamName of TEAM_ORDER) {
@@ -53,7 +59,12 @@ export default async function Home() {
         .filter((m: any) => (!mainComp || m.competition === mainComp) && new Date(m.date) >= sixtyDaysAgo)
         .sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime())[0]
       const nextMatch = teamMatches
-        .filter((m: any) => m.status === 'A_VENIR' && (!mainComp || m.competition === mainComp))
+        // On exclut les matchs restés bloqués en "A_VENIR" depuis plus de
+        // 4 jours (résultat jamais récupéré, ex: coupure du scraping FFF) —
+        // sinon ils remontent avant les vrais matchs à venir. Un match joué
+        // il y a 1-2 jours dont le score n'est pas encore publié reste
+        // affiché normalement pendant ce délai.
+        .filter((m: any) => m.status === 'A_VENIR' && new Date(m.date) >= staleAVenirCutoff && (!mainComp || m.competition === mainComp))
         .sort((a: any, b: any) => new Date(a.date).getTime() - new Date(b.date).getTime())[0]
 
       if (lastResult) carouselMatches.push({ ...lastResult, team_name: teamName })
