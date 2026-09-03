@@ -61,7 +61,7 @@ class SiteSettingsSerializer(serializers.ModelSerializer):
     class Meta:
         model = SiteSettings
         fields = ['hero_image', 'shop_url', 'facebook_url', 'instagram_url', 'twitter_url',
-                    'youtube_url', 'contact_email']
+                    'youtube_url', 'tiktok_url', 'contact_email']
 
 
 class ClubPageSerializer(serializers.ModelSerializer):
