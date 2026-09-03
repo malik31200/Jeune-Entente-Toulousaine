@@ -41,9 +41,16 @@ class FFFMatchImporter:
 
         home_name = home.get('short_name', '')
         away_name = away.get('short_name', '') if away else 'À définir'
-        home_club = home.get('club', {})
+        home_club = home.get('club', {}) or {}
+        away_club = away.get('club', {}) or {}
 
         is_home = home_club.get('cl_no') == self.club_id
+        is_away = away_club.get('cl_no') == self.club_id
+        if not is_home and not is_away:
+            # Ce match ne concerne pas notre club (ex: liste complète d'une
+            # poule récupérée manuellement, qui contient aussi les matchs
+            # entre d'autres équipes).
+            return None
         our_team_data = home if is_home else away
         category_code = our_team_data.get('category_code', '')
         team_code = our_team_data.get('code', 1)
