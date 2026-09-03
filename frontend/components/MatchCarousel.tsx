@@ -81,27 +81,28 @@ function MatchCard({ match }: { match: Match }) {
         </div>
       </div>
 
-      {/* Équipes + score — grandit pour remplir. J.E.T. toujours à droite,
-          l'adversaire toujours à gauche, quel que soit domicile/extérieur. */}
+      {/* Équipes + score — grandit pour remplir. Domicile toujours à droite,
+          extérieur toujours à gauche (la JET est en blanc, l'adversaire en gris,
+          quel que soit le côté où elle se trouve). */}
       <div className="px-4 py-2 flex-1 flex items-center">
         <div className="flex items-center gap-1 w-full">
           <div className="flex-1 text-right min-w-0">
-            <p className="font-black text-sm leading-tight truncate text-gray-500">
-              {jetIsHome ? match.away_team : match.home_team}
+            <p className={`font-black text-sm leading-tight truncate ${!jetIsHome ? 'text-white' : 'text-gray-500'}`}>
+              {match.away_team}
             </p>
           </div>
           <div className="flex-shrink-0 w-16 text-center">
             {isTermine ? (
               <p className="text-2xl font-black text-white tracking-tight">
-                {jetIsHome ? match.away_score : match.home_score}–{jetIsHome ? match.home_score : match.away_score}
+                {match.home_score}–{match.away_score}
               </p>
             ) : (
               <p className="text-sm font-bold text-gray-500">VS</p>
             )}
           </div>
           <div className="flex-1 text-left min-w-0">
-            <p className="font-black text-sm leading-tight truncate text-white">
-              {jetIsHome ? match.home_team : match.away_team}
+            <p className={`font-black text-sm leading-tight truncate ${jetIsHome ? 'text-white' : 'text-gray-500'}`}>
+              {match.home_team}
             </p>
           </div>
         </div>
