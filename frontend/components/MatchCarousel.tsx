@@ -81,14 +81,14 @@ function MatchCard({ match }: { match: Match }) {
         </div>
       </div>
 
-      {/* Équipes + score — grandit pour remplir. Domicile toujours à droite,
-          extérieur toujours à gauche (la JET est en blanc, l'adversaire en gris,
-          quel que soit le côté où elle se trouve). */}
+      {/* Équipes + score — grandit pour remplir. Domicile à gauche, extérieur à
+          droite (comme à l'origine). Les noms longs passent sur 2 lignes
+          (line-clamp) au lieu d'être coupés, pour rester lisibles en entier. */}
       <div className="px-4 py-2 flex-1 flex items-center">
         <div className="flex items-center gap-1 w-full">
           <div className="flex-1 text-right min-w-0">
-            <p className={`font-black text-sm leading-tight truncate ${!jetIsHome ? 'text-white' : 'text-gray-500'}`}>
-              {match.away_team}
+            <p className={`font-black text-sm leading-tight line-clamp-2 ${jetIsHome ? 'text-white' : 'text-gray-500'}`}>
+              {match.home_team}
             </p>
           </div>
           <div className="flex-shrink-0 w-16 text-center">
@@ -101,8 +101,8 @@ function MatchCard({ match }: { match: Match }) {
             )}
           </div>
           <div className="flex-1 text-left min-w-0">
-            <p className={`font-black text-sm leading-tight truncate ${jetIsHome ? 'text-white' : 'text-gray-500'}`}>
-              {match.home_team}
+            <p className={`font-black text-sm leading-tight line-clamp-2 ${!jetIsHome ? 'text-white' : 'text-gray-500'}`}>
+              {match.away_team}
             </p>
           </div>
         </div>
