@@ -60,7 +60,7 @@ class SponsorSerializer(serializers.ModelSerializer):
 class SiteSettingsSerializer(serializers.ModelSerializer):
     class Meta:
         model = SiteSettings
-        fields = ['shop_url', 'facebook_url', 'instagram_url', 'twitter_url',
+        fields = ['hero_image', 'shop_url', 'facebook_url', 'instagram_url', 'twitter_url',
                     'youtube_url', 'contact_email']
 
 

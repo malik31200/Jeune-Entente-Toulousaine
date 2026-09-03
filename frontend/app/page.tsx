@@ -1,4 +1,4 @@
-import { getArticles, getMatches, getTeams, getSponsors, getMediaUrl } from '../lib/api'
+import { getArticles, getMatches, getTeams, getSponsors, getSiteSettings, getMediaUrl } from '../lib/api'
 import MatchCarousel from '../components/MatchCarousel'
 import Link from 'next/link'
 import FadeIn from '../components/FadeIn'
@@ -18,11 +18,12 @@ export const metadata = {
 }
 
 export default async function Home() {
-    const [articlesData, matchesData, teamsData, sponsorsData] = await Promise.all([
+    const [articlesData, matchesData, teamsData, sponsorsData, settingsData] = await Promise.all([
       getArticles().catch(() => []),
       getMatches().catch(() => []),
       getTeams().catch(() => []),
       getSponsors().catch(() => []),
+      getSiteSettings().catch(() => null),
     ])
 
     const articles = Array.isArray(articlesData) ? articlesData : (articlesData.results || [])
@@ -30,6 +31,10 @@ export default async function Home() {
     const teams = Array.isArray(teamsData) ? teamsData : (teamsData.results || [])
     const heroArticle = articles[0] || null
     const sponsors = Array.isArray(sponsorsData) ? sponsorsData : (sponsorsData.results || [])
+    const siteSettings = Array.isArray(settingsData) ? settingsData[0] : (settingsData?.results?.[0] || null)
+    // L'admin peut choisir une photo de hero dédiée (SiteSettings) ; sinon on
+    // retombe sur l'image du dernier article, comme avant.
+    const heroImage = siteSettings?.hero_image || heroArticle?.image || null
 
     const TEAM_ORDER = ['Seniors', 'Seniors 2', 'U19', 'U18', 'U17', 'U16', 'U15', 'U14', 'Féminines', 'U18 Féminines', 'U15 Elite Féminines', 'U15 Territoire Féminines', 'Futsal']
     const sixtyDaysAgo = new Date()
@@ -81,10 +86,10 @@ export default async function Home() {
                     backgroundColor: 'var(--color-primary)',
                 }}
             >
-                    {heroArticle?.image && (
+                    {heroImage && (
                         <Image
-                            src={getMediaUrl(heroArticle.image)!}
-                            alt={heroArticle.title}
+                            src={getMediaUrl(heroImage)!}
+                            alt="Jeune Entente Toulousaine"
                             fill
                             className="object-cover object-center"
                             priority

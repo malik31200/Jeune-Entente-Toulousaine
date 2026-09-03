@@ -316,6 +316,8 @@ class GalleryPhoto(models.Model):
 
 
 class SiteSettings(models.Model):
+    hero_image = models.ImageField(upload_to='hero/', blank=True, null=True,
+                                    verbose_name="Photo du hero (page d'accueil)")
     shop_url = models.URLField(blank=True)
     facebook_url = models.URLField(blank=True)
     instagram_url = models.URLField(blank=True)
