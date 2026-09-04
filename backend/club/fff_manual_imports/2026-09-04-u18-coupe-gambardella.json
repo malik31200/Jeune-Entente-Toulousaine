@@ -1,0 +1,5180 @@
+{
+  "@context": "/api/contexts/MatchEntity",
+  "@id": "/api/match_entities",
+  "@type": "hydra:Collection",
+  "hydra:member": [
+    {
+      "ma_no": 56595196,
+      "competition": {
+        "cp_no": 449670,
+        "season": 2026,
+        "type": "CP",
+        "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+        "level": "F",
+        "cdg": {
+          "cg_no": 0,
+          "name": "FEDERATION FRANCAISE DE FOOTBALL",
+          "external_updated_at": "2026-08-31T22:09:54+00:00"
+        },
+        "external_updated_at": "2026-08-26T14:21:34+00:00"
+      },
+      "phase": {
+        "number": 1,
+        "type": "CP",
+        "name": "RÉGIONALE",
+        "external_updated_at": "2026-08-26T14:30:01+00:00"
+      },
+      "poule": {
+        "stage_number": 8,
+        "name": "OCCITANIE",
+        "external_updated_at": "2026-08-27T12:07:14+00:00",
+        "poule_unique": false,
+        "at_least_one_match_resultat": true
+      },
+      "poule_journee": {
+        "number": 2,
+        "external_updated_at": "2026-08-27T12:13:52+00:00",
+        "name": "2ième Tour"
+      },
+      "home": {
+        "club": {
+          "cl_no": 106289,
+          "external_updated_at": "2026-08-24T14:50:15+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC550949.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "CHUSCLAN LAUDUN",
+        "short_name_ligue": "CHUSCLAN LAUDUN",
+        "short_name_federation": "CHUSCLAN LAUDUN",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:44:23+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "away": {
+        "club": {
+          "cl_no": 113159,
+          "external_updated_at": "2026-08-31T14:50:50+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC551488.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "ST BEAUCAIRE FC",
+        "short_name_ligue": "ST. BEAUCAIROIS FC",
+        "short_name_federation": "SBFC",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          },
+          {
+            "competition": {
+              "cp_no": 449980,
+              "season": 2026,
+              "type": "CH",
+              "name": "U18 Régional 1 M",
+              "level": "L",
+              "cdg": {
+                "cg_no": 77,
+                "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+                "external_updated_at": "2026-09-01T15:11:32+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:22:56+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-31T10:31:46+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "terrain": {
+        "te_no": 301410101,
+        "name": "COMPLEXE SPORTIF LASCOURS 1",
+        "zip_code": "30290",
+        "city": "LAUDUN L ARDOISE",
+        "libelle_surface": "Pelouse Naturelle",
+        "external_updated_at": "2026-06-17T11:01:43+00:00",
+        "address": "TERRAIN HONNEUR JANNICK REBOUL CD N° 9"
+      },
+      "season": 2026,
+      "status": "A",
+      "ma_ar": "A",
+      "ma_inver": "N",
+      "ma_arret": "N",
+      "is_overtime": "N",
+      "date": "2026-09-05T00:00:00+00:00",
+      "time": "18H00",
+      "initial_date": null,
+      "cr_eq_naff": null,
+      "home_resu": "",
+      "cr_nb_but": null,
+      "home_score": null,
+      "home_but_contre": null,
+      "home_nb_point": null,
+      "home_nb_tir_but": null,
+      "home_nb_point_pena": null,
+      "home_is_forfeit": "N",
+      "cv_eq_naff": null,
+      "away_resu": "",
+      "away_nb_but": null,
+      "away_score": null,
+      "away_but_contre": null,
+      "away_nb_point": null,
+      "away_nb_tir_but": null,
+      "away_nb_point_pena": null,
+      "away_is_forfeit": "N",
+      "seems_postponed": "",
+      "match_membres": [
+        {
+          "mm_no": 162357665,
+          "po_cod": "AC",
+          "prenom": "ISMAEL",
+          "nom": "OUADGHIRI",
+          "label_position": "Arbitre centre",
+          "position_ordre": 1,
+          "external_updated_at": "2026-09-03T21:00:46+00:00"
+        }
+      ],
+      "match_feuille": null,
+      "external_updated_at": "2026-09-02T16:38:36+00:00",
+      "status_label": "/"
+    },
+    {
+      "ma_no": 56595162,
+      "competition": {
+        "cp_no": 449670,
+        "season": 2026,
+        "type": "CP",
+        "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+        "level": "F",
+        "cdg": {
+          "cg_no": 0,
+          "name": "FEDERATION FRANCAISE DE FOOTBALL",
+          "external_updated_at": "2026-08-31T22:09:54+00:00"
+        },
+        "external_updated_at": "2026-08-26T14:21:34+00:00"
+      },
+      "phase": {
+        "number": 1,
+        "type": "CP",
+        "name": "RÉGIONALE",
+        "external_updated_at": "2026-08-26T14:30:01+00:00"
+      },
+      "poule": {
+        "stage_number": 8,
+        "name": "OCCITANIE",
+        "external_updated_at": "2026-08-27T12:07:14+00:00",
+        "poule_unique": false,
+        "at_least_one_match_resultat": true
+      },
+      "poule_journee": {
+        "number": 2,
+        "external_updated_at": "2026-08-27T12:13:52+00:00",
+        "name": "2ième Tour"
+      },
+      "home": {
+        "club": {
+          "cl_no": 7674,
+          "external_updated_at": "2026-09-03T10:32:24+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC521601.jpg"
+        },
+        "category_code": "U19",
+        "number": 8,
+        "code": 1,
+        "short_name": "A.S. STEPHANOISE",
+        "short_name_ligue": "A.S. STEPHANOISE",
+        "short_name_federation": "A.S. STEPHANOISE",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:43:03+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "away": {
+        "club": {
+          "cl_no": 2735,
+          "external_updated_at": "2026-09-03T17:53:55+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC506029.jpg"
+        },
+        "category_code": "U19",
+        "number": 8,
+        "code": 1,
+        "short_name": "LA NICOLAITE",
+        "short_name_ligue": "ST NICOLAS",
+        "short_name_federation": "ST NICOLAS",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:42:07+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "terrain": {
+        "te_no": 821610201,
+        "name": "Stade René Colinet 1",
+        "zip_code": "82410",
+        "city": "ST ETIENNE DE TULMONT",
+        "libelle_surface": "Pelouse Naturelle",
+        "external_updated_at": "2026-06-25T10:56:45+00:00",
+        "address": "ALLEE DU STADE"
+      },
+      "season": 2026,
+      "status": "A",
+      "ma_ar": "A",
+      "ma_inver": "N",
+      "ma_arret": "N",
+      "is_overtime": "N",
+      "date": "2026-09-05T00:00:00+00:00",
+      "time": "15H00",
+      "initial_date": null,
+      "cr_eq_naff": null,
+      "home_resu": "",
+      "cr_nb_but": null,
+      "home_score": null,
+      "home_but_contre": null,
+      "home_nb_point": null,
+      "home_nb_tir_but": null,
+      "home_nb_point_pena": null,
+      "home_is_forfeit": "N",
+      "cv_eq_naff": null,
+      "away_resu": "",
+      "away_nb_but": null,
+      "away_score": null,
+      "away_but_contre": null,
+      "away_nb_point": null,
+      "away_nb_tir_but": null,
+      "away_nb_point_pena": null,
+      "away_is_forfeit": "N",
+      "seems_postponed": "",
+      "match_membres": [],
+      "match_feuille": null,
+      "external_updated_at": "2026-09-01T09:30:25+00:00",
+      "status_label": "/"
+    },
+    {
+      "ma_no": 56595161,
+      "competition": {
+        "cp_no": 449670,
+        "season": 2026,
+        "type": "CP",
+        "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+        "level": "F",
+        "cdg": {
+          "cg_no": 0,
+          "name": "FEDERATION FRANCAISE DE FOOTBALL",
+          "external_updated_at": "2026-08-31T22:09:54+00:00"
+        },
+        "external_updated_at": "2026-08-26T14:21:34+00:00"
+      },
+      "phase": {
+        "number": 1,
+        "type": "CP",
+        "name": "RÉGIONALE",
+        "external_updated_at": "2026-08-26T14:30:01+00:00"
+      },
+      "poule": {
+        "stage_number": 8,
+        "name": "OCCITANIE",
+        "external_updated_at": "2026-08-27T12:07:14+00:00",
+        "poule_unique": false,
+        "at_least_one_match_resultat": true
+      },
+      "poule_journee": {
+        "number": 2,
+        "external_updated_at": "2026-08-27T12:13:52+00:00",
+        "name": "2ième Tour"
+      },
+      "home": {
+        "club": {
+          "cl_no": 25462,
+          "external_updated_at": "2026-08-27T09:41:39+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC548368.jpg"
+        },
+        "category_code": "U19",
+        "number": 2,
+        "code": 1,
+        "short_name": "LAVAUR F.C.",
+        "short_name_ligue": "LAVAUR F.C.",
+        "short_name_federation": "LAVAUR F.C.",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          },
+          {
+            "competition": {
+              "cp_no": 449980,
+              "season": 2026,
+              "type": "CH",
+              "name": "U18 Régional 1 M",
+              "level": "L",
+              "cdg": {
+                "cg_no": 77,
+                "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+                "external_updated_at": "2026-09-01T15:11:32+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:22:56+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:44:12+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "away": {
+        "club": {
+          "cl_no": 10381,
+          "external_updated_at": "2026-08-28T12:31:04+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC525743.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "ONET LE CHAT.",
+        "short_name_ligue": "ONET LE CHAT.",
+        "short_name_federation": "ONET LE CHAT.",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          },
+          {
+            "competition": {
+              "cp_no": 449980,
+              "season": 2026,
+              "type": "CH",
+              "name": "U18 Régional 1 M",
+              "level": "L",
+              "cdg": {
+                "cg_no": 77,
+                "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+                "external_updated_at": "2026-09-01T15:11:32+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:22:56+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:43:22+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "terrain": {
+        "te_no": 811400201,
+        "name": "STADE MUNICIPAL 1",
+        "zip_code": "81500",
+        "city": "LAVAUR",
+        "libelle_surface": "Pelouse Naturelle",
+        "external_updated_at": "2026-08-28T12:30:49+00:00",
+        "address": "TERRAIN HONNEUR AVENUE JACQUES BESSE"
+      },
+      "season": 2026,
+      "status": "A",
+      "ma_ar": "A",
+      "ma_inver": "N",
+      "ma_arret": "N",
+      "is_overtime": "N",
+      "date": "2026-09-05T00:00:00+00:00",
+      "time": "15H00",
+      "initial_date": null,
+      "cr_eq_naff": null,
+      "home_resu": "",
+      "cr_nb_but": null,
+      "home_score": null,
+      "home_but_contre": null,
+      "home_nb_point": null,
+      "home_nb_tir_but": null,
+      "home_nb_point_pena": null,
+      "home_is_forfeit": "N",
+      "cv_eq_naff": null,
+      "away_resu": "",
+      "away_nb_but": null,
+      "away_score": null,
+      "away_but_contre": null,
+      "away_nb_point": null,
+      "away_nb_tir_but": null,
+      "away_nb_point_pena": null,
+      "away_is_forfeit": "N",
+      "seems_postponed": "",
+      "match_membres": [
+        {
+          "mm_no": 161163458,
+          "po_cod": "AC",
+          "prenom": "XAVIER",
+          "nom": "RATIE",
+          "label_position": "Arbitre centre",
+          "position_ordre": 1,
+          "external_updated_at": "2026-09-01T14:52:21+00:00"
+        }
+      ],
+      "match_feuille": null,
+      "external_updated_at": "2026-08-27T16:49:20+00:00",
+      "status_label": "/"
+    },
+    {
+      "ma_no": 56595159,
+      "competition": {
+        "cp_no": 449670,
+        "season": 2026,
+        "type": "CP",
+        "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+        "level": "F",
+        "cdg": {
+          "cg_no": 0,
+          "name": "FEDERATION FRANCAISE DE FOOTBALL",
+          "external_updated_at": "2026-08-31T22:09:54+00:00"
+        },
+        "external_updated_at": "2026-08-26T14:21:34+00:00"
+      },
+      "phase": {
+        "number": 1,
+        "type": "CP",
+        "name": "RÉGIONALE",
+        "external_updated_at": "2026-08-26T14:30:01+00:00"
+      },
+      "poule": {
+        "stage_number": 8,
+        "name": "OCCITANIE",
+        "external_updated_at": "2026-08-27T12:07:14+00:00",
+        "poule_unique": false,
+        "at_least_one_match_resultat": true
+      },
+      "poule_journee": {
+        "number": 2,
+        "external_updated_at": "2026-08-27T12:13:52+00:00",
+        "name": "2ième Tour"
+      },
+      "home": {
+        "club": {
+          "cl_no": 6734,
+          "external_updated_at": "2026-08-31T15:36:41+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC520109.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "BALARUC STADE",
+        "short_name_ligue": "BALARUC STADE",
+        "short_name_federation": "BALARUC STADE",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:42:54+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "away": {
+        "club": {
+          "cl_no": 21574,
+          "external_updated_at": "2026-08-24T14:44:54+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC541831.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "LAVERUNE FC",
+        "short_name_ligue": "F.C. LAVERUNE",
+        "short_name_federation": "F.C. LAVERUNE",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          },
+          {
+            "competition": {
+              "cp_no": 449980,
+              "season": 2026,
+              "type": "CH",
+              "name": "U18 Régional 1 M",
+              "level": "L",
+              "cdg": {
+                "cg_no": 77,
+                "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+                "external_updated_at": "2026-09-01T15:11:32+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:22:56+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:43:54+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "terrain": {
+        "te_no": 340230101,
+        "name": "Stade Jean Claude CombalaT",
+        "zip_code": "34540",
+        "city": "BALARUC LES BAINS",
+        "libelle_surface": "Synthétique",
+        "external_updated_at": "2026-08-28T12:31:03+00:00",
+        "address": "RUE DU STADE"
+      },
+      "season": 2026,
+      "status": "A",
+      "ma_ar": "A",
+      "ma_inver": "N",
+      "ma_arret": "N",
+      "is_overtime": "N",
+      "date": "2026-09-05T00:00:00+00:00",
+      "time": "18H30",
+      "initial_date": null,
+      "cr_eq_naff": null,
+      "home_resu": "",
+      "cr_nb_but": null,
+      "home_score": null,
+      "home_but_contre": null,
+      "home_nb_point": null,
+      "home_nb_tir_but": null,
+      "home_nb_point_pena": null,
+      "home_is_forfeit": "N",
+      "cv_eq_naff": null,
+      "away_resu": "",
+      "away_nb_but": null,
+      "away_score": null,
+      "away_but_contre": null,
+      "away_nb_point": null,
+      "away_nb_tir_but": null,
+      "away_nb_point_pena": null,
+      "away_is_forfeit": "N",
+      "seems_postponed": "",
+      "match_membres": [
+        {
+          "mm_no": 161207911,
+          "po_cod": "AC",
+          "prenom": "JEAN PIERRE",
+          "nom": "LAFFITTE",
+          "label_position": "Arbitre centre",
+          "position_ordre": 1,
+          "external_updated_at": "2026-09-01T03:17:39+00:00"
+        }
+      ],
+      "match_feuille": null,
+      "external_updated_at": "2026-08-31T15:12:03+00:00",
+      "status_label": "/"
+    },
+    {
+      "ma_no": 56595164,
+      "competition": {
+        "cp_no": 449670,
+        "season": 2026,
+        "type": "CP",
+        "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+        "level": "F",
+        "cdg": {
+          "cg_no": 0,
+          "name": "FEDERATION FRANCAISE DE FOOTBALL",
+          "external_updated_at": "2026-08-31T22:09:54+00:00"
+        },
+        "external_updated_at": "2026-08-26T14:21:34+00:00"
+      },
+      "phase": {
+        "number": 1,
+        "type": "CP",
+        "name": "RÉGIONALE",
+        "external_updated_at": "2026-08-26T14:30:01+00:00"
+      },
+      "poule": {
+        "stage_number": 8,
+        "name": "OCCITANIE",
+        "external_updated_at": "2026-08-27T12:07:14+00:00",
+        "poule_unique": false,
+        "at_least_one_match_resultat": true
+      },
+      "poule_journee": {
+        "number": 2,
+        "external_updated_at": "2026-08-27T12:13:52+00:00",
+        "name": "2ième Tour"
+      },
+      "home": {
+        "club": {
+          "cl_no": 206325,
+          "external_updated_at": "2026-08-28T02:26:24+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC565808.jpg"
+        },
+        "category_code": "U19",
+        "number": 4,
+        "code": 1,
+        "short_name": "ÉLITE FOOT 48",
+        "short_name_ligue": "ÉLITE FOOT 48",
+        "short_name_federation": "ÉLITE FOOT 48",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:45:31+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "away": {
+        "club": {
+          "cl_no": 201473,
+          "external_updated_at": "2026-08-24T15:03:05+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC564342.jpg"
+        },
+        "category_code": "U19",
+        "number": 12,
+        "code": 1,
+        "short_name": "FC COMTAL",
+        "short_name_ligue": "FC COMTAL",
+        "short_name_federation": "FC COMTAL",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:45:25+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "terrain": {
+        "te_no": 480950302,
+        "name": "STADE LE CAUSSE D' AUGE 2",
+        "zip_code": "48000",
+        "city": "MENDE",
+        "libelle_surface": "Pelouse Naturelle",
+        "external_updated_at": "2026-06-06T09:28:48+00:00",
+        "address": "ZA CAUSSE D' AUGE"
+      },
+      "season": 2026,
+      "status": "A",
+      "ma_ar": "A",
+      "ma_inver": "N",
+      "ma_arret": "N",
+      "is_overtime": "N",
+      "date": "2026-09-05T00:00:00+00:00",
+      "time": "15H00",
+      "initial_date": null,
+      "cr_eq_naff": null,
+      "home_resu": "",
+      "cr_nb_but": null,
+      "home_score": null,
+      "home_but_contre": null,
+      "home_nb_point": null,
+      "home_nb_tir_but": null,
+      "home_nb_point_pena": null,
+      "home_is_forfeit": "N",
+      "cv_eq_naff": null,
+      "away_resu": "",
+      "away_nb_but": null,
+      "away_score": null,
+      "away_but_contre": null,
+      "away_nb_point": null,
+      "away_nb_tir_but": null,
+      "away_nb_point_pena": null,
+      "away_is_forfeit": "N",
+      "seems_postponed": "",
+      "match_membres": [
+        {
+          "mm_no": 161700488,
+          "po_cod": "AC",
+          "prenom": "NICOLAS",
+          "nom": "GLOTAIN",
+          "label_position": "Arbitre centre",
+          "position_ordre": 1,
+          "external_updated_at": "2026-09-01T17:58:53+00:00"
+        }
+      ],
+      "match_feuille": null,
+      "external_updated_at": "2026-08-27T16:49:20+00:00",
+      "status_label": "/"
+    },
+    {
+      "ma_no": 56595173,
+      "competition": {
+        "cp_no": 449670,
+        "season": 2026,
+        "type": "CP",
+        "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+        "level": "F",
+        "cdg": {
+          "cg_no": 0,
+          "name": "FEDERATION FRANCAISE DE FOOTBALL",
+          "external_updated_at": "2026-08-31T22:09:54+00:00"
+        },
+        "external_updated_at": "2026-08-26T14:21:34+00:00"
+      },
+      "phase": {
+        "number": 1,
+        "type": "CP",
+        "name": "RÉGIONALE",
+        "external_updated_at": "2026-08-26T14:30:01+00:00"
+      },
+      "poule": {
+        "stage_number": 8,
+        "name": "OCCITANIE",
+        "external_updated_at": "2026-08-27T12:07:14+00:00",
+        "poule_unique": false,
+        "at_least_one_match_resultat": true
+      },
+      "poule_journee": {
+        "number": 2,
+        "external_updated_at": "2026-08-27T12:13:52+00:00",
+        "name": "2ième Tour"
+      },
+      "home": {
+        "club": {
+          "cl_no": 21539,
+          "external_updated_at": "2026-08-24T14:44:48+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC541787.jpg"
+        },
+        "category_code": "U19",
+        "number": 6,
+        "code": 1,
+        "short_name": "FC 2 RIVES 82",
+        "short_name_ligue": "FC 2 RIVES 82",
+        "short_name_federation": "FC 2 RIVES 82",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:43:54+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "away": {
+        "club": {
+          "cl_no": 2685,
+          "external_updated_at": "2026-08-28T12:30:52+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC505909.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "RODEZ AF",
+        "short_name_ligue": "RODEZ AF",
+        "short_name_federation": "RODEZ AF",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          },
+          {
+            "competition": {
+              "cp_no": 449980,
+              "season": 2026,
+              "type": "CH",
+              "name": "U18 Régional 1 M",
+              "level": "L",
+              "cdg": {
+                "cg_no": 77,
+                "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+                "external_updated_at": "2026-09-01T15:11:32+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:22:56+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:42:07+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "terrain": {
+        "te_no": 820720102,
+        "name": "STADE PAUL LAFONT 2",
+        "zip_code": "82400",
+        "city": "GOLFECH",
+        "libelle_surface": "Synthétique",
+        "external_updated_at": "2026-06-07T11:13:26+00:00",
+        "address": "ROUTE DU STADE"
+      },
+      "season": 2026,
+      "status": "A",
+      "ma_ar": "A",
+      "ma_inver": "N",
+      "ma_arret": "N",
+      "is_overtime": "N",
+      "date": "2026-09-05T00:00:00+00:00",
+      "time": "14H00",
+      "initial_date": null,
+      "cr_eq_naff": null,
+      "home_resu": "",
+      "cr_nb_but": null,
+      "home_score": null,
+      "home_but_contre": null,
+      "home_nb_point": null,
+      "home_nb_tir_but": null,
+      "home_nb_point_pena": null,
+      "home_is_forfeit": "N",
+      "cv_eq_naff": null,
+      "away_resu": "",
+      "away_nb_but": null,
+      "away_score": null,
+      "away_but_contre": null,
+      "away_nb_point": null,
+      "away_nb_tir_but": null,
+      "away_nb_point_pena": null,
+      "away_is_forfeit": "N",
+      "seems_postponed": "",
+      "match_membres": [
+        {
+          "mm_no": 161163316,
+          "po_cod": "AC",
+          "prenom": "ROMAIN",
+          "nom": "BUSQUET",
+          "label_position": "Arbitre centre",
+          "position_ordre": 1,
+          "external_updated_at": "2026-09-04T09:15:02+00:00"
+        }
+      ],
+      "match_feuille": null,
+      "external_updated_at": "2026-08-27T16:49:20+00:00",
+      "status_label": "/"
+    },
+    {
+      "ma_no": 56595172,
+      "competition": {
+        "cp_no": 449670,
+        "season": 2026,
+        "type": "CP",
+        "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+        "level": "F",
+        "cdg": {
+          "cg_no": 0,
+          "name": "FEDERATION FRANCAISE DE FOOTBALL",
+          "external_updated_at": "2026-08-31T22:09:54+00:00"
+        },
+        "external_updated_at": "2026-08-26T14:21:34+00:00"
+      },
+      "phase": {
+        "number": 1,
+        "type": "CP",
+        "name": "RÉGIONALE",
+        "external_updated_at": "2026-08-26T14:30:01+00:00"
+      },
+      "poule": {
+        "stage_number": 8,
+        "name": "OCCITANIE",
+        "external_updated_at": "2026-08-27T12:07:14+00:00",
+        "poule_unique": false,
+        "at_least_one_match_resultat": true
+      },
+      "poule_journee": {
+        "number": 2,
+        "external_updated_at": "2026-08-27T12:13:52+00:00",
+        "name": "2ième Tour"
+      },
+      "home": {
+        "club": {
+          "cl_no": 24565,
+          "external_updated_at": "2026-08-24T14:47:32+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC547122.jpg"
+        },
+        "category_code": "U19",
+        "number": 4,
+        "code": 1,
+        "short_name": "ENT.FCLF.FCCS46",
+        "short_name_ligue": "ENT.FCLF.FCCS46",
+        "short_name_federation": "ENT.FCLF.FCCS46",
+        "type": "E",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:44:07+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "away": {
+        "club": {
+          "cl_no": 2699,
+          "external_updated_at": "2026-08-24T14:24:10+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC505931.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "US ALBI",
+        "short_name_ligue": "US ALBI",
+        "short_name_federation": "US ALBI",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:42:07+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "terrain": {
+        "te_no": 461090101,
+        "name": "STADE ROBERT POUSSOU",
+        "zip_code": "46230",
+        "city": "FONTANES",
+        "libelle_surface": "Pelouse Naturelle",
+        "external_updated_at": "2026-06-06T09:19:34+00:00",
+        "address": "PLAINE DE JEUX  PLACE DE L ECOLE"
+      },
+      "season": 2026,
+      "status": "A",
+      "ma_ar": "A",
+      "ma_inver": "N",
+      "ma_arret": "N",
+      "is_overtime": "N",
+      "date": "2026-09-05T00:00:00+00:00",
+      "time": "14H00",
+      "initial_date": null,
+      "cr_eq_naff": null,
+      "home_resu": "",
+      "cr_nb_but": null,
+      "home_score": null,
+      "home_but_contre": null,
+      "home_nb_point": null,
+      "home_nb_tir_but": null,
+      "home_nb_point_pena": null,
+      "home_is_forfeit": "N",
+      "cv_eq_naff": null,
+      "away_resu": "",
+      "away_nb_but": null,
+      "away_score": null,
+      "away_but_contre": null,
+      "away_nb_point": null,
+      "away_nb_tir_but": null,
+      "away_nb_point_pena": null,
+      "away_is_forfeit": "N",
+      "seems_postponed": "",
+      "match_membres": [
+        {
+          "mm_no": 162039450,
+          "po_cod": "AC",
+          "prenom": "BAKARY",
+          "nom": "GORY",
+          "label_position": "Arbitre centre",
+          "position_ordre": 1,
+          "external_updated_at": "2026-09-02T18:58:35+00:00"
+        }
+      ],
+      "match_feuille": null,
+      "external_updated_at": "2026-09-02T15:50:58+00:00",
+      "status_label": "/"
+    },
+    {
+      "ma_no": 56595156,
+      "competition": {
+        "cp_no": 449670,
+        "season": 2026,
+        "type": "CP",
+        "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+        "level": "F",
+        "cdg": {
+          "cg_no": 0,
+          "name": "FEDERATION FRANCAISE DE FOOTBALL",
+          "external_updated_at": "2026-08-31T22:09:54+00:00"
+        },
+        "external_updated_at": "2026-08-26T14:21:34+00:00"
+      },
+      "phase": {
+        "number": 1,
+        "type": "CP",
+        "name": "RÉGIONALE",
+        "external_updated_at": "2026-08-26T14:30:01+00:00"
+      },
+      "poule": {
+        "stage_number": 8,
+        "name": "OCCITANIE",
+        "external_updated_at": "2026-08-27T12:07:14+00:00",
+        "poule_unique": false,
+        "at_least_one_match_resultat": true
+      },
+      "poule_journee": {
+        "number": 2,
+        "external_updated_at": "2026-08-27T12:13:52+00:00",
+        "name": "2ième Tour"
+      },
+      "home": {
+        "club": {
+          "cl_no": 285,
+          "external_updated_at": "2026-08-24T13:01:13+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC500152.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "LUNEL GC",
+        "short_name_ligue": "LUNEL GC",
+        "short_name_federation": "LUNEL GC",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          },
+          {
+            "competition": {
+              "cp_no": 449980,
+              "season": 2026,
+              "type": "CH",
+              "name": "U18 Régional 1 M",
+              "level": "L",
+              "cdg": {
+                "cg_no": 77,
+                "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+                "external_updated_at": "2026-09-01T15:11:32+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:22:56+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:41:52+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "away": {
+        "club": {
+          "cl_no": 202172,
+          "external_updated_at": "2026-08-24T14:57:47+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC564600.jpg"
+        },
+        "category_code": "U19",
+        "number": 8,
+        "code": 1,
+        "short_name": "SC SETE",
+        "short_name_ligue": "SC SETE",
+        "short_name_federation": "SC SETE",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:45:26+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "terrain": {
+        "te_no": 341450102,
+        "name": "STADE FERNAND BRUNEL 2",
+        "zip_code": "34400",
+        "city": "LUNEL",
+        "libelle_surface": "Synthétique",
+        "external_updated_at": "2026-06-05T22:43:26+00:00",
+        "address": "TERRAIN ANNEXE 1 370 RUE DU JEU DE MAIL"
+      },
+      "season": 2026,
+      "status": "A",
+      "ma_ar": "A",
+      "ma_inver": "N",
+      "ma_arret": "N",
+      "is_overtime": "N",
+      "date": "2026-09-05T00:00:00+00:00",
+      "time": "16H00",
+      "initial_date": null,
+      "cr_eq_naff": null,
+      "home_resu": "",
+      "cr_nb_but": null,
+      "home_score": null,
+      "home_but_contre": null,
+      "home_nb_point": null,
+      "home_nb_tir_but": null,
+      "home_nb_point_pena": null,
+      "home_is_forfeit": "N",
+      "cv_eq_naff": null,
+      "away_resu": "",
+      "away_nb_but": null,
+      "away_score": null,
+      "away_but_contre": null,
+      "away_nb_point": null,
+      "away_nb_tir_but": null,
+      "away_nb_point_pena": null,
+      "away_is_forfeit": "N",
+      "seems_postponed": "",
+      "match_membres": [
+        {
+          "mm_no": 161163325,
+          "po_cod": "AC",
+          "prenom": "JOSE",
+          "nom": "ROSA",
+          "label_position": "Arbitre centre",
+          "position_ordre": 1,
+          "external_updated_at": "2026-09-01T21:48:16+00:00"
+        }
+      ],
+      "match_feuille": null,
+      "external_updated_at": "2026-09-02T16:54:13+00:00",
+      "status_label": "/"
+    },
+    {
+      "ma_no": 56595199,
+      "competition": {
+        "cp_no": 449670,
+        "season": 2026,
+        "type": "CP",
+        "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+        "level": "F",
+        "cdg": {
+          "cg_no": 0,
+          "name": "FEDERATION FRANCAISE DE FOOTBALL",
+          "external_updated_at": "2026-08-31T22:09:54+00:00"
+        },
+        "external_updated_at": "2026-08-26T14:21:34+00:00"
+      },
+      "phase": {
+        "number": 1,
+        "type": "CP",
+        "name": "RÉGIONALE",
+        "external_updated_at": "2026-08-26T14:30:01+00:00"
+      },
+      "poule": {
+        "stage_number": 8,
+        "name": "OCCITANIE",
+        "external_updated_at": "2026-08-27T12:07:14+00:00",
+        "poule_unique": false,
+        "at_least_one_match_resultat": true
+      },
+      "poule_journee": {
+        "number": 2,
+        "external_updated_at": "2026-08-27T12:13:52+00:00",
+        "name": "2ième Tour"
+      },
+      "home": {
+        "club": {
+          "cl_no": 199259,
+          "external_updated_at": "2026-08-24T13:02:27+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC560950.jpg"
+        },
+        "category_code": "U19",
+        "number": 4,
+        "code": 1,
+        "short_name": "PNF",
+        "short_name_ligue": "PLATEAU NESTES F.",
+        "short_name_federation": "PNF",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:45:22+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "away": {
+        "club": {
+          "cl_no": 8017,
+          "external_updated_at": "2026-08-24T12:35:17+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC522111.jpg"
+        },
+        "category_code": "U19",
+        "number": 4,
+        "code": 1,
+        "short_name": "PAVIE",
+        "short_name_ligue": "PAVIE",
+        "short_name_federation": "PAVIE",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:43:05+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "terrain": {
+        "te_no": 650690101,
+        "name": "STADE ALBERT ESCALE",
+        "zip_code": "65250",
+        "city": "LA BARTHE DE NESTE",
+        "libelle_surface": "Pelouse Naturelle",
+        "external_updated_at": "2026-06-07T07:50:43+00:00",
+        "address": "RUE DU STADE"
+      },
+      "season": 2026,
+      "status": "A",
+      "ma_ar": "A",
+      "ma_inver": "N",
+      "ma_arret": "N",
+      "is_overtime": "N",
+      "date": "2026-09-05T00:00:00+00:00",
+      "time": "17H00",
+      "initial_date": null,
+      "cr_eq_naff": null,
+      "home_resu": "",
+      "cr_nb_but": null,
+      "home_score": null,
+      "home_but_contre": null,
+      "home_nb_point": null,
+      "home_nb_tir_but": null,
+      "home_nb_point_pena": null,
+      "home_is_forfeit": "N",
+      "cv_eq_naff": null,
+      "away_resu": "",
+      "away_nb_but": null,
+      "away_score": null,
+      "away_but_contre": null,
+      "away_nb_point": null,
+      "away_nb_tir_but": null,
+      "away_nb_point_pena": null,
+      "away_is_forfeit": "N",
+      "seems_postponed": "",
+      "match_membres": [
+        {
+          "mm_no": 162359386,
+          "po_cod": "AC",
+          "prenom": "MARVEN",
+          "nom": "CHITOU",
+          "label_position": "Arbitre centre",
+          "position_ordre": 1,
+          "external_updated_at": "2026-09-03T23:42:12+00:00"
+        }
+      ],
+      "match_feuille": null,
+      "external_updated_at": "2026-08-27T16:49:20+00:00",
+      "status_label": "/"
+    },
+    {
+      "ma_no": 56595141,
+      "competition": {
+        "cp_no": 449670,
+        "season": 2026,
+        "type": "CP",
+        "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+        "level": "F",
+        "cdg": {
+          "cg_no": 0,
+          "name": "FEDERATION FRANCAISE DE FOOTBALL",
+          "external_updated_at": "2026-08-31T22:09:54+00:00"
+        },
+        "external_updated_at": "2026-08-26T14:21:34+00:00"
+      },
+      "phase": {
+        "number": 1,
+        "type": "CP",
+        "name": "RÉGIONALE",
+        "external_updated_at": "2026-08-26T14:30:01+00:00"
+      },
+      "poule": {
+        "stage_number": 8,
+        "name": "OCCITANIE",
+        "external_updated_at": "2026-08-27T12:07:14+00:00",
+        "poule_unique": false,
+        "at_least_one_match_resultat": true
+      },
+      "poule_journee": {
+        "number": 2,
+        "external_updated_at": "2026-08-27T12:13:52+00:00",
+        "name": "2ième Tour"
+      },
+      "home": {
+        "club": {
+          "cl_no": 6408,
+          "external_updated_at": "2026-09-03T14:05:54+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC519585.jpg"
+        },
+        "category_code": "U19",
+        "number": 3,
+        "code": 1,
+        "short_name": "GARDOUCH OC",
+        "short_name_ligue": "GARDOUCH OC",
+        "short_name_federation": "GARDOUCH OC",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          },
+          {
+            "competition": {
+              "cp_no": 454507,
+              "season": 2026,
+              "type": "CH",
+              "name": "U18 TERRITOIRE ELITE",
+              "level": "D",
+              "cdg": {
+                "cg_no": 86,
+                "name": "DISTRICT HAUTE GARONNE",
+                "external_updated_at": "2026-08-10T12:23:26+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:22:25+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:42:50+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "away": {
+        "club": {
+          "cl_no": 2682,
+          "external_updated_at": "2026-08-29T14:37:47+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC505904.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "MURET AS",
+        "short_name_ligue": "MURET AS",
+        "short_name_federation": "MURET",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          },
+          {
+            "competition": {
+              "cp_no": 449980,
+              "season": 2026,
+              "type": "CH",
+              "name": "U18 Régional 1 M",
+              "level": "L",
+              "cdg": {
+                "cg_no": 77,
+                "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+                "external_updated_at": "2026-09-01T15:11:32+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:22:56+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:42:07+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "terrain": {
+        "te_no": 312100101,
+        "name": "STADE MUNICIPAL",
+        "zip_code": "31290",
+        "city": "GARDOUCH",
+        "libelle_surface": "Pelouse Naturelle",
+        "external_updated_at": "2026-06-05T17:18:57+00:00",
+        "address": "AVENUE TOLOSANE"
+      },
+      "season": 2026,
+      "status": "A",
+      "ma_ar": "A",
+      "ma_inver": "N",
+      "ma_arret": "N",
+      "is_overtime": "N",
+      "date": "2026-09-05T00:00:00+00:00",
+      "time": "18H00",
+      "initial_date": null,
+      "cr_eq_naff": null,
+      "home_resu": "",
+      "cr_nb_but": null,
+      "home_score": null,
+      "home_but_contre": null,
+      "home_nb_point": null,
+      "home_nb_tir_but": null,
+      "home_nb_point_pena": null,
+      "home_is_forfeit": "N",
+      "cv_eq_naff": null,
+      "away_resu": "",
+      "away_nb_but": null,
+      "away_score": null,
+      "away_but_contre": null,
+      "away_nb_point": null,
+      "away_nb_tir_but": null,
+      "away_nb_point_pena": null,
+      "away_is_forfeit": "N",
+      "seems_postponed": "",
+      "match_membres": [
+        {
+          "mm_no": 161943945,
+          "po_cod": "AC",
+          "prenom": "Anonyme",
+          "nom": "",
+          "label_position": "Arbitre centre",
+          "position_ordre": 1,
+          "external_updated_at": "2026-09-02T14:52:33+00:00"
+        }
+      ],
+      "match_feuille": null,
+      "external_updated_at": "2026-08-28T11:06:03+00:00",
+      "status_label": "/"
+    },
+    {
+      "ma_no": 56595129,
+      "competition": {
+        "cp_no": 449670,
+        "season": 2026,
+        "type": "CP",
+        "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+        "level": "F",
+        "cdg": {
+          "cg_no": 0,
+          "name": "FEDERATION FRANCAISE DE FOOTBALL",
+          "external_updated_at": "2026-08-31T22:09:54+00:00"
+        },
+        "external_updated_at": "2026-08-26T14:21:34+00:00"
+      },
+      "phase": {
+        "number": 1,
+        "type": "CP",
+        "name": "RÉGIONALE",
+        "external_updated_at": "2026-08-26T14:30:01+00:00"
+      },
+      "poule": {
+        "stage_number": 8,
+        "name": "OCCITANIE",
+        "external_updated_at": "2026-08-27T12:07:14+00:00",
+        "poule_unique": false,
+        "at_least_one_match_resultat": true
+      },
+      "poule_journee": {
+        "number": 2,
+        "external_updated_at": "2026-08-27T12:13:52+00:00",
+        "name": "2ième Tour"
+      },
+      "home": {
+        "club": {
+          "cl_no": 5574,
+          "external_updated_at": "2026-08-27T14:10:40+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC517802.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "TOURNEFEUILLE AS",
+        "short_name_ligue": "TOURNEFEUILLE",
+        "short_name_federation": "TOURNEFEUILLE",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:42:42+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "away": {
+        "club": {
+          "cl_no": 9278,
+          "external_updated_at": "2026-08-24T14:36:17+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC524101.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "ST ORENS FC",
+        "short_name_ligue": "SAINT-ORENS F.C.",
+        "short_name_federation": "SAINT-ORENS F.C.",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:43:14+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "terrain": {
+        "te_no": 315570104,
+        "name": "STADE MUNICIPAL 4",
+        "zip_code": "31170",
+        "city": "TOURNEFEUILLE",
+        "libelle_surface": "Synthétique",
+        "external_updated_at": "2026-06-05T17:32:06+00:00",
+        "address": "Allees des Sports"
+      },
+      "season": 2026,
+      "status": "A",
+      "ma_ar": "A",
+      "ma_inver": "N",
+      "ma_arret": "N",
+      "is_overtime": "N",
+      "date": "2026-09-05T00:00:00+00:00",
+      "time": "16H00",
+      "initial_date": null,
+      "cr_eq_naff": null,
+      "home_resu": "",
+      "cr_nb_but": null,
+      "home_score": null,
+      "home_but_contre": null,
+      "home_nb_point": null,
+      "home_nb_tir_but": null,
+      "home_nb_point_pena": null,
+      "home_is_forfeit": "N",
+      "cv_eq_naff": null,
+      "away_resu": "",
+      "away_nb_but": null,
+      "away_score": null,
+      "away_but_contre": null,
+      "away_nb_point": null,
+      "away_nb_tir_but": null,
+      "away_nb_point_pena": null,
+      "away_is_forfeit": "N",
+      "seems_postponed": "",
+      "match_membres": [
+        {
+          "mm_no": 161810540,
+          "po_cod": "AC",
+          "prenom": "JEREMY",
+          "nom": "CHELLE",
+          "label_position": "Arbitre centre",
+          "position_ordre": 1,
+          "external_updated_at": "2026-09-02T10:31:22+00:00"
+        }
+      ],
+      "match_feuille": null,
+      "external_updated_at": "2026-08-31T14:49:29+00:00",
+      "status_label": "/"
+    },
+    {
+      "ma_no": 56595126,
+      "competition": {
+        "cp_no": 449670,
+        "season": 2026,
+        "type": "CP",
+        "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+        "level": "F",
+        "cdg": {
+          "cg_no": 0,
+          "name": "FEDERATION FRANCAISE DE FOOTBALL",
+          "external_updated_at": "2026-08-31T22:09:54+00:00"
+        },
+        "external_updated_at": "2026-08-26T14:21:34+00:00"
+      },
+      "phase": {
+        "number": 1,
+        "type": "CP",
+        "name": "RÉGIONALE",
+        "external_updated_at": "2026-08-26T14:30:01+00:00"
+      },
+      "poule": {
+        "stage_number": 8,
+        "name": "OCCITANIE",
+        "external_updated_at": "2026-08-27T12:07:14+00:00",
+        "poule_unique": false,
+        "at_least_one_match_resultat": true
+      },
+      "poule_journee": {
+        "number": 2,
+        "external_updated_at": "2026-08-27T12:13:52+00:00",
+        "name": "2ième Tour"
+      },
+      "home": {
+        "club": {
+          "cl_no": 7516,
+          "external_updated_at": "2026-08-24T12:34:33+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC521342.jpg"
+        },
+        "category_code": "U19",
+        "number": 2,
+        "code": 1,
+        "short_name": "LAUNAGUET FC",
+        "short_name_ligue": "LAUNAGUET FC",
+        "short_name_federation": "LAUNAGUET FC",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:43:01+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "away": {
+        "club": {
+          "cl_no": 201992,
+          "external_updated_at": "2026-08-24T17:42:34+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC564480.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "FC MAS 31",
+        "short_name_ligue": "FC MAS 31",
+        "short_name_federation": "FC MAS 31",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          },
+          {
+            "competition": {
+              "cp_no": 449980,
+              "season": 2026,
+              "type": "CH",
+              "name": "U18 Régional 1 M",
+              "level": "L",
+              "cdg": {
+                "cg_no": 77,
+                "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+                "external_updated_at": "2026-09-01T15:11:32+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:22:56+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:45:25+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "terrain": {
+        "te_no": 312820101,
+        "name": "STADE MUNICIPAL 1",
+        "zip_code": "31140",
+        "city": "LAUNAGUET",
+        "libelle_surface": "Pelouse Naturelle",
+        "external_updated_at": "2026-06-05T17:20:34+00:00",
+        "address": "CHEMIN DES SPORTS"
+      },
+      "season": 2026,
+      "status": "A",
+      "ma_ar": "A",
+      "ma_inver": "N",
+      "ma_arret": "N",
+      "is_overtime": "N",
+      "date": "2026-09-05T00:00:00+00:00",
+      "time": "15H30",
+      "initial_date": null,
+      "cr_eq_naff": null,
+      "home_resu": "",
+      "cr_nb_but": null,
+      "home_score": null,
+      "home_but_contre": null,
+      "home_nb_point": null,
+      "home_nb_tir_but": null,
+      "home_nb_point_pena": null,
+      "home_is_forfeit": "N",
+      "cv_eq_naff": null,
+      "away_resu": "",
+      "away_nb_but": null,
+      "away_score": null,
+      "away_but_contre": null,
+      "away_nb_point": null,
+      "away_nb_tir_but": null,
+      "away_nb_point_pena": null,
+      "away_is_forfeit": "N",
+      "seems_postponed": "",
+      "match_membres": [
+        {
+          "mm_no": 161811350,
+          "po_cod": "AC",
+          "prenom": "CHRISTOPHE",
+          "nom": "RIVIERE",
+          "label_position": "Arbitre centre",
+          "position_ordre": 1,
+          "external_updated_at": "2026-09-02T14:46:18+00:00"
+        }
+      ],
+      "match_feuille": null,
+      "external_updated_at": "2026-08-28T12:38:39+00:00",
+      "status_label": "/"
+    },
+    {
+      "ma_no": 56595123,
+      "competition": {
+        "cp_no": 449670,
+        "season": 2026,
+        "type": "CP",
+        "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+        "level": "F",
+        "cdg": {
+          "cg_no": 0,
+          "name": "FEDERATION FRANCAISE DE FOOTBALL",
+          "external_updated_at": "2026-08-31T22:09:54+00:00"
+        },
+        "external_updated_at": "2026-08-26T14:21:34+00:00"
+      },
+      "phase": {
+        "number": 1,
+        "type": "CP",
+        "name": "RÉGIONALE",
+        "external_updated_at": "2026-08-26T14:30:01+00:00"
+      },
+      "poule": {
+        "stage_number": 8,
+        "name": "OCCITANIE",
+        "external_updated_at": "2026-08-27T12:07:14+00:00",
+        "poule_unique": false,
+        "at_least_one_match_resultat": true
+      },
+      "poule_journee": {
+        "number": 2,
+        "external_updated_at": "2026-08-27T12:13:52+00:00",
+        "name": "2ième Tour"
+      },
+      "home": {
+        "club": {
+          "cl_no": 9466,
+          "external_updated_at": "2026-08-31T10:20:35+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC524391.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "T.F.C.",
+        "short_name_ligue": "TOULOUSE FC",
+        "short_name_federation": "TOULOUSE FC",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          },
+          {
+            "competition": {
+              "cp_no": 449980,
+              "season": 2026,
+              "type": "CH",
+              "name": "U18 Régional 1 M",
+              "level": "L",
+              "cdg": {
+                "cg_no": 77,
+                "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+                "external_updated_at": "2026-09-01T15:11:32+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:22:56+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:43:16+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "away": {
+        "club": {
+          "cl_no": 110509,
+          "external_updated_at": "2026-08-24T14:56:07+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC851135.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "JEUNES SPORTIFS 31",
+        "short_name_ligue": "UJS TOULOUSE",
+        "short_name_federation": "UJS TOULOUSE",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          },
+          {
+            "competition": {
+              "cp_no": 449980,
+              "season": 2026,
+              "type": "CH",
+              "name": "U18 Régional 1 M",
+              "level": "L",
+              "cdg": {
+                "cg_no": 77,
+                "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+                "external_updated_at": "2026-09-01T15:11:32+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:22:56+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:44:25+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "terrain": {
+        "te_no": 315550104,
+        "name": "PARC DES SPORTS STADIUM A3",
+        "zip_code": "31400",
+        "city": "TOULOUSE",
+        "libelle_surface": "Synthétique",
+        "external_updated_at": "2026-06-11T08:20:36+00:00",
+        "address": "ALLEES GABRIEL BIENES"
+      },
+      "season": 2026,
+      "status": "A",
+      "ma_ar": "A",
+      "ma_inver": "N",
+      "ma_arret": "N",
+      "is_overtime": "N",
+      "date": "2026-09-05T00:00:00+00:00",
+      "time": "14H00",
+      "initial_date": null,
+      "cr_eq_naff": null,
+      "home_resu": "",
+      "cr_nb_but": null,
+      "home_score": null,
+      "home_but_contre": null,
+      "home_nb_point": null,
+      "home_nb_tir_but": null,
+      "home_nb_point_pena": null,
+      "home_is_forfeit": "N",
+      "cv_eq_naff": null,
+      "away_resu": "",
+      "away_nb_but": null,
+      "away_score": null,
+      "away_but_contre": null,
+      "away_nb_point": null,
+      "away_nb_tir_but": null,
+      "away_nb_point_pena": null,
+      "away_is_forfeit": "N",
+      "seems_postponed": "",
+      "match_membres": [
+        {
+          "mm_no": 161163317,
+          "po_cod": "AC",
+          "prenom": "PHILIPPE",
+          "nom": "NOGUEIRA CUNHA",
+          "label_position": "Arbitre centre",
+          "position_ordre": 1,
+          "external_updated_at": "2026-09-02T13:06:17+00:00"
+        }
+      ],
+      "match_feuille": null,
+      "external_updated_at": "2026-08-27T18:34:04+00:00",
+      "status_label": "/"
+    },
+    {
+      "ma_no": 56595179,
+      "competition": {
+        "cp_no": 449670,
+        "season": 2026,
+        "type": "CP",
+        "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+        "level": "F",
+        "cdg": {
+          "cg_no": 0,
+          "name": "FEDERATION FRANCAISE DE FOOTBALL",
+          "external_updated_at": "2026-08-31T22:09:54+00:00"
+        },
+        "external_updated_at": "2026-08-26T14:21:34+00:00"
+      },
+      "phase": {
+        "number": 1,
+        "type": "CP",
+        "name": "RÉGIONALE",
+        "external_updated_at": "2026-08-26T14:30:01+00:00"
+      },
+      "poule": {
+        "stage_number": 8,
+        "name": "OCCITANIE",
+        "external_updated_at": "2026-08-27T12:07:14+00:00",
+        "poule_unique": false,
+        "at_least_one_match_resultat": true
+      },
+      "poule_journee": {
+        "number": 2,
+        "external_updated_at": "2026-08-27T12:13:52+00:00",
+        "name": "2ième Tour"
+      },
+      "home": {
+        "club": {
+          "cl_no": 20586,
+          "external_updated_at": "2026-08-29T17:44:04+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC540546.jpg"
+        },
+        "category_code": "U19",
+        "number": 5,
+        "code": 1,
+        "short_name": "CASTELNAUDARY",
+        "short_name_ligue": "CASTELNAUDARY",
+        "short_name_federation": "CASTELNAUDARY",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 455812,
+              "season": 2026,
+              "type": "CH",
+              "name": "TERRITOIRE U18 M",
+              "level": "D",
+              "cdg": {
+                "cg_no": 58,
+                "name": "DISTRICT AUDE",
+                "external_updated_at": "2026-07-03T11:53:26+00:00"
+              },
+              "external_updated_at": "2026-09-02T11:39:48+00:00"
+            }
+          },
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:43:49+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "away": {
+        "club": {
+          "cl_no": 127190,
+          "external_updated_at": "2026-08-24T14:52:17+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC553097.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "S.PERPIGNAN NORD",
+        "short_name_ligue": "S.PERPIGNAN NORD",
+        "short_name_federation": "S.PERPIGNAN NORD",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:44:33+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "terrain": {
+        "te_no": 110760101,
+        "name": "STADE PIERRE DE COUBERTIN",
+        "zip_code": "11400",
+        "city": "CASTELNAUDARY",
+        "libelle_surface": "Pelouse Naturelle",
+        "external_updated_at": "2026-06-05T09:49:51+00:00",
+        "address": "AV. GEORGES POMPIDOU"
+      },
+      "season": 2026,
+      "status": "A",
+      "ma_ar": "A",
+      "ma_inver": "N",
+      "ma_arret": "N",
+      "is_overtime": "N",
+      "date": "2026-09-05T00:00:00+00:00",
+      "time": "15H00",
+      "initial_date": null,
+      "cr_eq_naff": null,
+      "home_resu": "",
+      "cr_nb_but": null,
+      "home_score": null,
+      "home_but_contre": null,
+      "home_nb_point": null,
+      "home_nb_tir_but": null,
+      "home_nb_point_pena": null,
+      "home_is_forfeit": "N",
+      "cv_eq_naff": null,
+      "away_resu": "",
+      "away_nb_but": null,
+      "away_score": null,
+      "away_but_contre": null,
+      "away_nb_point": null,
+      "away_nb_tir_but": null,
+      "away_nb_point_pena": null,
+      "away_is_forfeit": "N",
+      "seems_postponed": "",
+      "match_membres": [
+        {
+          "mm_no": 161751804,
+          "po_cod": "AC",
+          "prenom": "FRANCK",
+          "nom": "VILASPASA",
+          "label_position": "Arbitre centre",
+          "position_ordre": 1,
+          "external_updated_at": "2026-09-01T23:27:33+00:00"
+        }
+      ],
+      "match_feuille": null,
+      "external_updated_at": "2026-08-31T14:14:53+00:00",
+      "status_label": "/"
+    },
+    {
+      "ma_no": 56595185,
+      "competition": {
+        "cp_no": 449670,
+        "season": 2026,
+        "type": "CP",
+        "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+        "level": "F",
+        "cdg": {
+          "cg_no": 0,
+          "name": "FEDERATION FRANCAISE DE FOOTBALL",
+          "external_updated_at": "2026-08-31T22:09:54+00:00"
+        },
+        "external_updated_at": "2026-08-26T14:21:34+00:00"
+      },
+      "phase": {
+        "number": 1,
+        "type": "CP",
+        "name": "RÉGIONALE",
+        "external_updated_at": "2026-08-26T14:30:01+00:00"
+      },
+      "poule": {
+        "stage_number": 8,
+        "name": "OCCITANIE",
+        "external_updated_at": "2026-08-27T12:07:14+00:00",
+        "poule_unique": false,
+        "at_least_one_match_resultat": true
+      },
+      "poule_journee": {
+        "number": 2,
+        "external_updated_at": "2026-08-27T12:13:52+00:00",
+        "name": "2ième Tour"
+      },
+      "home": {
+        "club": {
+          "cl_no": 14245,
+          "external_updated_at": "2026-09-03T15:16:49+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC531488.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "FC CLAIRA ST LAURENT",
+        "short_name_ligue": "FC CLAIRA ST LAURENT",
+        "short_name_federation": "FC CLAIRA ST LAURENT",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          },
+          {
+            "competition": {
+              "cp_no": 455812,
+              "season": 2026,
+              "type": "CH",
+              "name": "TERRITOIRE U18 M",
+              "level": "D",
+              "cdg": {
+                "cg_no": 58,
+                "name": "DISTRICT AUDE",
+                "external_updated_at": "2026-07-03T11:53:26+00:00"
+              },
+              "external_updated_at": "2026-09-02T11:39:48+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:43:38+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "away": {
+        "club": {
+          "cl_no": 25237,
+          "external_updated_at": "2026-08-24T12:48:58+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC548103.jpg"
+        },
+        "category_code": "U19",
+        "number": 2,
+        "code": 1,
+        "short_name": "BADENS R.C.RU",
+        "short_name_ligue": "BADENS R.C.RU",
+        "short_name_federation": "BADENS R.C.RU",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          },
+          {
+            "competition": {
+              "cp_no": 455812,
+              "season": 2026,
+              "type": "CH",
+              "name": "TERRITOIRE U18 M",
+              "level": "D",
+              "cdg": {
+                "cg_no": 58,
+                "name": "DISTRICT AUDE",
+                "external_updated_at": "2026-07-03T11:53:26+00:00"
+              },
+              "external_updated_at": "2026-09-02T11:39:48+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:44:10+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "terrain": {
+        "te_no": 661800104,
+        "name": "COMPLEXE SPORTIF JO MASO ",
+        "zip_code": "66250",
+        "city": "ST LAURENT DE LA SALANQUE",
+        "libelle_surface": "Synthétique",
+        "external_updated_at": "2026-06-29T16:50:05+00:00",
+        "address": "TRACE MIXTE RUGBY 11 ROUTE DE SAINT HIPPOLYTE"
+      },
+      "season": 2026,
+      "status": "A",
+      "ma_ar": "A",
+      "ma_inver": "N",
+      "ma_arret": "N",
+      "is_overtime": "N",
+      "date": "2026-09-05T00:00:00+00:00",
+      "time": "15H00",
+      "initial_date": null,
+      "cr_eq_naff": null,
+      "home_resu": "",
+      "cr_nb_but": null,
+      "home_score": null,
+      "home_but_contre": null,
+      "home_nb_point": null,
+      "home_nb_tir_but": null,
+      "home_nb_point_pena": null,
+      "home_is_forfeit": "N",
+      "cv_eq_naff": null,
+      "away_resu": "",
+      "away_nb_but": null,
+      "away_score": null,
+      "away_but_contre": null,
+      "away_nb_point": null,
+      "away_nb_tir_but": null,
+      "away_nb_point_pena": null,
+      "away_is_forfeit": "N",
+      "seems_postponed": "",
+      "match_membres": [
+        {
+          "mm_no": 161757331,
+          "po_cod": "AC",
+          "prenom": "RIDA",
+          "nom": "AZOUAOUI",
+          "label_position": "Arbitre centre",
+          "position_ordre": 1,
+          "external_updated_at": "2026-09-02T06:59:35+00:00"
+        }
+      ],
+      "match_feuille": null,
+      "external_updated_at": "2026-08-31T15:18:38+00:00",
+      "status_label": "/"
+    },
+    {
+      "ma_no": 56595193,
+      "competition": {
+        "cp_no": 449670,
+        "season": 2026,
+        "type": "CP",
+        "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+        "level": "F",
+        "cdg": {
+          "cg_no": 0,
+          "name": "FEDERATION FRANCAISE DE FOOTBALL",
+          "external_updated_at": "2026-08-31T22:09:54+00:00"
+        },
+        "external_updated_at": "2026-08-26T14:21:34+00:00"
+      },
+      "phase": {
+        "number": 1,
+        "type": "CP",
+        "name": "RÉGIONALE",
+        "external_updated_at": "2026-08-26T14:30:01+00:00"
+      },
+      "poule": {
+        "stage_number": 8,
+        "name": "OCCITANIE",
+        "external_updated_at": "2026-08-27T12:07:14+00:00",
+        "poule_unique": false,
+        "at_least_one_match_resultat": true
+      },
+      "poule_journee": {
+        "number": 2,
+        "external_updated_at": "2026-08-27T12:13:52+00:00",
+        "name": "2ième Tour"
+      },
+      "home": {
+        "club": {
+          "cl_no": 122640,
+          "external_updated_at": "2026-08-25T10:41:26+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC552832.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "NIMES MAS DE MINGUE",
+        "short_name_ligue": "NIMES MAS DE MINGUE",
+        "short_name_federation": "NIMES MAS DE MINGUE",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          },
+          {
+            "competition": {
+              "cp_no": 449980,
+              "season": 2026,
+              "type": "CH",
+              "name": "U18 Régional 1 M",
+              "level": "L",
+              "cdg": {
+                "cg_no": 77,
+                "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+                "external_updated_at": "2026-09-01T15:11:32+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:22:56+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:44:32+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "away": {
+        "club": {
+          "cl_no": 1608,
+          "external_updated_at": "2026-08-24T14:21:31+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC503029.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "ALES OL",
+        "short_name_ligue": "ALES OL",
+        "short_name_federation": "ALES OL",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          },
+          {
+            "competition": {
+              "cp_no": 449980,
+              "season": 2026,
+              "type": "CH",
+              "name": "U18 Régional 1 M",
+              "level": "L",
+              "cdg": {
+                "cg_no": 77,
+                "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+                "external_updated_at": "2026-09-01T15:11:32+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:22:56+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:41:59+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "terrain": {
+        "te_no": 301891201,
+        "name": "Stade Henri Noel Mas De MinguE",
+        "zip_code": "30900",
+        "city": "NIMES",
+        "libelle_surface": "Synthétique",
+        "external_updated_at": "2026-06-09T15:08:14+00:00",
+        "address": "RUE RENE RASCALON"
+      },
+      "season": 2026,
+      "status": "A",
+      "ma_ar": "A",
+      "ma_inver": "N",
+      "ma_arret": "N",
+      "is_overtime": "N",
+      "date": "2026-09-05T00:00:00+00:00",
+      "time": "15H30",
+      "initial_date": null,
+      "cr_eq_naff": null,
+      "home_resu": "",
+      "cr_nb_but": null,
+      "home_score": null,
+      "home_but_contre": null,
+      "home_nb_point": null,
+      "home_nb_tir_but": null,
+      "home_nb_point_pena": null,
+      "home_is_forfeit": "N",
+      "cv_eq_naff": null,
+      "away_resu": "",
+      "away_nb_but": null,
+      "away_score": null,
+      "away_but_contre": null,
+      "away_nb_point": null,
+      "away_nb_tir_but": null,
+      "away_nb_point_pena": null,
+      "away_is_forfeit": "N",
+      "seems_postponed": "",
+      "match_membres": [
+        {
+          "mm_no": 161163319,
+          "po_cod": "AC",
+          "prenom": "RUDY",
+          "nom": "CISLO",
+          "label_position": "Arbitre centre",
+          "position_ordre": 1,
+          "external_updated_at": "2026-09-03T17:20:18+00:00"
+        },
+        {
+          "mm_no": 162327477,
+          "po_cod": "CP",
+          "prenom": "LAURENT",
+          "nom": "MAZAURIC",
+          "label_position": "Observateur principal",
+          "position_ordre": 14,
+          "external_updated_at": "2026-09-03T17:20:17+00:00"
+        }
+      ],
+      "match_feuille": null,
+      "external_updated_at": "2026-08-27T16:49:20+00:00",
+      "status_label": "/"
+    },
+    {
+      "ma_no": 56595131,
+      "competition": {
+        "cp_no": 449670,
+        "season": 2026,
+        "type": "CP",
+        "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+        "level": "F",
+        "cdg": {
+          "cg_no": 0,
+          "name": "FEDERATION FRANCAISE DE FOOTBALL",
+          "external_updated_at": "2026-08-31T22:09:54+00:00"
+        },
+        "external_updated_at": "2026-08-26T14:21:34+00:00"
+      },
+      "phase": {
+        "number": 1,
+        "type": "CP",
+        "name": "RÉGIONALE",
+        "external_updated_at": "2026-08-26T14:30:01+00:00"
+      },
+      "poule": {
+        "stage_number": 8,
+        "name": "OCCITANIE",
+        "external_updated_at": "2026-08-27T12:07:14+00:00",
+        "poule_unique": false,
+        "at_least_one_match_resultat": true
+      },
+      "poule_journee": {
+        "number": 2,
+        "external_updated_at": "2026-08-27T12:13:52+00:00",
+        "name": "2ième Tour"
+      },
+      "home": {
+        "club": {
+          "cl_no": 2769,
+          "external_updated_at": "2026-08-24T12:25:19+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC506204.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "ST SIMON ES",
+        "short_name_ligue": "ET.S. ST SIMON",
+        "short_name_federation": "ET.S. ST SIMON",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          },
+          {
+            "competition": {
+              "cp_no": 454507,
+              "season": 2026,
+              "type": "CH",
+              "name": "U18 TERRITOIRE ELITE",
+              "level": "D",
+              "cdg": {
+                "cg_no": 86,
+                "name": "DISTRICT HAUTE GARONNE",
+                "external_updated_at": "2026-08-10T12:23:26+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:22:25+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:42:08+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "away": {
+        "club": {
+          "cl_no": 5944,
+          "external_updated_at": "2026-08-24T14:30:59+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC518612.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "PLAISANCE DU TO. US",
+        "short_name_ligue": "U.S. PLAISANCE DU TO",
+        "short_name_federation": "U.S. PLAISANCE DU TO",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          },
+          {
+            "competition": {
+              "cp_no": 454507,
+              "season": 2026,
+              "type": "CH",
+              "name": "U18 TERRITOIRE ELITE",
+              "level": "D",
+              "cdg": {
+                "cg_no": 86,
+                "name": "DISTRICT HAUTE GARONNE",
+                "external_updated_at": "2026-08-10T12:23:26+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:22:25+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:42:46+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "terrain": {
+        "te_no": 315550801,
+        "name": "STADE MARCEL SARCOS N° 1",
+        "zip_code": "31100",
+        "city": "TOULOUSE",
+        "libelle_surface": "Pelouse Naturelle",
+        "external_updated_at": "2026-06-05T17:28:54+00:00",
+        "address": "10 CHEMIN DE LIFFARD"
+      },
+      "season": 2026,
+      "status": "A",
+      "ma_ar": "A",
+      "ma_inver": "N",
+      "ma_arret": "N",
+      "is_overtime": "N",
+      "date": "2026-09-05T00:00:00+00:00",
+      "time": "18H00",
+      "initial_date": null,
+      "cr_eq_naff": null,
+      "home_resu": "",
+      "cr_nb_but": null,
+      "home_score": null,
+      "home_but_contre": null,
+      "home_nb_point": null,
+      "home_nb_tir_but": null,
+      "home_nb_point_pena": null,
+      "home_is_forfeit": "N",
+      "cv_eq_naff": null,
+      "away_resu": "",
+      "away_nb_but": null,
+      "away_score": null,
+      "away_but_contre": null,
+      "away_nb_point": null,
+      "away_nb_tir_but": null,
+      "away_nb_point_pena": null,
+      "away_is_forfeit": "N",
+      "seems_postponed": "",
+      "match_membres": [
+        {
+          "mm_no": 161945373,
+          "po_cod": "AC",
+          "prenom": "SABRY",
+          "nom": "SMARA",
+          "label_position": "Arbitre centre",
+          "position_ordre": 1,
+          "external_updated_at": "2026-09-02T14:35:45+00:00"
+        }
+      ],
+      "match_feuille": null,
+      "external_updated_at": "2026-08-31T15:30:32+00:00",
+      "status_label": "/"
+    },
+    {
+      "ma_no": 56595132,
+      "competition": {
+        "cp_no": 449670,
+        "season": 2026,
+        "type": "CP",
+        "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+        "level": "F",
+        "cdg": {
+          "cg_no": 0,
+          "name": "FEDERATION FRANCAISE DE FOOTBALL",
+          "external_updated_at": "2026-08-31T22:09:54+00:00"
+        },
+        "external_updated_at": "2026-08-26T14:21:34+00:00"
+      },
+      "phase": {
+        "number": 1,
+        "type": "CP",
+        "name": "RÉGIONALE",
+        "external_updated_at": "2026-08-26T14:30:01+00:00"
+      },
+      "poule": {
+        "stage_number": 8,
+        "name": "OCCITANIE",
+        "external_updated_at": "2026-08-27T12:07:14+00:00",
+        "poule_unique": false,
+        "at_least_one_match_resultat": true
+      },
+      "poule_journee": {
+        "number": 2,
+        "external_updated_at": "2026-08-27T12:13:52+00:00",
+        "name": "2ième Tour"
+      },
+      "home": {
+        "club": {
+          "cl_no": 11641,
+          "external_updated_at": "2026-09-01T16:25:03+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC527639.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "J.E.T.",
+        "short_name_ligue": "JEUNE ENTENTE TOULOU",
+        "short_name_federation": "JEUNE ENTENTE TOULOU",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          },
+          {
+            "competition": {
+              "cp_no": 449980,
+              "season": 2026,
+              "type": "CH",
+              "name": "U18 Régional 1 M",
+              "level": "L",
+              "cdg": {
+                "cg_no": 77,
+                "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+                "external_updated_at": "2026-09-01T15:11:32+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:22:56+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:43:27+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "away": {
+        "club": {
+          "cl_no": 6329,
+          "external_updated_at": "2026-08-24T14:31:32+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC519456.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "BLAGNAC FC",
+        "short_name_ligue": "BLAGNAC FC",
+        "short_name_federation": "BLAGNAC",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          },
+          {
+            "competition": {
+              "cp_no": 449980,
+              "season": 2026,
+              "type": "CH",
+              "name": "U18 Régional 1 M",
+              "level": "L",
+              "cdg": {
+                "cg_no": 77,
+                "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+                "external_updated_at": "2026-09-01T15:11:32+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:22:56+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:42:50+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "terrain": {
+        "te_no": 315550402,
+        "name": "COMPLEXE SPORTIF BORDEROUGE 2",
+        "zip_code": "31200",
+        "city": "TOULOUSE",
+        "libelle_surface": "Synthétique",
+        "external_updated_at": "2026-06-05T17:28:43+00:00",
+        "address": "TERRAIN ANNEXE FERNAND SASTRE 3 RUE HUBERT MONLOUP"
+      },
+      "season": 2026,
+      "status": "A",
+      "ma_ar": "A",
+      "ma_inver": "N",
+      "ma_arret": "N",
+      "is_overtime": "N",
+      "date": "2026-09-05T00:00:00+00:00",
+      "time": "15H00",
+      "initial_date": null,
+      "cr_eq_naff": null,
+      "home_resu": "",
+      "cr_nb_but": null,
+      "home_score": null,
+      "home_but_contre": null,
+      "home_nb_point": null,
+      "home_nb_tir_but": null,
+      "home_nb_point_pena": null,
+      "home_is_forfeit": "N",
+      "cv_eq_naff": null,
+      "away_resu": "",
+      "away_nb_but": null,
+      "away_score": null,
+      "away_but_contre": null,
+      "away_nb_point": null,
+      "away_nb_tir_but": null,
+      "away_nb_point_pena": null,
+      "away_is_forfeit": "N",
+      "seems_postponed": "",
+      "match_membres": [
+        {
+          "mm_no": 161163318,
+          "po_cod": "AC",
+          "prenom": "ENZO",
+          "nom": "DOUET",
+          "label_position": "Arbitre centre",
+          "position_ordre": 1,
+          "external_updated_at": "2026-09-02T15:11:12+00:00"
+        },
+        {
+          "mm_no": 161952128,
+          "po_cod": "A2",
+          "prenom": "SOIFA",
+          "nom": "TSIMPOU",
+          "label_position": "Arbitre assistant 2",
+          "position_ordre": 3,
+          "external_updated_at": "2026-09-02T15:11:12+00:00"
+        },
+        {
+          "mm_no": 161952127,
+          "po_cod": "A1",
+          "prenom": "LOIC",
+          "nom": "LAFOND",
+          "label_position": "Arbitre assistant 1",
+          "position_ordre": 2,
+          "external_updated_at": "2026-09-02T15:11:12+00:00"
+        }
+      ],
+      "match_feuille": null,
+      "external_updated_at": "2026-08-27T17:12:27+00:00",
+      "status_label": "/"
+    },
+    {
+      "ma_no": 56595194,
+      "competition": {
+        "cp_no": 449670,
+        "season": 2026,
+        "type": "CP",
+        "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+        "level": "F",
+        "cdg": {
+          "cg_no": 0,
+          "name": "FEDERATION FRANCAISE DE FOOTBALL",
+          "external_updated_at": "2026-08-31T22:09:54+00:00"
+        },
+        "external_updated_at": "2026-08-26T14:21:34+00:00"
+      },
+      "phase": {
+        "number": 1,
+        "type": "CP",
+        "name": "RÉGIONALE",
+        "external_updated_at": "2026-08-26T14:30:01+00:00"
+      },
+      "poule": {
+        "stage_number": 8,
+        "name": "OCCITANIE",
+        "external_updated_at": "2026-08-27T12:07:14+00:00",
+        "poule_unique": false,
+        "at_least_one_match_resultat": true
+      },
+      "poule_journee": {
+        "number": 2,
+        "external_updated_at": "2026-08-27T12:13:52+00:00",
+        "name": "2ième Tour"
+      },
+      "home": {
+        "club": {
+          "cl_no": 7378,
+          "external_updated_at": "2026-08-24T14:33:20+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC521138.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "NIMES LASALLIEN",
+        "short_name_ligue": "NIMES LASALLIEN",
+        "short_name_federation": "NIMES LASALLIEN",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:43:00+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "away": {
+        "club": {
+          "cl_no": 194887,
+          "external_updated_at": "2026-08-24T15:05:11+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC560267.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "ACADEMIE UNIVERS",
+        "short_name_ligue": "ACADEMIE UNIVERS",
+        "short_name_federation": "ACADEMIE UNIVERS",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          },
+          {
+            "competition": {
+              "cp_no": 449980,
+              "season": 2026,
+              "type": "CH",
+              "name": "U18 Régional 1 M",
+              "level": "L",
+              "cdg": {
+                "cg_no": 77,
+                "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+                "external_updated_at": "2026-09-01T15:11:32+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:22:56+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:45:18+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "terrain": {
+        "te_no": 301890201,
+        "name": "STADE JEAN BOUIN",
+        "zip_code": "30900",
+        "city": "NIMES",
+        "libelle_surface": "Synthétique",
+        "external_updated_at": "2026-07-16T10:57:31+00:00",
+        "address": "IMPASSE JEAN PIERRE WIMILLE"
+      },
+      "season": 2026,
+      "status": "A",
+      "ma_ar": "A",
+      "ma_inver": "N",
+      "ma_arret": "N",
+      "is_overtime": "N",
+      "date": "2026-09-06T00:00:00+00:00",
+      "time": "13H00",
+      "initial_date": null,
+      "cr_eq_naff": null,
+      "home_resu": "",
+      "cr_nb_but": null,
+      "home_score": null,
+      "home_but_contre": null,
+      "home_nb_point": null,
+      "home_nb_tir_but": null,
+      "home_nb_point_pena": null,
+      "home_is_forfeit": "N",
+      "cv_eq_naff": null,
+      "away_resu": "",
+      "away_nb_but": null,
+      "away_score": null,
+      "away_but_contre": null,
+      "away_nb_point": null,
+      "away_nb_tir_but": null,
+      "away_nb_point_pena": null,
+      "away_is_forfeit": "N",
+      "seems_postponed": "",
+      "match_membres": [
+        {
+          "mm_no": 161163329,
+          "po_cod": "AC",
+          "prenom": "ILYES",
+          "nom": "MOUSSA",
+          "label_position": "Arbitre centre",
+          "position_ordre": 1,
+          "external_updated_at": "2026-08-30T21:52:16+00:00"
+        }
+      ],
+      "match_feuille": null,
+      "external_updated_at": "2026-08-27T16:49:20+00:00",
+      "status_label": "/"
+    },
+    {
+      "ma_no": 56595168,
+      "competition": {
+        "cp_no": 449670,
+        "season": 2026,
+        "type": "CP",
+        "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+        "level": "F",
+        "cdg": {
+          "cg_no": 0,
+          "name": "FEDERATION FRANCAISE DE FOOTBALL",
+          "external_updated_at": "2026-08-31T22:09:54+00:00"
+        },
+        "external_updated_at": "2026-08-26T14:21:34+00:00"
+      },
+      "phase": {
+        "number": 1,
+        "type": "CP",
+        "name": "RÉGIONALE",
+        "external_updated_at": "2026-08-26T14:30:01+00:00"
+      },
+      "poule": {
+        "stage_number": 8,
+        "name": "OCCITANIE",
+        "external_updated_at": "2026-08-27T12:07:14+00:00",
+        "poule_unique": false,
+        "at_least_one_match_resultat": true
+      },
+      "poule_journee": {
+        "number": 2,
+        "external_updated_at": "2026-08-27T12:13:52+00:00",
+        "name": "2ième Tour"
+      },
+      "home": {
+        "club": {
+          "cl_no": 12143,
+          "external_updated_at": "2026-08-24T12:40:17+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC528373.jpg"
+        },
+        "category_code": "U19",
+        "number": 6,
+        "code": 1,
+        "short_name": "UNION GRAULHETOISE",
+        "short_name_ligue": "UNION GRAULHETOISE",
+        "short_name_federation": "UNION GRAULHETOISE",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:43:30+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "away": {
+        "club": {
+          "cl_no": 2733,
+          "external_updated_at": "2026-08-24T14:24:04+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC506024.jpg"
+        },
+        "category_code": "U19",
+        "number": 9,
+        "code": 1,
+        "short_name": "ST JUERY O.",
+        "short_name_ligue": "ST JUERY O.",
+        "short_name_federation": "ST JUERY O.",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:42:07+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "terrain": {
+        "te_no": 811050102,
+        "name": "STADE DE L' ESTARIE N.2",
+        "zip_code": "81300",
+        "city": "GRAULHET",
+        "libelle_surface": "Pelouse Naturelle",
+        "external_updated_at": "2026-06-07T11:04:06+00:00",
+        "address": "62 RUE CAMILLE CLAUDEL"
+      },
+      "season": 2026,
+      "status": "A",
+      "ma_ar": "A",
+      "ma_inver": "N",
+      "ma_arret": "N",
+      "is_overtime": "N",
+      "date": "2026-09-06T00:00:00+00:00",
+      "time": "13H00",
+      "initial_date": null,
+      "cr_eq_naff": null,
+      "home_resu": "",
+      "cr_nb_but": null,
+      "home_score": null,
+      "home_but_contre": null,
+      "home_nb_point": null,
+      "home_nb_tir_but": null,
+      "home_nb_point_pena": null,
+      "home_is_forfeit": "N",
+      "cv_eq_naff": null,
+      "away_resu": "",
+      "away_nb_but": null,
+      "away_score": null,
+      "away_but_contre": null,
+      "away_nb_point": null,
+      "away_nb_tir_but": null,
+      "away_nb_point_pena": null,
+      "away_is_forfeit": "N",
+      "seems_postponed": "",
+      "match_membres": [
+        {
+          "mm_no": 161535929,
+          "po_cod": "AC",
+          "prenom": "VALENTIN",
+          "nom": "ANTONIO",
+          "label_position": "Arbitre centre",
+          "position_ordre": 1,
+          "external_updated_at": "2026-09-01T13:54:57+00:00"
+        }
+      ],
+      "match_feuille": null,
+      "external_updated_at": "2026-08-29T18:19:26+00:00",
+      "status_label": "/"
+    },
+    {
+      "ma_no": 56595166,
+      "competition": {
+        "cp_no": 449670,
+        "season": 2026,
+        "type": "CP",
+        "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+        "level": "F",
+        "cdg": {
+          "cg_no": 0,
+          "name": "FEDERATION FRANCAISE DE FOOTBALL",
+          "external_updated_at": "2026-08-31T22:09:54+00:00"
+        },
+        "external_updated_at": "2026-08-26T14:21:34+00:00"
+      },
+      "phase": {
+        "number": 1,
+        "type": "CP",
+        "name": "RÉGIONALE",
+        "external_updated_at": "2026-08-26T14:30:01+00:00"
+      },
+      "poule": {
+        "stage_number": 8,
+        "name": "OCCITANIE",
+        "external_updated_at": "2026-08-27T12:07:14+00:00",
+        "poule_unique": false,
+        "at_least_one_match_resultat": true
+      },
+      "poule_journee": {
+        "number": 2,
+        "external_updated_at": "2026-08-27T12:13:52+00:00",
+        "name": "2ième Tour"
+      },
+      "home": {
+        "club": {
+          "cl_no": 203912,
+          "external_updated_at": "2026-08-24T15:02:38+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC564903.jpg"
+        },
+        "category_code": "U19",
+        "number": 3,
+        "code": 1,
+        "short_name": "GCLS",
+        "short_name_ligue": "GCLS",
+        "short_name_federation": "GCLS",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:45:28+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "away": {
+        "club": {
+          "cl_no": 21623,
+          "external_updated_at": "2026-08-24T14:44:54+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC541889.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "FIGEAC CAPDENAC QFC",
+        "short_name_ligue": "FIGEAC CAPDENAC QFC",
+        "short_name_federation": "FIGEAC CAPDENAC QFC",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:43:54+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "terrain": {
+        "te_no": 462670101,
+        "name": "STADE MUNICIPAL",
+        "zip_code": "46310",
+        "city": "ST GERMAIN BEL AIR",
+        "libelle_surface": "Pelouse Naturelle",
+        "external_updated_at": "2026-06-15T08:58:43+00:00",
+        "address": "682 route de ceou VILLAGE"
+      },
+      "season": 2026,
+      "status": "A",
+      "ma_ar": "A",
+      "ma_inver": "N",
+      "ma_arret": "N",
+      "is_overtime": "N",
+      "date": "2026-09-06T00:00:00+00:00",
+      "time": "13H00",
+      "initial_date": null,
+      "cr_eq_naff": null,
+      "home_resu": "",
+      "cr_nb_but": null,
+      "home_score": null,
+      "home_but_contre": null,
+      "home_nb_point": null,
+      "home_nb_tir_but": null,
+      "home_nb_point_pena": null,
+      "home_is_forfeit": "N",
+      "cv_eq_naff": null,
+      "away_resu": "",
+      "away_nb_but": null,
+      "away_score": null,
+      "away_but_contre": null,
+      "away_nb_point": null,
+      "away_nb_tir_but": null,
+      "away_nb_point_pena": null,
+      "away_is_forfeit": "N",
+      "seems_postponed": "",
+      "match_membres": [
+        {
+          "mm_no": 162039452,
+          "po_cod": "AC",
+          "prenom": "MOHAMMAD",
+          "nom": "GHULAMI",
+          "label_position": "Arbitre centre",
+          "position_ordre": 1,
+          "external_updated_at": "2026-09-02T18:58:35+00:00"
+        }
+      ],
+      "match_feuille": null,
+      "external_updated_at": "2026-08-29T18:19:26+00:00",
+      "status_label": "/"
+    },
+    {
+      "ma_no": 56595163,
+      "competition": {
+        "cp_no": 449670,
+        "season": 2026,
+        "type": "CP",
+        "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+        "level": "F",
+        "cdg": {
+          "cg_no": 0,
+          "name": "FEDERATION FRANCAISE DE FOOTBALL",
+          "external_updated_at": "2026-08-31T22:09:54+00:00"
+        },
+        "external_updated_at": "2026-08-26T14:21:34+00:00"
+      },
+      "phase": {
+        "number": 1,
+        "type": "CP",
+        "name": "RÉGIONALE",
+        "external_updated_at": "2026-08-26T14:30:01+00:00"
+      },
+      "poule": {
+        "stage_number": 8,
+        "name": "OCCITANIE",
+        "external_updated_at": "2026-08-27T12:07:14+00:00",
+        "poule_unique": false,
+        "at_least_one_match_resultat": true
+      },
+      "poule_journee": {
+        "number": 2,
+        "external_updated_at": "2026-08-27T12:13:52+00:00",
+        "name": "2ième Tour"
+      },
+      "home": {
+        "club": {
+          "cl_no": 11333,
+          "external_updated_at": "2026-08-24T14:38:26+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC527193.jpg"
+        },
+        "category_code": "U19",
+        "number": 4,
+        "code": 1,
+        "short_name": "CASTEL.GANDALOU FC",
+        "short_name_ligue": "CASTEL.GANDALOU FC",
+        "short_name_federation": "CASTEL.GANDALOU FC",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:43:26+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "away": {
+        "club": {
+          "cl_no": 199254,
+          "external_updated_at": "2026-09-03T12:00:19+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC560945.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "GCLEM",
+        "short_name_ligue": "GR. CAUSSE L. ELAN M",
+        "short_name_federation": "GCLEM",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:45:22+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "terrain": {
+        "te_no": 820330201,
+        "name": "PLAINE DE JEUX DE GANDALOU 1",
+        "zip_code": "82100",
+        "city": "CASTELSARRASIN",
+        "libelle_surface": "Pelouse Naturelle",
+        "external_updated_at": "2026-06-07T11:12:17+00:00",
+        "address": "3555 ROUTE DE GANDALOU"
+      },
+      "season": 2026,
+      "status": "A",
+      "ma_ar": "A",
+      "ma_inver": "N",
+      "ma_arret": "N",
+      "is_overtime": "N",
+      "date": "2026-09-06T00:00:00+00:00",
+      "time": "13H00",
+      "initial_date": null,
+      "cr_eq_naff": null,
+      "home_resu": "",
+      "cr_nb_but": null,
+      "home_score": null,
+      "home_but_contre": null,
+      "home_nb_point": null,
+      "home_nb_tir_but": null,
+      "home_nb_point_pena": null,
+      "home_is_forfeit": "N",
+      "cv_eq_naff": null,
+      "away_resu": "",
+      "away_nb_but": null,
+      "away_score": null,
+      "away_but_contre": null,
+      "away_nb_point": null,
+      "away_nb_tir_but": null,
+      "away_nb_point_pena": null,
+      "away_is_forfeit": "N",
+      "seems_postponed": "",
+      "match_membres": [],
+      "match_feuille": null,
+      "external_updated_at": "2026-08-27T16:49:20+00:00",
+      "status_label": "/"
+    },
+    {
+      "ma_no": 56595160,
+      "competition": {
+        "cp_no": 449670,
+        "season": 2026,
+        "type": "CP",
+        "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+        "level": "F",
+        "cdg": {
+          "cg_no": 0,
+          "name": "FEDERATION FRANCAISE DE FOOTBALL",
+          "external_updated_at": "2026-08-31T22:09:54+00:00"
+        },
+        "external_updated_at": "2026-08-26T14:21:34+00:00"
+      },
+      "phase": {
+        "number": 1,
+        "type": "CP",
+        "name": "RÉGIONALE",
+        "external_updated_at": "2026-08-26T14:30:01+00:00"
+      },
+      "poule": {
+        "stage_number": 8,
+        "name": "OCCITANIE",
+        "external_updated_at": "2026-08-27T12:07:14+00:00",
+        "poule_unique": false,
+        "at_least_one_match_resultat": true
+      },
+      "poule_journee": {
+        "number": 2,
+        "external_updated_at": "2026-08-27T12:13:52+00:00",
+        "name": "2ième Tour"
+      },
+      "home": {
+        "club": {
+          "cl_no": 22465,
+          "external_updated_at": "2026-08-24T14:45:40+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC544157.jpg"
+        },
+        "category_code": "U19",
+        "number": 4,
+        "code": 1,
+        "short_name": "CORNEILHAN LIGNAN ",
+        "short_name_ligue": "ENT. CORNEILHAN LIGN",
+        "short_name_federation": "ENT. CORNEILHAN LIGN",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          },
+          {
+            "competition": {
+              "cp_no": 452475,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE DE L'HERAULT U18",
+              "level": "D",
+              "cdg": {
+                "cg_no": 60,
+                "name": "DISTRICT DE L'HERAULT",
+                "external_updated_at": "2026-08-29T19:39:55+00:00"
+              },
+              "external_updated_at": "2026-09-02T16:55:52+00:00"
+            }
+          },
+          {
+            "competition": {
+              "cp_no": 452493,
+              "season": 2026,
+              "type": "CH",
+              "name": "U18 D1 M",
+              "level": "D",
+              "cdg": {
+                "cg_no": 60,
+                "name": "DISTRICT DE L'HERAULT",
+                "external_updated_at": "2026-08-29T19:39:55+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:57+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:43:59+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "away": {
+        "club": {
+          "cl_no": 11759,
+          "external_updated_at": "2026-08-24T12:39:56+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC527810.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "VALERGUES AS",
+        "short_name_ligue": "VALERGUES AS",
+        "short_name_federation": "VALERGUES AS",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          },
+          {
+            "competition": {
+              "cp_no": 452475,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE DE L'HERAULT U18",
+              "level": "D",
+              "cdg": {
+                "cg_no": 60,
+                "name": "DISTRICT DE L'HERAULT",
+                "external_updated_at": "2026-08-29T19:39:55+00:00"
+              },
+              "external_updated_at": "2026-09-02T16:55:52+00:00"
+            }
+          },
+          {
+            "competition": {
+              "cp_no": 452494,
+              "season": 2026,
+              "type": "CH",
+              "name": "U18 D2 M",
+              "level": "D",
+              "cdg": {
+                "cg_no": 60,
+                "name": "DISTRICT DE L'HERAULT",
+                "external_updated_at": "2026-08-29T19:39:55+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:57+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:43:28+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "terrain": {
+        "te_no": 341400201,
+        "name": "STADE RAYMOND BATTUT",
+        "zip_code": "34490",
+        "city": "LIGNAN SUR ORB",
+        "libelle_surface": "Pelouse Naturelle",
+        "external_updated_at": "2026-06-05T22:43:13+00:00",
+        "address": "AVENUE PIERRE-MARIE CURIE"
+      },
+      "season": 2026,
+      "status": "A",
+      "ma_ar": "A",
+      "ma_inver": "N",
+      "ma_arret": "N",
+      "is_overtime": "N",
+      "date": "2026-09-06T00:00:00+00:00",
+      "time": "13H00",
+      "initial_date": null,
+      "cr_eq_naff": null,
+      "home_resu": "",
+      "cr_nb_but": null,
+      "home_score": null,
+      "home_but_contre": null,
+      "home_nb_point": null,
+      "home_nb_tir_but": null,
+      "home_nb_point_pena": null,
+      "home_is_forfeit": "N",
+      "cv_eq_naff": null,
+      "away_resu": "",
+      "away_nb_but": null,
+      "away_score": null,
+      "away_but_contre": null,
+      "away_nb_point": null,
+      "away_nb_tir_but": null,
+      "away_nb_point_pena": null,
+      "away_is_forfeit": "N",
+      "seems_postponed": "",
+      "match_membres": [
+        {
+          "mm_no": 161207913,
+          "po_cod": "AC",
+          "prenom": "BENJAMIN",
+          "nom": "MARIN",
+          "label_position": "Arbitre centre",
+          "position_ordre": 1,
+          "external_updated_at": "2026-08-31T10:58:16+00:00"
+        }
+      ],
+      "match_feuille": null,
+      "external_updated_at": "2026-08-27T16:49:20+00:00",
+      "status_label": "/"
+    },
+    {
+      "ma_no": 56595148,
+      "competition": {
+        "cp_no": 449670,
+        "season": 2026,
+        "type": "CP",
+        "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+        "level": "F",
+        "cdg": {
+          "cg_no": 0,
+          "name": "FEDERATION FRANCAISE DE FOOTBALL",
+          "external_updated_at": "2026-08-31T22:09:54+00:00"
+        },
+        "external_updated_at": "2026-08-26T14:21:34+00:00"
+      },
+      "phase": {
+        "number": 1,
+        "type": "CP",
+        "name": "RÉGIONALE",
+        "external_updated_at": "2026-08-26T14:30:01+00:00"
+      },
+      "poule": {
+        "stage_number": 8,
+        "name": "OCCITANIE",
+        "external_updated_at": "2026-08-27T12:07:14+00:00",
+        "poule_unique": false,
+        "at_least_one_match_resultat": true
+      },
+      "poule_journee": {
+        "number": 2,
+        "external_updated_at": "2026-08-27T12:13:52+00:00",
+        "name": "2ième Tour"
+      },
+      "home": {
+        "club": {
+          "cl_no": 1722,
+          "external_updated_at": "2026-08-24T12:22:53+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC503251.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "CLERMONTAISE",
+        "short_name_ligue": "CLERMONTAISE",
+        "short_name_federation": "CLERMONTAISE",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          },
+          {
+            "competition": {
+              "cp_no": 449980,
+              "season": 2026,
+              "type": "CH",
+              "name": "U18 Régional 1 M",
+              "level": "L",
+              "cdg": {
+                "cg_no": 77,
+                "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+                "external_updated_at": "2026-09-01T15:11:32+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:22:56+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:42:00+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "away": {
+        "club": {
+          "cl_no": 1707,
+          "external_updated_at": "2026-08-24T12:22:51+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC503214.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "FRONTIGNAN AS",
+        "short_name_ligue": "FRONTIGNAN AS",
+        "short_name_federation": "FRONTIGNAN AS",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          },
+          {
+            "competition": {
+              "cp_no": 449980,
+              "season": 2026,
+              "type": "CH",
+              "name": "U18 Régional 1 M",
+              "level": "L",
+              "cdg": {
+                "cg_no": 77,
+                "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+                "external_updated_at": "2026-09-01T15:11:32+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:22:56+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:42:00+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "terrain": {
+        "te_no": 340790201,
+        "name": "COMPLEXE SPORTIF L' ESTAGNOL",
+        "zip_code": "34800",
+        "city": "CLERMONT L HERAULT",
+        "libelle_surface": "Pelouse Naturelle",
+        "external_updated_at": "2026-06-05T22:41:53+00:00",
+        "address": "AVENUE LOUIS VILLARET"
+      },
+      "season": 2026,
+      "status": "A",
+      "ma_ar": "A",
+      "ma_inver": "N",
+      "ma_arret": "N",
+      "is_overtime": "N",
+      "date": "2026-09-06T00:00:00+00:00",
+      "time": "11H00",
+      "initial_date": null,
+      "cr_eq_naff": null,
+      "home_resu": "",
+      "cr_nb_but": null,
+      "home_score": null,
+      "home_but_contre": null,
+      "home_nb_point": null,
+      "home_nb_tir_but": null,
+      "home_nb_point_pena": null,
+      "home_is_forfeit": "N",
+      "cv_eq_naff": null,
+      "away_resu": "",
+      "away_nb_but": null,
+      "away_score": null,
+      "away_but_contre": null,
+      "away_nb_point": null,
+      "away_nb_tir_but": null,
+      "away_nb_point_pena": null,
+      "away_is_forfeit": "N",
+      "seems_postponed": "",
+      "match_membres": [
+        {
+          "mm_no": 161163327,
+          "po_cod": "AC",
+          "prenom": "YAHYA",
+          "nom": "HEDDOUN",
+          "label_position": "Arbitre centre",
+          "position_ordre": 1,
+          "external_updated_at": "2026-09-03T17:22:54+00:00"
+        },
+        {
+          "mm_no": 162331051,
+          "po_cod": "CP",
+          "prenom": "ABDELHALIM",
+          "nom": "DAOUDI",
+          "label_position": "Observateur principal",
+          "position_ordre": 14,
+          "external_updated_at": "2026-09-03T17:22:30+00:00"
+        }
+      ],
+      "match_feuille": null,
+      "external_updated_at": "2026-08-27T16:49:20+00:00",
+      "status_label": "/"
+    },
+    {
+      "ma_no": 56595147,
+      "competition": {
+        "cp_no": 449670,
+        "season": 2026,
+        "type": "CP",
+        "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+        "level": "F",
+        "cdg": {
+          "cg_no": 0,
+          "name": "FEDERATION FRANCAISE DE FOOTBALL",
+          "external_updated_at": "2026-08-31T22:09:54+00:00"
+        },
+        "external_updated_at": "2026-08-26T14:21:34+00:00"
+      },
+      "phase": {
+        "number": 1,
+        "type": "CP",
+        "name": "RÉGIONALE",
+        "external_updated_at": "2026-08-26T14:30:01+00:00"
+      },
+      "poule": {
+        "stage_number": 8,
+        "name": "OCCITANIE",
+        "external_updated_at": "2026-08-27T12:07:14+00:00",
+        "poule_unique": false,
+        "at_least_one_match_resultat": true
+      },
+      "poule_journee": {
+        "number": 2,
+        "external_updated_at": "2026-08-27T12:13:52+00:00",
+        "name": "2ième Tour"
+      },
+      "home": {
+        "club": {
+          "cl_no": 200839,
+          "external_updated_at": "2026-09-03T11:13:00+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC561208.jpg"
+        },
+        "category_code": "U19",
+        "number": 2,
+        "code": 1,
+        "short_name": "ASM34",
+        "short_name_ligue": "AS MEDITERRANEE 34",
+        "short_name_federation": "ASM34",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          },
+          {
+            "competition": {
+              "cp_no": 452475,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE DE L'HERAULT U18",
+              "level": "D",
+              "cdg": {
+                "cg_no": 60,
+                "name": "DISTRICT DE L'HERAULT",
+                "external_updated_at": "2026-08-29T19:39:55+00:00"
+              },
+              "external_updated_at": "2026-09-02T16:55:52+00:00"
+            }
+          },
+          {
+            "competition": {
+              "cp_no": 452493,
+              "season": 2026,
+              "type": "CH",
+              "name": "U18 D1 M",
+              "level": "D",
+              "cdg": {
+                "cg_no": 60,
+                "name": "DISTRICT DE L'HERAULT",
+                "external_updated_at": "2026-08-29T19:39:55+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:57+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:45:24+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "away": {
+        "club": {
+          "cl_no": 6926,
+          "external_updated_at": "2026-08-24T12:33:40+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC520449.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "VENDARGUES PI",
+        "short_name_ligue": "VENDARGUES PI",
+        "short_name_federation": "VENDARGUES PI",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:42:56+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "terrain": {
+        "te_no": 343240101,
+        "name": "STADE ARMAND VACQUERIN 1",
+        "zip_code": "34350",
+        "city": "VALRAS PLAGE",
+        "libelle_surface": "Pelouse Naturelle",
+        "external_updated_at": "2026-06-05T22:49:02+00:00",
+        "address": "BOULEVARD ROGER AUDOUX"
+      },
+      "season": 2026,
+      "status": "A",
+      "ma_ar": "A",
+      "ma_inver": "N",
+      "ma_arret": "N",
+      "is_overtime": "N",
+      "date": "2026-09-06T00:00:00+00:00",
+      "time": "13H00",
+      "initial_date": null,
+      "cr_eq_naff": null,
+      "home_resu": "",
+      "cr_nb_but": null,
+      "home_score": null,
+      "home_but_contre": null,
+      "home_nb_point": null,
+      "home_nb_tir_but": null,
+      "home_nb_point_pena": null,
+      "home_is_forfeit": "N",
+      "cv_eq_naff": null,
+      "away_resu": "",
+      "away_nb_but": null,
+      "away_score": null,
+      "away_but_contre": null,
+      "away_nb_point": null,
+      "away_nb_tir_but": null,
+      "away_nb_point_pena": null,
+      "away_is_forfeit": "N",
+      "seems_postponed": "",
+      "match_membres": [
+        {
+          "mm_no": 161207948,
+          "po_cod": "AC",
+          "prenom": "ANTHONY",
+          "nom": "MASSOL",
+          "label_position": "Arbitre centre",
+          "position_ordre": 1,
+          "external_updated_at": "2026-09-03T13:43:24+00:00"
+        }
+      ],
+      "match_feuille": null,
+      "external_updated_at": "2026-08-30T12:31:14+00:00",
+      "status_label": "/"
+    },
+    {
+      "ma_no": 56595178,
+      "competition": {
+        "cp_no": 449670,
+        "season": 2026,
+        "type": "CP",
+        "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+        "level": "F",
+        "cdg": {
+          "cg_no": 0,
+          "name": "FEDERATION FRANCAISE DE FOOTBALL",
+          "external_updated_at": "2026-08-31T22:09:54+00:00"
+        },
+        "external_updated_at": "2026-08-26T14:21:34+00:00"
+      },
+      "phase": {
+        "number": 1,
+        "type": "CP",
+        "name": "RÉGIONALE",
+        "external_updated_at": "2026-08-26T14:30:01+00:00"
+      },
+      "poule": {
+        "stage_number": 8,
+        "name": "OCCITANIE",
+        "external_updated_at": "2026-08-27T12:07:14+00:00",
+        "poule_unique": false,
+        "at_least_one_match_resultat": true
+      },
+      "poule_journee": {
+        "number": 2,
+        "external_updated_at": "2026-08-27T12:13:52+00:00",
+        "name": "2ième Tour"
+      },
+      "home": {
+        "club": {
+          "cl_no": 26179,
+          "external_updated_at": "2026-08-24T12:49:51+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC549437.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "U.S. DU MINERVOIS",
+        "short_name_ligue": "U.S. DU MINERVOIS",
+        "short_name_federation": "U.S. DU MINERVOIS",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:44:16+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "away": {
+        "club": {
+          "cl_no": 121962,
+          "external_updated_at": "2026-08-24T14:52:13+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC552756.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "ALBERES / ARGELES",
+        "short_name_ligue": "ALBERES / ARGELES",
+        "short_name_federation": "ALBERES / ARGELES",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          },
+          {
+            "competition": {
+              "cp_no": 455812,
+              "season": 2026,
+              "type": "CH",
+              "name": "TERRITOIRE U18 M",
+              "level": "D",
+              "cdg": {
+                "cg_no": 58,
+                "name": "DISTRICT AUDE",
+                "external_updated_at": "2026-07-03T11:53:26+00:00"
+              },
+              "external_updated_at": "2026-09-02T11:39:48+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:44:32+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "terrain": {
+        "te_no": 343020101,
+        "name": "STADE MUNICIPAL2",
+        "zip_code": "34210",
+        "city": "SIRAN",
+        "libelle_surface": "Pelouse Naturelle",
+        "external_updated_at": "2026-06-23T16:41:34+00:00",
+        "address": "RUE DU STADE"
+      },
+      "season": 2026,
+      "status": "A",
+      "ma_ar": "A",
+      "ma_inver": "N",
+      "ma_arret": "N",
+      "is_overtime": "N",
+      "date": "2026-09-06T00:00:00+00:00",
+      "time": "15H00",
+      "initial_date": null,
+      "cr_eq_naff": null,
+      "home_resu": "",
+      "cr_nb_but": null,
+      "home_score": null,
+      "home_but_contre": null,
+      "home_nb_point": null,
+      "home_nb_tir_but": null,
+      "home_nb_point_pena": null,
+      "home_is_forfeit": "N",
+      "cv_eq_naff": null,
+      "away_resu": "",
+      "away_nb_but": null,
+      "away_score": null,
+      "away_but_contre": null,
+      "away_nb_point": null,
+      "away_nb_tir_but": null,
+      "away_nb_point_pena": null,
+      "away_is_forfeit": "N",
+      "seems_postponed": "",
+      "match_membres": [
+        {
+          "mm_no": 162050398,
+          "po_cod": "AC",
+          "prenom": "TUGKAN",
+          "nom": "GENEL",
+          "label_position": "Arbitre centre",
+          "position_ordre": 1,
+          "external_updated_at": "2026-09-02T23:25:02+00:00"
+        }
+      ],
+      "match_feuille": null,
+      "external_updated_at": "2026-08-31T10:02:59+00:00",
+      "status_label": "/"
+    },
+    {
+      "ma_no": 56595138,
+      "competition": {
+        "cp_no": 449670,
+        "season": 2026,
+        "type": "CP",
+        "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+        "level": "F",
+        "cdg": {
+          "cg_no": 0,
+          "name": "FEDERATION FRANCAISE DE FOOTBALL",
+          "external_updated_at": "2026-08-31T22:09:54+00:00"
+        },
+        "external_updated_at": "2026-08-26T14:21:34+00:00"
+      },
+      "phase": {
+        "number": 1,
+        "type": "CP",
+        "name": "RÉGIONALE",
+        "external_updated_at": "2026-08-26T14:30:01+00:00"
+      },
+      "poule": {
+        "stage_number": 8,
+        "name": "OCCITANIE",
+        "external_updated_at": "2026-08-27T12:07:14+00:00",
+        "poule_unique": false,
+        "at_least_one_match_resultat": true
+      },
+      "poule_journee": {
+        "number": 2,
+        "external_updated_at": "2026-08-27T12:13:52+00:00",
+        "name": "2ième Tour"
+      },
+      "home": {
+        "club": {
+          "cl_no": 24606,
+          "external_updated_at": "2026-08-31T12:17:51+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC547175.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "RODEO FC",
+        "short_name_ligue": "RODEO F.C.",
+        "short_name_federation": "RODEO F.C.",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:44:07+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "away": {
+        "club": {
+          "cl_no": 3612,
+          "external_updated_at": "2026-08-27T17:12:18+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC510389.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "CASTANET US",
+        "short_name_ligue": "CASTANET US",
+        "short_name_federation": "CASTANET US",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          },
+          {
+            "competition": {
+              "cp_no": 449980,
+              "season": 2026,
+              "type": "CH",
+              "name": "U18 Régional 1 M",
+              "level": "L",
+              "cdg": {
+                "cg_no": 77,
+                "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+                "external_updated_at": "2026-09-01T15:11:32+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:22:56+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:42:20+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "terrain": {
+        "te_no": 315553302,
+        "name": "STADE AMOUROUX 2",
+        "zip_code": "31200",
+        "city": "TOULOUSE",
+        "libelle_surface": "Synthétique",
+        "external_updated_at": "2026-06-05T17:30:57+00:00",
+        "address": "160 r William ET Catherine BOOTH"
+      },
+      "season": 2026,
+      "status": "A",
+      "ma_ar": "A",
+      "ma_inver": "N",
+      "ma_arret": "N",
+      "is_overtime": "N",
+      "date": "2026-09-06T00:00:00+00:00",
+      "time": "13H00",
+      "initial_date": null,
+      "cr_eq_naff": null,
+      "home_resu": "",
+      "cr_nb_but": null,
+      "home_score": null,
+      "home_but_contre": null,
+      "home_nb_point": null,
+      "home_nb_tir_but": null,
+      "home_nb_point_pena": null,
+      "home_is_forfeit": "N",
+      "cv_eq_naff": null,
+      "away_resu": "",
+      "away_nb_but": null,
+      "away_score": null,
+      "away_but_contre": null,
+      "away_nb_point": null,
+      "away_nb_tir_but": null,
+      "away_nb_point_pena": null,
+      "away_is_forfeit": "N",
+      "seems_postponed": "",
+      "match_membres": [
+        {
+          "mm_no": 161163320,
+          "po_cod": "AC",
+          "prenom": "MATHIEU",
+          "nom": "MAUMUS",
+          "label_position": "Arbitre centre",
+          "position_ordre": 1,
+          "external_updated_at": "2026-08-31T06:37:36+00:00"
+        }
+      ],
+      "match_feuille": null,
+      "external_updated_at": "2026-08-27T17:12:27+00:00",
+      "status_label": "/"
+    },
+    {
+      "ma_no": 56595137,
+      "competition": {
+        "cp_no": 449670,
+        "season": 2026,
+        "type": "CP",
+        "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+        "level": "F",
+        "cdg": {
+          "cg_no": 0,
+          "name": "FEDERATION FRANCAISE DE FOOTBALL",
+          "external_updated_at": "2026-08-31T22:09:54+00:00"
+        },
+        "external_updated_at": "2026-08-26T14:21:34+00:00"
+      },
+      "phase": {
+        "number": 1,
+        "type": "CP",
+        "name": "RÉGIONALE",
+        "external_updated_at": "2026-08-26T14:30:01+00:00"
+      },
+      "poule": {
+        "stage_number": 8,
+        "name": "OCCITANIE",
+        "external_updated_at": "2026-08-27T12:07:14+00:00",
+        "poule_unique": false,
+        "at_least_one_match_resultat": true
+      },
+      "poule_journee": {
+        "number": 2,
+        "external_updated_at": "2026-08-27T12:13:52+00:00",
+        "name": "2ième Tour"
+      },
+      "home": {
+        "club": {
+          "cl_no": 165623,
+          "external_updated_at": "2026-08-24T12:56:27+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC590591.jpg"
+        },
+        "category_code": "U19",
+        "number": 4,
+        "code": 1,
+        "short_name": "LABEGE INTER FC",
+        "short_name_ligue": "LABEGE FOOT",
+        "short_name_federation": "LABEGE FOOT",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          },
+          {
+            "competition": {
+              "cp_no": 454507,
+              "season": 2026,
+              "type": "CH",
+              "name": "U18 TERRITOIRE ELITE",
+              "level": "D",
+              "cdg": {
+                "cg_no": 86,
+                "name": "DISTRICT HAUTE GARONNE",
+                "external_updated_at": "2026-08-10T12:23:26+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:22:25+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:44:45+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "away": {
+        "club": {
+          "cl_no": 18865,
+          "external_updated_at": "2026-08-24T14:43:24+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC538169.jpg"
+        },
+        "category_code": "U19",
+        "number": 5,
+        "code": 1,
+        "short_name": "US3C",
+        "short_name_ligue": "US3C",
+        "short_name_federation": "US3C",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:43:47+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "terrain": {
+        "te_no": 312540101,
+        "name": "STADE JUST FONTAINE",
+        "zip_code": "31670",
+        "city": "LABEGE",
+        "libelle_surface": "Synthétique",
+        "external_updated_at": "2026-06-05T17:19:59+00:00",
+        "address": "RUE ISATIS"
+      },
+      "season": 2026,
+      "status": "A",
+      "ma_ar": "A",
+      "ma_inver": "N",
+      "ma_arret": "N",
+      "is_overtime": "N",
+      "date": "2026-09-06T00:00:00+00:00",
+      "time": "13H00",
+      "initial_date": null,
+      "cr_eq_naff": null,
+      "home_resu": "",
+      "cr_nb_but": null,
+      "home_score": null,
+      "home_but_contre": null,
+      "home_nb_point": null,
+      "home_nb_tir_but": null,
+      "home_nb_point_pena": null,
+      "home_is_forfeit": "N",
+      "cv_eq_naff": null,
+      "away_resu": "",
+      "away_nb_but": null,
+      "away_score": null,
+      "away_but_contre": null,
+      "away_nb_point": null,
+      "away_nb_tir_but": null,
+      "away_nb_point_pena": null,
+      "away_is_forfeit": "N",
+      "seems_postponed": "",
+      "match_membres": [
+        {
+          "mm_no": 161958052,
+          "po_cod": "AC",
+          "prenom": "YOUSSEF",
+          "nom": "LAKHRIREZ",
+          "label_position": "Arbitre centre",
+          "position_ordre": 1,
+          "external_updated_at": "2026-09-02T15:00:34+00:00"
+        }
+      ],
+      "match_feuille": null,
+      "external_updated_at": "2026-08-27T17:12:27+00:00",
+      "status_label": "/"
+    },
+    {
+      "ma_no": 56595136,
+      "competition": {
+        "cp_no": 449670,
+        "season": 2026,
+        "type": "CP",
+        "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+        "level": "F",
+        "cdg": {
+          "cg_no": 0,
+          "name": "FEDERATION FRANCAISE DE FOOTBALL",
+          "external_updated_at": "2026-08-31T22:09:54+00:00"
+        },
+        "external_updated_at": "2026-08-26T14:21:34+00:00"
+      },
+      "phase": {
+        "number": 1,
+        "type": "CP",
+        "name": "RÉGIONALE",
+        "external_updated_at": "2026-08-26T14:30:01+00:00"
+      },
+      "poule": {
+        "stage_number": 8,
+        "name": "OCCITANIE",
+        "external_updated_at": "2026-08-27T12:07:14+00:00",
+        "poule_unique": false,
+        "at_least_one_match_resultat": true
+      },
+      "poule_journee": {
+        "number": 2,
+        "external_updated_at": "2026-08-27T12:13:52+00:00",
+        "name": "2ième Tour"
+      },
+      "home": {
+        "club": {
+          "cl_no": 9282,
+          "external_updated_at": "2026-08-24T14:36:07+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC524108.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "TLSE LARDENNE AS",
+        "short_name_ligue": "AS TLSE LARDENNE",
+        "short_name_federation": "AS TLSE LARDENNE",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:43:14+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "away": {
+        "club": {
+          "cl_no": 7673,
+          "external_updated_at": "2026-08-25T17:55:39+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC521599.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "LANDORTHE EST. SAV.",
+        "short_name_ligue": "ENT. LANDORTHE ESTAN",
+        "short_name_federation": "ENT. LANDORTHE ESTAN",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          },
+          {
+            "competition": {
+              "cp_no": 449980,
+              "season": 2026,
+              "type": "CH",
+              "name": "U18 Régional 1 M",
+              "level": "L",
+              "cdg": {
+                "cg_no": 77,
+                "name": "LIGUE DE FOOTBALL D'OCCITANIE",
+                "external_updated_at": "2026-09-01T15:11:32+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:22:56+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:43:03+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "terrain": {
+        "te_no": 315553102,
+        "name": "COMPLEXE SPORTIF DE LARDENNE N°2",
+        "zip_code": "31100",
+        "city": "TOULOUSE",
+        "libelle_surface": "Synthétique",
+        "external_updated_at": "2026-06-05T17:30:40+00:00",
+        "address": "153 AVENUE DE LARDENNE"
+      },
+      "season": 2026,
+      "status": "A",
+      "ma_ar": "A",
+      "ma_inver": "N",
+      "ma_arret": "N",
+      "is_overtime": "N",
+      "date": "2026-09-06T00:00:00+00:00",
+      "time": "13H00",
+      "initial_date": null,
+      "cr_eq_naff": null,
+      "home_resu": "",
+      "cr_nb_but": null,
+      "home_score": null,
+      "home_but_contre": null,
+      "home_nb_point": null,
+      "home_nb_tir_but": null,
+      "home_nb_point_pena": null,
+      "home_is_forfeit": "N",
+      "cv_eq_naff": null,
+      "away_resu": "",
+      "away_nb_but": null,
+      "away_score": null,
+      "away_but_contre": null,
+      "away_nb_point": null,
+      "away_nb_tir_but": null,
+      "away_nb_point_pena": null,
+      "away_is_forfeit": "N",
+      "seems_postponed": "",
+      "match_membres": [
+        {
+          "mm_no": 161840282,
+          "po_cod": "AC",
+          "prenom": "MATTHIEU",
+          "nom": "GOUGEON",
+          "label_position": "Arbitre centre",
+          "position_ordre": 1,
+          "external_updated_at": "2026-09-02T10:31:04+00:00"
+        }
+      ],
+      "match_feuille": null,
+      "external_updated_at": "2026-08-27T17:12:27+00:00",
+      "status_label": "/"
+    },
+    {
+      "ma_no": 56595134,
+      "competition": {
+        "cp_no": 449670,
+        "season": 2026,
+        "type": "CP",
+        "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+        "level": "F",
+        "cdg": {
+          "cg_no": 0,
+          "name": "FEDERATION FRANCAISE DE FOOTBALL",
+          "external_updated_at": "2026-08-31T22:09:54+00:00"
+        },
+        "external_updated_at": "2026-08-26T14:21:34+00:00"
+      },
+      "phase": {
+        "number": 1,
+        "type": "CP",
+        "name": "RÉGIONALE",
+        "external_updated_at": "2026-08-26T14:30:01+00:00"
+      },
+      "poule": {
+        "stage_number": 8,
+        "name": "OCCITANIE",
+        "external_updated_at": "2026-08-27T12:07:14+00:00",
+        "poule_unique": false,
+        "at_least_one_match_resultat": true
+      },
+      "poule_journee": {
+        "number": 2,
+        "external_updated_at": "2026-08-27T12:13:52+00:00",
+        "name": "2ième Tour"
+      },
+      "home": {
+        "club": {
+          "cl_no": 8796,
+          "external_updated_at": "2026-08-31T11:40:12+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC523353.jpg"
+        },
+        "category_code": "U19",
+        "number": 2,
+        "code": 1,
+        "short_name": "CASTELGINEST US",
+        "short_name_ligue": "U.S. CASTELGINEST",
+        "short_name_federation": "U.S. CASTELGINEST",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          },
+          {
+            "competition": {
+              "cp_no": 454507,
+              "season": 2026,
+              "type": "CH",
+              "name": "U18 TERRITOIRE ELITE",
+              "level": "D",
+              "cdg": {
+                "cg_no": 86,
+                "name": "DISTRICT HAUTE GARONNE",
+                "external_updated_at": "2026-08-10T12:23:26+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:22:25+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:43:10+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "away": {
+        "club": {
+          "cl_no": 10866,
+          "external_updated_at": "2026-08-24T12:39:01+00:00",
+          "logo": "https://cdn-transverse.azureedge.net/phlogos/BC526462.jpg"
+        },
+        "category_code": "U19",
+        "number": 1,
+        "code": 1,
+        "short_name": "BAGATELLE FC",
+        "short_name_ligue": "F.C. BAGATELLE",
+        "short_name_federation": "F.C. BAGATELLE",
+        "type": "C",
+        "engagements": [
+          {
+            "competition": {
+              "cp_no": 449670,
+              "season": 2026,
+              "type": "CP",
+              "name": "COUPE GAMBARDELLA CRÉDIT AGRICOLE",
+              "level": "F",
+              "cdg": {
+                "cg_no": 0,
+                "name": "FEDERATION FRANCAISE DE FOOTBALL",
+                "external_updated_at": "2026-08-31T22:09:54+00:00"
+              },
+              "external_updated_at": "2026-08-26T14:21:34+00:00"
+            }
+          }
+        ],
+        "external_updated_at": "2026-08-27T14:43:23+00:00",
+        "category_label": "U19 - U18 Libre",
+        "category_gender": "M"
+      },
+      "terrain": {
+        "te_no": 311160202,
+        "name": "COMPLEXE SPORTIF NAUZEMARELLE 2",
+        "zip_code": "31780",
+        "city": "CASTELGINEST",
+        "libelle_surface": "Synthétique",
+        "external_updated_at": "2026-06-25T10:57:16+00:00",
+        "address": "Rue Jean DUMONS"
+      },
+      "season": 2026,
+      "status": "A",
+      "ma_ar": "A",
+      "ma_inver": "N",
+      "ma_arret": "N",
+      "is_overtime": "N",
+      "date": "2026-09-06T00:00:00+00:00",
+      "time": "13H00",
+      "initial_date": null,
+      "cr_eq_naff": null,
+      "home_resu": "",
+      "cr_nb_but": null,
+      "home_score": null,
+      "home_but_contre": null,
+      "home_nb_point": null,
+      "home_nb_tir_but": null,
+      "home_nb_point_pena": null,
+      "home_is_forfeit": "N",
+      "cv_eq_naff": null,
+      "away_resu": "",
+      "away_nb_but": null,
+      "away_score": null,
+      "away_but_contre": null,
+      "away_nb_point": null,
+      "away_nb_tir_but": null,
+      "away_nb_point_pena": null,
+      "away_is_forfeit": "N",
+      "seems_postponed": "",
+      "match_membres": [
+        {
+          "mm_no": 161957281,
+          "po_cod": "AC",
+          "prenom": "GERMAIN",
+          "nom": "KERDRAON",
+          "label_position": "Arbitre centre",
+          "position_ordre": 1,
+          "external_updated_at": "2026-09-03T16:30:04+00:00"
+        }
+      ],
+      "match_feuille": null,
+      "external_updated_at": "2026-09-03T16:08:59+00:00",
+      "status_label": "/"
+    }
+  ],
+  "hydra:totalItems": 64,
+  "hydra:view": {
+    "@id": "/api/compets/449670/phases/1/poules/8/matchs?pjNo=2&page=1",
+    "@type": "hydra:PartialCollectionView",
+    "hydra:first": "/api/compets/449670/phases/1/poules/8/matchs?pjNo=2&page=1",
+    "hydra:last": "/api/compets/449670/phases/1/poules/8/matchs?pjNo=2&page=3",
+    "hydra:next": "/api/compets/449670/phases/1/poules/8/matchs?pjNo=2&page=2"
+  },
+  "hydra:search": {
+    "@type": "hydra:IriTemplate",
+    "hydra:template": "/api/compets/449670/phases/1/poules/8/matchs{?clNo,competition.cp_no,competition.cp_no[],ma_dat[before],ma_dat[strictly_before],ma_dat[after],ma_dat[strictly_after]}",
+    "hydra:variableRepresentation": "BasicRepresentation",
+    "hydra:mapping": [
+      {
+        "@type": "IriTemplateMapping",
+        "variable": "clNo",
+        "property": "clNo",
+        "required": false
+      },
+      {
+        "@type": "IriTemplateMapping",
+        "variable": "competition.cp_no",
+        "property": "competition.cp_no",
+        "required": false
+      },
+      {
+        "@type": "IriTemplateMapping",
+        "variable": "competition.cp_no[]",
+        "property": "competition.cp_no",
+        "required": false
+      },
+      {
+        "@type": "IriTemplateMapping",
+        "variable": "ma_dat[before]",
+        "property": "ma_dat",
+        "required": false
+      },
+      {
+        "@type": "IriTemplateMapping",
+        "variable": "ma_dat[strictly_before]",
+        "property": "ma_dat",
+        "required": false
+      },
+      {
+        "@type": "IriTemplateMapping",
+        "variable": "ma_dat[after]",
+        "property": "ma_dat",
+        "required": false
+      },
+      {
+        "@type": "IriTemplateMapping",
+        "variable": "ma_dat[strictly_after]",
+        "property": "ma_dat",
+        "required": false
+      }
+    ]
+  }
+}
