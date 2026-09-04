@@ -7,7 +7,7 @@ export const metadata = {
 }
 
 
-const TEAM_ORDER = ['Seniors', 'Seniors 2', 'U19', 'U18', 'U17', 'U16', 'U15', 'U14', 'Féminines', 'U18 Féminines', 'U15 Elite Féminines', 'U15 Territoire Féminines']
+const TEAM_ORDER = ['Seniors', 'Seniors 2', 'U19', 'U18', 'U18 Territoire Elite', 'U17', 'U16', 'U15', 'U14', 'Féminines', 'U18 Féminines', 'U15 Elite Féminines', 'U15 Territoire Féminines']
 
 export default async function EquipesPage() {
   const data = await getTeams().catch(() => [])

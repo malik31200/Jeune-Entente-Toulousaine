@@ -96,7 +96,11 @@ class FFFMatchImporter:
     def get_or_create_team(self, category_code, competition_name, team_code):
         comp = competition_name.upper()
 
-        if 'U18' in comp and 'F' not in category_code:
+        if 'U18' in comp and 'TERRITOIRE' in comp and 'F' not in category_code:
+            # "U18 Régional 1 M" et "U18 Territoire Elite" sont deux équipes
+            # distinctes du club, à distinguer avant le cas générique U18.
+            team_name = 'U18 Territoire Elite'
+        elif 'U18' in comp and 'F' not in category_code:
             # La compétition s'appelle "U18" mais la FFF renvoie encore le
             # category_code historique "U19" pour cette tranche d'âge.
             team_name = 'U18'
