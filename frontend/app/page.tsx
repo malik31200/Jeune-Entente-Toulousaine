@@ -36,7 +36,7 @@ export default async function Home() {
     // retombe sur l'image du dernier article, comme avant.
     const heroImage = siteSettings?.hero_image || heroArticle?.image || null
 
-    const TEAM_ORDER = ['Seniors', 'Seniors 2', 'U19', 'U18', 'U18 Territoire Elite', 'U17', 'U16', 'U15', 'U14', 'Féminines', 'U18 Féminines', 'U15 Elite Féminines', 'U15 Territoire Féminines', 'Futsal']
+    const TEAM_ORDER = ['Seniors', 'Seniors 2', 'U19', 'U18', 'U18 Territoire Elite', 'U17', 'U16 Régional', 'U16 Territoire', 'U15', 'U14', 'Féminines', 'U18 Féminines', 'U15 Elite Féminines', 'U15 Territoire Féminines', 'Futsal']
     const sixtyDaysAgo = new Date()
     sixtyDaysAgo.setDate(sixtyDaysAgo.getDate() - 60)
     // Marge de tolérance : un match peut rester en statut A_VENIR quelques
