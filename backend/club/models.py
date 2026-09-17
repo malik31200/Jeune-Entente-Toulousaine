@@ -3,13 +3,14 @@ from django.contrib.auth.models import User
 from django.utils.text import slugify
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
+from .fields import CompressedImageField
 
 
 class Article(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(unique=True, blank=True)
     content = RichTextUploadingField()
-    image = models.ImageField(upload_to='articles/', blank=True, null=True)
+    image = CompressedImageField(upload_to='articles/', blank=True, null=True)
     video_url = models.URLField(blank=True, null=True)
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     published_date = models.DateTimeField(auto_now_add=True)
@@ -33,7 +34,7 @@ class Team(models.Model):
     name = models.CharField(max_length=100)
     category = models.CharField(max_length=50)
     description = models.TextField(blank=True)
-    image = models.ImageField(upload_to='teams/', blank=True, null=True)
+    image = CompressedImageField(upload_to='teams/', blank=True, null=True)
     order = models.IntegerField(default=0)
     ranking_api_url = models.URLField(blank=True, null=True, verbose_name="URL API classement FFF")
     cp_no = models.CharField(max_length=20, blank=True, null=True, verbose_name="FFF cp_no",
@@ -70,7 +71,7 @@ class Player(models.Model):
 
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
-    photo = models.ImageField(upload_to='players/', blank=True, null=True)
+    photo = CompressedImageField(upload_to='players/', blank=True, null=True)
     position = models.CharField(max_length=3, choices=POSITION_CHOICES)
     jersey_number = models.IntegerField()
     team = models.ForeignKey(Team, on_delete=models.CASCADE, related_name='players')
@@ -209,7 +210,7 @@ class ClassementFetchLock(models.Model):
 
 class Sponsor(models.Model):
     name = models.CharField(max_length=200)
-    logo = models.ImageField(upload_to='sponsors/')
+    logo = CompressedImageField(upload_to='sponsors/')
     website_url = models.URLField(blank=True, null=True)
     description = models.TextField(blank=True, verbose_name="Description (optionnel)",
                                    help_text="Texte affiché sous le nom du sponsor")
@@ -228,7 +229,7 @@ class ClubPage(models.Model):
     title = models.CharField(max_length=200, default="Notre Club")
     subtitle = models.CharField(max_length=300, blank=True)
     content = RichTextUploadingField(blank=True)
-    image = models.ImageField(upload_to='club/', blank=True, null=True)
+    image = CompressedImageField(upload_to='club/', blank=True, null=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
@@ -262,7 +263,7 @@ class CategoryPage(models.Model):
         ('foot-a-5', 'Foot à 5'),
     ]
     slug = models.CharField(max_length=20, choices=SLUG_CHOICES, unique=True)
-    image = models.ImageField(upload_to='categories/', blank=True, null=True)
+    image = CompressedImageField(upload_to='categories/', blank=True, null=True)
     description = RichTextField(blank=True)
     coaches = models.TextField(blank=True, help_text="Noms des coachs, un par ligne")
     updated_at = models.DateTimeField(auto_now=True)
@@ -285,7 +286,7 @@ class TeamPresentation(models.Model):
                              related_name='presentations', verbose_name="Équipe (optionnel)")
     name = models.CharField(max_length=100, blank=True, verbose_name="Nom personnalisé",
                             help_text="Si aucune équipe sélectionnée ci-dessus, entrez un nom ici")
-    image = models.ImageField(upload_to='team-presentations/', blank=True, null=True, verbose_name="Photo")
+    image = CompressedImageField(upload_to='team-presentations/', blank=True, null=True, verbose_name="Photo")
     coaches = models.TextField(blank=True, verbose_name="Staff / Coachs",
                                help_text="Un nom par ligne (ex: Jean Dupont)")
     order = models.IntegerField(default=0, verbose_name="Ordre d'affichage")
@@ -302,7 +303,7 @@ class TeamPresentation(models.Model):
 
 class GalleryPhoto(models.Model):
     title = models.CharField(max_length=200, blank=True)
-    image = models.ImageField(upload_to='gallery/')
+    image = CompressedImageField(upload_to='gallery/')
     order = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -316,7 +317,7 @@ class GalleryPhoto(models.Model):
 
 
 class SiteSettings(models.Model):
-    hero_image = models.ImageField(upload_to='hero/', blank=True, null=True,
+    hero_image = CompressedImageField(upload_to='hero/', blank=True, null=True,
                                     verbose_name="Photo du hero (page d'accueil)")
     shop_url = models.URLField(blank=True)
     facebook_url = models.URLField(blank=True)
