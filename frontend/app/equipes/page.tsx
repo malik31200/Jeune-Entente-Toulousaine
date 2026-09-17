@@ -7,15 +7,15 @@ export const metadata = {
 }
 
 
-const TEAM_ORDER = ['Seniors', 'Seniors 2', 'U19', 'U18', 'U18 Territoire Elite', 'U17', 'U16 Régional', 'U16 Territoire', 'U15', 'U14', 'Féminines', 'U18 Féminines', 'U15 Elite Féminines', 'U15 Territoire Féminines']
-
 export default async function EquipesPage() {
   const data = await getTeams().catch(() => [])
   const allTeams = Array.isArray(data) ? data : (data.results || [])
 
-  const teams = TEAM_ORDER
-    .map(name => allTeams.find((t: any) => t.name === name))
-    .filter(Boolean)
+  // L'API trie déjà par le champ "order" (voir Team.Meta.ordering côté
+  // backend) — on ne filtre que le Futsal, qui a sa propre page dédiée.
+  // On ne trie plus par nom : un renommage d'équipe dans l'admin ne doit
+  // jamais faire disparaître une équipe du site.
+  const teams = allTeams.filter((t: any) => t.category !== 'SESM')
 
   return (
     <div className="container pt-12 pb-40">

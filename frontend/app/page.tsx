@@ -36,7 +36,6 @@ export default async function Home() {
     // retombe sur l'image du dernier article, comme avant.
     const heroImage = siteSettings?.hero_image || heroArticle?.image || null
 
-    const TEAM_ORDER = ['Seniors', 'Seniors 2', 'U19', 'U18', 'U18 Territoire Elite', 'U17', 'U16 Régional', 'U16 Territoire', 'U15', 'U14', 'Féminines', 'U18 Féminines', 'U15 Elite Féminines', 'U15 Territoire Féminines', 'Futsal']
     const sixtyDaysAgo = new Date()
     sixtyDaysAgo.setDate(sixtyDaysAgo.getDate() - 60)
     // Marge de tolérance : un match peut rester en statut A_VENIR quelques
@@ -47,9 +46,11 @@ export default async function Home() {
     staleAVenirCutoff.setDate(staleAVenirCutoff.getDate() - 4)
 
     const carouselMatches: any[] = []
-    for (const teamName of TEAM_ORDER) {
-      const team = teams.find((t: any) => t.name === teamName)
-      if (!team) continue
+    // L'API trie déjà les équipes par le champ "order" (Team.Meta.ordering) —
+    // on ne cherche plus par nom, pour qu'un renommage d'équipe dans l'admin
+    // ne fasse jamais disparaître son carrousel.
+    for (const team of teams) {
+      const teamName = team.name
       const teamMatches = allMatches.filter((m: any) => m.team === team.id)
 
       // Compétition principale = celle avec le plus de matchs terminés
