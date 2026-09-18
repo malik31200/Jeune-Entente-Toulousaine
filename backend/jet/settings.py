@@ -192,9 +192,17 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 9,
 }
 
-# Email (console en dev, SMTP en production)
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_HOST_USER = 'noreply@jet.fr'
+# Email (SMTP si EMAIL_HOST est configuré, sinon console en dev)
+EMAIL_HOST = os.environ.get('EMAIL_HOST')
+if EMAIL_HOST:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_PORT = int(os.environ.get('EMAIL_PORT', '587'))
+    EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', '1') == '1'
+    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', '')
+    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '')
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    EMAIL_HOST_USER = 'noreply@jet.fr'
 
 # Cloudinary
 import cloudinary
