@@ -12,9 +12,23 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+import socket
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Railway ne route pas correctement l'IPv6 sortant : des services comme
+# Gmail annoncent une adresse IPv6, et la connexion échoue avec
+# "Network is unreachable" avant même d'essayer l'IPv4. On force toutes
+# les résolutions DNS du process à ne renvoyer que de l'IPv4.
+_orig_getaddrinfo = socket.getaddrinfo
+
+
+def _ipv4_only_getaddrinfo(host, port, family=0, type=0, proto=0, flags=0):
+    return _orig_getaddrinfo(host, port, socket.AF_INET, type, proto, flags)
+
+
+socket.getaddrinfo = _ipv4_only_getaddrinfo
 
 
 # Quick-start development settings - unsuitable for production
