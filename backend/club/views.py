@@ -3,7 +3,7 @@ from rest_framework import viewsets, status
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
-from django.core.mail import send_mail
+from django.core.mail import EmailMessage
 from django.core.cache import cache
 from django.conf import settings
 import requests as http_requests
@@ -336,12 +336,13 @@ def contact_view(request):
             body += f'\nSujet : {subject}'
         body += f'\n\n{message}'
 
-        send_mail(
+        EmailMessage(
             subject=f'[JET] {subject or "Message"} de {name}',
-            message=body,
+            body=body,
             from_email=settings.DEFAULT_FROM_EMAIL,
-            recipient_list=[recipient],
-        )
+            to=[recipient],
+            reply_to=[email],
+        ).send()
         return Response({'success': 'Message envoyé avec succès.'})
     except Exception as e:
         logger.error(f'Erreur envoi email formulaire de contact : {e}')
