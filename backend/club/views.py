@@ -1,3 +1,4 @@
+import logging
 from rest_framework import viewsets, status
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
@@ -6,6 +7,8 @@ from django.core.mail import send_mail
 from django.core.cache import cache
 from django.conf import settings
 import requests as http_requests
+
+logger = logging.getLogger(__name__)
 
 FFF_BASE = "https://api-dofa.fff.fr"
 CACHE_TIMEOUT = 15 * 60
@@ -341,5 +344,6 @@ def contact_view(request):
         )
         return Response({'success': 'Message envoyé avec succès.'})
     except Exception as e:
+        logger.error(f'Erreur envoi email formulaire de contact : {e}')
         return Response({'error': 'Erreur lors de l\'envoi.'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
