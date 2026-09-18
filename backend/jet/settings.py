@@ -206,9 +206,19 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 9,
 }
 
-# Email (SMTP si EMAIL_HOST est configuré, sinon console en dev)
+# Email — Brevo (API HTTPS) en priorité si BREVO_API_KEY est configuré :
+# Railway bloque le SMTP sortant (tous ports) sur ce plan, donc on passe
+# par une API HTTPS (jamais bloquée) via django-anymail. SMTP classique
+# reste disponible en repli si jamais utilisé sur un autre hébergeur.
+BREVO_API_KEY = os.environ.get('BREVO_API_KEY')
 EMAIL_HOST = os.environ.get('EMAIL_HOST')
-if EMAIL_HOST:
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', 'noreply@jet.fr')
+
+if BREVO_API_KEY:
+    INSTALLED_APPS = INSTALLED_APPS + ['anymail']
+    EMAIL_BACKEND = 'anymail.backends.brevo.EmailBackend'
+    ANYMAIL = {'BREVO_API_KEY': BREVO_API_KEY}
+elif EMAIL_HOST:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_PORT = int(os.environ.get('EMAIL_PORT', '587'))
     EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', '1') == '1'
@@ -221,7 +231,6 @@ if EMAIL_HOST:
     EMAIL_TIMEOUT = 10
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    EMAIL_HOST_USER = 'noreply@jet.fr'
 
 # Cloudinary
 import cloudinary

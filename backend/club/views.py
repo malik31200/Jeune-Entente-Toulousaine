@@ -339,7 +339,7 @@ def contact_view(request):
         send_mail(
             subject=f'[JET] {subject or "Message"} de {name}',
             message=body,
-            from_email=settings.EMAIL_HOST_USER or 'noreply@jet.fr',
+            from_email=settings.DEFAULT_FROM_EMAIL,
             recipient_list=[recipient],
         )
         return Response({'success': 'Message envoyé avec succès.'})
