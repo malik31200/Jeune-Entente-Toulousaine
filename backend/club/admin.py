@@ -19,6 +19,8 @@ class ArticleAdmin(admin.ModelAdmin):
 @admin.register(Team)
 class TeamAdmin(admin.ModelAdmin):
     list_display = ['name', 'category', 'order', 'ranking_api_url']
+    list_display_links = ['name']
+    list_editable = ['order']
     list_filter = ['category']
     search_fields = ['name']
     fieldsets = [
