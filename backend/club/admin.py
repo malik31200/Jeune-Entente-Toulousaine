@@ -67,12 +67,35 @@ class NeedsScoreFilter(admin.SimpleListFilter):
         return queryset
 
 
+class SeasonFilter(admin.SimpleListFilter):
+    """Une saison de foot va d'août à juillet de l'année suivante."""
+    title = 'saison'
+    parameter_name = 'saison'
+
+    def lookups(self, request, model_admin):
+        now = timezone.now()
+        current_start_year = now.year if now.month >= 8 else now.year - 1
+        return [
+            (str(current_start_year - offset), f'{current_start_year - offset}/{current_start_year - offset + 1}')
+            for offset in range(0, 3)
+        ]
+
+    def queryset(self, request, queryset):
+        if self.value():
+            start_year = int(self.value())
+            tz = timezone.get_current_timezone()
+            start = timezone.datetime(start_year, 8, 1, tzinfo=tz)
+            end = timezone.datetime(start_year + 1, 8, 1, tzinfo=tz)
+            return queryset.filter(date__gte=start, date__lt=end)
+        return queryset
+
+
 @admin.register(Match)
 class MatchAdmin(admin.ModelAdmin):
-    list_display = ['home_team', 'away_team', 'competition', 'date', 'team', 'status', 'home_score', 'away_score']
+    list_display = ['home_team', 'away_team', 'home_score', 'away_score', 'status', 'date', 'team', 'competition']
     list_display_links = ['home_team', 'away_team']
     list_editable = ['status', 'home_score', 'away_score']
-    list_filter = [NeedsScoreFilter, 'team', 'status']
+    list_filter = [NeedsScoreFilter, SeasonFilter, 'team', 'status']
     search_fields = ['home_team', 'away_team', 'competition']
     ordering = ['-date']
     actions = [scraper_fff_action, supprimer_doublons_action]
