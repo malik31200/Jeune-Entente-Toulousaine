@@ -3,6 +3,7 @@ from django.core.management import call_command
 from django.contrib import messages
 from django.shortcuts import redirect
 from django.urls import reverse
+from django.utils import timezone
 from .models import Article, Team, Player, TrainingSchedule, Match, TeamStats, ClassementEntry, Sponsor, SiteSettings, ClubPage, GalleryPhoto, CategoryPage, TeamPresentation, Detection
 
 
@@ -53,11 +54,27 @@ def supprimer_doublons_action(modeladmin, request, queryset):
     messages.success(request, f'{deleted} anciens matchs sans ID FFF supprimés.')
 supprimer_doublons_action.short_description = '🗑️ Supprimer les anciens matchs en double (sans ID FFF)'
 
+class NeedsScoreFilter(admin.SimpleListFilter):
+    title = 'match à mettre à jour'
+    parameter_name = 'a_traiter'
+
+    def lookups(self, request, model_admin):
+        return [('oui', 'Oui — date passée, score manquant')]
+
+    def queryset(self, request, queryset):
+        if self.value() == 'oui':
+            return queryset.filter(home_score__isnull=True, date__lt=timezone.now())
+        return queryset
+
+
 @admin.register(Match)
 class MatchAdmin(admin.ModelAdmin):
-    list_display = ['home_team', 'away_team', 'date', 'team', 'status', 'home_score', 'away_score']
-    list_filter = ['team', 'status']
+    list_display = ['home_team', 'away_team', 'competition', 'date', 'team', 'status', 'home_score', 'away_score']
+    list_display_links = ['home_team', 'away_team']
+    list_editable = ['status', 'home_score', 'away_score']
+    list_filter = [NeedsScoreFilter, 'team', 'status']
     search_fields = ['home_team', 'away_team', 'competition']
+    ordering = ['-date']
     actions = [scraper_fff_action, supprimer_doublons_action]
 
 
