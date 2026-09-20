@@ -38,6 +38,14 @@ export default async function Home() {
 
     const sixtyDaysAgo = new Date()
     sixtyDaysAgo.setDate(sixtyDaysAgo.getDate() - 60)
+    // Une saison va d'août à juillet. On limite le calcul de la "compétition
+    // principale" à la saison en cours, sinon une compétition d'une saison
+    // précédente (avec un nom différent, ex: "U18 Honneur F" -> "U18
+    // Territoire F") peut avoir plus de matchs terminés au total et
+    // l'emporter, masquant tous les matchs de la saison actuelle.
+    const now = new Date()
+    const currentSeasonStart = new Date(now.getFullYear(), 7, 1)
+    if (now < currentSeasonStart) currentSeasonStart.setFullYear(currentSeasonStart.getFullYear() - 1)
     // Marge de tolérance : un match peut rester en statut A_VENIR quelques
     // jours après le coup d'envoi si la FFF n'a pas encore publié le score
     // (délai normal) — on ne l'exclut du "prochain match" que passé ce délai,
@@ -54,9 +62,13 @@ export default async function Home() {
       const teamMatches = allMatches.filter((m: any) => m.team === team.id)
 
       // Compétition principale = celle avec le plus de matchs terminés
+      // CETTE SAISON (voir note plus haut sur les changements de nom).
       const terminated = teamMatches.filter((m: any) => m.status === 'TERMINE' && m.home_score !== null)
       const compCount: Record<string, number> = {}
-      for (const m of terminated) compCount[m.competition] = (compCount[m.competition] || 0) + 1
+      for (const m of terminated) {
+        if (new Date(m.date) < currentSeasonStart) continue
+        compCount[m.competition] = (compCount[m.competition] || 0) + 1
+      }
       const mainComp = Object.keys(compCount).length > 0
         ? Object.entries(compCount).sort(([, a], [, b]) => b - a)[0][0]
         : null
