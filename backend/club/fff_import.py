@@ -153,8 +153,12 @@ class FFFMatchImporter:
             return timezone.now()
 
     def determine_status(self, match_date, home_score, away_score):
+        # Un match n'est "Terminé" que si on a vraiment les deux scores.
+        # Une date passée sans score ne veut pas dire que le match n'a pas eu
+        # lieu : la FFF (ou nous) n'a simplement pas encore rentré le
+        # résultat. Le laisser en "À venir" permet au site de continuer à
+        # l'afficher (voir la tolérance de quelques jours côté frontend) au
+        # lieu de le faire disparaître (ni "terminé avec score" ni "à venir").
         if home_score is not None and away_score is not None:
-            return 'TERMINE'
-        if match_date and match_date < timezone.now():
             return 'TERMINE'
         return 'A_VENIR'
