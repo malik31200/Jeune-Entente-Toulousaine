@@ -19,8 +19,8 @@ interface Match {
 function MatchCard({ match }: { match: Match }) {
   const isTermine = match.status === 'TERMINE'
   const date = new Date(match.date)
-  const dateStr = date.toLocaleDateString('fr-FR', { day: '2-digit', month: 'short' })
-  const timeStr = date.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' })
+  const dateStr = date.toLocaleDateString('fr-FR', { day: '2-digit', month: 'short', timeZone: 'Europe/Paris' })
+  const timeStr = date.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Paris' })
   const jetIsHome = match.is_home
 
   let jetWon = false, jetLost = false
