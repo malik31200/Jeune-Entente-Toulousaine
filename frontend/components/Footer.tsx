@@ -67,10 +67,10 @@ export default async function Footer() {
               <Image src="/logo.png" alt="Logo JET" width={44} height={44} className="object-cover rounded-full" />
               <div>
                 <p className="leading-none" style={{ color: 'var(--color-accent)', fontFamily: 'GraffitiYouth', fontSize: '1.4rem' }}>La JET</p>
-                <p className="text-gray-500 text-xs leading-none mt-0.5 tracking-widest uppercase">Toulouse</p>
+                <p className="text-gray-400 text-xs leading-none mt-0.5 tracking-widest uppercase">Toulouse</p>
               </div>
             </div>
-            <p className="text-gray-500 text-xs leading-relaxed mb-5">
+            <p className="text-gray-400 text-xs leading-relaxed mb-5">
               Club de football toulousain.<br />
               <span style={{ color: 'var(--color-accent)' }}>Rejoignez l&apos;aventure JET !</span>
             </p>
@@ -93,9 +93,9 @@ export default async function Footer() {
           {/* Colonnes 2 & 3 — Navigation + Le Club (côte à côte sur mobile) */}
           <div className="col-span-1 md:col-span-2 grid grid-cols-2 gap-8">
             <div>
-              <h3 className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: 'var(--color-accent)' }}>
+              <h2 className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: 'var(--color-accent)' }}>
                 Navigation
-              </h3>
+              </h2>
               <ul className="space-y-2">
                 {navLinks.map((link) => (
                   <li key={link.href}>
@@ -108,9 +108,9 @@ export default async function Footer() {
             </div>
 
             <div>
-              <h3 className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: 'var(--color-accent)' }}>
+              <h2 className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: 'var(--color-accent)' }}>
                 Le Club
-              </h3>
+              </h2>
               <ul className="space-y-2">
                 {clubLinks.map((link) => (
                   <li key={link.href}>
@@ -125,9 +125,9 @@ export default async function Footer() {
 
           {/* Colonne 4 — Contact */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <h3 className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: 'var(--color-accent)' }}>
+            <h2 className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: 'var(--color-accent)' }}>
               Contact
-            </h3>
+            </h2>
             <div className="space-y-3 mb-5">
               <a
                 href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x12aea34fee9193e3:0x511aa5b8dee9bccf?sa=X&ved=1t:8290&ictx=111"
@@ -167,7 +167,7 @@ export default async function Footer() {
 
       {/* ── Copyright ── */}
       <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-        <div className="container py-4 text-center text-gray-600 text-xs">
+        <div className="container py-4 text-center text-gray-400 text-xs">
           © {new Date().getFullYear()} Jeune Entente Toulousaine — Tous droits réservés
         </div>
       </div>

@@ -158,7 +158,7 @@ function DataTab({ stats }: { stats: any }) {
           <div className="grid grid-cols-3 gap-3 mb-8">
             <motion.div
               className="rounded-xl p-5 text-center"
-              style={{ backgroundColor: 'rgba(246, 249, 250, 0.94)', border: '1px solid rgba(34,197,94,0.2)' }}
+              style={{ backgroundColor: 'rgba(34,197,94,0.12)', border: '1px solid rgba(34,197,94,0.2)' }}
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}
             >
               <p className="text-5xl font-black text-green-400">{stats.wins}</p>
@@ -213,7 +213,7 @@ function DataTab({ stats }: { stats: any }) {
           )}
 
           {/* Matchs joués */}
-          <div className="mt-8 text-center text-gray-600 text-xs uppercase tracking-widest">
+          <div className="mt-8 text-center text-gray-400 text-xs uppercase tracking-widest">
             {stats.matches_played} matchs joués
           </div>
         </div>
