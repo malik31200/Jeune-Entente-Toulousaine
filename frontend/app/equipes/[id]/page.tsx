@@ -410,7 +410,33 @@ export default function TeamDetailPage() {
     if (months.length > 0) setSelectedMonth(months[0])
   }
 
-  if (loading) return <div className="container py-12 text-gray-500">Chargement...</div>
+  if (loading) return (
+    // Occupe déjà la même structure/hauteur que la page réelle (bannière +
+    // barre d'onglets + zone de contenu 60vh) pour éviter un gros saut de
+    // mise en page (CLS) quand les vraies données arrivent.
+    <div style={{ backgroundColor: 'var(--color-primary)', minHeight: '60vh' }}>
+      <div className="py-12" style={{ backgroundColor: 'var(--color-primary)' }}>
+        <div className="container">
+          <div className="h-5 w-40 rounded mb-4" style={{ backgroundColor: 'rgba(255,255,255,0.08)' }} />
+          <div className="h-10 w-64 rounded mt-2" style={{ backgroundColor: 'rgba(255,255,255,0.12)' }} />
+          <div className="h-5 w-48 rounded mt-3" style={{ backgroundColor: 'rgba(255,255,255,0.08)' }} />
+        </div>
+      </div>
+      <div style={{ backgroundColor: 'var(--color-primary-light)' }}>
+        <div className="container">
+          <div className="flex overflow-x-auto">
+            {['DATA', 'RÉSULTATS/CALENDRIER', 'CLASSEMENT', 'STAFF'].map(label => (
+              <div key={label} className="flex-shrink-0 px-5 py-4 text-sm font-bold uppercase tracking-wider border-b-2 border-transparent"
+                style={{ color: '#9ca3af' }}>
+                {label}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="pb-20" style={{ backgroundColor: 'var(--color-primary)', minHeight: '60vh' }} />
+    </div>
+  )
   if (!team || team.detail === 'Not found.') return <div className="container py-12 text-gray-500">Équipe introuvable.</div>
 
   const mainComp = stats?.competition ?? null
