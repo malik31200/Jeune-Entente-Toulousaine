@@ -38,14 +38,6 @@ export default async function Home() {
 
     const sixtyDaysAgo = new Date()
     sixtyDaysAgo.setDate(sixtyDaysAgo.getDate() - 60)
-    // Une saison va d'août à juillet. On limite le calcul de la "compétition
-    // principale" à la saison en cours, sinon une compétition d'une saison
-    // précédente (avec un nom différent, ex: "U18 Honneur F" -> "U18
-    // Territoire F") peut avoir plus de matchs terminés au total et
-    // l'emporter, masquant tous les matchs de la saison actuelle.
-    const now = new Date()
-    const currentSeasonStart = new Date(now.getFullYear(), 7, 1)
-    if (now < currentSeasonStart) currentSeasonStart.setFullYear(currentSeasonStart.getFullYear() - 1)
     // Marge de tolérance : un match peut rester en statut A_VENIR quelques
     // jours après le coup d'envoi si la FFF n'a pas encore publié le score
     // (délai normal) — on ne l'exclut du "prochain match" que passé ce délai,
@@ -61,20 +53,14 @@ export default async function Home() {
       const teamName = team.name
       const teamMatches = allMatches.filter((m: any) => m.team === team.id)
 
-      // Compétition principale = celle avec le plus de matchs terminés
-      // CETTE SAISON (voir note plus haut sur les changements de nom).
+      // On ne filtre plus par "compétition principale" ici : un résultat de
+      // coupe est une info valable à montrer, pas du bruit à cacher (ce
+      // filtre reste utile uniquement pour les stats agrégées de l'onglet
+      // DATA de la page équipe, où mélanger coupe et championnat fausserait
+      // les V/N/D).
       const terminated = teamMatches.filter((m: any) => m.status === 'TERMINE' && m.home_score !== null)
-      const compCount: Record<string, number> = {}
-      for (const m of terminated) {
-        if (new Date(m.date) < currentSeasonStart) continue
-        compCount[m.competition] = (compCount[m.competition] || 0) + 1
-      }
-      const mainComp = Object.keys(compCount).length > 0
-        ? Object.entries(compCount).sort(([, a], [, b]) => b - a)[0][0]
-        : null
-
       const lastResult = terminated
-        .filter((m: any) => (!mainComp || m.competition === mainComp) && new Date(m.date) >= sixtyDaysAgo)
+        .filter((m: any) => new Date(m.date) >= sixtyDaysAgo)
         .sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime())[0]
       const nextMatch = teamMatches
         // On exclut les matchs restés bloqués en "A_VENIR" depuis plus de
@@ -82,7 +68,7 @@ export default async function Home() {
         // sinon ils remontent avant les vrais matchs à venir. Un match joué
         // il y a 1-2 jours dont le score n'est pas encore publié reste
         // affiché normalement pendant ce délai.
-        .filter((m: any) => m.status === 'A_VENIR' && new Date(m.date) >= staleAVenirCutoff && (!mainComp || m.competition === mainComp))
+        .filter((m: any) => m.status === 'A_VENIR' && new Date(m.date) >= staleAVenirCutoff)
         .sort((a: any, b: any) => new Date(a.date).getTime() - new Date(b.date).getTime())[0]
 
       if (lastResult) carouselMatches.push({ ...lastResult, team_name: teamName })
