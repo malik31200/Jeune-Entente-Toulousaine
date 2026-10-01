@@ -108,6 +108,13 @@ class FFFMatchImporter:
             # "U15 Elite F" et "U15 Territoire F" partagent le même
             # category_code (U15F) mais ce sont deux équipes distinctes.
             team_name = 'U15 Territoire Féminines'
+        elif 'U15' in comp and 'DISTRICT' in comp and 'F' not in category_code:
+            # "U15 R1" (Régional) et "U15 District A" sont deux équipes
+            # distinctes du club, comme pour les autres catégories.
+            team_name = 'U15 District A'
+        elif 'U15' in comp and 'F' not in category_code:
+            # Nom de l'équipe existante après renommage par l'admin.
+            team_name = 'U15 R1'
         elif 'U16' in comp and 'TERRITOIRE' in comp:
             # "U16 Régional" et "U16 Territoire" sont deux équipes distinctes.
             team_name = 'U16 Territoire'
