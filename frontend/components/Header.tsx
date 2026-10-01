@@ -193,7 +193,7 @@ export default function Header({ shopUrl }: { shopUrl?: string | null }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm font-bold px-4 py-2 rounded transition-opacity hover:opacity-80"
-                  style={{ backgroundColor: 'var(--color-accent)', color: 'var(--color-primary)' }}
+                  style={{ backgroundColor: 'var(--color-accent)', color: 'var(--color-white)' }}
                 >
                   Boutique
                 </a>
@@ -324,7 +324,7 @@ export default function Header({ shopUrl }: { shopUrl?: string | null }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-4 text-center text-sm font-bold px-4 py-3 rounded"
-                  style={{ backgroundColor: 'var(--color-accent)', color: 'var(--color-primary)' }}
+                  style={{ backgroundColor: 'var(--color-accent)', color: 'var(--color-white)' }}
                   onClick={closeMenu}
                 >
                   🛒 Boutique

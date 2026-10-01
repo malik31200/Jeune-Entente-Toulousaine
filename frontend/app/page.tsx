@@ -145,7 +145,7 @@ export default async function Home() {
                                     <Link
                                         href={`/actualites/${heroArticle.slug}`}
                                         className="flex items-center justify-center gap-2 font-bold px-6 py-3 rounded transition-opacity hover:opacity-80 w-full"
-                                        style={{ backgroundColor: 'var(--color-accent)', color: 'var(--color-primary)' }}
+                                        style={{ backgroundColor: 'var(--color-accent)', color: 'var(--color-white)' }}
                                     >
                                         Lire l'article →
                                     </Link>

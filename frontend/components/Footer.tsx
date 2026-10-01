@@ -149,7 +149,7 @@ export default async function Footer() {
             <div className="flex flex-col gap-2 w-full">
               <Link href="/contact"
                 className="text-center text-sm font-bold px-4 py-2 rounded transition-opacity hover:opacity-90"
-                style={{ backgroundColor: 'var(--color-accent)', color: '#000' }}>
+                style={{ backgroundColor: 'var(--color-accent)', color: '#fff' }}>
                 Nous contacter
               </Link>
               {settings?.shop_url && (
