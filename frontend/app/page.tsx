@@ -189,8 +189,8 @@ export default async function Home() {
               '@type': 'SportsOrganization',
               name: 'Jeune Entente Toulousaine',
               alternateName: 'JET',
-              url: process.env.NEXT_PUBLIC_SITE_URL || 'https://jet-toulouse.fr',
-              logo: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://jet-toulouse.fr'}/logo.png`,
+              url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.jetfoottoulouse.fr',
+              logo: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.jetfoottoulouse.fr'}/logo.png`,
               sport: 'Football',
               address: {
                 '@type': 'PostalAddress',

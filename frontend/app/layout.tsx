@@ -13,7 +13,7 @@ const bebasNeue = Bebas_Neue({
   variable: '--font-bebas',
 })
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://jet-toulouse.fr'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.jetfoottoulouse.fr'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

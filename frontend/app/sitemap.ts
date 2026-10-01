@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://jet-toulouse.fr'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.jetfoottoulouse.fr'
 const API_URL = process.env.API_URL || 'http://backend:8000/api'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -29,8 +29,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     articleUrls = articles
       .filter((a: any) => a.is_published)
       .map((a: any) => ({
+        // L'API n'expose pas "updated_at" sur les articles : new Date(undefined)
+        // donne une date invalide, et Next.js plante (500) en générant le XML.
         url: `${SITE_URL}/actualites/${a.slug}`,
-        lastModified: new Date(a.updated_at),
+        lastModified: a.published_date ? new Date(a.published_date) : now,
         changeFrequency: 'weekly' as const,
         priority: 0.8,
       }))
