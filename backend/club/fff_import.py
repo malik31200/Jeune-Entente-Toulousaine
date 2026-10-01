@@ -62,7 +62,11 @@ class FFFMatchImporter:
             return None
         self.update_team_classement(team, competition, phase, poule)
 
-        date_str = data.get('date')
+        # Un match "Reporté" (reprogrammation pas encore fixée par la FFF) a
+        # "date": null. Sans ce repli, parse_date() retombait sur "maintenant",
+        # ce qui faisait apparaître le match en tête de liste avec la date du
+        # jour de l'import au lieu de sa date initialement prévue.
+        date_str = data.get('date') or data.get('initial_date')
         time_str = data.get('time', '00H00')
         match_date = self.parse_date(date_str, time_str)
 
