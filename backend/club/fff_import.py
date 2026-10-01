@@ -113,8 +113,14 @@ class FFFMatchImporter:
             team_name = 'U16 Territoire'
         elif 'U16' in comp:
             team_name = 'U16 Régional'
+        elif 'U14' in comp and 'DISTRICT' in comp:
+            # "U14 R1" (Régional) et "U14 District A" sont deux équipes
+            # distinctes du club, comme pour les autres catégories.
+            team_name = 'U14 District A'
         elif 'U14' in comp:
-            team_name = 'U14'
+            # Nom de l'équipe existante après renommage par l'admin (le code
+            # doit matcher le nom actuel, pas un nom générique).
+            team_name = 'U14 R1'
         elif category_code == 'SEM' and team_code == 2:
             team_name = 'Seniors 2'
         else:
