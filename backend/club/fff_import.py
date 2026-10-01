@@ -21,7 +21,7 @@ CATEGORY_TO_TEAM = {
     'U15': 'U15',
     'U15F': 'U15 Elite Féminines',
     'U14': 'U14',
-    'SEF': 'Féminines',
+    'SEF': 'SENIORS F',
     'SESM': 'Futsal',
 }
 
@@ -128,6 +128,11 @@ class FFFMatchImporter:
             # Nom de l'équipe existante après renommage par l'admin (le code
             # doit matcher le nom actuel, pas un nom générique).
             team_name = 'U14 R1'
+        elif category_code == 'SEF' and 'TERRITOIRE' in comp:
+            # "SENIORS F" (Régional) et cette compétition Territoire sont
+            # deux équipes distinctes du club, comme pour les autres
+            # catégories.
+            team_name = 'Seniors F Territoire'
         elif category_code == 'SEM' and team_code == 2:
             team_name = 'Seniors 2'
         else:
