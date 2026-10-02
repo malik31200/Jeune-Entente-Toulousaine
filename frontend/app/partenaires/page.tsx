@@ -16,7 +16,9 @@ export default async function PartenairesPage() {
         Nos Partenaires
       </h1>
       <div className="h-1 w-16 mb-8" style={{ backgroundColor: 'var(--color-accent)' }} />
-      <p className="text-gray-500 mb-10">Merci à tous nos partenaires pour leur soutien au club.</p>
+      <p className="text-gray-500 mb-10">
+        La Jeune Entente Toulousaine remercie chaleureusement ses sponsors et partenaires, dont le soutien permet au club de faire grandir ses équipes et de proposer un encadrement de qualité à Toulouse. Découvrez ci-dessous les entreprises qui nous accompagnent.
+      </p>
 
       {sponsors.length === 0 ? (
         <p className="text-gray-400">Aucun partenaire à afficher pour le moment.</p>
