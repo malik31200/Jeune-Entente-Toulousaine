@@ -21,4 +21,5 @@ urlpatterns = [
     path('category-page/<str:slug>/', views.category_page_view, name='category-page'),
     path('classement/', views.classement_view, name='classement'),
     path('club-page/', views.club_page_view, name='club-page'),
+    path('track-visit/', views.track_visit_view, name='track-visit'),
 ]

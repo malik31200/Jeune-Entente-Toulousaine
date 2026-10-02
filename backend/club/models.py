@@ -329,7 +329,33 @@ class SiteSettings(models.Model):
 
     def __str__(self):
         return "Configuration du site"
-    
+
     class Meta :
         verbose_name = "Configuration du site"
         verbose_name_plural = "Configuration du site"
+
+
+class VisitorPing(models.Model):
+    """Une ligne par visiteur unique et par jour (empreinte, jamais l'IP en clair).
+    Sert uniquement à dédupliquer ; la table DailyVisitorCount porte le total lisible.
+    """
+    date = models.DateField()
+    visitor_hash = models.CharField(max_length=64)
+
+    class Meta:
+        unique_together = ('date', 'visitor_hash')
+        verbose_name = "Visite (technique)"
+        verbose_name_plural = "Visites (technique)"
+
+
+class DailyVisitorCount(models.Model):
+    date = models.DateField(unique=True)
+    count = models.PositiveIntegerField(default=0)
+
+    def __str__(self):
+        return f"{self.date} : {self.count} visiteurs"
+
+    class Meta:
+        ordering = ['-date']
+        verbose_name = "Visiteurs par jour"
+        verbose_name_plural = "Visiteurs par jour"

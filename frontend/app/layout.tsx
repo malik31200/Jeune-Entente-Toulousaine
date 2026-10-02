@@ -3,6 +3,7 @@ import { Bebas_Neue } from 'next/font/google'
 import './globals.css'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import VisitorTracker from '../components/VisitorTracker'
 import { getSiteSettings } from '../lib/api'
 
 export const dynamic = 'force-dynamic'
@@ -55,6 +56,7 @@ export default async function RootLayout({
         <link rel="preload" href="/fonts/GraffitiYouth-Regular.otf" as="font" type="font/otf" crossOrigin="anonymous" />
       </head>
       <body className="flex flex-col min-h-screen">
+        <VisitorTracker />
         <Header shopUrl={shopUrl} />
        <main className="flex-1">{children}</main>
         <Footer />

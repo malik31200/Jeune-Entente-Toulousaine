@@ -4,7 +4,8 @@ from django.contrib import messages
 from django.shortcuts import redirect
 from django.urls import reverse
 from django.utils import timezone
-from .models import Article, Team, Player, TrainingSchedule, Match, TeamStats, ClassementEntry, Sponsor, SiteSettings, ClubPage, GalleryPhoto, CategoryPage, TeamPresentation, Detection
+from django.db.models import Sum
+from .models import Article, Team, Player, TrainingSchedule, Match, TeamStats, ClassementEntry, Sponsor, SiteSettings, ClubPage, GalleryPhoto, CategoryPage, TeamPresentation, Detection, DailyVisitorCount
 
 
 
@@ -175,3 +176,23 @@ class GalleryPhotoAdmin(admin.ModelAdmin):
     list_display = ['__str__', 'order', 'created_at']
     list_editable = ['order']
     fields = ['image', 'order']
+
+
+@admin.register(DailyVisitorCount)
+class DailyVisitorCountAdmin(admin.ModelAdmin):
+    list_display = ['date', 'count']
+    change_list_template = 'admin/club/dailyvisitorcount/change_list.html'
+
+    def has_add_permission(self, request):
+        return False
+
+    def has_change_permission(self, request, obj=None):
+        return False
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+    def changelist_view(self, request, extra_context=None):
+        extra_context = extra_context or {}
+        extra_context['total_visitors'] = DailyVisitorCount.objects.aggregate(total=Sum('count'))['total'] or 0
+        return super().changelist_view(request, extra_context=extra_context)

@@ -1,3 +1,4 @@
+import hashlib
 import logging
 from rest_framework import viewsets, status
 from rest_framework.decorators import api_view, permission_classes
@@ -6,13 +7,16 @@ from rest_framework.response import Response
 from django.core.mail import EmailMessage
 from django.core.cache import cache
 from django.conf import settings
+from django.db import transaction
+from django.db.models import F
+from django.utils import timezone
 import requests as http_requests
 
 logger = logging.getLogger(__name__)
 
 FFF_BASE = "https://api-dofa.fff.fr"
 CACHE_TIMEOUT = 15 * 60
-from .models import Article, Team, TrainingSchedule, Match, TeamStats, ClassementEntry, ClassementFetchLock, Sponsor, SiteSettings, ClubPage, GalleryPhoto, CategoryPage, TeamPresentation, Detection
+from .models import Article, Team, TrainingSchedule, Match, TeamStats, ClassementEntry, ClassementFetchLock, Sponsor, SiteSettings, ClubPage, GalleryPhoto, CategoryPage, TeamPresentation, Detection, DailyVisitorCount, VisitorPing
 from .serializers import (ArticleSerializer, TeamSerializer, TrainingScheduleSerializer,
                           MatchSerializer, TeamStatsSerializer, SponsorSerializer,
                           SiteSettingsSerializer, ClubPageSerializer, GalleryPhotoSerializer,
@@ -347,4 +351,26 @@ def contact_view(request):
     except Exception as e:
         logger.error(f'Erreur envoi email formulaire de contact : {e}')
         return Response({'error': 'Erreur lors de l\'envoi.'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+@api_view(['POST'])
+@permission_classes([AllowAny])
+def track_visit_view(request):
+    """Appelé une fois par le frontend à chaque chargement de page. Compte un
+    visiteur unique par jour via une empreinte de son IP (jamais stockée en
+    clair), pour afficher un total dans l'admin sans tracker personnellement
+    les visiteurs.
+    """
+    ip = request.META.get('HTTP_X_FORWARDED_FOR', request.META.get('REMOTE_ADDR', ''))
+    ip = ip.split(',')[0].strip()
+    visitor_hash = hashlib.sha256(f'{ip}{settings.SECRET_KEY}'.encode()).hexdigest()
+    today = timezone.localdate()
+
+    _, created = VisitorPing.objects.get_or_create(date=today, visitor_hash=visitor_hash)
+    if created:
+        with transaction.atomic():
+            DailyVisitorCount.objects.get_or_create(date=today)
+            DailyVisitorCount.objects.filter(date=today).update(count=F('count') + 1)
+
+    return Response(status=status.HTTP_204_NO_CONTENT)
 

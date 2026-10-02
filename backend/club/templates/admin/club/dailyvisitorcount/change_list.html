@@ -1,0 +1,8 @@
+{% extends "admin/change_list.html" %}
+
+{% block object-tools %}
+<p style="font-size: 1.3em; font-weight: bold; margin: 10px 0;">
+  Total de visiteurs depuis le début : {{ total_visitors }}
+</p>
+{{ block.super }}
+{% endblock %}
