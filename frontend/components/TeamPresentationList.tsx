@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { getMediaUrl } from '../lib/api'
@@ -9,6 +10,35 @@ interface TeamItem {
   display_name: string
   image?: string
   coaches?: string
+}
+
+function PhotoFallback() {
+  return (
+    <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: '#f3f4f6' }}>
+      <span className="text-4xl">⚽</span>
+    </div>
+  )
+}
+
+// Affiche le ⚽ par défaut si l'image est absente ou introuvable
+// (ex : fichier supprimé de Cloudinary mais encore référencé en base).
+function TeamPhoto({ src, alt }: { src: string | null; alt: string }) {
+  const [failed, setFailed] = useState(false)
+  if (!src || failed) return <PhotoFallback />
+  return (
+    <Image
+      src={src}
+      alt={alt}
+      fill
+      className="object-cover transition-transform duration-500 group-hover:scale-105"
+      sizes="(max-width: 640px) 100vw, 288px"
+      onError={() => setFailed(true)}
+      // Si l'image a déjà échoué avant l'hydratation, onError ne se déclenche pas
+      ref={(img) => {
+        if (img && img.complete && img.naturalWidth === 0) setFailed(true)
+      }}
+    />
+  )
 }
 
 export default function TeamPresentationList({ teams }: { teams: TeamItem[] }) {
@@ -33,19 +63,7 @@ export default function TeamPresentationList({ teams }: { teams: TeamItem[] }) {
           >
             {/* Photo */}
             <div className="relative w-full h-56 sm:h-auto sm:w-72 flex-shrink-0 overflow-hidden" style={{ minHeight: '180px' }}>
-              {imageUrl ? (
-                <Image
-                  src={imageUrl}
-                  alt={item.display_name}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 640px) 100vw, 288px"
-                />
-              ) : (
-                <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: '#f3f4f6' }}>
-                  <span className="text-4xl">⚽</span>
-                </div>
-              )}
+              <TeamPhoto src={imageUrl} alt={item.display_name} />
             </div>
 
             {/* Contenu */}
