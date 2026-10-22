@@ -28,21 +28,19 @@ export default function TeamPresentationList({ teams }: { teams: TeamItem[] }) {
             viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.45, delay: i * 0.08, ease: 'easeOut' }}
             whileHover={{ y: -6, transition: { duration: 0.2, ease: 'easeOut' } }}
-            className="rounded-xl overflow-hidden shadow flex group cursor-pointer"
+            className="rounded-xl overflow-hidden shadow flex flex-col sm:flex-row group cursor-pointer"
             style={{ backgroundColor: 'white', border: '1px solid #e5e7eb', minHeight: '180px' }}
           >
             {/* Photo */}
-            <div className="w-48 flex-shrink-0 overflow-hidden" style={{ minHeight: '180px' }}>
+            <div className="relative w-full h-56 sm:h-auto sm:w-72 flex-shrink-0 overflow-hidden" style={{ minHeight: '180px' }}>
               {imageUrl ? (
-                <div className="relative w-full h-full">
-                  <Image
-                    src={imageUrl}
-                    alt={item.display_name}
-                    fill
-                    className="object-contain transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                </div>
+                <Image
+                  src={imageUrl}
+                  alt={item.display_name}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, 288px"
+                />
               ) : (
                 <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: '#f3f4f6' }}>
                   <span className="text-4xl">⚽</span>
