@@ -97,7 +97,7 @@ class SeasonFilter(admin.SimpleListFilter):
 class MatchAdmin(admin.ModelAdmin):
     list_display = ['home_team', 'away_team', 'home_score', 'away_score', 'status', 'date', 'team', 'competition']
     list_display_links = ['home_team', 'away_team']
-    list_editable = ['status', 'home_score', 'away_score']
+    list_editable = ['status', 'home_score', 'away_score', 'date']
     list_filter = [NeedsScoreFilter, SeasonFilter, 'team', 'status']
     search_fields = ['home_team', 'away_team', 'competition']
     ordering = ['-date']
