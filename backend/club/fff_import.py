@@ -8,8 +8,11 @@ Partagée entre :
   depuis un vrai navigateur.
 """
 from datetime import datetime
+from zoneinfo import ZoneInfo
 from django.utils import timezone
 from club.models import Team, Match
+
+PARIS_TZ = ZoneInfo('Europe/Paris')
 
 CATEGORY_TO_TEAM = {
     'SEM': 'Seniors',
@@ -161,16 +164,25 @@ class FFFMatchImporter:
             team.cp_no = cp_no
 
     def parse_date(self, date_str, time_str='00H00'):
+        """Construit la date du match à l'heure de Paris.
+
+        La FFF envoie la date seule en UTC ("2026-10-31T00:00:00+00:00") et
+        l'heure à part, en heure locale ("14H00"). Il faut donc combiner le
+        jour et l'heure puis les interpréter à l'heure de Paris. Garder le
+        fuseau UTC de la date décalait tous les matchs d'1h (2h en été).
+        """
         if not date_str:
             return timezone.now()
         try:
-            dt = datetime.fromisoformat(date_str)
+            day = datetime.fromisoformat(date_str).date()
+            hour, minute = 0, 0
+            time_str = (time_str or '').strip()
             if time_str:
-                parts = time_str.replace('H', ':').split(':')
+                parts = time_str.upper().replace('H', ':').split(':')
                 hour = int(parts[0])
-                minute = int(parts[1]) if len(parts) > 1 else 0
-                dt = dt.replace(hour=hour, minute=minute)
-            return dt
+                minute = int(parts[1]) if len(parts) > 1 and parts[1] else 0
+            naive = datetime(day.year, day.month, day.day, hour, minute)
+            return timezone.make_aware(naive, PARIS_TZ)
         except (ValueError, TypeError):
             return timezone.now()
 
